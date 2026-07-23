@@ -1,0 +1,4 @@
+// Placeholder para futuros utilitários
+export const helperUtils = {
+  // Adicionar utilitários conforme necessário
+}

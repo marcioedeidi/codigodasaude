@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@layer components {
+  .btn-primary {
+    @apply inline-block px-8 py-3 bg-accent-300 text-gray-900 font-bold rounded-full hover:scale-105 transition-transform duration-300 cursor-pointer text-center;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-8 py-3 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-600 transition-colors duration-300 cursor-pointer text-center;
+  }
+
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}

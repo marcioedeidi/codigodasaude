@@ -1,0 +1,4 @@
+// Placeholder para futuras estruturas de dados
+export const libUtils = {
+  // Adicionar estruturas conforme necessário
+}
