@@ -34,3 +34,35 @@ export async function saveContact(name: string, whatsapp: string, email: string)
     return { success: false, error }
   }
 }
+
+// Função para buscar contatos (admin)
+export async function getContacts() {
+  try {
+    const { data, error } = await supabase
+      .from('contacts')
+      .select('*')
+      .order('created_at', { ascending: false })
+
+    if (error) throw error
+    return { success: true, data }
+  } catch (error) {
+    console.error('Error fetching contacts:', error)
+    return { success: false, error }
+  }
+}
+
+// Função para deletar contato
+export async function deleteContact(id: string) {
+  try {
+    const { error } = await supabase
+      .from('contacts')
+      .delete()
+      .eq('id', id)
+
+    if (error) throw error
+    return { success: true }
+  } catch (error) {
+    console.error('Error deleting contact:', error)
+    return { success: false, error }
+  }
+}
