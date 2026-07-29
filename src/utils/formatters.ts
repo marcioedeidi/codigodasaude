@@ -41,14 +41,25 @@ export function delay(ms: number): Promise<void> {
 }
 
 // Formata uma data em português
-export function formatDate(date: Date | string, format: 'short' | 'long' = 'short'): string {
+export function formatDate(
+  date: Date | string,
+  format: 'short' | 'long' = 'short'
+): string {
   const d = typeof date === 'string' ? new Date(date) : date
-  
-  const options: Intl.DateTimeFormatOptions = format === 'short' 
-    ? { day: '2-digit', month: '2-digit', year: 'numeric' }
-    : { day: 'long', month: 'long', year: 'numeric' }
-  
-  return d.toLocaleDateString('pt-BR', options)
+
+  if (format === 'short') {
+    return d.toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    })
+  }
+
+  return d.toLocaleDateString('pt-BR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }
 
 // Formata um valor como moeda

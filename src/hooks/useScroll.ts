@@ -14,7 +14,7 @@ export function useScroll({ threshold = 0 }: UseScrollProps = {}) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
       setScrollY(currentScrollY)
-      setIsScrollingDown(currentScrollY > lastScrollY)
+      setIsScrollingDown(currentScrollY > lastScrollY && currentScrollY > threshold)
       lastScrollY = currentScrollY
     }
 

@@ -20,7 +20,7 @@ const Hero = () => {
             Descubra uma Nova Forma de Cuidar da Sua Saúde
           </h1>
           <p className="text-lg md:text-xl text-primary-100 mb-8">
-            Com os produtos naturais Velmora, você encontra a qualidade e eficiência que sua saúde merece.
+            No Código da Saúde, selecionamos produtos, conteúdos e soluções para ajudar você a conquistar mais saúde, qualidade de vida e bem-estar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button

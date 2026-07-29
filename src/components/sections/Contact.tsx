@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import Button from '@components/common/Button'
 import Input from '@components/common/Input'
 import { useContactForm } from '@hooks/useContactForm'
@@ -8,7 +7,7 @@ const Contact = () => {
   const { register, handleSubmit, errors, isLoading, submitStatus, errorMessage, onSubmit } = useContactForm()
 
   return (
-    <section id="contato" className="section-padding bg-gray-50">
+      <section id="contato" className="section-padding bg-[#F7EEDC]">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0 }}

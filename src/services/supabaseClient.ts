@@ -16,22 +16,23 @@ export const supabase = createClient(
 export async function saveContact(name: string, whatsapp: string, email: string) {
   try {
     const { data, error } = await supabase
-      .from('contacts')
+      .from('Cadastros')
       .insert([
         {
-          name,
+          nome: name,
           whatsapp,
           email,
           created_at: new Date().toISOString(),
         },
       ])
-      .select()
 
     if (error) throw error
+    
     return { success: true, data }
-  } catch (error) {
-    console.error('Error saving contact:', error)
-    return { success: false, error }
+  } catch (error: any) {
+      alert(JSON. stringify(error))
+      console.error(error)
+      return { success: false, error }
   }
 }
 
@@ -39,7 +40,7 @@ export async function saveContact(name: string, whatsapp: string, email: string)
 export async function getContacts() {
   try {
     const { data, error } = await supabase
-      .from('contacts')
+      .from('Cadastros')
       .select('*')
       .order('created_at', { ascending: false })
 
@@ -55,7 +56,7 @@ export async function getContacts() {
 export async function deleteContact(id: string) {
   try {
     const { error } = await supabase
-      .from('contacts')
+      .from('Cadastros')
       .delete()
       .eq('id', id)
 

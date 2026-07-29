@@ -58,10 +58,10 @@ const Benefits = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Por Que Escolher Velmora?
+            Por Que Escolher o Código da Saúde?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Nossos produtos são desenvolvidos com dedicação para sua saúde e bem-estar.
+            Selecionamos produtos, conteúdos e soluções para ajudar você a conquistar mais saúde e qualidade de vida.
           </p>
         </motion.div>
 
