@@ -12,7 +12,7 @@ import Footer from '../components/layout/Footer'
 
 const AppRoutes: React.FC = () => {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
