@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animations */
+/* Identidade visual global do Código da Saúde */
+:root {
+  --creme: #F7F3EA;
+  --verde-agua: #8FD8CE;
+  --verde-escuro: #245B4A;
+}
+
 @layer components {
   .btn-primary {
     @apply inline-block px-8 py-3 bg-accent-300 text-gray-900 font-bold rounded-full hover:scale-105 transition-transform duration-300 cursor-pointer text-center;
@@ -23,8 +29,32 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--creme);
 }
 
 body {
-  @apply bg-gray-50 text-gray-900 font-sans;
+  margin: 0;
+  color: #20342D;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--creme);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='620' viewBox='0 0 320 620'%3E%3Cg fill='%235F8F77' fill-opacity='.13'%3E%3Cellipse cx='28' cy='68' rx='17' ry='42' transform='rotate(-36 28 68)'/%3E%3Cellipse cx='67' cy='116' rx='13' ry='33' transform='rotate(35 67 116)'/%3E%3Cellipse cx='294' cy='208' rx='18' ry='46' transform='rotate(38 294 208)'/%3E%3Cellipse cx='258' cy='258' rx='12' ry='32' transform='rotate(-38 258 258)'/%3E%3Cellipse cx='31' cy='390' rx='16' ry='40' transform='rotate(38 31 390)'/%3E%3Cellipse cx='72' cy='442' rx='12' ry='31' transform='rotate(-32 72 442)'/%3E%3Cellipse cx='292' cy='535' rx='17' ry='43' transform='rotate(-38 292 535)'/%3E%3C/g%3E%3Cg stroke='%235F8F77' stroke-opacity='.12' stroke-width='3' fill='none'%3E%3Cpath d='M6 18 C38 68 43 120 88 156'/%3E%3Cpath d='M316 154 C281 206 285 266 242 301'/%3E%3Cpath d='M4 335 C39 385 43 444 88 478'/%3E%3Cpath d='M316 485 C280 530 283 584 244 617'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% 620px;
+  background-attachment: scroll;
+}
+
+#root {
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* Todas as dobras usam o mesmo fundo creme; o desenho das folhas vem do body. */
+section {
+  background-color: transparent !important;
+}
+
+/* Contorno branco pode ser usado para separar elementos sem fugir da paleta. */
+.white-outline {
+  border: 2px solid rgba(255, 255, 255, 0.95);
 }
