@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import BotanicalLeaves from '@components/common/BotanicalLeaves'
-import logoBig from '../../assets/logoBig'
 
 const Hero = () => {
+  const logoBig = `${import.meta.env.BASE_URL}assets/logo-big.jpg`
+  const logoSmall = `${import.meta.env.BASE_URL}assets/logo-small.webp`
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -69,7 +71,11 @@ const Hero = () => {
             <img
               src={logoBig}
               alt="Código da Saúde"
-              className="block h-auto w-full rounded-[1.6rem] object-cover"
+              onError={(event) => {
+                event.currentTarget.onerror = null
+                event.currentTarget.src = logoSmall
+              }}
+              className="block h-auto min-h-[260px] w-full rounded-[1.6rem] object-contain"
             />
           </div>
         </motion.div>
