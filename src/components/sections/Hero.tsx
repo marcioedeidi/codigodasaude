@@ -3,7 +3,7 @@ import BotanicalLeaves from '@components/common/BotanicalLeaves'
 import logoSmallFallback from '../../assets/logoSmall'
 
 const Hero = () => {
-  const logoBig = `${import.meta.env.BASE_URL}assets/logo-big.jpg`
+  const logoBig = `${import.meta.env.BASE_URL}assets/logo-big.webp`
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -75,7 +75,7 @@ const Hero = () => {
                 event.currentTarget.onerror = null
                 event.currentTarget.src = logoSmallFallback
               }}
-              className="block h-auto min-h-[260px] w-full rounded-[1.6rem] object-contain"
+              className="block h-auto w-full rounded-[1.6rem] object-contain"
             />
           </div>
         </motion.div>
