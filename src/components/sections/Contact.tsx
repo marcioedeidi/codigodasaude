@@ -1,26 +1,28 @@
 import { motion } from 'framer-motion'
 import Button from '@components/common/Button'
 import Input from '@components/common/Input'
+import BotanicalLeaves from '@components/common/BotanicalLeaves'
 import { useContactForm } from '@hooks/useContactForm'
 
 const Contact = () => {
   const { register, handleSubmit, errors, isLoading, submitStatus, errorMessage, onSubmit } = useContactForm()
 
   return (
-      <section id="contato" className="section-padding bg-[#F7EEDC]">
-      <div className="container-max">
+    <section id="contato" className="section-padding relative overflow-hidden bg-[#F7F3EA]">
+      <BotanicalLeaves />
+      <div className="container-max relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto"
+          className="mx-auto max-w-2xl"
         >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-[#173F36] md:text-5xl">
               Entre em Contato
             </h2>
-            <p className="text-lg text-gray-600">
-              Deixe seus dados e entraremos em contato em breve.
+            <p className="text-lg text-[#486B64]">
+              Deixe seus dados para continuar seu atendimento com o Código da Saúde.
             </p>
           </div>
 
@@ -29,9 +31,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             onSubmit={handleSubmit(onSubmit)}
-            className="bg-white rounded-2xl p-8 md:p-12 shadow-lg"
+            className="rounded-3xl border-2 border-white/95 bg-[#8FD8CE] p-8 shadow-xl md:p-12"
           >
-            <div className="space-y-6 mb-8">
+            <div className="mb-8 space-y-6">
               <div>
                 <Input
                   label="Nome"
@@ -67,9 +69,9 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6"
+                className="mb-6 rounded-lg border border-white/90 bg-white/70 p-4"
               >
-                <p className="text-green-700 font-semibold">✓ Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+                <p className="font-semibold text-[#245B4A]">✓ Dados enviados com sucesso.</p>
               </motion.div>
             )}
 
@@ -77,9 +79,9 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6"
+                className="mb-6 rounded-lg border border-red-200 bg-red-50 p-4"
               >
-                <p className="text-red-700 font-semibold">✗ {errorMessage}</p>
+                <p className="font-semibold text-red-700">✗ {errorMessage}</p>
               </motion.div>
             )}
 
