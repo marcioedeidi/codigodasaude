@@ -7,6 +7,7 @@
   --creme: #F7F3EA;
   --verde-agua: #8FD8CE;
   --verde-escuro: #245B4A;
+  --folha: #5F8F77;
 }
 
 @layer components {
@@ -46,9 +47,9 @@ body {
 
 /*
  * Regra visual fixa da marca:
- * - todas as dobras usam o mesmo creme;
- * - cada dobra recebe suas próprias folhas nas laterais;
- * - assim o desenho continua aparecendo conforme a pessoa navega.
+ * - todas as dobras usam o mesmo fundo creme;
+ * - cada dobra recebe folhas próprias nas duas laterais;
+ * - usamos glifos botânicos reais no CSS para não depender de SVG de fundo.
  */
 section {
   position: relative;
@@ -59,29 +60,31 @@ section {
 
 section::before,
 section::after {
-  content: '';
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: clamp(90px, 13vw, 190px);
-  pointer-events: none;
+  top: 7%;
   z-index: 0;
-  opacity: 0.55;
-  background-repeat: repeat-y;
-  background-size: 150px 420px;
+  pointer-events: none;
+  white-space: pre;
+  color: var(--folha);
+  opacity: 0.24;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(54px, 7vw, 96px);
+  line-height: 1.55;
+  letter-spacing: 0;
+  text-shadow: 0 240px 0 rgba(95, 143, 119, 0.74),
+               0 480px 0 rgba(95, 143, 119, 0.66);
 }
 
 section::before {
-  left: 0;
-  background-position: left 24px top 30px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='420' viewBox='0 0 150 420'%3E%3Cg fill='%235F8F77' fill-opacity='.18'%3E%3Cellipse cx='20' cy='58' rx='13' ry='34' transform='rotate(-35 20 58)'/%3E%3Cellipse cx='54' cy='105' rx='10' ry='27' transform='rotate(35 54 105)'/%3E%3Cellipse cx='22' cy='250' rx='13' ry='35' transform='rotate(36 22 250)'/%3E%3Cellipse cx='58' cy='300' rx='10' ry='27' transform='rotate(-34 58 300)'/%3E%3C/g%3E%3Cg stroke='%235F8F77' stroke-opacity='.17' stroke-width='2.5' fill='none'%3E%3Cpath d='M0 15 C31 58 34 111 76 142'/%3E%3Cpath d='M0 205 C31 248 37 303 79 337'/%3E%3C/g%3E%3C/svg%3E");
+  content: '❧\A\A❧';
+  left: clamp(-18px, -1vw, -4px);
+  transform: rotate(-12deg);
 }
 
 section::after {
-  right: 0;
-  transform: scaleX(-1);
-  background-position: left 24px top 120px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='420' viewBox='0 0 150 420'%3E%3Cg fill='%235F8F77' fill-opacity='.18'%3E%3Cellipse cx='20' cy='58' rx='13' ry='34' transform='rotate(-35 20 58)'/%3E%3Cellipse cx='54' cy='105' rx='10' ry='27' transform='rotate(35 54 105)'/%3E%3Cellipse cx='22' cy='250' rx='13' ry='35' transform='rotate(36 22 250)'/%3E%3Cellipse cx='58' cy='300' rx='10' ry='27' transform='rotate(-34 58 300)'/%3E%3C/g%3E%3Cg stroke='%235F8F77' stroke-opacity='.17' stroke-width='2.5' fill='none'%3E%3Cpath d='M0 15 C31 58 34 111 76 142'/%3E%3Cpath d='M0 205 C31 248 37 303 79 337'/%3E%3C/g%3E%3C/svg%3E");
+  content: '❧\A\A❧';
+  right: clamp(-18px, -1vw, -4px);
+  transform: scaleX(-1) rotate(-12deg);
 }
 
 section > * {
@@ -97,8 +100,19 @@ section > * {
 @media (max-width: 640px) {
   section::before,
   section::after {
-    width: 82px;
-    opacity: 0.4;
-    background-size: 115px 340px;
+    top: 5%;
+    opacity: 0.2;
+    font-size: 52px;
+    line-height: 1.8;
+    text-shadow: 0 220px 0 rgba(95, 143, 119, 0.66),
+                 0 440px 0 rgba(95, 143, 119, 0.58);
+  }
+
+  section::before {
+    left: -20px;
+  }
+
+  section::after {
+    right: -20px;
   }
 }
