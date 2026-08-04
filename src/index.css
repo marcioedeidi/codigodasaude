@@ -4,10 +4,9 @@
 
 /* Identidade visual global do Código da Saúde */
 :root {
-  --creme: #F7F3EA;
+  --creme: #EAD9B8;
   --verde-agua: #8FD8CE;
   --verde-escuro: #245B4A;
-  --folha: #5F8F77;
 }
 
 @layer components {
@@ -45,12 +44,7 @@ body {
   background: var(--creme);
 }
 
-/*
- * Regra visual fixa da marca:
- * - todas as dobras usam o mesmo fundo creme;
- * - cada dobra recebe folhas próprias nas duas laterais;
- * - usamos glifos botânicos reais no CSS para não depender de SVG de fundo.
- */
+/* Todas as dobras usam o mesmo creme. As folhas oficiais entram via BotanicalLeaves. */
 section {
   position: relative;
   isolation: isolate;
@@ -58,61 +52,11 @@ section {
   background-color: var(--creme) !important;
 }
 
-section::before,
-section::after {
-  position: absolute;
-  top: 7%;
-  z-index: 0;
-  pointer-events: none;
-  white-space: pre;
-  color: var(--folha);
-  opacity: 0.24;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(54px, 7vw, 96px);
-  line-height: 1.55;
-  letter-spacing: 0;
-  text-shadow: 0 240px 0 rgba(95, 143, 119, 0.74),
-               0 480px 0 rgba(95, 143, 119, 0.66);
-}
-
-section::before {
-  content: '❧\A\A❧';
-  left: clamp(-18px, -1vw, -4px);
-  transform: rotate(-12deg);
-}
-
-section::after {
-  content: '❧\A\A❧';
-  right: clamp(-18px, -1vw, -4px);
-  transform: scaleX(-1) rotate(-12deg);
-}
-
 section > * {
   position: relative;
   z-index: 1;
 }
 
-/* Contorno branco para separar cards e blocos sem quebrar a paleta. */
 .white-outline {
   border: 2px solid rgba(255, 255, 255, 0.95);
-}
-
-@media (max-width: 640px) {
-  section::before,
-  section::after {
-    top: 5%;
-    opacity: 0.2;
-    font-size: 52px;
-    line-height: 1.8;
-    text-shadow: 0 220px 0 rgba(95, 143, 119, 0.66),
-                 0 440px 0 rgba(95, 143, 119, 0.58);
-  }
-
-  section::before {
-    left: -20px;
-  }
-
-  section::after {
-    right: -20px;
-  }
 }
