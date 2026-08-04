@@ -15,13 +15,18 @@ await mkdir(outputDir, { recursive: true })
 for (const [source, target] of assets) {
   const sourcePath = path.join(root, source)
   const text = await readFile(sourcePath, 'utf8')
-  const match = text.match(/base64,([^']+)/s)
 
-  if (!match) {
+  const quotedPieces = [...text.matchAll(/'([^']*)'/g)].map((match) => match[1])
+  const joined = quotedPieces.join('')
+  const marker = 'base64,'
+  const markerIndex = joined.indexOf(marker)
+
+  if (markerIndex === -1) {
     throw new Error(`Base64 não encontrado em ${source}`)
   }
 
-  const buffer = Buffer.from(match[1], 'base64')
+  const base64 = joined.slice(markerIndex + marker.length)
+  const buffer = Buffer.from(base64, 'base64')
   await writeFile(path.join(outputDir, target), buffer)
   console.log(`Gerado: ${target} (${buffer.length} bytes)`)
 }
