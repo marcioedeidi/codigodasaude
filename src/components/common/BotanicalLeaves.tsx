@@ -1,17 +1,20 @@
-import leavesRight from '../../assets/leavesRight'
+import leavesStrip from '../../assets/leavesStrip'
 
 const BotanicalLeaves = () => {
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+    <div
+      aria-hidden="true"
+      className="botanical-leaves pointer-events-none absolute inset-0 overflow-hidden"
+    >
       <img
-        src={leavesRight}
+        src={leavesStrip}
         alt=""
-        className="absolute -left-8 top-0 h-full max-h-[720px] w-auto -scale-x-100 object-contain opacity-70 md:-left-3"
+        className="absolute -left-1 top-0 h-full w-[72px] object-fill opacity-90 md:w-[92px]"
       />
       <img
-        src={leavesRight}
+        src={leavesStrip}
         alt=""
-        className="absolute -right-8 top-0 h-full max-h-[720px] w-auto object-contain opacity-70 md:-right-3"
+        className="absolute -right-1 top-0 h-full w-[72px] -scale-x-100 object-fill opacity-90 md:w-[92px]"
       />
     </div>
   )
