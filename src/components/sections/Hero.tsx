@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import BotanicalLeaves from '@components/common/BotanicalLeaves'
+import logoSmallFallback from '../../assets/logoSmall'
 
 const Hero = () => {
   const logoBig = `${import.meta.env.BASE_URL}assets/logo-big.jpg`
-  const logoSmall = `${import.meta.env.BASE_URL}assets/logo-small.webp`
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -73,7 +73,7 @@ const Hero = () => {
               alt="Código da Saúde"
               onError={(event) => {
                 event.currentTarget.onerror = null
-                event.currentTarget.src = logoSmall
+                event.currentTarget.src = logoSmallFallback
               }}
               className="block h-auto min-h-[260px] w-full rounded-[1.6rem] object-contain"
             />
