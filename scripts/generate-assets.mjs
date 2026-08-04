@@ -5,56 +5,23 @@ const root = process.cwd()
 const outputDir = path.join(root, 'public', 'assets')
 
 const assets = [
-  {
-    sources: ['src/assets/logoSmall.ts'],
-    target: 'logo-small.webp',
-    mode: 'ts-data-uri',
-  },
-  {
-    sources: [
-      'src/assets/logoBig.part1.txt',
-      'src/assets/logoBig.part2.txt',
-      'src/assets/logoBig.part3.txt',
-      'src/assets/logoBig.part4.txt',
-    ],
-    target: 'logo-big.webp',
-    mode: 'raw-base64',
-  },
-  {
-    sources: ['src/assets/leavesStrip.ts'],
-    target: 'leaves-strip.webp',
-    mode: 'ts-data-uri',
-  },
+  ['src/assets/logoSmall.ts', 'logo-small.webp'],
+  ['src/assets/logoBig.ts', 'logo-big.webp'],
+  ['src/assets/leavesStrip.ts', 'leaves-strip.webp'],
 ]
 
 await mkdir(outputDir, { recursive: true })
 
-for (const asset of assets) {
-  let base64 = ''
+for (const [source, target] of assets) {
+  const sourcePath = path.join(root, source)
+  const text = await readFile(sourcePath, 'utf8')
+  const match = text.match(/base64,([^']+)/s)
 
-  if (asset.mode === 'raw-base64') {
-    const parts = await Promise.all(
-      asset.sources.map(async (source) => {
-        const value = await readFile(path.join(root, source), 'utf8')
-        return value.replace(/\s+/g, '')
-      }),
-    )
-    base64 = parts.join('')
-  } else {
-    const text = await readFile(path.join(root, asset.sources[0]), 'utf8')
-    const quotedPieces = [...text.matchAll(/'([^']*)'/g)].map((match) => match[1])
-    const joined = quotedPieces.join('')
-    const marker = 'base64,'
-    const markerIndex = joined.indexOf(marker)
-
-    if (markerIndex === -1) {
-      throw new Error(`Base64 não encontrado em ${asset.sources[0]}`)
-    }
-
-    base64 = joined.slice(markerIndex + marker.length)
+  if (!match) {
+    throw new Error(`Base64 não encontrado em ${source}`)
   }
 
-  const buffer = Buffer.from(base64, 'base64')
-  await writeFile(path.join(outputDir, asset.target), buffer)
-  console.log(`Gerado: ${asset.target} (${buffer.length} bytes)`)
+  const buffer = Buffer.from(match[1], 'base64')
+  await writeFile(path.join(outputDir, target), buffer)
+  console.log(`Gerado: ${target} (${buffer.length} bytes)`)
 }
