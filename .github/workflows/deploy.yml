@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages'
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -24,10 +24,10 @@ jobs:
 
     steps:
       - name: Baixar o código
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Configurar o Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -45,7 +45,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Enviar o site pronto
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
