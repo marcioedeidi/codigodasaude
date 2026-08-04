@@ -1,6 +1,6 @@
-import leavesStrip from '../../assets/leavesStrip'
-
 const BotanicalLeaves = () => {
+  const leavesStrip = `${import.meta.env.BASE_URL}assets/leaves-strip.webp`
+
   return (
     <div
       aria-hidden="true"
@@ -9,12 +9,12 @@ const BotanicalLeaves = () => {
       <img
         src={leavesStrip}
         alt=""
-        className="absolute -left-1 top-0 h-full w-[72px] object-fill opacity-90 md:w-[92px]"
+        className="absolute -left-1 top-0 h-full w-[92px] object-fill opacity-95 md:w-[118px]"
       />
       <img
         src={leavesStrip}
         alt=""
-        className="absolute -right-1 top-0 h-full w-[72px] -scale-x-100 object-fill opacity-90 md:w-[92px]"
+        className="absolute -right-1 top-0 h-full w-[92px] -scale-x-100 object-fill opacity-95 md:w-[118px]"
       />
     </div>
   )
