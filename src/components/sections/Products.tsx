@@ -1,42 +1,44 @@
 import { motion } from 'framer-motion'
 import Card from '@components/common/Card'
+import BotanicalLeaves from '@components/common/BotanicalLeaves'
 
 const Products = () => {
   const products = [
     {
       id: 1,
-      title: 'Produto Premium',
-      description: 'Fórmula exclusiva com ingredientes selecionados para máxima eficácia.',
-      price: 'Sob demanda',
+      title: 'Fiber Slim',
+      description: 'Uma das opções da linha Velmora para quem busca organizar melhor sua rotina de bem-estar.',
+      badge: 'Conheça a opção',
     },
     {
       id: 2,
-      title: 'Produto Essencial',
-      description: 'O essencial para sua saúde com qualidade garantida.',
-      price: 'Sob demanda',
+      title: 'Velmo Drink',
+      description: 'Produto em destaque no Código da Saúde, com e-book de apoio como brinde.',
+      badge: 'Inclui e-book',
     },
     {
       id: 3,
-      title: 'Produto Completo',
-      description: 'Solução completa para uma saúde integral e equilibrada.',
-      price: 'Sob demanda',
+      title: 'Termo Drink',
+      description: 'Uma alternativa da linha para quem procura praticidade no dia a dia.',
+      badge: 'Saiba mais',
     },
   ]
 
   return (
-    <section id="produtos" className="section-padding bg-white">
-      <div className="container-max">
+    <section id="produtos" className="section-padding relative overflow-hidden bg-[#F7F3EA]">
+      <BotanicalLeaves />
+      <div className="container-max relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="mb-4 text-4xl font-bold text-[#173F36] md:text-5xl">
             Nossos Produtos
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Conheça nossa linha de produtos desenvolvidos especialmente para você.
+          <p className="mx-auto max-w-2xl text-lg text-[#486B64]">
+            Conheça algumas opções selecionadas para diferentes objetivos e rotinas.
           </p>
         </motion.div>
 
@@ -44,24 +46,29 @@ const Products = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 gap-8 md:grid-cols-3"
         >
           {products.map((product) => (
             <motion.div
               key={product.id}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
-              <Card>
-                <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-4xl">💚</span>
+              <Card className="h-full border-2 border-white/95 bg-[#8FD8CE]">
+                <div className="mb-5 flex aspect-square items-center justify-center rounded-2xl border border-white/80 bg-white/35">
+                  <div className="text-center">
+                    <div className="mb-3 text-5xl">🌿</div>
+                    <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#315D55]">
+                      Imagem oficial em breve
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="mb-3 text-2xl font-bold text-[#173F36]">
                   {product.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <div className="text-accent-400 font-bold text-lg">
-                  {product.price}
+                <p className="mb-5 leading-7 text-[#315D55]">{product.description}</p>
+                <div className="inline-flex rounded-full border border-white/90 bg-white/55 px-4 py-2 text-sm font-bold text-[#146D68]">
+                  {product.badge}
                 </div>
               </Card>
             </motion.div>
