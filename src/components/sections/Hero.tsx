@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import BotanicalLeaves from '@components/common/BotanicalLeaves'
-import logoOfficial from '../../assets/logoSmall'
+import logoOfficialComplete from '../../assets/logoBig'
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -65,11 +65,11 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.12 }}
           className="relative mx-auto w-full max-w-xl"
         >
-          <div className="flex min-h-[430px] items-center justify-center overflow-hidden rounded-[2rem] border-2 border-white/95 bg-white/35 p-8 shadow-2xl shadow-[#173f36]/10 md:min-h-[520px] md:p-12">
+          <div className="flex items-center justify-center overflow-hidden rounded-[2rem] border-2 border-white/95 bg-white/20 p-2 shadow-2xl shadow-[#173f36]/10 md:p-3">
             <img
-              src={logoOfficial}
+              src={logoOfficialComplete}
               alt="Código da Saúde"
-              className="block h-auto w-full max-w-[470px] object-contain"
+              className="block h-auto w-full rounded-[1.6rem] object-contain"
             />
           </div>
         </motion.div>
