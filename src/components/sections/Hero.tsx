@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion'
 import BotanicalLeaves from '@components/common/BotanicalLeaves'
-import logoSmallFallback from '../../assets/logoSmall'
+import logoOfficial from '../../assets/logoSmall'
 
 const Hero = () => {
-  const logoBig = `${import.meta.env.BASE_URL}assets/logo-big.webp`
-
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -67,15 +65,11 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.12 }}
           className="relative mx-auto w-full max-w-xl"
         >
-          <div className="overflow-hidden rounded-[2rem] border-2 border-white/95 bg-white/25 p-2 shadow-2xl shadow-[#173f36]/10 md:p-3">
+          <div className="flex min-h-[430px] items-center justify-center overflow-hidden rounded-[2rem] border-2 border-white/95 bg-white/35 p-8 shadow-2xl shadow-[#173f36]/10 md:min-h-[520px] md:p-12">
             <img
-              src={logoBig}
+              src={logoOfficial}
               alt="Código da Saúde"
-              onError={(event) => {
-                event.currentTarget.onerror = null
-                event.currentTarget.src = logoSmallFallback
-              }}
-              className="block h-auto w-full rounded-[1.6rem] object-contain"
+              className="block h-auto w-full max-w-[470px] object-contain"
             />
           </div>
         </motion.div>
