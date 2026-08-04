@@ -44,7 +44,7 @@ body {
   background: var(--creme);
 }
 
-/* Todas as dobras usam o mesmo creme. As folhas oficiais entram via BotanicalLeaves. */
+/* Todas as dobras usam o mesmo creme. */
 section {
   position: relative;
   isolation: isolate;
@@ -52,7 +52,14 @@ section {
   background-color: var(--creme) !important;
 }
 
-section > * {
+/* As folhas oficiais ficam no fundo, sem cobrir textos e cards. */
+section > .botanical-leaves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+section > :not(.botanical-leaves) {
   position: relative;
   z-index: 1;
 }
