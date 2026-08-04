@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import BotanicalLeaves from '@components/common/BotanicalLeaves'
+import logoBig from '../../assets/logoBig'
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -6,17 +8,16 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#f8f1e5] py-14 md:py-20">
-      <div className="pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-[#9fddd5]/35 blur-3xl" />
-      <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-[#d8bf75]/20 blur-3xl" />
+    <section className="relative overflow-hidden py-14 md:py-20">
+      <BotanicalLeaves />
 
-      <div className="container-max relative z-10 grid items-center gap-12 px-4 md:grid-cols-[1.08fr_.92fr] md:gap-16">
+      <div className="container-max relative z-10 grid items-center gap-12 px-4 md:grid-cols-[1.02fr_.98fr] md:gap-14">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65 }}
         >
-          <span className="inline-flex rounded-full border border-[#159a92]/30 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#146d68]">
+          <span className="inline-flex rounded-full border border-[#159a92]/45 bg-white/65 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#146d68]">
             Bem-estar com clareza e atendimento humano
           </span>
 
@@ -45,7 +46,7 @@ const Hero = () => {
             <button
               type="button"
               onClick={() => scrollToSection('produtos')}
-              className="rounded-2xl border border-[#159a92] bg-white/60 px-6 py-4 font-bold text-[#146d68] transition hover:-translate-y-0.5 hover:bg-white"
+              className="rounded-2xl border-2 border-white bg-white/55 px-6 py-4 font-bold text-[#146d68] transition hover:-translate-y-0.5 hover:bg-white"
             >
               Conhecer os produtos
             </button>
@@ -64,28 +65,12 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.12 }}
           className="relative mx-auto w-full max-w-xl"
         >
-          <div className="absolute -left-4 top-12 h-28 w-28 rounded-full border border-[#159a92]/20" />
-          <div className="absolute -right-4 bottom-8 h-36 w-36 rounded-full border border-[#b68b31]/20" />
-
-          <div className="relative overflow-hidden rounded-[2rem] border border-[#b68b31]/35 bg-gradient-to-br from-[#fffaf1] to-[#f2e2bd] p-8 shadow-2xl shadow-[#173f36]/10 md:p-12">
-            <div className="absolute right-5 top-5 text-7xl text-[#6f9a51]/20">❧</div>
-            <div className="absolute bottom-4 left-5 rotate-180 text-8xl text-[#159a92]/15">❧</div>
-
-            <div className="relative flex min-h-[360px] flex-col items-center justify-center text-center md:min-h-[440px]">
-              <div className="mb-6 grid h-28 w-28 place-items-center rounded-full border-4 border-[#b68b31] bg-white/80 text-5xl text-[#4e8d37] shadow-lg">
-                ✚
-              </div>
-              <p className="font-serif text-5xl font-bold leading-none text-[#173f36] md:text-6xl">
-                Código
-              </p>
-              <p className="mt-2 font-serif text-3xl italic text-[#b68b31]">da</p>
-              <p className="font-serif text-5xl font-bold leading-none text-[#173f36] md:text-6xl">
-                Saúde
-              </p>
-              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#54756f]">
-                Diagnóstico Personalizado
-              </p>
-            </div>
+          <div className="overflow-hidden rounded-[2rem] border-2 border-white/95 bg-white/25 p-2 shadow-2xl shadow-[#173f36]/10 md:p-3">
+            <img
+              src={logoBig}
+              alt="Código da Saúde"
+              className="block h-auto w-full rounded-[1.6rem] object-cover"
+            />
           </div>
         </motion.div>
       </div>
