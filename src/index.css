@@ -36,25 +36,69 @@ body {
   margin: 0;
   color: #20342D;
   font-family: ui-sans-serif, system-ui, sans-serif;
-  background-color: var(--creme);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='620' viewBox='0 0 320 620'%3E%3Cg fill='%235F8F77' fill-opacity='.13'%3E%3Cellipse cx='28' cy='68' rx='17' ry='42' transform='rotate(-36 28 68)'/%3E%3Cellipse cx='67' cy='116' rx='13' ry='33' transform='rotate(35 67 116)'/%3E%3Cellipse cx='294' cy='208' rx='18' ry='46' transform='rotate(38 294 208)'/%3E%3Cellipse cx='258' cy='258' rx='12' ry='32' transform='rotate(-38 258 258)'/%3E%3Cellipse cx='31' cy='390' rx='16' ry='40' transform='rotate(38 31 390)'/%3E%3Cellipse cx='72' cy='442' rx='12' ry='31' transform='rotate(-32 72 442)'/%3E%3Cellipse cx='292' cy='535' rx='17' ry='43' transform='rotate(-38 292 535)'/%3E%3C/g%3E%3Cg stroke='%235F8F77' stroke-opacity='.12' stroke-width='3' fill='none'%3E%3Cpath d='M6 18 C38 68 43 120 88 156'/%3E%3Cpath d='M316 154 C281 206 285 266 242 301'/%3E%3Cpath d='M4 335 C39 385 43 444 88 478'/%3E%3Cpath d='M316 485 C280 530 283 584 244 617'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-y;
-  background-position: center top;
-  background-size: 100% 620px;
-  background-attachment: scroll;
+  background: var(--creme);
 }
 
 #root {
   min-height: 100vh;
-  background: transparent;
+  background: var(--creme);
 }
 
-/* Todas as dobras usam o mesmo fundo creme; o desenho das folhas vem do body. */
+/*
+ * Regra visual fixa da marca:
+ * - todas as dobras usam o mesmo creme;
+ * - cada dobra recebe suas próprias folhas nas laterais;
+ * - assim o desenho continua aparecendo conforme a pessoa navega.
+ */
 section {
-  background-color: transparent !important;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--creme) !important;
 }
 
-/* Contorno branco pode ser usado para separar elementos sem fugir da paleta. */
+section::before,
+section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(90px, 13vw, 190px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  background-repeat: repeat-y;
+  background-size: 150px 420px;
+}
+
+section::before {
+  left: 0;
+  background-position: left 24px top 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='420' viewBox='0 0 150 420'%3E%3Cg fill='%235F8F77' fill-opacity='.18'%3E%3Cellipse cx='20' cy='58' rx='13' ry='34' transform='rotate(-35 20 58)'/%3E%3Cellipse cx='54' cy='105' rx='10' ry='27' transform='rotate(35 54 105)'/%3E%3Cellipse cx='22' cy='250' rx='13' ry='35' transform='rotate(36 22 250)'/%3E%3Cellipse cx='58' cy='300' rx='10' ry='27' transform='rotate(-34 58 300)'/%3E%3C/g%3E%3Cg stroke='%235F8F77' stroke-opacity='.17' stroke-width='2.5' fill='none'%3E%3Cpath d='M0 15 C31 58 34 111 76 142'/%3E%3Cpath d='M0 205 C31 248 37 303 79 337'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+section::after {
+  right: 0;
+  transform: scaleX(-1);
+  background-position: left 24px top 120px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='420' viewBox='0 0 150 420'%3E%3Cg fill='%235F8F77' fill-opacity='.18'%3E%3Cellipse cx='20' cy='58' rx='13' ry='34' transform='rotate(-35 20 58)'/%3E%3Cellipse cx='54' cy='105' rx='10' ry='27' transform='rotate(35 54 105)'/%3E%3Cellipse cx='22' cy='250' rx='13' ry='35' transform='rotate(36 22 250)'/%3E%3Cellipse cx='58' cy='300' rx='10' ry='27' transform='rotate(-34 58 300)'/%3E%3C/g%3E%3Cg stroke='%235F8F77' stroke-opacity='.17' stroke-width='2.5' fill='none'%3E%3Cpath d='M0 15 C31 58 34 111 76 142'/%3E%3Cpath d='M0 205 C31 248 37 303 79 337'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Contorno branco para separar cards e blocos sem quebrar a paleta. */
 .white-outline {
   border: 2px solid rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 640px) {
+  section::before,
+  section::after {
+    width: 82px;
+    opacity: 0.4;
+    background-size: 115px 340px;
+  }
 }
