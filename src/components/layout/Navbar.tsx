@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import logoSmall from '../../assets/logoSmall'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const logoSmall = `${import.meta.env.BASE_URL}assets/logo-small.webp`
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
