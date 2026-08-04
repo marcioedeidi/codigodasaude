@@ -6,7 +6,7 @@ const outputDir = path.join(root, 'public', 'assets')
 
 const assets = [
   ['src/assets/logoSmall.ts', 'logo-small.webp'],
-  ['src/assets/logoBig.ts', 'logo-big.jpg'],
+  ['src/assets/logoBig.ts', 'logo-big.webp'],
   ['src/assets/leavesStrip.ts', 'leaves-strip.webp'],
 ]
 
