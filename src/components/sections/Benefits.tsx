@@ -1,31 +1,32 @@
 import { motion } from 'framer-motion'
 import Card from '@components/common/Card'
+import BotanicalLeaves from '@components/common/BotanicalLeaves'
 
 const Benefits = () => {
   const benefits = [
     {
       id: 1,
-      title: '100% Natural',
-      description: 'Todos os nossos produtos são formulados com ingredientes naturais selecionados.',
+      title: 'Seleção Cuidadosa',
+      description: 'Escolhas organizadas para facilitar sua busca por opções de saúde e bem-estar.',
       icon: '🌿',
     },
     {
       id: 2,
-      title: 'Comprovado Cientificamente',
-      description: 'Desenvolvidos com base em pesquisas científicas e estudos clínicos.',
-      icon: '🔬',
+      title: 'Informação Clara',
+      description: 'Conteúdo simples e transparente para ajudar você a entender melhor cada opção.',
+      icon: '📖',
     },
     {
       id: 3,
-      title: 'Seguro e Eficaz',
-      description: 'Testados rigorosamente para garantir segurança e eficácia máxima.',
-      icon: '✅',
+      title: 'Atendimento Humano',
+      description: 'Orientação próxima, sem pressão, respeitando suas dúvidas e suas escolhas.',
+      icon: '🤝',
     },
     {
       id: 4,
-      title: 'Fácil de Usar',
-      description: 'Produtos práticos e fáceis de integrar na sua rotina diária.',
-      icon: '⚡',
+      title: 'Rotina Mais Simples',
+      description: 'Uma experiência prática para organizar seus próximos passos de bem-estar.',
+      icon: '✨',
     },
   ]
 
@@ -33,9 +34,7 @@ const Benefits = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   }
 
@@ -49,19 +48,20 @@ const Benefits = () => {
   }
 
   return (
-    <section id="beneficios" className="section-padding bg-gray-50">
-      <div className="container-max">
+    <section id="beneficios" className="section-padding relative overflow-hidden bg-[#F7F3EA]">
+      <BotanicalLeaves />
+      <div className="container-max relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="mb-4 text-4xl font-bold text-[#173F36] md:text-5xl">
             Por Que Escolher o Código da Saúde?
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Selecionamos produtos, conteúdos e soluções para ajudar você a conquistar mais saúde e qualidade de vida.
+          <p className="mx-auto max-w-2xl text-lg text-[#486B64]">
+            Informação, acolhimento e escolhas mais simples para cuidar do seu bem-estar com clareza.
           </p>
         </motion.div>
 
@@ -70,16 +70,16 @@ const Benefits = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
         >
           {benefits.map((benefit) => (
-            <motion.div key={benefit.id} variants={itemVariants}>
-              <Card>
-                <div className="text-5xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+            <motion.div key={benefit.id} variants={itemVariants} className="h-full">
+              <Card className="h-full border-2 border-white/95 bg-[#8FD8CE]">
+                <div className="mb-4 text-5xl">{benefit.icon}</div>
+                <h3 className="mb-2 text-xl font-bold text-[#173F36]">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{benefit.description}</p>
+                <p className="text-sm leading-6 text-[#315D55]">{benefit.description}</p>
               </Card>
             </motion.div>
           ))}
