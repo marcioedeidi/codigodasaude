@@ -15,14 +15,14 @@ const AreaHome: React.FC = () => {
   ]
 
   return (
-    <main className="relative overflow-hidden bg-[#a7ddd6]">
+    <main className="relative overflow-hidden bg-[#9fded6]">
       <section className="relative isolate overflow-hidden px-4 pb-7 pt-7 md:px-7 md:pb-8 md:pt-8 xl:px-10">
         <BotanicalLeaves />
 
-        <div className="absolute inset-0 -z-30 bg-[linear-gradient(112deg,#dff2ec_0%,#f6f1dc_35%,#8dcbc2_73%,#a9ddd6_100%)]" />
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_9%_45%,rgba(64,123,84,0.34),transparent_25%),radial-gradient(circle_at_42%_20%,rgba(255,255,255,0.86),transparent_31%),radial-gradient(circle_at_68%_53%,rgba(69,205,194,0.42),transparent_32%),radial-gradient(circle_at_92%_22%,rgba(255,255,255,0.40),transparent_22%)]" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-52 bg-gradient-to-t from-[#5ab9af]/45 to-transparent" />
-        <div className="absolute -left-28 top-24 -z-10 h-[520px] w-[390px] rounded-full bg-[#477f5f]/15 blur-3xl" />
+        <div className="absolute inset-0 -z-30 bg-[linear-gradient(112deg,#dcf5f0_0%,#bcebe4_34%,#86d2c9_72%,#a8e2db_100%)]" />
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_12%_40%,rgba(255,255,255,0.72),transparent_28%),radial-gradient(circle_at_44%_18%,rgba(241,255,252,0.82),transparent_32%),radial-gradient(circle_at_70%_52%,rgba(42,190,178,0.35),transparent_34%),radial-gradient(circle_at_94%_20%,rgba(255,255,255,0.42),transparent_23%)]" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-52 bg-gradient-to-t from-[#48b9ae]/48 to-transparent" />
+        <div className="absolute -left-28 top-24 -z-10 h-[520px] w-[390px] rounded-full bg-[#2f8d73]/18 blur-3xl" />
 
         <div className="relative z-10 mx-auto grid w-full max-w-[1450px] items-center gap-5 lg:grid-cols-[1.02fr_1.23fr_0.82fr] xl:gap-8">
           <div className="pb-2 text-center lg:text-left">
@@ -79,7 +79,7 @@ const AreaHome: React.FC = () => {
           </div>
 
           <div className="relative mx-auto flex min-h-[650px] w-full max-w-[690px] items-end justify-center lg:min-h-[690px]">
-            <div className="absolute left-1/2 top-[8%] h-[500px] w-[500px] -translate-x-1/2 rounded-full border-4 border-white/90 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.92),rgba(196,238,230,0.58)_53%,rgba(41,182,171,0.28)_75%,transparent_76%)] shadow-[0_0_0_12px_rgba(81,226,214,0.18),0_0_44px_rgba(65,229,217,0.78)] md:h-[570px] md:w-[570px]" />
+            <div className="absolute left-1/2 top-[8%] h-[500px] w-[500px] -translate-x-1/2 rounded-full border-4 border-white/90 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.92),rgba(188,239,232,0.62)_54%,rgba(31,184,173,0.32)_76%,transparent_77%)] shadow-[0_0_0_12px_rgba(81,226,214,0.18),0_0_44px_rgba(65,229,217,0.78)] md:h-[570px] md:w-[570px]" />
             <div className="absolute left-[7%] top-[34%] h-48 w-16 rotate-[-12deg] rounded-[50%] border-l-4 border-[#d8ffff]/80 opacity-80 blur-[1px]" />
             <div className="absolute right-[8%] top-[38%] h-52 w-20 rotate-[14deg] rounded-[50%] border-r-4 border-[#d8ffff]/80 opacity-80 blur-[1px]" />
             <div className="absolute bottom-4 left-1/2 h-[108px] w-[78%] -translate-x-1/2 rounded-[50%] border-t-8 border-[#7e8077] bg-[radial-gradient(ellipse_at_center,#4b504c_0%,#313733_50%,#1d2320_100%)] shadow-[0_20px_30px_rgba(12,47,42,0.35)]" />
@@ -102,7 +102,7 @@ const AreaHome: React.FC = () => {
             </div>
           </div>
 
-          <aside className="mx-auto w-full max-w-[360px] rounded-[30px] border-2 border-white/90 bg-[#bce7df]/82 p-4 shadow-[0_18px_40px_rgba(3,77,70,0.22),0_0_25px_rgba(129,255,244,0.45)] backdrop-blur-md">
+          <aside className="mx-auto w-full max-w-[360px] rounded-[30px] border-2 border-white/90 bg-[#bce7df]/88 p-4 shadow-[0_18px_40px_rgba(3,77,70,0.22),0_0_25px_rgba(129,255,244,0.45)] backdrop-blur-md">
             <div className="mb-4 flex items-center justify-center gap-4 text-center">
               <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#19a99e] text-3xl text-white shadow-lg">♧</span>
               <h2 className="text-[21px] font-black uppercase leading-tight text-[#0a2724]">
@@ -132,7 +132,7 @@ const AreaHome: React.FC = () => {
           </aside>
         </div>
 
-        <div className="relative z-10 mx-auto mt-4 w-full max-w-[1415px] rounded-[28px] border-2 border-white/75 bg-[#d4eeea]/88 px-6 py-6 shadow-[0_15px_30px_rgba(7,83,76,0.16)] backdrop-blur-md">
+        <div className="relative z-10 mx-auto mt-4 w-full max-w-[1415px] rounded-[28px] border-2 border-white/75 bg-[#d2f0eb]/90 px-6 py-6 shadow-[0_15px_30px_rgba(7,83,76,0.16)] backdrop-blur-md">
           <div className="grid gap-5 md:grid-cols-5">
             {benefits.map(([icon, title, text]) => (
               <div key={title} className="flex min-h-[86px] items-center gap-4 px-2 md:border-r md:border-[#43877f]/35 md:last:border-r-0">
