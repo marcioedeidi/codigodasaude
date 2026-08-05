@@ -12,29 +12,20 @@ export const supabase = createClient(
   supabaseAnonKey || ''
 )
 
-type SupabaseLikeError = {
-  code?: string
-  message?: string
-  details?: string
-  hint?: string
+export type LeadInput = {
+  nome: string
+  whatsapp: string
+  email?: string
+  objetivo?: string | null
+  ritmo?: string | null
+  dificuldade?: string | null
+  rotina?: string | null
+  consentimento?: boolean
+  recomendacao?: string | null
+  origem?: string
 }
 
-function isSchemaMismatch(error: SupabaseLikeError) {
-  const code = error.code || ''
-  const message = (error.message || '').toLowerCase()
-
-  return (
-    ['PGRST204', 'PGRST205', '42P01', '42703'].includes(code) ||
-    message.includes('could not find the table') ||
-    message.includes('does not exist') ||
-    message.includes('column')
-  )
-}
-
-// Salva o cadastro. Primeiro usa a estrutura atual (Cadastros/nome).
-// Se o projeto ainda estiver com a estrutura antiga (contacts/name),
-// fazemos uma tentativa compatível sem duplicar um cadastro que já foi salvo.
-export async function saveContact(name: string, whatsapp: string, email: string) {
+export async function saveLead(lead: LeadInput) {
   if (!supabaseUrl || !supabaseAnonKey) {
     return {
       success: false,
@@ -46,77 +37,73 @@ export async function saveContact(name: string, whatsapp: string, email: string)
   }
 
   try {
-    const currentAttempt = await supabase
-      .from('Cadastros')
+    const { data, error } = await supabase
+      .from('leads')
       .insert([
         {
-          nome: name,
-          whatsapp,
-          email,
-          created_at: new Date().toISOString(),
+          nome: lead.nome.trim(),
+          whatsapp: lead.whatsapp.replace(/\D/g, ''),
+          email: lead.email?.trim() || null,
+          objetivo: lead.objetivo || null,
+          ritmo: lead.ritmo || null,
+          dificuldade: lead.dificuldade || null,
+          rotina: lead.rotina || null,
+          consentimento: lead.consentimento ?? true,
+          recomendacao: lead.recomendacao || null,
+          origem: lead.origem || 'site',
         },
       ])
+      .select('id')
+      .single()
 
-    if (!currentAttempt.error) {
-      return { success: true, data: currentAttempt.data, table: 'Cadastros' }
+    if (error) {
+      console.error('Supabase lead insert error:', error)
+      return { success: false, error }
     }
 
-    if (!isSchemaMismatch(currentAttempt.error)) {
-      console.error('Supabase insert error:', currentAttempt.error)
-      return { success: false, error: currentAttempt.error }
-    }
-
-    const legacyAttempt = await supabase
-      .from('contacts')
-      .insert([
-        {
-          name,
-          whatsapp,
-          email,
-          created_at: new Date().toISOString(),
-        },
-      ])
-
-    if (legacyAttempt.error) {
-      console.error('Supabase legacy insert error:', legacyAttempt.error)
-      return { success: false, error: legacyAttempt.error }
-    }
-
-    return { success: true, data: legacyAttempt.data, table: 'contacts' }
+    return { success: true, data }
   } catch (error) {
     console.error('Unexpected Supabase error:', error)
     return { success: false, error }
   }
 }
 
-// Função para buscar contatos (admin)
+export async function saveContact(name: string, whatsapp: string, email: string) {
+  return saveLead({
+    nome: name,
+    whatsapp,
+    email,
+    consentimento: true,
+    origem: 'cadastro-site',
+  })
+}
+
 export async function getContacts() {
   try {
     const { data, error } = await supabase
-      .from('Cadastros')
+      .from('leads')
       .select('*')
       .order('created_at', { ascending: false })
 
     if (error) throw error
     return { success: true, data }
   } catch (error) {
-    console.error('Error fetching contacts:', error)
+    console.error('Error fetching leads:', error)
     return { success: false, error }
   }
 }
 
-// Função para deletar contato
 export async function deleteContact(id: string) {
   try {
     const { error } = await supabase
-      .from('Cadastros')
+      .from('leads')
       .delete()
       .eq('id', id)
 
     if (error) throw error
     return { success: true }
   } catch (error) {
-    console.error('Error deleting contact:', error)
+    console.error('Error deleting lead:', error)
     return { success: false, error }
   }
 }
