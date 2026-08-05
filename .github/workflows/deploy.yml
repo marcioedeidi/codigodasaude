@@ -42,8 +42,7 @@ jobs:
       - name: Gerar o site atualizado
         id: build
         run: |
-          node scripts/build-hero-reference.mjs > build.log 2>&1
-          node scripts/generate-assets.mjs >> build.log 2>&1
+          node scripts/generate-assets.mjs > build.log 2>&1
           npx vite build >> build.log 2>&1
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
@@ -83,7 +82,7 @@ jobs:
           DEPLOYMENT: ${{ steps.deployment.outcome }}
         run: |
           {
-            echo '## Verificação da nova hero'
+            echo '## Verificação da publicação'
             echo
             echo "- Commit: \`${GITHUB_SHA}\`"
             echo "- Checkout: **${CHECKOUT}**"
