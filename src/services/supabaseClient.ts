@@ -1,24 +1,41 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn('Supabase configuration is missing. Please check your environment variables.')
+function cleanEnv(value: string | undefined, variableName: string) {
+  return (value || '')
+    .trim()
+    .replace(new RegExp(`^${variableName}\\s*=\\s*`, 'i'), '')
+    .replace(/^['"]|['"]$/g, '')
+    .trim()
 }
 
-export const supabase = createClient(
-  supabaseUrl || '',
-  supabaseAnonKey || ''
-)
+const rawSupabaseUrl = cleanEnv(import.meta.env.VITE_SUPABASE_URL, 'VITE_SUPABASE_URL')
+const supabaseAnonKey = cleanEnv(import.meta.env.VITE_SUPABASE_ANON_KEY, 'VITE_SUPABASE_ANON_KEY')
+const supabaseUrl = rawSupabaseUrl.replace(/\/+$/, '')
+
+const hasValidConfig =
+  /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(supabaseUrl) &&
+  supabaseAnonKey.length > 20
+
+if (!hasValidConfig) {
+  console.warn('A configuração pública do Supabase está ausente ou inválida.')
+}
+
+const supabase = hasValidConfig
+  ? createClient(supabaseUrl, supabaseAnonKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    })
+  : null
 
 export async function saveContact(name: string, whatsapp: string, email: string) {
-  if (!supabaseUrl || !supabaseAnonKey) {
+  if (!supabase) {
     return {
       success: false,
       error: {
-        code: 'CONFIG_MISSING',
-        message: 'Configuração do Supabase ausente na publicação.',
+        code: 'CONFIG_INVALID',
+        message: 'O endereço ou a chave pública do Supabase está inválido na publicação.',
       },
     }
   }
@@ -35,13 +52,13 @@ export async function saveContact(name: string, whatsapp: string, email: string)
       ])
 
     if (error) {
-      console.error('Supabase lead insert error:', error)
+      console.error('Erro ao gravar lead no Supabase:', error)
       return { success: false, error }
     }
 
     return { success: true }
   } catch (error) {
-    console.error('Unexpected Supabase error:', error)
+    console.error('Falha de conexão com o Supabase:', error)
     return { success: false, error }
   }
 }
