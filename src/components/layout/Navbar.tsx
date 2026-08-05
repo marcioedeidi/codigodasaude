@@ -3,7 +3,7 @@ import { NavLink, Link as RouterLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Início', to: '/', icon: '⌂' },
+  { label: 'Início', to: '/inicio', icon: '⌂' },
   { label: 'Produtos', to: '/produtos', icon: '▢' },
   { label: 'E-books', to: '/ebooks', icon: '▤' },
   { label: 'Sobre nós', to: '/sobre', icon: '♡' },
@@ -25,7 +25,7 @@ const Navbar = () => {
     <>
       <header className="sticky top-0 z-50 border-b border-[#d7c39a]/40 bg-white/95 shadow-sm backdrop-blur">
         <div className="container-max flex items-center justify-between gap-4 px-4 py-3">
-          <RouterLink to="/" className="flex shrink-0 items-center" aria-label="Código da Saúde">
+          <RouterLink to="/inicio" className="flex shrink-0 items-center" aria-label="Código da Saúde">
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -37,7 +37,7 @@ const Navbar = () => {
 
           <nav className="hidden items-center gap-1 lg:flex">
             {navLinks.map((link) => (
-              <NavLink key={link.to} to={link.to} className={linkClass} end={link.to === '/'}>
+              <NavLink key={link.to} to={link.to} className={linkClass}>
                 <span className="text-xl leading-none" aria-hidden="true">{link.icon}</span>
                 <span>{link.label}</span>
               </NavLink>
@@ -74,7 +74,6 @@ const Navbar = () => {
                 <NavLink
                   key={link.to}
                   to={link.to}
-                  end={link.to === '/'}
                   onClick={() => setIsMenuOpen(false)}
                   className={({ isActive }) =>
                     `rounded-xl px-4 py-3 font-semibold ${
