@@ -3,7 +3,6 @@ import path from 'node:path'
 import crypto from 'node:crypto'
 
 const root = process.cwd()
-const parts = []
 const expectedParts = [
   [18000, '93fe1e744f19c41b2da0dbb3505e24511864eb9b7461e58f771fea4992f23cf5'],
   [18000, '08d26685b95cbb3c19557e8249f7f414208c4bdbaca62599b62170420ffed797'],
@@ -13,16 +12,30 @@ const expectedParts = [
   [15420, '9eac2df4fbd86e58052ca158fc7a7650f13552e68e4b5d56a970255c587a3bf8'],
 ]
 
-for (let i = 1; i <= 6; i += 1) {
-  const file = path.join(root, 'src', 'assets', `heroRef${i}.ts`)
-  const source = fs.readFileSync(file, 'utf8')
+const readPart = (name) => {
+  const source = fs.readFileSync(path.join(root, 'src', 'assets', `${name}.ts`), 'utf8')
   const match = source.match(/export default '([^']*)'/s)
-  if (!match) throw new Error(`Não foi possível ler heroRef${i}.ts`)
-  const part = match[1]
+  if (!match) throw new Error(`Não foi possível ler ${name}.ts`)
+  return match[1]
+}
+
+const parts = [
+  readPart('heroRef1'),
+  readPart('heroRef2'),
+  readPart('heroRef3'),
+  ['a', 'b', 'c', 'd', 'e', 'f'].map((suffix) => readPart(`heroRef4${suffix}`)).join(''),
+  readPart('heroRef5'),
+  readPart('heroRef6'),
+]
+
+for (let i = 0; i < parts.length; i += 1) {
+  const part = parts[i]
   const partHash = crypto.createHash('sha256').update(part).digest('hex')
-  const [expectedLength, expectedPartHash] = expectedParts[i - 1]
-  console.log(`Parte ${i}: ${part.length}/${expectedLength} chars | ${partHash} | ${partHash === expectedPartHash ? 'OK' : 'DIFERENTE'}`)
-  parts.push(part)
+  const [expectedLength, expectedPartHash] = expectedParts[i]
+  console.log(`Parte ${i + 1}: ${part.length}/${expectedLength} chars | ${partHash} | ${partHash === expectedPartHash ? 'OK' : 'DIFERENTE'}`)
+  if (part.length !== expectedLength || partHash !== expectedPartHash) {
+    throw new Error(`Parte ${i + 1} da hero não confere.`)
+  }
 }
 
 const base64 = parts.join('')
