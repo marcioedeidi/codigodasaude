@@ -3,107 +3,143 @@ import { Link } from 'react-router-dom'
 import BotanicalLeaves from '@components/common/BotanicalLeaves'
 
 const AreaHome: React.FC = () => {
-  const brandArt = `${import.meta.env.BASE_URL}assets/logo-big.webp`
+  const logo = `${import.meta.env.BASE_URL}assets/logo-small.webp`
   const productImage = 'https://www.minhavitrine.pro/products/4a1b6bbe-00b6-417d-9471-43187c321d9d.png'
 
+  const benefits = [
+    ['♢', 'Compra 100% Segura', 'Seus dados e pagamentos protegidos.'],
+    ['♧', 'Ingredientes Naturais', 'Fórmulas seguras e de alta qualidade.'],
+    ['♙', 'Base Científica', 'Desenvolvido com estudos e evidências.'],
+    ['♧', 'Resultados Reais', 'Mais energia, disposição e bem-estar.'],
+    ['▤', 'Entrega para Todo o Brasil', 'Receba com rapidez e segurança.'],
+  ]
+
   return (
-    <main className="relative overflow-hidden bg-[#9edfd7]">
-      <section className="relative isolate min-h-[760px] overflow-hidden px-4 py-10 md:py-14">
+    <main className="relative overflow-hidden bg-[#a7ddd6]">
+      <section className="relative isolate overflow-hidden px-4 pb-7 pt-7 md:px-7 md:pb-8 md:pt-8 xl:px-10">
         <BotanicalLeaves />
 
-        <div className="absolute inset-0 -z-30 bg-[linear-gradient(120deg,#c8f0ea_0%,#8fd8ce_46%,#63c7bd_100%)]" />
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_24%,rgba(255,255,255,0.7),transparent_28%),radial-gradient(circle_at_66%_42%,rgba(239,225,189,0.72),transparent_31%),radial-gradient(circle_at_92%_18%,rgba(255,255,255,0.38),transparent_24%)]" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-44 bg-gradient-to-t from-[#55bbb1]/65 to-transparent" />
+        <div className="absolute inset-0 -z-30 bg-[linear-gradient(112deg,#dff2ec_0%,#f6f1dc_35%,#8dcbc2_73%,#a9ddd6_100%)]" />
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_9%_45%,rgba(64,123,84,0.34),transparent_25%),radial-gradient(circle_at_42%_20%,rgba(255,255,255,0.86),transparent_31%),radial-gradient(circle_at_68%_53%,rgba(69,205,194,0.42),transparent_32%),radial-gradient(circle_at_92%_22%,rgba(255,255,255,0.40),transparent_22%)]" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-52 bg-gradient-to-t from-[#5ab9af]/45 to-transparent" />
+        <div className="absolute -left-28 top-24 -z-10 h-[520px] w-[390px] rounded-full bg-[#477f5f]/15 blur-3xl" />
 
-        <div className="container-max relative z-10 grid items-center gap-10 lg:grid-cols-[0.9fr_1.12fr_0.72fr]">
-          <div className="text-center lg:text-left">
-            <div className="mx-auto mb-6 max-w-[470px] rounded-[2rem] border border-white/80 bg-white/35 p-3 shadow-xl shadow-[#0d6862]/10 backdrop-blur-sm lg:mx-0">
-              <img
-                src={brandArt}
-                alt="Código da Saúde"
-                className="max-h-[250px] w-full rounded-[1.5rem] object-contain"
-              />
+        <div className="relative z-10 mx-auto grid w-full max-w-[1450px] items-center gap-5 lg:grid-cols-[1.02fr_1.23fr_0.82fr] xl:gap-8">
+          <div className="pb-2 text-center lg:text-left">
+            <img
+              src={logo}
+              alt="Código da Saúde"
+              className="mx-auto h-auto w-full max-w-[540px] object-contain drop-shadow-[0_10px_18px_rgba(28,72,52,0.12)] lg:mx-0"
+            />
+
+            <div className="mx-auto mt-1 h-px w-[72%] bg-gradient-to-r from-transparent via-[#c9a963] to-transparent lg:mx-0" />
+            <div className="mx-auto mt-2 flex max-w-[420px] items-center justify-center gap-2 text-[#c39b4e] lg:mx-0">
+              <span className="h-px flex-1 bg-[#c9a963]/65" />
+              <span className="text-3xl">♡</span>
+              <span className="h-px flex-1 bg-[#c9a963]/65" />
             </div>
 
-            <p className="mx-auto max-w-lg text-xl font-medium leading-8 text-[#174d47] lg:mx-0">
-              Seu caminho para escolhas de bem-estar mais simples, claras e conscientes.
+            <p className="mx-auto mt-2 max-w-[535px] text-[22px] font-medium leading-[1.45] text-[#152b27] md:text-[27px] lg:mx-0">
+              Seu caminho para uma vida<br className="hidden xl:block" /> mais leve,{' '}
+              <strong className="font-black text-[#287346]">saudável e equilibrada.</strong>
             </p>
 
-            <div className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start">
+            <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
               <Link
                 to="/produtos"
-                className="rounded-2xl bg-[#078a82] px-6 py-4 font-bold text-white shadow-lg shadow-[#075f5a]/25 transition hover:bg-[#066f69]"
+                className="flex min-h-[72px] min-w-[300px] items-center justify-center gap-4 rounded-[19px] border border-[#21b4a7] bg-[linear-gradient(135deg,#078b80,#056a63)] px-6 py-4 text-[17px] font-black uppercase text-white shadow-[0_12px_24px_rgba(4,105,96,0.26)] transition hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(4,105,96,0.32)]"
               >
-                Conhecer os produtos →
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d4b356] text-2xl text-[#f0ce6a]">⌑</span>
+                Conhecer os produtos
+                <span className="text-3xl font-light">›</span>
               </Link>
+
               <Link
                 to="/cadastro"
-                className="rounded-2xl bg-[#053e3a] px-6 py-4 font-bold text-white shadow-lg transition hover:bg-[#032f2c]"
+                className="flex min-h-[72px] min-w-[250px] items-center justify-center gap-4 rounded-[19px] border border-[#0c554f] bg-[linear-gradient(135deg,#173e39,#032d2a)] px-6 py-4 text-[17px] font-black uppercase text-white shadow-[0_12px_24px_rgba(2,54,49,0.25)] transition hover:-translate-y-1 hover:bg-[#032b28]"
               >
-                Falar no WhatsApp →
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#6a9f27] text-2xl">◔</span>
+                <span className="leading-tight">Falar no<br />WhatsApp</span>
+                <span className="text-3xl font-light">›</span>
               </Link>
             </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-bold text-[#185d56] lg:justify-start">
-              <span>✓ Seleção cuidadosa</span>
-              <span>✓ Atendimento humano</span>
-              <span>✓ Compra orientada</span>
+            <div className="mt-9 grid max-w-[565px] gap-3 text-left text-sm font-bold text-[#183d36] sm:grid-cols-3">
+              {[
+                ['♢', 'Produtos', 'Selecionados'],
+                ['♡', 'Atendimento', 'Humanizado'],
+                ['▣', 'Compra 100%', 'Segura'],
+              ].map(([icon, first, second]) => (
+                <div key={first} className="flex items-center justify-center gap-3 lg:justify-start">
+                  <span className="text-4xl font-light text-[#0d625b]">{icon}</span>
+                  <span className="leading-5">{first}<br />{second}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="relative mx-auto flex min-h-[510px] w-full max-w-[650px] items-end justify-center">
-            <div className="absolute left-1/2 top-8 h-[420px] w-[420px] -translate-x-1/2 rounded-full border-4 border-white/90 bg-[#f3e5c5]/92 shadow-[0_0_0_18px_rgba(119,224,214,0.34),0_0_56px_rgba(4,116,108,0.38)] md:h-[480px] md:w-[480px]" />
-            <div className="absolute bottom-7 left-1/2 h-20 w-[75%] -translate-x-1/2 rounded-[50%] bg-[#0d4f49]/38 blur-xl" />
+          <div className="relative mx-auto flex min-h-[650px] w-full max-w-[690px] items-end justify-center lg:min-h-[690px]">
+            <div className="absolute left-1/2 top-[8%] h-[500px] w-[500px] -translate-x-1/2 rounded-full border-4 border-white/90 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.92),rgba(196,238,230,0.58)_53%,rgba(41,182,171,0.28)_75%,transparent_76%)] shadow-[0_0_0_12px_rgba(81,226,214,0.18),0_0_44px_rgba(65,229,217,0.78)] md:h-[570px] md:w-[570px]" />
+            <div className="absolute left-[7%] top-[34%] h-48 w-16 rotate-[-12deg] rounded-[50%] border-l-4 border-[#d8ffff]/80 opacity-80 blur-[1px]" />
+            <div className="absolute right-[8%] top-[38%] h-52 w-20 rotate-[14deg] rounded-[50%] border-r-4 border-[#d8ffff]/80 opacity-80 blur-[1px]" />
+            <div className="absolute bottom-4 left-1/2 h-[108px] w-[78%] -translate-x-1/2 rounded-[50%] border-t-8 border-[#7e8077] bg-[radial-gradient(ellipse_at_center,#4b504c_0%,#313733_50%,#1d2320_100%)] shadow-[0_20px_30px_rgba(12,47,42,0.35)]" />
+            <div className="absolute bottom-[72px] left-1/2 h-16 w-[66%] -translate-x-1/2 rounded-[50%] bg-[#6b716d] shadow-[inset_0_10px_18px_rgba(255,255,255,0.13),inset_0_-10px_18px_rgba(0,0,0,0.35)]" />
+
             <img
               src={productImage}
               alt="Velmo Black Drink"
-              className="relative z-10 max-h-[500px] w-auto max-w-[92%] object-contain drop-shadow-[0_30px_30px_rgba(8,61,56,0.34)]"
+              className="relative z-10 mb-[72px] max-h-[570px] w-auto max-w-[92%] object-contain drop-shadow-[0_32px_34px_rgba(4,38,34,0.38)]"
             />
-            <div className="absolute right-4 top-2 z-20 flex h-32 w-32 flex-col items-center justify-center rounded-full border-2 border-[#9af1e9] bg-[#043f3b] text-center text-white shadow-[0_0_30px_rgba(141,243,233,0.88)]">
-              <span className="text-2xl">♧</span>
-              <strong className="mt-1 text-base uppercase leading-tight">Produtos</strong>
-              <span className="text-xs uppercase text-[#b7eb7e]">selecionados</span>
-              <span className="mt-1 text-[#f2cf60]">★★★</span>
+
+            <div className="absolute bottom-[72px] right-[9%] z-20 rotate-[8deg] text-[72px] drop-shadow-[0_8px_8px_rgba(50,16,8,0.25)]" aria-hidden="true">🍓</div>
+            <div className="absolute bottom-[66px] right-[20%] z-20 -rotate-[10deg] text-[58px] drop-shadow-[0_8px_8px_rgba(50,16,8,0.25)]" aria-hidden="true">🍓</div>
+
+            <div className="absolute right-[4%] top-[2%] z-30 flex h-[158px] w-[158px] flex-col items-center justify-center rounded-full border-2 border-[#a4fff5] bg-[radial-gradient(circle_at_45%_25%,#124d48,#032b29_70%)] text-center text-white shadow-[0_0_0_3px_rgba(255,255,255,0.55),0_0_28px_rgba(87,245,230,0.86)]">
+              <span className="text-3xl text-[#e5c15f]">♧</span>
+              <strong className="mt-1 text-xl uppercase leading-tight">Produtos</strong>
+              <span className="text-sm font-bold uppercase text-[#abd44d]">Selecionados</span>
+              <span className="mt-1 text-xl tracking-[4px] text-[#f1bd45]">★★★</span>
             </div>
           </div>
 
-          <aside className="mx-auto w-full max-w-sm rounded-[2rem] border-2 border-white/90 bg-[#d8f5f0]/82 p-5 shadow-2xl shadow-[#075f59]/20 backdrop-blur-md">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#149f97] text-2xl text-white">◇</span>
-              <div>
-                <p className="text-sm font-bold uppercase tracking-wide text-[#0b5b56]">Bônus digital</p>
-                <h2 className="text-xl font-black text-[#153b35]">E-book exclusivo</h2>
-              </div>
+          <aside className="mx-auto w-full max-w-[360px] rounded-[30px] border-2 border-white/90 bg-[#bce7df]/82 p-4 shadow-[0_18px_40px_rgba(3,77,70,0.22),0_0_25px_rgba(129,255,244,0.45)] backdrop-blur-md">
+            <div className="mb-4 flex items-center justify-center gap-4 text-center">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#19a99e] text-3xl text-white shadow-lg">♧</span>
+              <h2 className="text-[21px] font-black uppercase leading-tight text-[#0a2724]">
+                Ganhe este<br />e-book exclusivo!
+              </h2>
             </div>
 
-            <div className="rounded-2xl border border-white/85 bg-[#fff8e8]/92 p-5 text-center shadow-inner">
-              <div className="mx-auto mb-4 flex h-40 w-32 items-center justify-center rounded-lg border border-[#a7c8a5] bg-white px-3 text-[#28594f] shadow-md">
-                <div>
-                  <span className="block text-4xl font-black text-[#8a1f1f]">7</span>
-                  <strong className="block text-lg leading-tight">Pequenas Mudanças</strong>
-                  <span className="mt-2 block text-xs">para uma rotina de bem-estar mais consciente</span>
-                </div>
-              </div>
-              <p className="font-bold text-[#173f36]">Brinde com ofertas selecionadas do Velmo Black Drink</p>
-              <p className="mt-2 text-sm leading-5 text-[#4a6962]">Confira as condições e a disponibilidade no atendimento.</p>
+            <div className="relative mx-auto aspect-[0.72] w-[82%] overflow-hidden rounded-sm border border-[#d8cfae] bg-[linear-gradient(145deg,#fffdf4_0%,#f3edcf_60%,#e1dfc4_100%)] p-5 text-center shadow-[0_14px_24px_rgba(28,58,48,0.28)]">
+              <div className="absolute -left-9 -top-8 h-28 w-28 rounded-full bg-[#6a9632]/20 blur-sm" />
+              <div className="absolute -right-10 bottom-8 h-32 w-32 rounded-full bg-[#6a9632]/20 blur-sm" />
+              <span className="absolute left-3 top-3 rounded-full bg-[#477d2e] px-3 py-2 text-[10px] font-black uppercase text-white">E-book<br />gratuito</span>
+              <img src={logo} alt="Código da Saúde" className="mx-auto mt-3 h-20 w-auto object-contain" />
+              <div className="mx-auto mt-1 h-px w-[78%] bg-[#c7ae68]" />
+              <p className="mt-5 text-[44px] font-black leading-none text-[#8d1c1c]">7</p>
+              <h3 className="mt-1 font-serif text-[29px] font-black leading-[0.95] text-[#251d18]">Pequenas<br />Mudanças</h3>
+              <p className="mt-3 text-[13px] font-bold leading-tight text-[#493b2b]">que podem transformar sua</p>
+              <p className="mt-1 font-serif text-[30px] italic leading-none text-[#5d8a35]">Saúde em</p>
+              <p className="mt-1 text-[18px] font-black leading-tight text-[#251d18]">Apenas 7 Dias</p>
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-[radial-gradient(circle_at_22%_90%,#d1a234_0_10%,transparent_11%),radial-gradient(circle_at_45%_90%,#6aa142_0_13%,transparent_14%),radial-gradient(circle_at_70%_90%,#be5535_0_12%,transparent_13%),linear-gradient(to_top,#e6d8a6,transparent)] opacity-75" />
             </div>
+
+            <p className="mt-5 text-center text-lg font-black uppercase leading-tight text-[#122d28]">
+              Grátis na compra do<br />
+              <span className="text-[22px] text-[#1d772f]">Velmo Black Drink</span><br />
+              <span className="text-base">(normal ou combo)</span>
+            </p>
           </aside>
         </div>
 
-        <div className="container-max relative z-10 mt-10 rounded-[2rem] border-2 border-white/85 bg-[#d9f4ef]/88 p-5 shadow-xl shadow-[#0b6660]/15 backdrop-blur-md">
+        <div className="relative z-10 mx-auto mt-4 w-full max-w-[1415px] rounded-[28px] border-2 border-white/75 bg-[#d4eeea]/88 px-6 py-6 shadow-[0_15px_30px_rgba(7,83,76,0.16)] backdrop-blur-md">
           <div className="grid gap-5 md:grid-cols-5">
-            {[
-              ['◇', 'Compra segura', 'Dados tratados com cuidado.'],
-              ['♧', 'Seleção cuidadosa', 'Produtos organizados por objetivo.'],
-              ['☆', 'Informação clara', 'Conteúdo simples e responsável.'],
-              ['♡', 'Atendimento humano', 'Orientação sem pressão.'],
-              ['▤', 'Entrega nacional', 'Consulte prazos e condições.'],
-            ].map(([icon, title, text]) => (
-              <div key={title} className="flex gap-3 md:border-r md:border-[#368f87]/35 md:last:border-r-0">
-                <span className="text-3xl text-[#08766f]">{icon}</span>
+            {benefits.map(([icon, title, text]) => (
+              <div key={title} className="flex min-h-[86px] items-center gap-4 px-2 md:border-r md:border-[#43877f]/35 md:last:border-r-0">
+                <span className="shrink-0 text-5xl font-light text-[#0b625b]">{icon}</span>
                 <div>
-                  <p className="font-bold text-[#123f39]">{title}</p>
-                  <p className="mt-1 text-sm leading-5 text-[#3c665f]">{text}</p>
+                  <p className="text-[15px] font-black leading-tight text-[#132e2a]">{title}</p>
+                  <p className="mt-2 text-[13px] leading-5 text-[#253e39]">{text}</p>
                 </div>
               </div>
             ))}
