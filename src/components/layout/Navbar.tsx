@@ -78,6 +78,7 @@ const Navbar = () => {
                   `rounded-xl px-4 py-3 font-semibold ${
                     isActive ? 'bg-white text-[#0d655f]' : 'text-[#29463e] hover:bg-white/70'
                   }`
+                }
               >
                 {link.label}
               </NavLink>
