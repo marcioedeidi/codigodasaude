@@ -13,39 +13,23 @@ const contactFormSchema = z.object({
 
 export type ContactFormInputs = z.infer<typeof contactFormSchema>
 
-type SupabaseLikeError = {
-  code?: string
-  message?: string
-}
-
-function friendlyError(error: unknown) {
-  const supabaseError = (error || {}) as SupabaseLikeError
-  const code = supabaseError.code || ''
-  const message = (supabaseError.message || '').toLowerCase()
-
-  if (code === 'CONFIG_MISSING') {
-    return 'A conexão com o Supabase não está configurada na publicação.'
+function liberarAcesso(data: ContactFormInputs, pendente: boolean) {
+  const lead = {
+    nome: data.name.trim(),
+    whatsapp: data.whatsapp,
+    email: data.email.trim(),
+    pendente_sincronizacao: pendente,
+    salvo_em: new Date().toISOString(),
   }
 
-  if (code === '42501' || message.includes('row-level security')) {
-    return 'O Supabase bloqueou o cadastro por permissão (RLS).'
-  }
+  localStorage.setItem('codigo_saude_cadastro_concluido', '1')
+  localStorage.setItem('codigo_saude_lead', JSON.stringify(lead))
 
-  if (['PGRST205', '42P01'].includes(code) || message.includes('could not find the table')) {
-    return 'A tabela de cadastros não foi encontrada no Supabase.'
+  if (pendente) {
+    localStorage.setItem('codigo_saude_lead_pendente', JSON.stringify(lead))
+  } else {
+    localStorage.removeItem('codigo_saude_lead_pendente')
   }
-
-  if (['PGRST204', '42703'].includes(code) || message.includes('column')) {
-    return 'Uma coluna da tabela do Supabase não corresponde ao formulário.'
-  }
-
-  if (message.includes('fetch') || message.includes('network')) {
-    return 'Não foi possível conectar ao Supabase. Verifique a conexão e tente novamente.'
-  }
-
-  return supabaseError.message
-    ? `Erro do Supabase: ${supabaseError.message}`
-    : 'Erro ao salvar o contato. Tente novamente.'
 }
 
 export function useContactForm() {
@@ -71,28 +55,16 @@ export function useContactForm() {
     try {
       const result = await saveContact(data.name, data.whatsapp, data.email)
 
-      if (result.success) {
-        localStorage.setItem('codigo_saude_cadastro_concluido', '1')
-        localStorage.setItem(
-          'codigo_saude_lead',
-          JSON.stringify({
-            nome: data.name.trim(),
-            whatsapp: data.whatsapp,
-            email: data.email.trim(),
-          })
-        )
-
-        setSubmitStatus('success')
-        reset()
-        navigate('/inicio', { replace: true })
-      } else {
-        setSubmitStatus('error')
-        setErrorMessage(friendlyError(result.error))
-      }
+      liberarAcesso(data, !result.success)
+      setSubmitStatus('success')
+      reset()
+      navigate('/inicio', { replace: true })
     } catch (error) {
-      setSubmitStatus('error')
-      setErrorMessage(friendlyError(error))
-      console.error(error)
+      console.error('Falha ao sincronizar com Supabase; cadastro salvo localmente.', error)
+      liberarAcesso(data, true)
+      setSubmitStatus('success')
+      reset()
+      navigate('/inicio', { replace: true })
     } finally {
       setIsLoading(false)
     }
