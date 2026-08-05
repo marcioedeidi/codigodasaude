@@ -2,7 +2,8 @@ name: Publicar Código da Saúde
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -11,19 +12,18 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-and-deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
-
     steps:
-      - name: Baixar o código
+      - name: Baixar o código atualizado
         uses: actions/checkout@v4
 
       - name: Configurar o Node
@@ -32,23 +32,30 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Instalar as dependências
-        run: npm ci
+      - name: Instalar dependências
+        run: npm install
 
-      - name: Gerar o site
-        run: npm run build
+      - name: Gerar o site atualizado
+        run: |
+          node scripts/generate-assets.mjs
+          npx vite build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
+      - name: Corrigir acesso direto e erro 404
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
+
       - name: Configurar o GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Enviar o site pronto
-        uses: actions/upload-pages-artifact@v3
+      - name: Preparar arquivos para publicação
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
-      - name: Publicar no GitHub Pages
+      - name: Publicar a versão nova
         id: deployment
         uses: actions/deploy-pages@v4
