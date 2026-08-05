@@ -10,6 +10,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  issues: write
 
 concurrency:
   group: github-pages
@@ -24,38 +25,90 @@ jobs:
 
     steps:
       - name: Baixar o código atualizado
+        id: checkout
+        continue-on-error: true
         uses: actions/checkout@v4
 
       - name: Configurar o Node
+        id: node
+        continue-on-error: true
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
       - name: Instalar dependências
-        run: npm install
+        id: install
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          npm install 2>&1 | tee install.log
 
       - name: Gerar o site atualizado
+        id: build
+        continue-on-error: true
+        shell: bash
         run: |
-          node scripts/generate-assets.mjs
-          npx vite build
+          set -o pipefail
+          node scripts/generate-assets.mjs 2>&1 | tee build.log
+          npx vite build 2>&1 | tee -a build.log
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
-      - name: Corrigir acesso direto e erro 404
+      - name: Preparar acesso direto e versão do deploy
+        id: prepare
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        shell: bash
         run: |
           cp dist/index.html dist/404.html
-          touch dist/.nojekyll
+          printf '%s\n' "commit=${GITHUB_SHA}" "publicado_em=$(date -u +%Y-%m-%dT%H:%M:%SZ)" > dist/versao-publicada.txt
+          find dist -maxdepth 2 -type f -printf '%p %s bytes\n' | sort | tee dist-files.log
 
       - name: Configurar o GitHub Pages
+        id: pages
+        if: steps.prepare.outcome == 'success'
+        continue-on-error: true
         uses: actions/configure-pages@v5
 
       - name: Preparar arquivos para publicação
+        id: upload
+        if: steps.pages.outcome == 'success'
+        continue-on-error: true
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
       - name: Publicar a versão nova
         id: deployment
+        if: steps.upload.outcome == 'success'
+        continue-on-error: true
         uses: actions/deploy-pages@v4
+
+      - name: Registrar diagnóstico completo
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "## Resultado automático do deploy"
+            echo
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Checkout: **${{ steps.checkout.outcome }}**"
+            echo "- Node: **${{ steps.node.outcome }}**"
+            echo "- Instalação: **${{ steps.install.outcome }}**"
+            echo "- Compilação: **${{ steps.build.outcome }}**"
+            echo "- Preparação: **${{ steps.prepare.outcome }}**"
+            echo "- Configuração Pages: **${{ steps.pages.outcome }}**"
+            echo "- Envio do pacote: **${{ steps.upload.outcome }}**"
+            echo "- Publicação: **${{ steps.deployment.outcome }}**"
+            echo
+            echo "### Últimas linhas do diagnóstico"
+            echo '```text'
+            tail -n 100 install.log build.log dist-files.log 2>/dev/null || true
+            echo '```'
+          } > diagnostico.md
+          gh issue comment 1 --repo "$GITHUB_REPOSITORY" --body-file diagnostico.md
