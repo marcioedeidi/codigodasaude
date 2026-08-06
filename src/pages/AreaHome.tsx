@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const AreaHome: React.FC = () => {
-  const heroImage = `${import.meta.env.BASE_URL}assets/hero-reference.webp`
+  const heroImage = `${import.meta.env.BASE_URL}assets/hero-oficial.jpg`
 
   return (
     <main className="w-full bg-[#9fded7]">
       <section className="w-full overflow-hidden">
         <div
           className="relative mx-auto w-full max-w-[1536px] overflow-hidden"
-          style={{ aspectRatio: '1536 / 919' }}
+          style={{ aspectRatio: '1536 / 920' }}
         >
           <img
             src={heroImage}
@@ -18,17 +18,17 @@ const AreaHome: React.FC = () => {
             draggable={false}
           />
 
-          {/* Áreas transparentes alinhadas exatamente aos botões desenhados na arte. */}
+          {/* Áreas transparentes exatamente sobre os botões desenhados na hero. */}
           <Link
             to="/produtos"
             aria-label="Conhecer os produtos"
-            className="absolute left-[3.97%] top-[57.13%] z-20 h-[9.03%] w-[22.40%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90"
+            className="absolute left-[3.97%] top-[57.28%] z-20 h-[8.92%] w-[22.40%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90"
           />
 
           <Link
             to="/cadastro"
             aria-label="Falar no WhatsApp"
-            className="absolute left-[27.34%] top-[57.13%] z-20 h-[9.03%] w-[12.30%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90"
+            className="absolute left-[27.34%] top-[57.28%] z-20 h-[8.92%] w-[12.30%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90"
           />
         </div>
       </section>
