@@ -39,10 +39,10 @@ jobs:
         id: install
         run: npm install > install.log 2>&1
 
-      - name: Gerar a hero oficial e o site atualizado
+      - name: Gerar a hero limpa e o site atualizado
         id: build
         run: |
-          node scripts/build-hero-reference.mjs > build.log 2>&1
+          node scripts/build-hero-clean.mjs > build.log 2>&1
           node scripts/generate-assets.mjs >> build.log 2>&1
           npx vite build >> build.log 2>&1
         env:
