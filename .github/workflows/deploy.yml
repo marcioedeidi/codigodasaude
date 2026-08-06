@@ -39,10 +39,11 @@ jobs:
         id: install
         run: npm install > install.log 2>&1
 
-      - name: Gerar o site atualizado
+      - name: Gerar a hero oficial e o site atualizado
         id: build
         run: |
-          node scripts/generate-assets.mjs > build.log 2>&1
+          node scripts/build-hero-reference.mjs > build.log 2>&1
+          node scripts/generate-assets.mjs >> build.log 2>&1
           npx vite build >> build.log 2>&1
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
@@ -97,7 +98,7 @@ jobs:
               echo
               echo '### Diagnóstico da compilação'
               echo '```text'
-              tail -n 45 build.log
+              tail -n 55 build.log
               echo '```'
             fi
           } > deploy-report.md
