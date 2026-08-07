@@ -39,10 +39,25 @@ jobs:
         id: install
         run: npm install > install.log 2>&1
 
-      - name: Gerar a hero limpa e o site atualizado
+      - name: Gerar hero compatível e site atualizado
         id: build
         run: |
           node scripts/build-hero-clean.mjs > build.log 2>&1
+          python3 -m pip install --quiet pillow >> build.log 2>&1
+          python3 - <<'PY' >> build.log 2>&1
+          from PIL import Image
+          import hashlib
+
+          src = 'public/assets/hero-oficial.jpg'
+          dst = 'public/assets/hero-baseline-v2.jpg'
+          image = Image.open(src).convert('RGB')
+          image.save(dst, 'JPEG', quality=60, optimize=True, progressive=False, subsampling=2)
+          data = open(dst, 'rb').read()
+          assert image.size == (1536, 920), image.size
+          assert b'\xff\xc0' in data, 'JPEG baseline sem marcador SOF0'
+          assert b'\xff\xc2' not in data, 'JPEG ainda está progressivo'
+          print(f'Hero BASELINE gerada: {len(data)} bytes / sha256 {hashlib.sha256(data).hexdigest()}')
+          PY
           node scripts/generate-assets.mjs >> build.log 2>&1
           npx vite build >> build.log 2>&1
         env:
@@ -98,7 +113,7 @@ jobs:
               echo
               echo '### Diagnóstico da compilação'
               echo '```text'
-              tail -n 55 build.log
+              tail -n 70 build.log
               echo '```'
             fi
           } > deploy-report.md
