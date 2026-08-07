@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const AreaHome: React.FC = () => {
-  const heroImage = `${import.meta.env.BASE_URL}assets/hero-oficial.jpg?v=clean-98a0e43e`
+  const heroImage = `${import.meta.env.BASE_URL}assets/hero-baseline-v2.jpg?v=baseline-v2`
 
   return (
     <main className="w-full bg-[#9fded7]">
