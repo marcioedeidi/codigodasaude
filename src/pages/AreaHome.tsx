@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const AreaHome: React.FC = () => {
-  const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean.webp?v=clean-ca62963e`
+  const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
 
   return (
     <main className="w-full bg-[#9fded7]">
@@ -18,7 +18,6 @@ const AreaHome: React.FC = () => {
             draggable={false}
           />
 
-          {/* Áreas transparentes exatamente sobre os botões desenhados na hero. */}
           <Link
             to="/produtos"
             aria-label="Conhecer os produtos"

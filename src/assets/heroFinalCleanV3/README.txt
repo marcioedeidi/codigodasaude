@@ -1,0 +1,1 @@
+Hero V3 limpa: 11 partes base64. O build só publica se reconstruir 126886 bytes, WebP válido e SHA-256 ca62963e93d4542146a2bd0fa8aacf1d271d5a7975cecd5f7a44fba69426275f.

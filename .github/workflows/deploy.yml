@@ -39,12 +39,16 @@ jobs:
         id: install
         run: npm install > install.log 2>&1
 
-      - name: Gerar a hero final limpa e o site atualizado
+      - name: Gerar a hero final limpa V3 e o site atualizado
         id: build
         run: |
-          node scripts/build-hero-final-clean.mjs > build.log 2>&1
+          node scripts/build-hero-final-clean-v3.mjs > build.log 2>&1
           node scripts/generate-assets.mjs >> build.log 2>&1
           npx vite build >> build.log 2>&1
+          test -f dist/assets/hero-final-clean-v3.webp
+          HERO_SHA="$(sha256sum dist/assets/hero-final-clean-v3.webp | awk '{print $1}')"
+          echo "Hero V3 no dist: ${HERO_SHA}" >> build.log
+          test "${HERO_SHA}" = "ca62963e93d4542146a2bd0fa8aacf1d271d5a7975cecd5f7a44fba69426275f"
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -98,7 +102,7 @@ jobs:
               echo
               echo '### Diagnóstico da compilação'
               echo '```text'
-              tail -n 70 build.log
+              tail -n 80 build.log
               echo '```'
             fi
           } > deploy-report.md
