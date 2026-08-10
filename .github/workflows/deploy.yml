@@ -39,23 +39,18 @@ jobs:
         id: install
         run: npm install > install.log 2>&1
 
-      - name: Gerar hero, página de produtos e site atualizado
+      - name: Gerar hero e site atualizado
         id: build
         run: |
           node scripts/build-hero-final-clean-v3.mjs > build.log 2>&1
-          node scripts/build-produtos-page.mjs >> build.log 2>&1
           node scripts/generate-assets.mjs >> build.log 2>&1
           npx vite build >> build.log 2>&1
           test -f dist/assets/hero-final-clean-v3.webp
           HERO_SHA="$(sha256sum dist/assets/hero-final-clean-v3.webp | awk '{print $1}')"
           echo "Hero V3 no dist: ${HERO_SHA}" >> build.log
           test "${HERO_SHA}" = "ca62963e93d4542146a2bd0fa8aacf1d271d5a7975cecd5f7a44fba69426275f"
-          test -f dist/assets/produtos-page-v1.webp
-          PRODUTOS_SHA="$(sha256sum dist/assets/produtos-page-v1.webp | awk '{print $1}')"
-          echo "Produtos V1 no dist: ${PRODUTOS_SHA}" >> build.log
-          test "${PRODUTOS_SHA}" = "a0c35c9414e2db1df4de8c048f2e06f997136423acf59428ffa2dde73bed71b8"
+          echo "Página Produtos compilada diretamente em React/CSS" >> build.log
         env:
-          GH_TOKEN: ${{ github.token }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
