@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
-  const testimonialsImage = `${import.meta.env.BASE_URL}assets/testimonials-fold-v2-real.webp?v=testimonials-fold-v2`
+  const testimonialsImage = `${import.meta.env.BASE_URL}assets/testimonials-fold-v2-real.webp?v=testimonials-fold-v3`
 
   return (
     <main className="w-full bg-[#9fded7]">
