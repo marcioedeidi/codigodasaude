@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 type ClickArea = {
   name: string
@@ -23,11 +24,17 @@ const clickAreas: ClickArea[] = [
 ]
 
 const Produtos: React.FC = () => {
+  const navigate = useNavigate()
   const [selected, setSelected] = useState<string | null>(null)
   const timerRef = useRef<number | null>(null)
   const pageImage = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=produtos-v3-fiel`
 
   const handleProductClick = (name: string) => {
+    if (name === 'Fiber Slim') {
+      navigate('/fiberslim')
+      return
+    }
+
     setSelected(name)
 
     if (timerRef.current) {

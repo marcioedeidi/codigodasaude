@@ -6,7 +6,7 @@ import Footer from './Footer'
 const ProtectedLayout: React.FC = () => {
   const location = useLocation()
   const unlocked = localStorage.getItem('codigo_saude_cadastro_concluido') === '1'
-  const isProdutos = location.pathname === '/produtos'
+  const hideFooter = location.pathname === '/produtos' || location.pathname === '/fiberslim'
 
   if (!unlocked) {
     return <Navigate to="/cadastro" replace />
@@ -16,7 +16,7 @@ const ProtectedLayout: React.FC = () => {
     <>
       <Navbar />
       <Outlet />
-      {!isProdutos && <Footer />}
+      {!hideFooter && <Footer />}
     </>
   )
 }
