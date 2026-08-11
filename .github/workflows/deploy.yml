@@ -46,9 +46,33 @@ jobs:
           node scripts/build-produtos-page.mjs >> build.log 2>&1
           node scripts/generate-assets.mjs >> build.log 2>&1
 
-          base64 -d public/assets/testimonials-fold-v2.webp > public/assets/testimonials-fold-v2-real.webp
+          rm -f public/assets/testimonials-fold-v2-real.webp
+          cat \
+            src/assets/testimonialsFold/part00.txt \
+            src/assets/testimonialsFold/part01.txt \
+            src/assets/testimonialsFold/part02.txt \
+            src/assets/testimonialsFold/p03_00.txt \
+            src/assets/testimonialsFold/p03_01.txt \
+            src/assets/testimonialsFold/p03_02.txt \
+            src/assets/testimonialsFold/p03_03.txt \
+            src/assets/testimonialsFold/p03_04.txt \
+            src/assets/testimonialsFold/p03_05.txt \
+            src/assets/testimonialsFold/p03_06.txt \
+            src/assets/testimonialsFold/p03_07.txt \
+            src/assets/testimonialsFold/p03_08.txt \
+            src/assets/testimonialsFold/part04.txt \
+            src/assets/testimonialsFold/part05.txt \
+            src/assets/testimonialsFold/part06.txt \
+            src/assets/testimonialsFold/part07.txt \
+            src/assets/testimonialsFold/part08.txt \
+            | base64 -d > public/assets/testimonials-fold-v2-real.webp
+
           test -s public/assets/testimonials-fold-v2-real.webp
-          echo "Dobra de depoimentos decodificada com sucesso." >> build.log
+          TESTIMONIALS_SHA="$(sha256sum public/assets/testimonials-fold-v2-real.webp | awk '{print $1}')"
+          TESTIMONIALS_SIZE="$(wc -c < public/assets/testimonials-fold-v2-real.webp | tr -d ' ')"
+          echo "Depoimentos: ${TESTIMONIALS_SIZE} bytes / ${TESTIMONIALS_SHA}" >> build.log
+          test "${TESTIMONIALS_SIZE}" = "56348"
+          test "${TESTIMONIALS_SHA}" = "f6eeb6f1117f25e95d6979be8612160b14cf9f7bac7d8b07c4e70a413cd772a6"
 
           npx vite build >> build.log 2>&1
 
@@ -63,7 +87,9 @@ jobs:
           test "${PRODUTOS_SHA}" = "60b970a57861ae19ef8aee9d57c3ae6e2a3f453084d4270189cf6a6bfffa6a17"
 
           test -f dist/assets/testimonials-fold-v2-real.webp
-          echo "Dobra de depoimentos presente no dist." >> build.log
+          DIST_TESTIMONIALS_SHA="$(sha256sum dist/assets/testimonials-fold-v2-real.webp | awk '{print $1}')"
+          echo "Depoimentos no dist: ${DIST_TESTIMONIALS_SHA}" >> build.log
+          test "${DIST_TESTIMONIALS_SHA}" = "f6eeb6f1117f25e95d6979be8612160b14cf9f7bac7d8b07c4e70a413cd772a6"
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
