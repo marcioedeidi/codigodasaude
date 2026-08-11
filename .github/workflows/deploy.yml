@@ -45,6 +45,11 @@ jobs:
           node scripts/build-hero-final-clean-v3.mjs > build.log 2>&1
           node scripts/build-produtos-page.mjs >> build.log 2>&1
           node scripts/generate-assets.mjs >> build.log 2>&1
+
+          base64 -d public/assets/testimonials-fold-v2.webp > public/assets/testimonials-fold-v2-real.webp
+          test -s public/assets/testimonials-fold-v2-real.webp
+          echo "Dobra de depoimentos decodificada com sucesso." >> build.log
+
           npx vite build >> build.log 2>&1
 
           test -f dist/assets/hero-final-clean-v3.webp
@@ -56,6 +61,9 @@ jobs:
           PRODUTOS_SHA="$(sha256sum dist/assets/produtos-page-v3.webp | awk '{print $1}')"
           echo "Produtos V3 no dist: ${PRODUTOS_SHA}" >> build.log
           test "${PRODUTOS_SHA}" = "60b970a57861ae19ef8aee9d57c3ae6e2a3f453084d4270189cf6a6bfffa6a17"
+
+          test -f dist/assets/testimonials-fold-v2-real.webp
+          echo "Dobra de depoimentos presente no dist." >> build.log
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
