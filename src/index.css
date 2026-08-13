@@ -67,3 +67,35 @@ section > :not(.botanical-leaves) {
 .white-outline {
   border: 2px solid rgba(255, 255, 255, 0.95);
 }
+
+/* Ajuste fino da vitrine móvel: centraliza a imagem dos produtos da segunda linha
+   da arte de Produtos, evitando que o recorte mostre apenas descrição e botão. */
+.product-marquee-track > :is(:nth-child(7), :nth-child(19)) > div:first-child {
+  background-position: 4% 64% !important;
+  background-size: 720% auto !important;
+}
+
+.product-marquee-track > :is(:nth-child(8), :nth-child(20)) > div:first-child {
+  background-position: 22% 64% !important;
+  background-size: 720% auto !important;
+}
+
+.product-marquee-track > :is(:nth-child(9), :nth-child(21)) > div:first-child {
+  background-position: 38% 64% !important;
+  background-size: 720% auto !important;
+}
+
+.product-marquee-track > :is(:nth-child(10), :nth-child(22)) > div:first-child {
+  background-position: 56% 64% !important;
+  background-size: 720% auto !important;
+}
+
+.product-marquee-track > :is(:nth-child(11), :nth-child(23)) > div:first-child {
+  background-position: 74% 64% !important;
+  background-size: 720% auto !important;
+}
+
+.product-marquee-track > :is(:nth-child(12), :nth-child(24)) > div:first-child {
+  background-position: 93% 64% !important;
+  background-size: 720% auto !important;
+}
