@@ -2,10 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import TestimonialGallery from '../components/TestimonialGallery'
 import ProductMarquee from '../components/ProductMarquee'
+import alwaysFitImagePart1 from '../data/alwaysfitImagePart1'
+import alwaysFitImagePart2 from '../data/alwaysfitImagePart2'
+import alwaysFitImagePart3 from '../data/alwaysfitImagePart3'
+import alwaysFitImagePart4 from '../data/alwaysfitImagePart4'
 
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
-  const alwaysFitImage = `${import.meta.env.BASE_URL}assets/alwaysfit-dobra.webp?v=alwaysfit-dobra-v1`
+  const alwaysFitImage = `data:image/webp;base64,${alwaysFitImagePart1}${alwaysFitImagePart2}${alwaysFitImagePart3}${alwaysFitImagePart4}`
 
   return (
     <main className="w-full bg-[#9fded7]">
@@ -38,7 +42,7 @@ const AreaHome: React.FC = () => {
           <img
             src={alwaysFitImage}
             alt="AlwaysFit — suplementos selecionados para equilíbrio, energia e bem-estar"
-            className="absolute inset-0 block h-full w-full select-none object-contain"
+            className="absolute inset-0 block h-full w-full select-none object-cover"
             draggable={false}
           />
           <Link
