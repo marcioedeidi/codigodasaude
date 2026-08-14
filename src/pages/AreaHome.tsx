@@ -5,6 +5,7 @@ import ProductMarquee from '../components/ProductMarquee'
 
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
+  const alwaysFitImage = `${import.meta.env.BASE_URL}assets/alwaysfit-dobra.webp?v=alwaysfit-dobra-v1`
 
   return (
     <main className="w-full bg-[#9fded7]">
@@ -28,8 +29,25 @@ const AreaHome: React.FC = () => {
           />
         </div>
       </section>
+
       <TestimonialGallery />
       <ProductMarquee />
+
+      <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
+        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
+          <img
+            src={alwaysFitImage}
+            alt="AlwaysFit — suplementos selecionados para equilíbrio, energia e bem-estar"
+            className="absolute inset-0 block h-full w-full select-none object-contain"
+            draggable={false}
+          />
+          <Link
+            to="/produtos"
+            aria-label="Conhecer os produtos AlwaysFit"
+            className="absolute left-[6.8%] top-[63.3%] z-20 h-[7.1%] w-[20.5%] rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90"
+          />
+        </div>
+      </section>
     </main>
   )
 }
