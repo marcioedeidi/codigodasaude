@@ -34,7 +34,6 @@ const AreaHome: React.FC = () => {
         </div>
       </section>
 
-      <TestimonialGallery />
       <ProductMarquee />
 
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
@@ -52,6 +51,8 @@ const AreaHome: React.FC = () => {
           />
         </div>
       </section>
+
+      <TestimonialGallery />
     </main>
   )
 }
