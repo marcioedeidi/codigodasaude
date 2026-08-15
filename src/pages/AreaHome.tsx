@@ -9,7 +9,7 @@ import alwaysFitImagePart4 from '../data/alwaysfitImagePart4'
 
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
-  const alwaysFitImage = `data:image/webp;base64,${alwaysFitImagePart1}${alwaysFitImagePart2}${alwaysFitImagePart3}${alwaysFitImagePart4}`
+  const alwaysFitImage = `data:image/jpeg;base64,${alwaysFitImagePart1}${alwaysFitImagePart2}${alwaysFitImagePart3}${alwaysFitImagePart4}`
 
   return (
     <main className="w-full bg-[#9fded7]">
