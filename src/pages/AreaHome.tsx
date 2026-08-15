@@ -38,17 +38,17 @@ const AreaHome: React.FC = () => {
       <ProductMarquee />
 
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
-        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
+        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1100 / 619' }}>
           <img
             src={alwaysFitImage}
             alt="AlwaysFit — suplementos selecionados para equilíbrio, energia e bem-estar"
-            className="absolute inset-0 block h-full w-full select-none object-contain"
+            className="absolute inset-0 block h-full w-full select-none object-cover"
             draggable={false}
           />
           <Link
             to="/produtos"
             aria-label="Conhecer os produtos AlwaysFit"
-            className="absolute left-[6.8%] top-[63.3%] z-20 h-[7.1%] w-[20.5%] rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90"
+            className="absolute left-[7.1%] top-[63.5%] z-20 h-[7.4%] w-[19.8%] rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90"
           />
         </div>
       </section>
