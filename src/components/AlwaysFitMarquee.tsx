@@ -1,55 +1,50 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import alwaysFitImagePart1 from '../data/alwaysfitImagePart1'
-import alwaysFitImagePart2 from '../data/alwaysfitImagePart2'
-import alwaysFitImagePart3 from '../data/alwaysfitImagePart3'
-import alwaysFitImagePart4 from '../data/alwaysfitImagePart4'
 
 type AlwaysFitItem = {
   name: string
   kind: 'logo' | 'product'
   x?: string
-  y?: string
-  size?: string
 }
 
 const items: AlwaysFitItem[] = [
-  { name: 'AlwaysFit', kind: 'logo', x: '0%', y: '8%', size: '150% auto' },
-  { name: 'NAC', kind: 'product', x: '45%', y: '45%', size: '420% auto' },
-  { name: 'FIT DREAMS', kind: 'product', x: '59%', y: '28%', size: '420% auto' },
-  { name: 'FIT HAIR', kind: 'product', x: '73%', y: '23%', size: '420% auto' },
-  { name: 'Vitaminas B6, B9, B12', kind: 'product', x: '69%', y: '53%', size: '420% auto' },
-  { name: 'Q10 Coenzima', kind: 'product', x: '92%', y: '37%', size: '420% auto' },
-  { name: 'PRO+ Magnésio', kind: 'product', x: '57%', y: '72%', size: '420% auto' },
-  { name: 'PRO Curcumin', kind: 'product', x: '81%', y: '72%', size: '420% auto' },
-  { name: 'FITS36', kind: 'product', x: '94%', y: '70%', size: '420% auto' },
+  { name: 'Código da Saúde', kind: 'logo' },
+  { name: 'NAC', kind: 'product', x: '15%' },
+  { name: 'FIT DREAMS', kind: 'product', x: '28%' },
+  { name: 'FIT HAIR', kind: 'product', x: '41%' },
+  { name: 'Vitaminas B6 B9 B12', kind: 'product', x: '53%' },
+  { name: 'Q10 Coenzima', kind: 'product', x: '66%' },
+  { name: 'PRO+ Magnésio', kind: 'product', x: '79%' },
+  { name: 'PRO Curcumin', kind: 'product', x: '92%' },
+  { name: 'FITS36', kind: 'product', x: '100%' },
 ]
 
 const AlwaysFitMarquee: React.FC = () => {
-  const artwork = `data:image/webp;base64,${alwaysFitImagePart1}${alwaysFitImagePart2}${alwaysFitImagePart3}${alwaysFitImagePart4}`
+  const logo = `${import.meta.env.BASE_URL}assets/logo-small.webp`
+  const artwork = `${import.meta.env.BASE_URL}assets/faixa-alwaysfit-codigo-saude.webp?v=4`
   const loopItems = [...items, ...items]
 
   return (
     <section
-      className="w-full overflow-hidden bg-[linear-gradient(180deg,#eef9f6_0%,#d9f2ec_100%)] py-8 md:py-10"
+      className="w-full overflow-hidden bg-[linear-gradient(180deg,#e8f8f4_0%,#d2f0ea_100%)] py-8 md:py-10"
       aria-label="Conheça a linha AlwaysFit"
     >
       <div className="mx-auto mb-5 flex w-full max-w-[1420px] items-end justify-between gap-4 px-4 sm:px-6">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#158b80]">Linha AlwaysFit</p>
           <h2 className="mt-1 font-serif text-2xl font-bold text-[#10372f] sm:text-3xl md:text-4xl">
-            Bem-estar em movimento
+            Conheça nossas soluções
           </h2>
         </div>
         <span className="hidden rounded-full border border-[#8fd1c7] bg-white/75 px-5 py-2 text-sm font-extrabold text-[#12675f] shadow-sm sm:inline-flex">
-          Conhecer a linha →
+          Ver todos os produtos →
         </span>
       </div>
 
       <Link
         to="/produtos"
-        aria-label="Conhecer os produtos AlwaysFit"
-        className="alwaysfit-marquee-group block w-full border-y border-white/80 bg-white/48 py-4 shadow-[0_10px_28px_rgba(28,103,92,0.10)] outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50"
+        aria-label="Ver todos os produtos da linha AlwaysFit"
+        className="alwaysfit-marquee-group block w-full border-y border-white/80 bg-white/45 py-4 shadow-[0_10px_28px_rgba(28,103,92,0.10)] outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50"
       >
         <div className="relative overflow-hidden">
           <div className="alwaysfit-marquee-track flex w-max items-center gap-4 px-4 sm:gap-5 sm:px-6">
@@ -60,30 +55,25 @@ const AlwaysFitMarquee: React.FC = () => {
                 aria-hidden={index >= items.length}
               >
                 {item.kind === 'logo' ? (
-                  <div className="relative h-full w-full overflow-hidden bg-[radial-gradient(circle_at_center,#ffffff_0%,#e7f6f2_70%,#d3eee8_100%)]">
-                    <div
-                      className="absolute inset-0 bg-no-repeat"
-                      style={{
-                        backgroundImage: `url(${artwork})`,
-                        backgroundSize: item.size,
-                        backgroundPosition: `${item.x} ${item.y}`,
-                      }}
+                  <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_center,#ffffff_0%,#dcf3ee_68%,#c7eae3_100%)] p-4">
+                    <img
+                      src={logo}
+                      alt="Código da Saúde"
+                      className="max-h-[104px] w-auto max-w-full object-contain"
+                      draggable={false}
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white/95 via-white/70 to-transparent px-3 pb-2 pt-7">
-                      <p className="text-center text-xs font-black tracking-wide text-[#183969] sm:text-sm">AlwaysFit</p>
-                    </div>
                   </div>
                 ) : (
                   <>
                     <div
-                      className="absolute inset-0 scale-[1.02] bg-no-repeat transition duration-500 group-hover:scale-[1.06]"
+                      className="absolute inset-0 scale-[1.03] bg-no-repeat transition duration-500 group-hover:scale-[1.07]"
                       style={{
                         backgroundImage: `url(${artwork})`,
-                        backgroundSize: item.size,
-                        backgroundPosition: `${item.x} ${item.y}`,
+                        backgroundSize: '520% auto',
+                        backgroundPosition: `${item.x} 67%`,
                       }}
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/92 via-[#073d37]/58 to-transparent px-3 pb-2 pt-8">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/90 via-[#073d37]/55 to-transparent px-3 pb-2 pt-8">
                       <p className="truncate text-center text-xs font-black text-white sm:text-sm">{item.name}</p>
                     </div>
                   </>
@@ -95,7 +85,7 @@ const AlwaysFitMarquee: React.FC = () => {
 
         <div className="mt-4 flex justify-center px-4 sm:hidden">
           <span className="rounded-full bg-[#07534c] px-5 py-2 text-sm font-black text-white shadow-md">
-            Conhecer a linha AlwaysFit →
+            Ver todos os produtos →
           </span>
         </div>
       </Link>
