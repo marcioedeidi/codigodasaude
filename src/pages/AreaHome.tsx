@@ -10,7 +10,7 @@ import alwaysFitImagePart4 from '../data/alwaysfitImagePart4'
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
   const alwaysFitImage = `data:image/webp;base64,${alwaysFitImagePart1}${alwaysFitImagePart2}${alwaysFitImagePart3}${alwaysFitImagePart4}`
-  const faixaAlwaysFit = `${import.meta.env.BASE_URL}assets/faixa-alwaysfit-codigo-saude.webp?v=1`
+  const faixaAlwaysFit = `${import.meta.env.BASE_URL}assets/faixa-alwaysfit-codigo-saude.webp?v=3`
 
   return (
     <main className="w-full bg-[#9fded7]">
@@ -55,21 +55,54 @@ const AreaHome: React.FC = () => {
 
       <TestimonialGallery />
 
-      <section className="w-full overflow-hidden bg-[#eef7f4] py-8 md:py-10" aria-label="Linha AlwaysFit">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6">
-          <Link
-            to="/produtos"
-            aria-label="Conhecer a linha AlwaysFit"
-            className="block overflow-hidden rounded-[28px] bg-white/60 shadow-[0_12px_30px_rgba(28,103,92,0.10)] outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50"
-          >
-            <img
-              src={faixaAlwaysFit}
-              alt="Conheça a linha AlwaysFit — Código da Saúde"
-              className="block h-auto w-full"
-              draggable={false}
-            />
-          </Link>
+      <section
+        className="w-full overflow-hidden bg-[#eef7f4] py-5 md:py-7"
+        aria-label="Esteira da linha AlwaysFit"
+      >
+        <div className="relative w-full overflow-hidden">
+          <div className="alwaysfit-banner-track flex w-max items-center">
+            {[0, 1].map((copy) => (
+              <Link
+                key={copy}
+                to="/produtos"
+                aria-label={copy === 0 ? 'Conhecer a linha AlwaysFit' : undefined}
+                aria-hidden={copy === 1}
+                tabIndex={copy === 1 ? -1 : 0}
+                className="block shrink-0 overflow-hidden bg-white/60 outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50"
+                style={{ width: 'min(1100px, 92vw)' }}
+              >
+                <img
+                  src={faixaAlwaysFit}
+                  alt={copy === 0 ? 'Conheça a linha AlwaysFit — Código da Saúde' : ''}
+                  className="block h-auto w-full select-none"
+                  draggable={false}
+                />
+              </Link>
+            ))}
+          </div>
         </div>
+
+        <style>{`
+          .alwaysfit-banner-track {
+            animation: alwaysfit-banner-scroll 28s linear infinite;
+            will-change: transform;
+          }
+
+          .alwaysfit-banner-track:hover {
+            animation-play-state: paused;
+          }
+
+          @keyframes alwaysfit-banner-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .alwaysfit-banner-track {
+              animation-duration: 70s;
+            }
+          }
+        `}</style>
       </section>
     </main>
   )
