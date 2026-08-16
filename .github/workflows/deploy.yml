@@ -74,6 +74,23 @@ jobs:
           test "${TESTIMONIALS_SIZE}" = "56348"
           test "${TESTIMONIALS_SHA}" = "f6eeb6f1117f25e95d6979be8612160b14cf9f7bac7d8b07c4e70a413cd772a6"
 
+          rm -f public/assets/faixa-alwaysfit-codigo-saude.webp
+          cat \
+            src/assets/alwaysFitStrip/part00.txt \
+            src/assets/alwaysFitStrip/part01.txt \
+            src/assets/alwaysFitStrip/part02.txt \
+            src/assets/alwaysFitStrip/part03.txt \
+            src/assets/alwaysFitStrip/part04.txt \
+            src/assets/alwaysFitStrip/part05.txt \
+            | base64 -d > public/assets/faixa-alwaysfit-codigo-saude.webp
+
+          test -s public/assets/faixa-alwaysfit-codigo-saude.webp
+          ALWAYSFIT_SHA="$(sha256sum public/assets/faixa-alwaysfit-codigo-saude.webp | awk '{print $1}')"
+          ALWAYSFIT_SIZE="$(wc -c < public/assets/faixa-alwaysfit-codigo-saude.webp | tr -d ' ')"
+          echo "Faixa AlwaysFit: ${ALWAYSFIT_SIZE} bytes / ${ALWAYSFIT_SHA}" >> build.log
+          test "${ALWAYSFIT_SIZE}" = "57282"
+          test "${ALWAYSFIT_SHA}" = "60a76086c51d2b28eb8bdc7aa4f7b10afce32e9ad2f0e6e1b18c6dd962fd0a60"
+
           npx vite build >> build.log 2>&1
 
           test -f dist/assets/hero-final-clean-v3.webp
@@ -90,6 +107,11 @@ jobs:
           DIST_TESTIMONIALS_SHA="$(sha256sum dist/assets/testimonials-fold-v2-real.webp | awk '{print $1}')"
           echo "Depoimentos no dist: ${DIST_TESTIMONIALS_SHA}" >> build.log
           test "${DIST_TESTIMONIALS_SHA}" = "f6eeb6f1117f25e95d6979be8612160b14cf9f7bac7d8b07c4e70a413cd772a6"
+
+          test -f dist/assets/faixa-alwaysfit-codigo-saude.webp
+          DIST_ALWAYSFIT_SHA="$(sha256sum dist/assets/faixa-alwaysfit-codigo-saude.webp | awk '{print $1}')"
+          echo "Faixa AlwaysFit no dist: ${DIST_ALWAYSFIT_SHA}" >> build.log
+          test "${DIST_ALWAYSFIT_SHA}" = "60a76086c51d2b28eb8bdc7aa4f7b10afce32e9ad2f0e6e1b18c6dd962fd0a60"
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
