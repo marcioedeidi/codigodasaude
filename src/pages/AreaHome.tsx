@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import TestimonialGallery from '../components/TestimonialGallery'
 import ProductMarquee from '../components/ProductMarquee'
-import AlwaysFitMarquee from '../components/AlwaysFitMarquee'
 import alwaysFitImagePart1 from '../data/alwaysfitImagePart1'
 import alwaysFitImagePart2 from '../data/alwaysfitImagePart2'
 import alwaysFitImagePart3 from '../data/alwaysfitImagePart3'
@@ -11,6 +10,7 @@ import alwaysFitImagePart4 from '../data/alwaysfitImagePart4'
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
   const alwaysFitImage = `data:image/webp;base64,${alwaysFitImagePart1}${alwaysFitImagePart2}${alwaysFitImagePart3}${alwaysFitImagePart4}`
+  const faixaAlwaysFit = `${import.meta.env.BASE_URL}assets/faixa-alwaysfit-codigo-saude.webp?v=1`
 
   return (
     <main className="w-full bg-[#9fded7]">
@@ -54,7 +54,23 @@ const AreaHome: React.FC = () => {
       </section>
 
       <TestimonialGallery />
-      <AlwaysFitMarquee />
+
+      <section className="w-full overflow-hidden bg-[#eef7f4] py-8 md:py-10" aria-label="Linha AlwaysFit">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6">
+          <Link
+            to="/produtos"
+            aria-label="Conhecer a linha AlwaysFit"
+            className="block overflow-hidden rounded-[28px] bg-white/60 shadow-[0_12px_30px_rgba(28,103,92,0.10)] outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50"
+          >
+            <img
+              src={faixaAlwaysFit}
+              alt="Conheça a linha AlwaysFit — Código da Saúde"
+              className="block h-auto w-full"
+              draggable={false}
+            />
+          </Link>
+        </div>
+      </section>
     </main>
   )
 }
