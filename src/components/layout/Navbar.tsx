@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const navLinks = [
   { label: 'Início', to: '/inicio', icon: '⌂' },
   { label: 'Produtos', to: '/produtos', icon: '▢' },
-  { label: 'E-books', to: '/ebooks', icon: '▤' },
+  { label: 'E-books', to: '/inicio#ebooks', icon: '▤' },
   { label: 'Sobre nós', to: '/sobre', icon: '♡' },
   { label: 'Depoimentos', to: '/depoimentos', icon: '◯' },
 ]
@@ -22,7 +22,7 @@ const Navbar = () => {
     }`
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/70 bg-[linear-gradient(90deg,#bdeee8_0%,#91d9d0_50%,#bcebe6_100%)] shadow-[0_5px_22px_rgba(4,79,72,0.12)]">
+    <header className="sticky top-0 z-50 w-full border-b border-white/70 bg-[linear-gradient(90deg,#bdeee8_0%,#91d9d0_50%,#bcebe6_100%)] shadow-[0_5px_22px_rgba(4,79,72,0.12)]">
       <div className="mx-auto flex min-h-[104px] w-full max-w-[1536px] items-center justify-between gap-5 px-7 py-2 lg:px-10">
         <RouterLink to="/inicio" className="flex shrink-0 items-center" aria-label="Código da Saúde">
           <motion.img
