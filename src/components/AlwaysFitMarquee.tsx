@@ -7,17 +7,57 @@ type AlwaysFitItem = {
   image?: string
 }
 
+// Imagens oficiais da vitrine AlwaysFit.
+// Usamos <img> diretamente, em vez de SVG com <image>, para evitar
+// bloqueios de carregamento do navegador e problemas com lazy-loading
+// dentro de uma esteira horizontal animada.
 const items: AlwaysFitItem[] = [
   { name: 'Código da Saúde', kind: 'logo' },
-  { name: 'NAC', kind: 'product', image: 'assets/alwaysfit/nac.svg' },
-  { name: 'FIT DREAMS', kind: 'product', image: 'assets/alwaysfit/fit-dreams.svg' },
-  { name: 'FIT HAIR', kind: 'product', image: 'assets/alwaysfit/fit-hair.svg' },
-  { name: 'Vitaminas B6 B9 B12', kind: 'product', image: 'assets/alwaysfit/vitaminas-b6-b9-b12.svg' },
-  { name: 'Q10 Coenzima', kind: 'product', image: 'assets/alwaysfit/q10.svg' },
-  { name: 'PRO3 Magnésio', kind: 'product', image: 'assets/alwaysfit/pro3-magnesio.svg' },
-  { name: 'Picolinato de Cromo', kind: 'product', image: 'assets/alwaysfit/picolinato-cromo.svg' },
-  { name: 'PRO Curcumin', kind: 'product', image: 'assets/alwaysfit/pro-curcumin.svg' },
-  { name: 'FITS36', kind: 'product', image: 'assets/alwaysfit/fits36.svg' },
+  {
+    name: 'NAC',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-nac-01_4__11zon_1200x.webp?v=1762809255',
+  },
+  {
+    name: 'FIT DREAMS',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-fitdreams-01_2__11zon_1200x.webp?v=1758138598',
+  },
+  {
+    name: 'FIT HAIR',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-fithair-1frasco_11zon_5074b251-776e-45d5-974f-7fb2a8393ed3.webp?v=1761578728',
+  },
+  {
+    name: 'Vitaminas B6 B9 B12',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-metil-caps-01_11zon.webp?v=1775762206',
+  },
+  {
+    name: 'Q10 Coenzima',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-coq10-01_11zon.webp?v=1752256794',
+  },
+  {
+    name: 'PRO3 Magnésio',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-pro3-1frasco_1__11zon_1c68d9d8-5d77-4f5b-85c9-69b3cd767ca1_1200x.webp?v=1783636176',
+  },
+  {
+    name: 'Picolinato de Cromo',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-picolinato-1frasco_11zon_2_1200x.webp?v=1750724263',
+  },
+  {
+    name: 'PRO Curcumin',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-procurcumin-1frasco_11zon_a8e6cf0a-cdcb-4ed8-9958-d6a68f997165.webp?v=1775763718',
+  },
+  {
+    name: 'FITS36',
+    kind: 'product',
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-fits36-1frasco_11zon_800x.webp?v=1778598620',
+  },
 ]
 
 const AlwaysFitMarquee: React.FC = () => {
@@ -43,12 +83,12 @@ const AlwaysFitMarquee: React.FC = () => {
           <>
             <div className="flex h-full w-full items-center justify-center px-5 pb-8 pt-3">
               <img
-                src={`${import.meta.env.BASE_URL}${item.image}`}
+                src={item.image}
                 alt={duplicate ? '' : item.name}
                 className="max-h-[104px] w-auto max-w-[92%] object-contain transition duration-500 hover:scale-105"
                 draggable={false}
-                loading="lazy"
                 decoding="async"
+                referrerPolicy="no-referrer"
               />
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/95 via-[#073d37]/70 to-transparent px-3 pb-2 pt-7">
