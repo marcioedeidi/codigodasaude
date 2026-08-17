@@ -11,31 +11,38 @@ import ProtectedLayout from '../components/layout/ProtectedLayout'
 import Footer from '../components/layout/Footer'
 
 const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useLayoutEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }
 
-    const scrollTop = () => {
+    const scrollToTarget = () => {
+      if (hash) {
+        const target = document.getElementById(hash.slice(1))
+        if (target) {
+          target.scrollIntoView({ behavior: 'auto', block: 'start' })
+          return
+        }
+      }
+
       window.scrollTo(0, 0)
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
     }
 
-    scrollTop()
-
-    const frame1 = window.requestAnimationFrame(scrollTop)
+    scrollToTarget()
+    const frame1 = window.requestAnimationFrame(scrollToTarget)
     const frame2 = window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(scrollTop)
+      window.requestAnimationFrame(scrollToTarget)
     })
 
     return () => {
       window.cancelAnimationFrame(frame1)
       window.cancelAnimationFrame(frame2)
     }
-  }, [pathname])
+  }, [pathname, hash])
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
