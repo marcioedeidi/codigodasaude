@@ -1,12 +1,11 @@
 import React, { useEffect, useLayoutEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Home from '../pages/Home'
 import AreaHome from '../pages/AreaHome'
 import Cadastro from '../pages/Cadastro'
 import Produtos from '../pages/Produtos'
 import FiberSlim from '../pages/FiberSlim'
 import Depoimentos from '../pages/Depoimentos'
-import Ebooks from '../pages/Ebooks'
 import Sobre from '../pages/Sobre'
 import ProtectedLayout from '../components/layout/ProtectedLayout'
 import Footer from '../components/layout/Footer'
@@ -27,8 +26,6 @@ const ScrollToTop: React.FC = () => {
 
     scrollTop()
 
-    // O navegador pode tentar restaurar a posição antiga depois da troca de rota.
-    // Reforçamos o topo após o próximo ciclo de pintura para impedir isso.
     const frame1 = window.requestAnimationFrame(scrollTop)
     const frame2 = window.requestAnimationFrame(() => {
       window.requestAnimationFrame(scrollTop)
@@ -70,7 +67,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/fiberslim" element={<FiberSlim />} />
           <Route path="/depoimentos" element={<Depoimentos />} />
-          <Route path="/ebooks" element={<Ebooks />} />
+          <Route path="/ebooks" element={<Navigate to="/inicio#ebooks" replace />} />
           <Route path="/sobre" element={<Sobre />} />
         </Route>
       </Routes>
