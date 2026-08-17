@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import TestimonialGallery from '../components/TestimonialGallery'
 import ProductMarquee from '../components/ProductMarquee'
 import AlwaysFitMarquee from '../components/AlwaysFitMarquee'
+import Ebooks from './Ebooks'
 import alwaysFitImagePart1 from '../data/alwaysfitImagePart1'
 import alwaysFitImagePart2 from '../data/alwaysfitImagePart2'
 import alwaysFitImagePart3 from '../data/alwaysfitImagePart3'
@@ -58,6 +59,9 @@ const AreaHome: React.FC = () => {
 
       <TestimonialGallery brand="alwaysfit" />
       <AlwaysFitMarquee />
+
+      {/* E-BOOKS: sempre abaixo da esteira AlwaysFit */}
+      <Ebooks />
     </main>
   )
 }
