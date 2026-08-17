@@ -2,50 +2,38 @@ import React, { useState } from 'react'
 
 type TestimonialVideo = {
   src: string
-  fallbackSrc: string
   label: string
 }
 
-const videos: TestimonialVideo[] = [
-  {
-    src: 'videos/VID-20260813-WA0022.mp4',
-    fallbackSrc: 'videos/VID-20260710-WA0034.mp4',
-    label: 'Depoimento 1',
-  },
-  {
-    src: 'videos/VID-20260813-WA0023.mp4',
-    fallbackSrc: 'videos/VID-20260710-WA0037.mp4',
-    label: 'Depoimento 2',
-  },
-  {
-    src: 'videos/VID-20260813-WA0024.mp4',
-    fallbackSrc: 'videos/VID-20260710-WA0039.mp4',
-    label: 'Depoimento 3',
-  },
-  {
-    src: 'videos/VID-20260813-WA0025.mp4',
-    fallbackSrc: 'videos/VID-20260710-WA0040.mp4',
-    label: 'Depoimento 4',
-  },
-  {
-    src: 'videos/VID-20260813-WA0026.mp4',
-    fallbackSrc: 'videos/VID_20260711_202934_087.mp4',
-    label: 'Depoimento 5',
-  },
-  {
-    src: 'videos/VID-20260813-WA0027.mp4',
-    fallbackSrc: 'videos/VID_20260711_203427_248.mp4',
-    label: 'Depoimento 6',
-  },
-  {
-    src: 'videos/VID-20260813-WA0028.mp4',
-    fallbackSrc: 'videos/VID_20260711_203605_713.mp4',
-    label: 'Depoimento 7',
-  },
+type Brand = 'velmora' | 'alwaysfit'
+
+const velmoraVideos: TestimonialVideo[] = [
+  { src: 'videos/VID-20260710-WA0034.mp4', label: 'Depoimento 1' },
+  { src: 'videos/VID-20260710-WA0037.mp4', label: 'Depoimento 2' },
+  { src: 'videos/VID-20260710-WA0039.mp4', label: 'Depoimento 3' },
+  { src: 'videos/VID-20260710-WA0040.mp4', label: 'Depoimento 4' },
+  { src: 'videos/VID_20260711_202934_087.mp4', label: 'Depoimento 5' },
+  { src: 'videos/VID_20260711_203427_248.mp4', label: 'Depoimento 6' },
+  { src: 'videos/VID_20260711_203605_713.mp4', label: 'Depoimento 7' },
+  { src: 'videos/VID_20260711_203747_736.mp4', label: 'Depoimento 8' },
+  { src: 'videos/VID_20260711_204757_995.mp4.mov', label: 'Depoimento 9' },
 ]
 
-const TestimonialGallery: React.FC = () => {
+const alwaysFitVideos: TestimonialVideo[] = [
+  { src: 'videos/VID-20260813-WA0022.mp4', label: 'Depoimento 1' },
+  { src: 'videos/VID-20260813-WA0023.mp4', label: 'Depoimento 2' },
+  { src: 'videos/VID-20260813-WA0024.mp4', label: 'Depoimento 3' },
+  { src: 'videos/VID-20260813-WA0025.mp4', label: 'Depoimento 4' },
+  { src: 'videos/VID-20260813-WA0026.mp4', label: 'Depoimento 5' },
+  { src: 'videos/VID-20260813-WA0027.mp4', label: 'Depoimento 6' },
+  { src: 'videos/VID-20260813-WA0028.mp4', label: 'Depoimento 7' },
+]
+
+const TestimonialGallery: React.FC<{ brand?: Brand }> = ({ brand = 'velmora' }) => {
   const [activeVideo, setActiveVideo] = useState<TestimonialVideo | null>(null)
+  const videos = brand === 'alwaysfit' ? alwaysFitVideos : velmoraVideos
+  const isAlwaysFit = brand === 'alwaysfit'
+  const brandName = isAlwaysFit ? 'Always Fit' : 'Velmora'
 
   const getVideoUrl = (src: string) => `${import.meta.env.BASE_URL}${src}`
 
@@ -62,27 +50,17 @@ const TestimonialGallery: React.FC = () => {
     }
   }
 
-  const useFallback = (video: HTMLVideoElement, fallbackSrc: string) => {
-    const fallbackUrl = getVideoUrl(fallbackSrc)
-
-    if (video.dataset.fallbackLoaded === '1' || video.currentSrc === fallbackUrl) return
-
-    video.dataset.fallbackLoaded = '1'
-    video.src = fallbackUrl
-    video.load()
-  }
-
   return (
     <>
       <section
-        id="depoimentos-grade"
+        id={`depoimentos-${brand}`}
         className="w-full bg-[#f3f8f3] px-3 py-10 sm:px-5 md:py-14"
-        aria-label="Depoimentos em vídeo de clientes"
+        aria-label={`Depoimentos em vídeo da ${brandName}`}
       >
         <div className="mx-auto w-full max-w-[1420px]">
           <div className="mb-8 text-center md:mb-10">
             <span className="inline-flex rounded-full border border-[#8fd1c6] bg-[#def3ee] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-[#146d63] sm:text-sm">
-              Depoimentos em vídeo
+              Depoimentos em vídeo — {brandName}
             </span>
 
             <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-[#10372f] sm:text-4xl md:text-5xl">
@@ -96,7 +74,7 @@ const TestimonialGallery: React.FC = () => {
             </div>
 
             <p className="mx-auto mt-3 max-w-3xl text-base font-semibold leading-relaxed text-[#235e55] sm:text-lg">
-              Assista aos relatos de pessoas que decidiram compartilhar a própria experiência.
+              Assista aos relatos de pessoas que decidiram compartilhar a própria experiência com a {brandName}.
             </p>
           </div>
 
@@ -106,7 +84,7 @@ const TestimonialGallery: React.FC = () => {
                 key={video.src}
                 type="button"
                 onClick={() => setActiveVideo(video)}
-                aria-label={`Assistir ${video.label}`}
+                aria-label={`Assistir ${video.label} da ${brandName}`}
                 className="group relative aspect-[9/16] w-[calc(50%-0.375rem)] max-w-[260px] overflow-hidden rounded-[22px] border-[5px] border-white bg-[#dcefe9] text-left shadow-[0_12px_28px_rgba(29,91,80,0.16)] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(29,91,80,0.22)] focus-visible:ring-4 focus-visible:ring-[#168f82]/60 sm:w-[calc(33.333%-0.85rem)] lg:w-[calc(25%-0.95rem)]"
               >
                 <video
@@ -117,7 +95,6 @@ const TestimonialGallery: React.FC = () => {
                   aria-hidden="true"
                   tabIndex={-1}
                   onLoadedMetadata={(event) => positionPreviewFrame(event.currentTarget)}
-                  onError={(event) => useFallback(event.currentTarget, video.fallbackSrc)}
                   className="pointer-events-none absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"
                 />
 
@@ -178,7 +155,6 @@ const TestimonialGallery: React.FC = () => {
               autoPlay
               playsInline
               preload="metadata"
-              onError={(event) => useFallback(event.currentTarget, activeVideo.fallbackSrc)}
               className="max-h-[88vh] w-full bg-black object-contain"
             >
               Seu navegador não conseguiu reproduzir este vídeo.
