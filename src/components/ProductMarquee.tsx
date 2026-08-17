@@ -26,7 +26,7 @@ const items: MarqueeItem[] = [
 
 const ProductMarquee: React.FC = () => {
   const logo = `${import.meta.env.BASE_URL}assets/logo-small.webp`
-  const productsArtwork = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=faixa-produtos-3`
+  const productsArtwork = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=faixa-produtos-4`
   const loopItems = [...items, ...items]
 
   return (
