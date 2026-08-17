@@ -14,6 +14,7 @@ const AreaHome: React.FC = () => {
 
   return (
     <main className="w-full bg-[#9fded7]">
+      {/* VELMORA: HERO → DEPOIMENTOS → ESTEIRA */}
       <section className="w-full overflow-hidden">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 920' }}>
           <img
@@ -35,8 +36,10 @@ const AreaHome: React.FC = () => {
         </div>
       </section>
 
+      <TestimonialGallery brand="velmora" />
       <ProductMarquee />
 
+      {/* ALWAYS FIT: HERO → DEPOIMENTOS → ESTEIRA */}
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1100 / 619' }}>
           <img
@@ -53,7 +56,7 @@ const AreaHome: React.FC = () => {
         </div>
       </section>
 
-      <TestimonialGallery />
+      <TestimonialGallery brand="alwaysfit" />
       <AlwaysFitMarquee />
     </main>
   )
