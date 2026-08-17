@@ -22,6 +22,14 @@ const Cadastro: React.FC = () => {
       JSON.stringify({ nome: nome.trim(), whatsapp: telefoneLimpo })
     )
 
+    // Garante que o acesso recém-liberado sempre comece no topo da página inicial.
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+
     navigate('/inicio', { replace: true })
   }
 
