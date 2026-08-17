@@ -22,36 +22,27 @@ const AreaHome: React.FC = () => {
           <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[57.28%] z-20 h-[8.92%] w-[12.30%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
         </div>
       </section>
-
       <TestimonialGallery brand="velmora" />
       <ProductMarquee />
-
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1100 / 619' }}>
           <img src={alwaysFitImage} alt="AlwaysFit — suplementos selecionados para equilíbrio, energia e bem-estar" className="absolute inset-0 block h-full w-full select-none object-cover" draggable={false} />
           <Link to="/produtos" aria-label="Conhecer os produtos AlwaysFit" className="absolute left-[7.1%] top-[63.5%] z-20 h-[7.4%] w-[19.8%] rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
         </div>
       </section>
-
       <TestimonialGallery brand="alwaysfit" />
       <AlwaysFitMarquee />
-
-      {/* E-BOOKS HERO */}
-      <section id="ebooks" className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#9fded7] scroll-mt-[104px]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(255,255,255,0.55),transparent_42%),radial-gradient(circle_at_82%_45%,rgba(22,139,128,0.12),transparent_45%)]" />
-        <div className="relative mx-auto grid min-h-screen w-full max-w-[1536px] grid-cols-1 items-center gap-8 px-6 py-16 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:px-14 lg:py-12">
-          <div className="flex h-full min-h-[75vh] items-center justify-center lg:justify-start">
-            <img
-              src={ebookImage}
-              alt="E-book Código da Saúde"
-              className="block h-[72vh] w-auto max-w-full object-contain drop-shadow-[0_30px_60px_rgba(8,70,63,0.28)] sm:h-[78vh] lg:h-[84vh]"
-              draggable={false}
-            />
-          </div>
-          <div className="flex flex-col justify-center text-center lg:text-left">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#126f67]">Conteúdo exclusivo</p>
-            <h2 className="mt-4 text-5xl font-bold leading-[1.02] text-[#10372f] sm:text-6xl lg:text-7xl">E-books Código da Saúde</h2>
-            <p className="mt-7 text-xl leading-9 text-[#355b54] lg:text-2xl">Conhecimento para ajudar você a fazer escolhas mais conscientes e cuidar melhor da sua rotina.</p>
+      <section id="ebooks" className="w-full bg-[#9fded7] scroll-mt-[104px]">
+        <div className="mx-auto flex min-h-[620px] w-full max-w-[1536px] items-center px-6 py-14 sm:px-10 lg:min-h-[680px] lg:px-14 lg:py-16">
+          <div className="grid w-full items-center gap-10 md:grid-cols-2 lg:gap-16">
+            <div className="flex h-full min-h-[500px] items-center justify-center">
+              <img src={ebookImage} alt="E-book Código da Saúde" className="block h-[500px] w-auto max-w-full object-contain drop-shadow-[0_22px_42px_rgba(8,70,63,0.22)] sm:h-[560px] lg:h-[600px]" draggable={false} />
+            </div>
+            <div className="flex flex-col justify-center text-center md:text-left">
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-[#126f67]">Conteúdo exclusivo</p>
+              <h2 className="mt-4 text-4xl font-bold leading-tight text-[#10372f] sm:text-5xl lg:text-6xl">E-books Código da Saúde</h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-[#355b54] sm:text-xl">Conhecimento para ajudar você a fazer escolhas mais conscientes e cuidar melhor da sua rotina.</p>
+            </div>
           </div>
         </div>
       </section>
