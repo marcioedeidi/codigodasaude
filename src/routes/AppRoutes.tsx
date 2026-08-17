@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Home from '../pages/Home'
 import AreaHome from '../pages/AreaHome'
@@ -14,9 +14,37 @@ import Footer from '../components/layout/Footer'
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation()
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  useLayoutEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+
+    const scrollTop = () => {
+      window.scrollTo(0, 0)
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }
+
+    scrollTop()
+
+    // O navegador pode tentar restaurar a posição antiga depois da troca de rota.
+    // Reforçamos o topo após o próximo ciclo de pintura para impedir isso.
+    const frame1 = window.requestAnimationFrame(scrollTop)
+    const frame2 = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(scrollTop)
+    })
+
+    return () => {
+      window.cancelAnimationFrame(frame1)
+      window.cancelAnimationFrame(frame2)
+    }
   }, [pathname])
+
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
 
   return null
 }
