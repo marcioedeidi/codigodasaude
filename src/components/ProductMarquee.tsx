@@ -16,17 +16,17 @@ const items: MarqueeItem[] = [
   { name: 'Velmo Black Cápsulas', kind: 'product', x: '54%', y: '30%', size: '520% auto' },
   { name: 'Creatina Gummy', kind: 'product', x: '77%', y: '30%', size: '520% auto' },
   { name: 'Fiber Slim', kind: 'product', x: '96%', y: '30%', size: '520% auto' },
-  { name: 'Termo Drink', kind: 'product', x: '4%', y: '91%', size: '650% auto' },
-  { name: 'CreaGym', kind: 'product', x: '22%', y: '91%', size: '650% auto' },
-  { name: 'Skin-Fit', kind: 'product', x: '38%', y: '91%', size: '650% auto' },
-  { name: 'Movimint', kind: 'product', x: '56%', y: '91%', size: '650% auto' },
-  { name: 'Calminol', kind: 'product', x: '74%', y: '91%', size: '650% auto' },
-  { name: 'HeyHair', kind: 'product', x: '93%', y: '91%', size: '650% auto' },
+  { name: 'Termo Drink', kind: 'product', x: '4%', y: '90%', size: '540% auto' },
+  { name: 'CreaGym', kind: 'product', x: '22%', y: '90%', size: '540% auto' },
+  { name: 'Skin-Fit', kind: 'product', x: '38%', y: '90%', size: '540% auto' },
+  { name: 'Movimint', kind: 'product', x: '56%', y: '90%', size: '540% auto' },
+  { name: 'Calminol', kind: 'product', x: '74%', y: '90%', size: '540% auto' },
+  { name: 'HeyHair', kind: 'product', x: '93%', y: '90%', size: '540% auto' },
 ]
 
 const ProductMarquee: React.FC = () => {
   const logo = `${import.meta.env.BASE_URL}assets/logo-small.webp`
-  const productsArtwork = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=faixa-produtos-1`
+  const productsArtwork = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=faixa-produtos-2`
   const loopItems = [...items, ...items]
 
   return (
