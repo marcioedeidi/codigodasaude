@@ -4,29 +4,29 @@ import { Link } from 'react-router-dom'
 type AlwaysFitItem = {
   name: string
   kind: 'logo' | 'product'
-  x?: string
+  image?: string
 }
 
 const items: AlwaysFitItem[] = [
   { name: 'Código da Saúde', kind: 'logo' },
-  { name: 'NAC', kind: 'product', x: '15%' },
-  { name: 'FIT DREAMS', kind: 'product', x: '28%' },
-  { name: 'FIT HAIR', kind: 'product', x: '41%' },
-  { name: 'Vitaminas B6 B9 B12', kind: 'product', x: '53%' },
-  { name: 'Q10 Coenzima', kind: 'product', x: '66%' },
-  { name: 'PRO+ Magnésio', kind: 'product', x: '79%' },
-  { name: 'PRO Curcumin', kind: 'product', x: '92%' },
-  { name: 'FITS36', kind: 'product', x: '100%' },
+  { name: 'NAC', kind: 'product', image: 'assets/alwaysfit/nac.webp' },
+  { name: 'FIT DREAMS', kind: 'product', image: 'assets/alwaysfit/fit-dreams.webp' },
+  { name: 'FIT HAIR', kind: 'product', image: 'assets/alwaysfit/fit-hair.webp' },
+  { name: 'Vitaminas B6 B9 B12', kind: 'product', image: 'assets/alwaysfit/vitaminas-b6-b9-b12.webp' },
+  { name: 'Q10 Coenzima', kind: 'product', image: 'assets/alwaysfit/q10.webp' },
+  { name: 'PRO3 Magnésio', kind: 'product', image: 'assets/alwaysfit/pro3-magnesio.webp' },
+  { name: 'Picolinato de Cromo', kind: 'product', image: 'assets/alwaysfit/picolinato-cromo.webp' },
+  { name: 'PRO Curcumin', kind: 'product', image: 'assets/alwaysfit/pro-curcumin.webp' },
+  { name: 'FITS36', kind: 'product', image: 'assets/alwaysfit/fits36.webp' },
 ]
 
 const AlwaysFitMarquee: React.FC = () => {
   const logo = `${import.meta.env.BASE_URL}assets/logo-small.webp`
-  const artwork = `${import.meta.env.BASE_URL}assets/faixa-alwaysfit-codigo-saude.webp?v=4`
   const loopItems = [...items, ...items]
 
   return (
     <section
-      className="w-full overflow-hidden bg-[linear-gradient(180deg,#e8f8f4_0%,#d2f0ea_100%)] py-8 md:py-10"
+      className="w-full overflow-hidden bg-[linear-gradient(180deg,#e8f8f4_0%,#d2f0ea_100%)] py-7 md:py-9"
       aria-label="Conheça a linha AlwaysFit"
     >
       <div className="mx-auto mb-5 flex w-full max-w-[1420px] items-end justify-between gap-4 px-4 sm:px-6">
@@ -51,7 +51,7 @@ const AlwaysFitMarquee: React.FC = () => {
             {loopItems.map((item, index) => (
               <div
                 key={`${item.name}-${index}`}
-                className="relative h-[126px] w-[174px] shrink-0 overflow-hidden rounded-[22px] border-[3px] border-white bg-[#eaf7f3] shadow-[0_10px_24px_rgba(23,91,80,0.16)] sm:h-[140px] sm:w-[194px]"
+                className="relative flex h-[138px] w-[176px] shrink-0 items-center justify-center overflow-hidden rounded-[22px] border-[3px] border-white bg-white shadow-[0_10px_24px_rgba(23,91,80,0.16)] sm:h-[150px] sm:w-[194px]"
                 aria-hidden={index >= items.length}
               >
                 {item.kind === 'logo' ? (
@@ -59,21 +59,22 @@ const AlwaysFitMarquee: React.FC = () => {
                     <img
                       src={logo}
                       alt="Código da Saúde"
-                      className="max-h-[104px] w-auto max-w-full object-contain"
+                      className="max-h-[100px] w-auto max-w-[90%] object-contain"
                       draggable={false}
                     />
                   </div>
                 ) : (
                   <>
-                    <div
-                      className="absolute inset-0 scale-[1.03] bg-no-repeat transition duration-500 group-hover:scale-[1.07]"
-                      style={{
-                        backgroundImage: `url(${artwork})`,
-                        backgroundSize: '520% auto',
-                        backgroundPosition: `${item.x} 67%`,
-                      }}
-                    />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/90 via-[#073d37]/55 to-transparent px-3 pb-2 pt-8">
+                    <div className="flex h-full w-full items-center justify-center px-5 pb-8 pt-3">
+                      <img
+                        src={`${import.meta.env.BASE_URL}${item.image}`}
+                        alt={item.name}
+                        className="max-h-[104px] w-auto max-w-[92%] object-contain transition duration-500 hover:scale-105"
+                        draggable={false}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/95 via-[#073d37]/70 to-transparent px-3 pb-2 pt-7">
                       <p className="truncate text-center text-xs font-black text-white sm:text-sm">{item.name}</p>
                     </div>
                   </>
