@@ -1,8 +1,7 @@
 import React from 'react'
+import ebookImage from '../assets/livros/file_00000000e974820ea169cab1c1a81f5b.png'
 
 const Ebooks: React.FC = () => {
-  const ebookImage = `${import.meta.env.BASE_URL}assets/livros/file_00000000e974820ea169cab1c1a81f5b.png`
-
   return (
     <section
       id="ebooks"
