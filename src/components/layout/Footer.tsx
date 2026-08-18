@@ -1,3 +1,5 @@
+import footerImage from '../../assets/footer/rodape.png'
+
 const Footer = () => {
   const items = [
     { icon: '◇', title: 'Compra Segura', text: 'Seus dados e pagamentos protegidos.' },
@@ -8,6 +10,14 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#f2ead6] px-4 pb-6 pt-4">
+      <div className="w-full overflow-hidden">
+        <img
+          src={footerImage}
+          alt="Código da Saúde — rodapé"
+          className="block h-auto w-full max-w-none object-cover"
+          draggable={false}
+        />
+      </div>
       <div className="container-max overflow-hidden rounded-[2rem] bg-[#0b8e88] text-white shadow-xl shadow-[#0b615d]/10">
         <div className="grid divide-y divide-white/25 md:grid-cols-4 md:divide-x md:divide-y-0">
           {items.map((item) => (
