@@ -10,11 +10,12 @@ const Ebooks: React.FC = () => {
     >
       <div className="mx-auto flex min-h-[calc(100vh-104px)] w-full max-w-[1536px] items-center px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
         <div className="grid w-full items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
-          <div className="flex w-full items-center justify-center">
+          <div className="flex w-full items-center justify-center overflow-hidden">
             <img
               src={ebookImage}
               alt="E-book Código da Saúde"
               className="block max-h-[72vh] w-auto max-w-full rounded-[24px] object-contain shadow-[0_20px_45px_rgba(8,70,63,0.22)]"
+              style={{ clipPath: 'inset(14% 0 14% 0)' }}
               draggable={false}
             />
           </div>
