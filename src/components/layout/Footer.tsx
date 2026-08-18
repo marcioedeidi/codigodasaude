@@ -10,12 +10,12 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#f2ead6] px-4 pb-6 pt-4">
-      <div className="w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden" style={{ aspectRatio: '1536 / 788' }}>
         <img
           src={footerImage}
           alt="Código da Saúde — rodapé"
-          className="block h-auto w-full max-w-none object-cover"
-          style={{ clipPath: 'inset(14% 0 9% 0)' }}
+          className="absolute left-0 top-0 block h-auto w-full max-w-none object-cover"
+          style={{ transform: 'translateY(-14.453125%)' }}
           draggable={false}
         />
       </div>
