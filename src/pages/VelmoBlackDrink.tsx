@@ -48,7 +48,7 @@ const VelmoBlackDrink: React.FC = () => {
         </div>
       </section>
 
-      <TestimonialGallery brand="velmora" />
+      <TestimonialGallery brand="velmora" videoIndexes={[2, 4, 8]} />
     </main>
   )
 }
