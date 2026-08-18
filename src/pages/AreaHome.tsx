@@ -17,13 +17,7 @@ const AreaHome: React.FC = () => {
     <main className="w-full bg-[#9fded7]">
       <section className="w-full overflow-hidden">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 788' }}>
-          <img
-            src={heroImage}
-            alt="Código da Saúde — Velmo Black Drink, e-book exclusivo e benefícios"
-            className="absolute left-0 top-0 block h-auto w-full max-w-none select-none object-cover"
-            style={{ transform: 'translateY(-14.453125%)' }}
-            draggable={false}
-          />
+          <img src={heroImage} alt="Código da Saúde — Velmo Black Drink, e-book exclusivo e benefícios" className="absolute left-0 top-0 block h-auto w-full max-w-none select-none object-cover" style={{ transform: 'translateY(-14.453125%)' }} draggable={false} />
           <Link to="/produtos" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
           <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[48.10%] z-20 h-[10.66%] w-[12.30%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
         </div>
@@ -40,27 +34,10 @@ const AreaHome: React.FC = () => {
       <AlwaysFitMarquee />
       <section id="ebooks" className="w-full overflow-hidden bg-[#9fded7] scroll-mt-[104px]">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 790' }}>
-          <img
-            src={ebookImage}
-            alt="E-books Código da Saúde"
-            className="absolute left-0 top-0 block h-auto w-full max-w-none object-cover"
-            style={{ transform: 'translateY(-12.109375%)' }}
-            draggable={false}
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 bottom-0 z-20 h-[18%] bg-[#9fded7]"
-          />
-          <Link
-            to="/cadastro"
-            aria-label="Quero este E-book — Mulher Forte, Mente Cansada"
-            className="absolute left-[27.0%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70"
-          />
-          <Link
-            to="/cadastro"
-            aria-label="Quero este E-book — Mude sua Mente, Transforme sua Vida"
-            className="absolute left-[73.5%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70"
-          />
+          <img src={ebookImage} alt="E-books Código da Saúde" className="absolute left-0 top-0 block h-auto w-full max-w-none object-cover" style={{ transform: 'translateY(-12.109375%)' }} draggable={false} />
+          <div aria-hidden="true" className="absolute inset-x-0 bottom-0 z-20 h-[30%] bg-[#9fded7]" />
+          <Link to="/cadastro" aria-label="Quero este E-book — Mulher Forte, Mente Cansada" className="absolute left-[27.0%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70" />
+          <Link to="/cadastro" aria-label="Quero este E-book — Mude sua Mente, Transforme sua Vida" className="absolute left-[73.5%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70" />
         </div>
       </section>
     </main>
