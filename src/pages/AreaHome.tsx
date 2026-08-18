@@ -35,7 +35,6 @@ const AreaHome: React.FC = () => {
       <section id="ebooks" className="w-full overflow-hidden bg-[#9fded7] scroll-mt-[104px]">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 790' }}>
           <img src={ebookImage} alt="E-books Código da Saúde" className="absolute left-0 top-0 block h-auto w-full max-w-none object-cover" style={{ transform: 'translateY(-12.109375%)' }} draggable={false} />
-          <div aria-hidden="true" className="absolute inset-x-0 bottom-0 z-20 h-[30%] bg-[#9fded7]" />
           <Link to="/cadastro" aria-label="Quero este E-book — Mulher Forte, Mente Cansada" className="absolute left-[27.0%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70" />
           <Link to="/cadastro" aria-label="Quero este E-book — Mude sua Mente, Transforme sua Vida" className="absolute left-[73.5%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70" />
         </div>
