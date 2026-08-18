@@ -7,6 +7,7 @@ import alwaysFitImagePart1 from '../data/alwaysfitImagePart1'
 import alwaysFitImagePart2 from '../data/alwaysfitImagePart2'
 import alwaysFitImagePart3 from '../data/alwaysfitImagePart3'
 import alwaysFitImagePart4 from '../data/alwaysfitImagePart4'
+import footerImage from '../assets/footer/rodape.png'
 
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
@@ -34,6 +35,9 @@ const AreaHome: React.FC = () => {
       <AlwaysFitMarquee />
       <section id="ebooks" className="w-full overflow-hidden bg-[#9fded7] scroll-mt-[104px]">
         <img src={ebookImage} alt="E-books Código da Saúde" className="block h-auto w-full max-w-none object-cover" draggable={false} />
+      </section>
+      <section className="w-full overflow-hidden bg-[#9fded7]" aria-label="Rodapé">
+        <img src={footerImage} alt="Código da Saúde — rodapé" className="block h-auto w-full max-w-none object-cover" draggable={false} />
       </section>
     </main>
   )
