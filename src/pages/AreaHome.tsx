@@ -47,6 +47,16 @@ const AreaHome: React.FC = () => {
             style={{ transform: 'translateY(-12.109375%)' }}
             draggable={false}
           />
+          <Link
+            to="/cadastro"
+            aria-label="Quero este E-book — Mulher Forte, Mente Cansada"
+            className="absolute left-[27.0%] top-[67.0%] z-30 h-[7.5%] w-[16.5%] rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70"
+          />
+          <Link
+            to="/cadastro"
+            aria-label="Quero este E-book — Mude sua Mente, Transforme sua Vida"
+            className="absolute left-[73.5%] top-[67.0%] z-30 h-[7.5%] w-[16.5%] rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70"
+          />
         </div>
       </section>
     </main>
