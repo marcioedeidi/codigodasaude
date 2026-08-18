@@ -30,11 +30,6 @@ const Produtos: React.FC = () => {
   const pageImage = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=produtos-v3-fiel`
 
   const handleProductClick = (name: string) => {
-    if (name === 'Fiber Slim') {
-      navigate('/fiberslim')
-      return
-    }
-
     setSelected(name)
 
     if (timerRef.current) {
@@ -81,7 +76,7 @@ const Produtos: React.FC = () => {
 
       {selected && (
         <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-2xl md:text-base">
-          {selected} selecionado. Depois vamos ligar este botão à página do produto.
+          {selected} selecionado. Vamos preparar a página individual deste produto.
         </div>
       )}
     </main>
