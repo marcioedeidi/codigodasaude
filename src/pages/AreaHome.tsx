@@ -47,6 +47,10 @@ const AreaHome: React.FC = () => {
             style={{ transform: 'translateY(-12.109375%)' }}
             draggable={false}
           />
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 z-20 h-[18%] bg-[#9fded7]"
+          />
           <Link
             to="/cadastro"
             aria-label="Quero este E-book — Mulher Forte, Mente Cansada"
