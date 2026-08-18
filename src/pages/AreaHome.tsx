@@ -16,10 +16,16 @@ const AreaHome: React.FC = () => {
   return (
     <main className="w-full bg-[#9fded7]">
       <section className="w-full overflow-hidden">
-        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 920' }}>
-          <img src={heroImage} alt="Código da Saúde — Velmo Black Drink, e-book exclusivo e benefícios" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
-          <Link to="/produtos" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[57.28%] z-20 h-[8.92%] w-[22.40%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
-          <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[57.28%] z-20 h-[8.92%] w-[12.30%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
+        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 788' }}>
+          <img
+            src={heroImage}
+            alt="Código da Saúde — Velmo Black Drink, e-book exclusivo e benefícios"
+            className="absolute left-0 top-0 block h-auto w-full max-w-none select-none object-cover"
+            style={{ transform: 'translateY(-14.453125%)' }}
+            draggable={false}
+          />
+          <Link to="/produtos" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
+          <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[48.10%] z-20 h-[10.66%] w-[12.30%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
         </div>
       </section>
       <TestimonialGallery brand="velmora" />
@@ -33,12 +39,12 @@ const AreaHome: React.FC = () => {
       <TestimonialGallery brand="alwaysfit" />
       <AlwaysFitMarquee />
       <section id="ebooks" className="w-full overflow-hidden bg-[#9fded7] scroll-mt-[104px]">
-        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 648' }}>
+        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 790' }}>
           <img
             src={ebookImage}
             alt="E-books Código da Saúde"
             className="absolute left-0 top-0 block h-auto w-full max-w-none object-cover"
-            style={{ transform: 'translateY(-14%)' }}
+            style={{ transform: 'translateY(-12.109375%)' }}
             draggable={false}
           />
         </div>
