@@ -15,6 +15,7 @@ const Footer = () => {
           src={footerImage}
           alt="Código da Saúde — rodapé"
           className="block h-auto w-full max-w-none object-cover"
+          style={{ clipPath: 'inset(4% 0 0 0)' }}
           draggable={false}
         />
       </div>
