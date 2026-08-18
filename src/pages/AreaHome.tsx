@@ -33,7 +33,15 @@ const AreaHome: React.FC = () => {
       <TestimonialGallery brand="alwaysfit" />
       <AlwaysFitMarquee />
       <section id="ebooks" className="w-full overflow-hidden bg-[#9fded7] scroll-mt-[104px]">
-        <img src={ebookImage} alt="E-books Código da Saúde" className="block h-auto w-full max-w-none object-cover" style={{ clipPath: 'inset(4% 0 0 0)' }} draggable={false} />
+        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 648' }}>
+          <img
+            src={ebookImage}
+            alt="E-books Código da Saúde"
+            className="absolute left-0 top-0 block h-auto w-full max-w-none object-cover"
+            style={{ transform: 'translateY(-14%)' }}
+            draggable={false}
+          />
+        </div>
       </section>
     </main>
   )
