@@ -1,10 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import TestimonialGallery from '../components/TestimonialGallery'
+import productImage from '../assets/Produtos/file_000000004f3c820e826c84ffe787e1d6.png'
 
 const VelmoBlackDrink: React.FC = () => {
   const navigate = useNavigate()
-  const productImage = `${import.meta.env.BASE_URL}assets/Produtos/file_000000004f3c820e826c84ffe787e1d6.png`
 
   return (
     <main className="w-full bg-[#f3f8f3]">
