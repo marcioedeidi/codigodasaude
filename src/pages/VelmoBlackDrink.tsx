@@ -10,31 +10,32 @@ const VelmoBlackDrink: React.FC = () => {
     <main className="w-full bg-[#f3f8f3]">
       <section className="w-full px-4 py-8 sm:px-6 md:py-12">
         <div className="mx-auto w-full max-w-[1400px]">
-          <div className="overflow-hidden rounded-[32px] bg-white shadow-[0_18px_55px_rgba(15,91,82,0.12)]">
+          <div className="relative w-full rounded-[32px] bg-white shadow-[0_18px_55px_rgba(15,91,82,0.12)]">
             <img
               src={productImage}
               alt="Velmo Black Drink — opções e preços"
-              className="block h-auto w-full object-contain"
+              className="block h-auto w-full rounded-[32px] object-contain"
               draggable={false}
             />
-            <div className="relative -mt-[18%] h-[18%] min-h-[70px] w-full">
+
+            <div className="absolute inset-0">
               <button
                 type="button"
                 aria-label="Comprar 1 pote — R$ 209,90"
                 onClick={() => undefined}
-                className="absolute left-[4%] top-[8%] h-[84%] w-[29%] cursor-pointer bg-transparent"
+                className="absolute left-[4%] bottom-[5%] h-[9%] w-[29%] cursor-pointer bg-transparent"
               />
               <button
                 type="button"
                 aria-label="Comprar 6 potes — R$ 461,50"
                 onClick={() => undefined}
-                className="absolute left-[35.5%] top-[8%] h-[84%] w-[29%] cursor-pointer bg-transparent"
+                className="absolute left-[35.5%] bottom-[5%] h-[9%] w-[29%] cursor-pointer bg-transparent"
               />
               <button
                 type="button"
                 aria-label="Comprar 12 potes — R$ 851,80"
                 onClick={() => undefined}
-                className="absolute right-[4%] top-[8%] h-[84%] w-[29%] cursor-pointer bg-transparent"
+                className="absolute right-[4%] bottom-[5%] h-[9%] w-[29%] cursor-pointer bg-transparent"
               />
             </div>
           </div>
