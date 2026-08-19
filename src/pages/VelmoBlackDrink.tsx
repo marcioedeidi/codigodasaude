@@ -17,6 +17,26 @@ const VelmoBlackDrink: React.FC = () => {
               className="block h-auto w-full object-contain"
               draggable={false}
             />
+            <div className="relative -mt-[18%] h-[18%] min-h-[70px] w-full">
+              <button
+                type="button"
+                aria-label="Comprar 1 pote — R$ 209,90"
+                onClick={() => undefined}
+                className="absolute left-[4%] top-[8%] h-[84%] w-[29%] cursor-pointer bg-transparent"
+              />
+              <button
+                type="button"
+                aria-label="Comprar 6 potes — R$ 461,50"
+                onClick={() => undefined}
+                className="absolute left-[35.5%] top-[8%] h-[84%] w-[29%] cursor-pointer bg-transparent"
+              />
+              <button
+                type="button"
+                aria-label="Comprar 12 potes — R$ 851,80"
+                onClick={() => undefined}
+                className="absolute right-[4%] top-[8%] h-[84%] w-[29%] cursor-pointer bg-transparent"
+              />
+            </div>
           </div>
 
           <div className="mt-6 flex justify-center">
