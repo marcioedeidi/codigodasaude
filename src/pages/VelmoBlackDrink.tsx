@@ -10,17 +10,17 @@ const VelmoBlackDrink: React.FC = () => {
     {
       label: 'Comprar 1 pote — R$ 209,90',
       href: 'https://pay.hest.com.br/39ff9602-35fc-4907-bf20-404a05daba13',
-      className: 'left-[4%] w-[29%]',
+      className: 'left-[4%] top-[86%] h-[10%] w-[29%]',
     },
     {
       label: 'Comprar 6 potes — R$ 461,90',
       href: 'https://pay.hest.com.br/2bcc7585-e7bf-49d2-87a9-e758482a59f9',
-      className: 'left-[35.5%] w-[29%]',
+      className: 'left-[35.5%] top-[86%] h-[10%] w-[29%]',
     },
     {
       label: 'Comprar 12 potes — R$ 851,80',
       href: 'https://pay.hest.com.br/595c4946-e0a9-4226-ad29-45c41223c55c',
-      className: 'right-[4%] w-[29%]',
+      className: 'right-[4%] top-[86%] h-[10%] w-[29%]',
     },
   ]
 
@@ -35,7 +35,7 @@ const VelmoBlackDrink: React.FC = () => {
               className="block h-auto w-full object-contain"
               draggable={false}
             />
-            <div className="pointer-events-none absolute bottom-0 left-0 h-[18%] w-full">
+            <div className="pointer-events-none absolute inset-0 z-10 h-full w-full">
               {offers.map((offer) => (
                 <a
                   key={offer.href}
@@ -43,7 +43,7 @@ const VelmoBlackDrink: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={offer.label}
-                  className={`pointer-events-auto absolute top-[8%] h-[84%] cursor-pointer ${offer.className}`}
+                  className={`pointer-events-auto absolute cursor-pointer ${offer.className}`}
                 />
               ))}
             </div>
