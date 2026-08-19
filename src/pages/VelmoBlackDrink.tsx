@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import TestimonialGallery from '../components/TestimonialGallery'
-import productImage from '../assets/Produtos/file_000000004f3c820e826c84ffe787e1d6.png'
+import productImage from '../assets/Produtos/file_000000004f3c820e826c84ffe787e1d6~3.jpg'
 
 const VelmoBlackDrink: React.FC = () => {
   const navigate = useNavigate()
