@@ -40,6 +40,11 @@ const Produtos: React.FC = () => {
       return
     }
 
+    if (name === 'Velmo Black Cápsulas') {
+      navigate('/produtos/velmo-caps')
+      return
+    }
+
     setSelected(name)
 
     if (timerRef.current) {
