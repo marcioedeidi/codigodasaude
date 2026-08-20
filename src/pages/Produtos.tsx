@@ -35,6 +35,11 @@ const Produtos: React.FC = () => {
       return
     }
 
+    if (name === 'Combo Velmo Black Drink') {
+      navigate('/produtos/combo-velmo-black')
+      return
+    }
+
     setSelected(name)
 
     if (timerRef.current) {
