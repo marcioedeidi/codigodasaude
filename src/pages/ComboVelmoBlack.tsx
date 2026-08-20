@@ -9,7 +9,7 @@ const ComboVelmoBlack: React.FC = () => {
   const offers = [
     { label: 'Comprar oferta 1 — R$ 463,50', href: 'https://pay.hest.com.br/bd533e91-b2dd-4a41-847f-95520fe5279d', className: 'left-[40.5%] top-[67.5%] h-[7.5%] w-[14.5%]' },
     { label: 'Comprar Combo — 3 Velmo Black Morango + 3 Velmo Black Caps — R$ 463,50', href: 'https://pay.hest.com.br/320579e7-af9b-4c3d-b835-ee53979bc58c', className: 'left-[56%] top-[67.5%] h-[7.5%] w-[18.5%]' },
-    { label: 'Comprar Combo — 6 Velmo Black Morango + 6 Velmo Black Tangerina — R$ 851,80', href: 'https://pay.hest.com.br/a35c23fd-c53c-49b7-99e4-ee18bd9d5c98', className: 'left-[83%] top-[70%] h-[8.8%] w-[17%]' },
+    { label: 'Comprar Combo — 6 Velmo Black Morango + 6 Velmo Black Tangerina — R$ 851,80', href: 'https://pay.hest.com.br/a35c23fd-c53c-49b7-99e4-ee18bd9d5c98', className: 'left-[81%] top-[70%] h-[8.8%] w-[17%]' },
   ]
 
   return (
