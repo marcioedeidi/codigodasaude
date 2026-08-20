@@ -5,6 +5,7 @@ import AreaHome from '../pages/AreaHome'
 import Cadastro from '../pages/Cadastro'
 import Produtos from '../pages/Produtos'
 import VelmoBlackDrink from '../pages/VelmoBlackDrink'
+import ComboVelmoBlack from '../pages/ComboVelmoBlack'
 import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
 import ProtectedLayout from '../components/layout/ProtectedLayout'
@@ -73,6 +74,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/inicio" element={<AreaHome />} />
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/produtos/velmo-black-drink" element={<VelmoBlackDrink />} />
+          <Route path="/produtos/combo-velmo-black" element={<ComboVelmoBlack />} />
           <Route path="/depoimentos" element={<Depoimentos />} />
           <Route path="/ebooks" element={<Navigate to="/inicio#ebooks" replace />} />
           <Route path="/sobre" element={<Sobre />} />
