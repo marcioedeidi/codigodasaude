@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import TestimonialGallery from '../components/TestimonialGallery'
 import productImage from '../assets/Produtos/combovelmoblack.jpg'
 
 const ComboVelmoBlack: React.FC = () => {
@@ -28,6 +29,7 @@ const ComboVelmoBlack: React.FC = () => {
           </div>
         </div>
       </section>
+      <TestimonialGallery brand="velmora" videoIndexes={[3, 9]} />
     </main>
   )
 }
