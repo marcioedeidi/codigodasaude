@@ -4,9 +4,9 @@ import productImage from '../assets/Produtos/velmocaps.jpg'
 
 const VelmoCaps: React.FC = () => {
   const offers = [
-    { label: 'Comprar Velmo Black — R$ 197,90', href: 'https://pay.hest.com.br/d62ce28b-9144-4fa0-aa8e-6445436abb7f', className: 'left-[40.5%] top-[72%] h-[7.5%] w-[14.5%]' },
-    { label: 'Comprar Velmo Black 3+3 — R$ 397,00', href: 'https://pay.hest.com.br/fd79ee12-1c17-4aad-ac57-baeebb818d12', className: 'left-[56%] top-[72%] h-[7.5%] w-[18.5%]' },
-    { label: 'Comprar Velmo Black 12 Meses — R$ 697,00', href: 'https://pay.hest.com.br/199937a2-138d-469a-86b1-554f6fb0686c', className: 'left-[80%] top-[72%] h-[7.5%] w-[16%]' },
+    { label: 'Comprar Velmo Black — R$ 197,90', href: 'https://pay.hest.com.br/d62ce28b-9144-4fa0-aa8e-6445436abb7f', className: 'left-[40.5%] top-[73%] h-[7.5%] w-[14.5%]' },
+    { label: 'Comprar Velmo Black 3+3 — R$ 397,00', href: 'https://pay.hest.com.br/fd79ee12-1c17-4aad-ac57-baeebb818d12', className: 'left-[56%] top-[73%] h-[7.5%] w-[18.5%]' },
+    { label: 'Comprar Velmo Black 12 Meses — R$ 697,00', href: 'https://pay.hest.com.br/199937a2-138d-469a-86b1-554f6fb0686c', className: 'left-[80%] top-[73%] h-[7.5%] w-[16%]' },
   ]
 
   return (
