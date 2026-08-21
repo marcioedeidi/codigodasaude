@@ -1,32 +1,19 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import productImage from '../assets/Produtos/fiberslim.jpg'
 
 const FiberSlim: React.FC = () => {
-  const navigate = useNavigate()
-  const pageImage = `${import.meta.env.BASE_URL}assets/fiberslim-page-v1.webp?v=fiberslim-v1`
-
   return (
-    <main className="w-full bg-[#dff4f0]">
-      <section className="w-full overflow-hidden">
-        <div
-          className="relative mx-auto w-full max-w-[1536px] overflow-hidden"
-          style={{ aspectRatio: '1024 / 606' }}
-        >
-          <img
-            src={pageImage}
-            alt="Código da Saúde — Fiber Slim"
-            className="absolute inset-0 block h-full w-full select-none object-contain"
-            draggable={false}
-          />
-
-          <button
-            type="button"
-            onClick={() => navigate('/cadastro')}
-            aria-label="Quero experimentar o Fiber Slim"
-            title="Quero experimentar o Fiber Slim"
-            className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70"
-            style={{ left: '58.2%', top: '72.7%', width: '27.4%', height: '9.8%' }}
-          />
+    <main className="w-full bg-[#f3f8f3]">
+      <section className="w-full px-4 py-8 sm:px-6 md:py-12">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <div className="overflow-hidden rounded-[32px] bg-white shadow-[0_18px_55px_rgba(15,91,82,0.12)]">
+            <img
+              src={productImage}
+              alt="Fiber Slim"
+              className="block h-auto w-full object-contain"
+              draggable={false}
+            />
+          </div>
         </div>
       </section>
     </main>
