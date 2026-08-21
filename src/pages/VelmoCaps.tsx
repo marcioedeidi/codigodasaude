@@ -1,4 +1,5 @@
 import React from 'react'
+import TestimonialGallery from '../components/TestimonialGallery'
 import productImage from '../assets/Produtos/velmocaps.jpg'
 
 const VelmoCaps: React.FC = () => {
@@ -16,6 +17,7 @@ const VelmoCaps: React.FC = () => {
           </div>
         </div>
       </section>
+      <TestimonialGallery brand="velmora" videoIndexes={[9]} />
     </main>
   )
 }
