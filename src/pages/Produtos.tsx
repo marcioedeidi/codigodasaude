@@ -34,7 +34,10 @@ const Produtos: React.FC = () => {
     if (name === 'Combo Velmo Black Drink') { navigate('/produtos/combo-velmo-black'); return }
     if (name === 'Velmo Black Cápsulas') { navigate('/produtos/velmo-caps'); return }
     if (name === 'Creatina Gummy') { navigate('/produtos/creatina-gummy'); return }
-    if (name === 'Fiber Slim') { navigate('/produtos/fiber-slim'); return }
+    if (name === 'Fiber Slim') {
+      window.location.assign(`${import.meta.env.BASE_URL}produtos/fiber-slim`)
+      return
+    }
 
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
