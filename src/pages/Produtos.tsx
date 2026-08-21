@@ -30,70 +30,27 @@ const Produtos: React.FC = () => {
   const pageImage = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=produtos-v3-fiel`
 
   const handleProductClick = (name: string) => {
-    if (name === 'Velmo Black Drink') {
-      navigate('/produtos/velmo-black-drink')
-      return
-    }
-
-    if (name === 'Combo Velmo Black Drink') {
-      navigate('/produtos/combo-velmo-black')
-      return
-    }
-
-    if (name === 'Velmo Black Cápsulas') {
-      navigate('/produtos/velmo-caps')
-      return
-    }
+    if (name === 'Velmo Black Drink') { navigate('/produtos/velmo-black-drink'); return }
+    if (name === 'Combo Velmo Black Drink') { navigate('/produtos/combo-velmo-black'); return }
+    if (name === 'Velmo Black Cápsulas') { navigate('/produtos/velmo-caps'); return }
+    if (name === 'Creatina Gummy') { navigate('/produtos/creatina-gummy'); return }
 
     setSelected(name)
-
-    if (timerRef.current) {
-      window.clearTimeout(timerRef.current)
-    }
-
-    timerRef.current = window.setTimeout(() => {
-      setSelected(null)
-    }, 2400)
+    if (timerRef.current) window.clearTimeout(timerRef.current)
+    timerRef.current = window.setTimeout(() => setSelected(null), 2400)
   }
 
   return (
     <main className="w-full bg-[#dff4f0]">
       <section className="w-full overflow-hidden">
-        <div
-          className="relative mx-auto w-full max-w-[1536px] overflow-hidden"
-          style={{ aspectRatio: '1536 / 911' }}
-        >
-          <img
-            src={pageImage}
-            alt="Código da Saúde — Nossas Soluções"
-            className="absolute inset-0 block h-full w-full select-none object-contain"
-            draggable={false}
-          />
-
+        <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 911' }}>
+          <img src={pageImage} alt="Código da Saúde — Nossas Soluções" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
           {clickAreas.map((area) => (
-            <button
-              key={area.name}
-              type="button"
-              aria-label={`Conhecer ${area.name}`}
-              title={`Conhecer ${area.name}`}
-              onClick={() => handleProductClick(area.name)}
-              className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70"
-              style={{
-                left: area.left,
-                top: area.top,
-                width: area.width,
-                height: area.height,
-              }}
-            />
+            <button key={area.name} type="button" aria-label={`Conhecer ${area.name}`} title={`Conhecer ${area.name}`} onClick={() => handleProductClick(area.name)} className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70" style={{ left: area.left, top: area.top, width: area.width, height: area.height }} />
           ))}
         </div>
       </section>
-
-      {selected && (
-        <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-2xl md:text-base">
-          {selected} selecionado. Vamos preparar a página individual deste produto.
-        </div>
-      )}
+      {selected && <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-2xl md:text-base">{selected} selecionado. Vamos preparar a página individual deste produto.</div>}
     </main>
   )
 }
