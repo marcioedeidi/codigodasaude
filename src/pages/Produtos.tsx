@@ -15,7 +15,6 @@ const clickAreas: ClickArea[] = [
   { name: 'Velmo Black Cápsulas', left: '48.0%', top: '52.5%', width: '10.6%', height: '3.4%' },
   { name: 'Creatina Gummy', left: '66.0%', top: '52.5%', width: '10.4%', height: '3.4%' },
   { name: 'Fiber Slim', left: '81.9%', top: '52.5%', width: '10.3%', height: '3.4%' },
-  { name: 'Termo Drink', left: '7.0%', top: '82.5%', width: '8.6%', height: '3.2%' },
   { name: 'CreaGym', left: '21.7%', top: '82.5%', width: '8.7%', height: '3.2%' },
   { name: 'Skin-Fit', left: '36.2%', top: '82.5%', width: '8.6%', height: '3.2%' },
   { name: 'Movimint', left: '50.6%', top: '82.5%', width: '8.7%', height: '3.2%' },
@@ -36,10 +35,6 @@ const Produtos: React.FC = () => {
     if (name === 'Creatina Gummy') { navigate('/produtos/creatina-gummy'); return }
     if (name === 'Fiber Slim') {
       window.location.assign(`${import.meta.env.BASE_URL}produtos/fiber-slim`)
-      return
-    }
-    if (name === 'Termo Drink') {
-      window.location.assign(`${import.meta.env.BASE_URL}produtos/thermo-drink`)
       return
     }
 
