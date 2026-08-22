@@ -38,6 +38,10 @@ const Produtos: React.FC = () => {
       window.location.assign(`${import.meta.env.BASE_URL}produtos/fiber-slim`)
       return
     }
+    if (name === 'Termo Drink') {
+      window.location.assign(`${import.meta.env.BASE_URL}produtos/thermo-drink`)
+      return
+    }
 
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
