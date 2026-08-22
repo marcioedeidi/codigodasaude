@@ -37,6 +37,10 @@ const Produtos: React.FC = () => {
       window.location.assign(`${import.meta.env.BASE_URL}produtos/fiber-slim`)
       return
     }
+    if (name === 'CreaGym') {
+      window.location.assign(`${import.meta.env.BASE_URL}produtos/creagym`)
+      return
+    }
 
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
