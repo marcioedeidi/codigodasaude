@@ -1,5 +1,6 @@
 import React from 'react'
 import productImage from '../assets/Produtos/skin-fit.jpg'
+import TestimonialGallery from '../components/TestimonialGallery'
 
 const SkinFit: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const SkinFit: React.FC = () => {
           </div>
         </div>
       </section>
+      <TestimonialGallery brand="velmora" videoIndexes={[6, 7]} />
     </main>
   )
 }
