@@ -5,17 +5,17 @@ const offers = [
   {
     label: 'Comprar CreaGym Morango — 1 Mês — R$ 197,00',
     href: 'https://pay.hest.com.br/8c8359b5-9a06-4786-b363-fe136b6ab25c',
-    className: 'left-[40.5%] top-[73%] h-[7.5%] w-[14.5%]',
+    className: 'left-[39%] top-[73%] h-[7.5%] w-[14.5%]',
   },
   {
     label: 'Comprar CreaGym Tangerina — 3 Meses — R$ 417,00',
     href: 'https://pay.hest.com.br/90b2d46d-8c16-11f1-b7d4-0affdf3a7b6b',
-    className: 'left-[56%] top-[73%] h-[7.5%] w-[18.5%]',
+    className: 'left-[54.5%] top-[73%] h-[7.5%] w-[18.5%]',
   },
   {
     label: 'Comprar CreaGym Morango 3+3 — R$ 529,00',
     href: 'https://pay.hest.com.br/866ba3ea-0ebd-497e-89cc-1653f5459556',
-    className: 'left-[80%] top-[73%] h-[7.5%] w-[16%]',
+    className: 'left-[78.5%] top-[73%] h-[7.5%] w-[16%]',
   },
 ]
 
