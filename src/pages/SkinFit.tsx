@@ -11,7 +11,7 @@ const offers = [
   {
     label: 'Comprar Skin-Fit Maracujá — 5 Meses — R$ 461,50',
     href: 'https://pay.hest.com.br/c9132d65-185a-4d91-8028-69270293f68e',
-    className: 'left-[53.5%] top-[73%] h-[7.5%] w-[18.5%]',
+    className: 'left-[52.5%] top-[73%] h-[7.5%] w-[18.5%]',
   },
   {
     label: 'Comprar Skin-Fit Maracujá — 12 Meses — R$ 859,00',
