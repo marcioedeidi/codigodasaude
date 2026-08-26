@@ -13,7 +13,7 @@ const offers = [
     className: 'left-[38%] top-[73%] h-[5.5%] w-[24%]',
   },
   {
-    label: 'Comprar Movi mint — 12 Meses — R$ 397,00',
+    label: 'Comprar Movi mint — 12 Meses — R$ 697,00',
     href: 'https://pay.hest.com.br/9a3d2f76-894a-485d-ad3f-fb82770b3917',
     className: 'left-[66%] top-[73%] h-[5.5%] w-[24%]',
   },
@@ -24,22 +24,10 @@ const Movimint: React.FC = () => (
     <section className="w-full px-4 py-8 sm:px-6 md:py-12">
       <div className="mx-auto w-full max-w-[1400px]">
         <div className="relative overflow-hidden rounded-[32px] bg-white shadow-[0_18px_55px_rgba(15,91,82,0.12)]">
-          <img
-            src={productImage}
-            alt="Movimint"
-            className="block h-auto w-full object-contain"
-            draggable={false}
-          />
+          <img src={productImage} alt="Movimint" className="block h-auto w-full object-contain" draggable={false} />
           <div className="pointer-events-none absolute inset-0 z-10 h-full w-full">
             {offers.map((offer) => (
-              <a
-                key={offer.href}
-                href={offer.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={offer.label}
-                className={`pointer-events-auto absolute cursor-pointer ${offer.className}`}
-              />
+              <a key={offer.href} href={offer.href} target="_blank" rel="noopener noreferrer" aria-label={offer.label} className={`pointer-events-auto absolute cursor-pointer ${offer.className}`} />
             ))}
           </div>
         </div>
