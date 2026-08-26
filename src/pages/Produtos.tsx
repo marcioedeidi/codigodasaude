@@ -45,6 +45,10 @@ const Produtos: React.FC = () => {
       window.location.assign(`${import.meta.env.BASE_URL}produtos/skin-fit`)
       return
     }
+    if (name === 'Movimint') {
+      window.location.assign(`${import.meta.env.BASE_URL}produtos/movimint`)
+      return
+    }
 
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
