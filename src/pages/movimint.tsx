@@ -12,11 +12,6 @@ const offers = [
     href: 'https://pay.hest.com.br/52f91d1a-5511-4a7e-bf20-a2f83a4d912b',
     className: 'left-[38%] top-[73%] h-[5.5%] w-[24%]',
   },
-  {
-    label: 'Comprar Movi mint — 12 Meses — R$ 697,00',
-    href: 'https://pay.hest.com.br/9a3d2f76-894a-485d-ad3f-fb82770b3917',
-    className: 'left-[66%] top-[73%] h-[5.5%] w-[24%]',
-  },
 ]
 
 const Movimint: React.FC = () => (
