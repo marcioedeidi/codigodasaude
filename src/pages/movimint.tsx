@@ -5,12 +5,17 @@ const offers = [
   {
     label: 'Comprar Movi mint — 1 Mês — R$ 197,00',
     href: 'https://pay.hest.com.br/8cf30fdb-5932-4bbf-a7be-e6ad170150f1',
-    className: 'left-[10%] top-[73%] h-[5.5%] w-[24%]',
+    className: 'left-[48%] top-[73%] h-[5.5%] w-[7.5%]',
   },
   {
     label: 'Comprar Movi mint — 3+3 — R$ 397,00',
     href: 'https://pay.hest.com.br/52f91d1a-5511-4a7e-bf20-a2f83a4d912b',
-    className: 'left-[38%] top-[73%] h-[5.5%] w-[24%]',
+    className: 'left-[61%] top-[73%] h-[5.5%] w-[11%]',
+  },
+  {
+    label: 'Comprar Movi mint — 12 Meses — R$ 697,00',
+    href: 'https://pay.hest.com.br/9a3d2f76-894a-485d-ad3f-fb82770b3917',
+    className: 'left-[78.5%] top-[73%] h-[5.5%] w-[12%]',
   },
 ]
 
