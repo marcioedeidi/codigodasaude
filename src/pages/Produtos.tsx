@@ -72,10 +72,10 @@ const Produtos: React.FC = () => {
             aria-hidden="true"
             className="pointer-events-none absolute z-10 rounded-[18px] border border-[#cfe9e4] shadow-[inset_0_0_24px_rgba(255,255,255,0.5)]"
             style={{
-              left: '4.0%',
-              top: '58.5%',
-              width: '14.8%',
-              height: '36.0%',
+              left: '4.1%',
+              top: '58.7%',
+              width: '14.5%',
+              height: '34.0%',
               background: 'linear-gradient(180deg, rgba(238,249,246,0.99) 0%, rgba(223,244,240,0.99) 100%)',
             }}
           />
