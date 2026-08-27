@@ -13,6 +13,7 @@ import ThermoDrink from '../pages/ThermoDrink'
 import CreaGym from '../pages/CreaGym'
 import SkinFit from '../pages/SkinFit'
 import Movimint from '../pages/movimint'
+import Calminol from '../pages/Calminol'
 import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
 import ProtectedLayout from '../components/layout/ProtectedLayout'
@@ -64,6 +65,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/produtos/creagym" element={<CreaGym />} />
           <Route path="/produtos/skin-fit" element={<SkinFit />} />
           <Route path="/produtos/movimint" element={<Movimint />} />
+          <Route path="/produtos/calminol" element={<Calminol />} />
           <Route path="/depoimentos" element={<Depoimentos />} />
           <Route path="/ebooks" element={<Navigate to="/inicio#ebooks" replace />} />
           <Route path="/sobre" element={<Sobre />} />
