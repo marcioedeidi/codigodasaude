@@ -64,6 +64,11 @@ section > :not(.botanical-leaves) {
   z-index: 1;
 }
 
+/* O Termo Drink não faz mais parte do catálogo. */
+#produtos .grid > :nth-child(3) {
+  display: none !important;
+}
+
 .white-outline {
   border: 2px solid rgba(255, 255, 255, 0.95);
 }
