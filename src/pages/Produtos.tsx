@@ -49,6 +49,10 @@ const Produtos: React.FC = () => {
       window.location.assign(`${import.meta.env.BASE_URL}produtos/movimint`)
       return
     }
+    if (name === 'Calminol') {
+      window.location.assign(`${import.meta.env.BASE_URL}produtos/calminol`)
+      return
+    }
 
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
