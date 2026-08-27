@@ -68,6 +68,17 @@ const Produtos: React.FC = () => {
       <section className="w-full overflow-hidden">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1536 / 911' }}>
           <img src={pageImage} alt="Código da Saúde — Nossas Soluções" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute z-10 rounded-[18px] border border-[#cfe9e4] shadow-[inset_0_0_24px_rgba(255,255,255,0.5)]"
+            style={{
+              left: '4.0%',
+              top: '58.5%',
+              width: '14.8%',
+              height: '36.0%',
+              background: 'linear-gradient(180deg, rgba(238,249,246,0.99) 0%, rgba(223,244,240,0.99) 100%)',
+            }}
+          />
           {clickAreas.map((area) => (
             <button key={area.name} type="button" aria-label={`Conhecer ${area.name}`} title={`Conhecer ${area.name}`} onClick={() => handleProductClick(area.name)} className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70" style={{ left: area.left, top: area.top, width: area.width, height: area.height }} />
           ))}
