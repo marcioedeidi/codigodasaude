@@ -9,7 +9,6 @@ import ComboVelmoBlack from '../pages/ComboVelmoBlack'
 import VelmoCaps from '../pages/VelmoCaps'
 import CreatinaGummy from '../pages/CreatinaGummy'
 import FiberSlim from '../pages/FiberSlim'
-import ThermoDrink from '../pages/ThermoDrink'
 import CreaGym from '../pages/CreaGym'
 import SkinFit from '../pages/SkinFit'
 import Movimint from '../pages/movimint'
@@ -62,7 +61,6 @@ const AppRoutes: React.FC = () => {
           <Route path="/produtos/velmo-caps" element={<VelmoCaps />} />
           <Route path="/produtos/creatina-gummy" element={<CreatinaGummy />} />
           <Route path="/produtos/fiber-slim" element={<FiberSlim />} />
-          <Route path="/produtos/thermo-drink" element={<ThermoDrink />} />
           <Route path="/produtos/creagym" element={<CreaGym />} />
           <Route path="/produtos/skin-fit" element={<SkinFit />} />
           <Route path="/produtos/movimint" element={<Movimint />} />
