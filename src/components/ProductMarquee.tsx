@@ -16,7 +16,6 @@ const items: MarqueeItem[] = [
   { name: 'Velmo Black Cápsulas', kind: 'product', x: '54%', y: '30%', size: '520% auto' },
   { name: 'Creatina Gummy', kind: 'product', x: '77%', y: '30%', size: '520% auto' },
   { name: 'Fiber Slim', kind: 'product', x: '96%', y: '30%', size: '520% auto' },
-  { name: 'Termo Drink', kind: 'product', x: '5.88%', y: '72.59%', size: '800% auto' },
   { name: 'CreaGym', kind: 'product', x: '22.62%', y: '72.59%', size: '800% auto' },
   { name: 'Skin-Fit', kind: 'product', x: '39.36%', y: '72.59%', size: '800% auto' },
   { name: 'Movimint', kind: 'product', x: '56.10%', y: '72.59%', size: '800% auto' },
