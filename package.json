@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node scripts/generate-assets.mjs && vite",
     "build": "node scripts/generate-assets.mjs && tsc && vite build",
+    "test": "node celuglow-flow.test.mjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,css}\""
