@@ -9,6 +9,10 @@ type ClickArea = {
   height: string
 }
 
+type PriceArea = ClickArea & {
+  price: string
+}
+
 const clickAreas: ClickArea[] = [
   { name: 'Velmo Black Drink', left: '8.2%', top: '54.0%', width: '10.8%', height: '3.6%' },
   { name: 'Combo Velmo Black Drink', left: '28.0%', top: '54.0%', width: '10.9%', height: '3.6%' },
@@ -20,6 +24,19 @@ const clickAreas: ClickArea[] = [
   { name: 'Movimint', left: '52.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
   { name: 'Calminol', left: '67.1%', top: '90.2%', width: '8.6%', height: '3.5%' },
   { name: 'HeyHair', left: '82.0%', top: '90.2%', width: '8.8%', height: '3.5%' },
+]
+
+const priceAreas: PriceArea[] = [
+  { name: 'Velmo Black Drink', price: 'A partir de R$ 197,90', left: '7.0%', top: '49.8%', width: '13.0%', height: '3.0%' },
+  { name: 'Combo Velmo Black Drink', price: 'A partir de R$ 463,50', left: '26.0%', top: '49.8%', width: '15.0%', height: '3.0%' },
+  { name: 'Velmo Black Cápsulas', price: 'A partir de R$ 197,90', left: '46.8%', top: '49.8%', width: '13.2%', height: '3.0%' },
+  { name: 'Creatina Gummy', price: 'A partir de R$ 197,00', left: '64.8%', top: '49.8%', width: '13.0%', height: '3.0%' },
+  { name: 'Fiber Slim', price: 'A partir de R$ 209,90', left: '80.8%', top: '49.8%', width: '12.4%', height: '3.0%' },
+  { name: 'CreaGym', price: 'A partir de R$ 197,00', left: '21.8%', top: '85.8%', width: '11.4%', height: '2.8%' },
+  { name: 'Skin-Fit', price: 'A partir de R$ 209,90', left: '36.3%', top: '85.8%', width: '11.4%', height: '2.8%' },
+  { name: 'Movimint', price: 'A partir de R$ 197,00', left: '50.8%', top: '85.8%', width: '11.7%', height: '2.8%' },
+  { name: 'Calminol', price: 'A partir de R$ 197,00', left: '65.8%', top: '85.8%', width: '11.7%', height: '2.8%' },
+  { name: 'HeyHair', price: 'A partir de R$ 197,00', left: '80.8%', top: '85.8%', width: '11.8%', height: '2.8%' },
 ]
 
 const Produtos: React.FC = () => {
@@ -49,8 +66,35 @@ const Produtos: React.FC = () => {
       <section className="w-full overflow-hidden">
         <div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{ aspectRatio: '1672 / 941' }}>
           <img src={pageImage} alt="Código da Saúde — Nossas Soluções" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
+
+          {priceAreas.map((area) => (
+            <div
+              key={`price-${area.name}`}
+              aria-hidden="true"
+              className="pointer-events-none absolute z-10 flex items-center justify-center whitespace-nowrap text-center font-extrabold tracking-tight text-[#064f46]"
+              style={{
+                left: area.left,
+                top: area.top,
+                width: area.width,
+                height: area.height,
+                fontSize: 'clamp(8px, 1.05vw, 18px)',
+                lineHeight: 1,
+              }}
+            >
+              {area.price}
+            </div>
+          ))}
+
           {clickAreas.map((area) => (
-            <button key={area.name} type="button" aria-label={`Conhecer ${area.name}`} title={`Conhecer ${area.name}`} onClick={() => handleProductClick(area.name)} className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70" style={{ left: area.left, top: area.top, width: area.width, height: area.height }} />
+            <button
+              key={area.name}
+              type="button"
+              aria-label={`Conhecer ${area.name}`}
+              title={`Conhecer ${area.name}`}
+              onClick={() => handleProductClick(area.name)}
+              className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70"
+              style={{ left: area.left, top: area.top, width: area.width, height: area.height }}
+            />
           ))}
         </div>
       </section>
