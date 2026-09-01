@@ -4,6 +4,9 @@ import productImage from '../assets/Produtos/ChatGPT Image 31 de ago. de 2026, 2
 
 type Offer = {
   label: string
+  title: string
+  description: string
+  price: string
   href: string | null
   className: string
 }
@@ -17,16 +20,25 @@ const checkoutLinks = {
 const offers: Offer[] = [
   {
     label: 'Comprar 1 unidade Celuglow — R$ 209,90',
+    title: '1 UNIDADE',
+    description: 'Opção individual para começar sua rotina de cuidados com CeluGlow.',
+    price: 'R$ 209,90',
     href: checkoutLinks.single,
     className: 'left-[36.5%] top-[76.5%] h-[7.5%] w-[16%]',
   },
   {
     label: 'Comprar Combo Celuglow 3 + 3 — R$ 461,50',
+    title: 'COMPRE 3 + LEVE 3',
+    description: 'Combo promocional com 6 unidades no total.',
+    price: 'R$ 461,50',
     href: checkoutLinks.combo,
     className: 'left-[56%] top-[76.5%] h-[7.5%] w-[17.5%]',
   },
   {
     label: 'Comprar Combo Celuglow 12 unidades — R$ 851,00',
+    title: '12 UNIDADES',
+    description: 'Kit completo com 12 unidades para uma rotina prolongada de cuidados.',
+    price: 'R$ 851,00',
     href: checkoutLinks.twelve,
     className: 'left-[77.5%] top-[76.5%] h-[7.5%] w-[17.5%]',
   },
@@ -67,6 +79,35 @@ const Celuglow: React.FC = () => {
                 />
               ))}
             </div>
+          </div>
+
+          <div className="mx-auto mt-6 max-w-[1120px] text-center">
+            <h1 className="text-2xl font-extrabold tracking-tight text-[#5c176f] sm:text-3xl">
+              CeluGlow Creme Anticelulite 200g
+            </h1>
+            <p className="mx-auto mt-2 max-w-[860px] text-sm leading-relaxed text-slate-600 sm:text-base">
+              Creme anticelulite com Nicotinato de Metila e Nano Q10, desenvolvido para auxiliar na melhora da firmeza e deixar a pele com aparência mais lisa.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-6 grid max-w-[1120px] gap-4 md:grid-cols-3">
+            {offers.map((offer, index) => (
+              <div
+                key={`${offer.label}-caption`}
+                className={`rounded-[24px] border bg-white p-5 text-center shadow-[0_10px_30px_rgba(92,23,111,0.08)] ${index === 1 ? 'border-[#d2a12b] md:-translate-y-2' : 'border-[#eadff0]'}`}
+              >
+                {index === 1 && (
+                  <span className="mb-3 inline-flex rounded-full bg-[#f8e5aa] px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-[#6d4d00]">
+                    Mais escolhido
+                  </span>
+                )}
+                <h2 className="text-lg font-extrabold text-[#5c176f]">{offer.title}</h2>
+                <p className="mt-2 min-h-[48px] text-sm leading-relaxed text-slate-600">
+                  {offer.description}
+                </p>
+                <p className="mt-4 text-2xl font-black text-[#07534c]">{offer.price}</p>
+              </div>
+            ))}
           </div>
 
           <div className="mt-6 flex justify-center">
