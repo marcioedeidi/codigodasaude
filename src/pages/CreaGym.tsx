@@ -15,7 +15,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Morango — 1 Mês — R$ 197,00"
-                className="absolute left-[39%] top-[73%] h-[7.5%] w-[14.5%] cursor-pointer"
+                className="absolute left-[54.5%] top-[73%] h-[7.5%] w-[18.5%] cursor-pointer"
               />
 
               <a
