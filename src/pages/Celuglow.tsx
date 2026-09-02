@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import productImage from '../assets/Produtos/ChatGPT Image 31 de ago. de 2026, 22_57_45.png'
+import productImage from '../assets/Produtos/celuglow-corrigido.png'
 
 type Offer = {
   label: string
