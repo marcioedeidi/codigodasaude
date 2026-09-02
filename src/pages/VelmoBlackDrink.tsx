@@ -7,9 +7,9 @@ const VelmoBlackDrink: React.FC = () => {
   const navigate = useNavigate()
 
   const offers = [
-    { label: 'Comprar Velmo Black — R$ 197,90', href: 'https://pay.hest.com.br/d62ce28b-9144-4fa0-aa8e-6445436abb7f', className: 'left-[40.5%] top-[67.5%] h-[7.5%] w-[14.5%]' },
-    { label: 'Comprar Velmo Black 3+3 — R$ 397,00', href: 'https://pay.hest.com.br/fd79ee12-1c17-4aad-ac57-baeebb818d12', className: 'left-[56%] top-[67.5%] h-[7.5%] w-[18.5%]' },
-    { label: 'Comprar Velmo Black 12 Meses — R$ 697,00', href: 'https://pay.hest.com.br/199937a2-138d-469a-86b1-554f6fb0686c', className: 'left-[80%] top-[67.5%] h-[7.5%] w-[16%]' },
+    { label: 'Comprar Velmo Black — R$ 209,90', href: 'https://pay.hest.com.br/39ff9602-35fc-4907-bf20-404a05daba13', className: 'left-[40.5%] top-[67.5%] h-[7.5%] w-[14.5%]' },
+    { label: 'Comprar Velmo Black 6 unidades — R$ 461,90', href: 'https://pay.hest.com.br/2bcc7585-e7bf-49d2-87a9-e758482a59f9', className: 'left-[56%] top-[67.5%] h-[7.5%] w-[18.5%]' },
+    { label: 'Comprar Velmo Black 12 Meses — R$ 851,80', href: 'https://pay.hest.com.br/595c4946-e0a9-4226-ad29-45c41223c55c', className: 'left-[80%] top-[67.5%] h-[7.5%] w-[16%]' },
   ]
 
   return (
