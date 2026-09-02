@@ -15,14 +15,6 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Morango — 1 Mês — R$ 197,00"
-                className="absolute left-[39%] top-[76.5%] h-[7.5%] w-[14.5%] cursor-pointer"
-              />
-
-              <a
-                href="https://pay.hest.com.br/90b2d46d-8c16-11f1-b7d4-0affdf3a7b6b"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Comprar CreaGym Tangerina — 3 Meses — R$ 417,00"
                 className="absolute left-[54.5%] top-[73%] h-[7.5%] w-[18.5%] cursor-pointer"
               />
 
