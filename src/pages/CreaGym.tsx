@@ -6,7 +6,7 @@ const CreaGym: React.FC = () => {
     <main className="w-full bg-[#f3f8f3]">
       <section className="w-full px-4 py-8 sm:px-6 md:py-12">
         <div className="mx-auto w-full max-w-[1400px]">
-          <div className="relative overflow-hidden rounded-[32px] bg-white shadow-[0_18px_55px_rgba(15,91,82,0.12)]">
+          <div className="relative overflow-hidden rounded-[32px] bg-white shadow-[0-18px-55px_rgba(15,91,82,0.12)]">
             <img src={productImage} alt="CreaGym" className="block h-auto w-full object-contain" draggable={false} />
 
             <div className="absolute inset-0">
@@ -15,7 +15,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Morango — 1 Mês — R$ 197,00"
-                className="absolute left-[54.5%] top-[73%] h-[7.5%] w-[18.5%] cursor-pointer"
+                className="absolute left-[39%] top-[73%] h-[7.5%] w-[14.5%] cursor-pointer"
               />
 
               <a
