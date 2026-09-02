@@ -63,18 +63,6 @@ const Celuglow: React.FC = () => {
               draggable={false}
             />
 
-            <div className="pointer-events-none absolute inset-0 z-20 h-full w-full">
-              {offers.map((offer) => (
-                <p
-                  key={`${offer.label}-image-description`}
-                  className={`absolute px-1 text-center font-semibold leading-[1.15] text-[#315f53] ${offer.descriptionClassName}`}
-                  style={{ fontSize: 'clamp(6px, 0.68vw, 10px)' }}
-                >
-                  {offer.description}
-                </p>
-              ))}
-            </div>
-
             <div className="pointer-events-none absolute inset-0 z-10 h-full w-full">
               {offers.map((offer) => offer.href ? (
                 <a
