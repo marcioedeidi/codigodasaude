@@ -19,6 +19,8 @@ assert.match(routes, /path="\/produtos\/celuglow" element={<Celuglow \/>}/)
 
 assert.match(celuglow, /celuglow-corrigido\.png/)
 assert.doesNotMatch(celuglow, /ChatGPT Image 31 de ago\. de 2026, 22_57_45\.png/)
+assert.doesNotMatch(celuglow, /image-description/)
+assert.doesNotMatch(celuglow, /z-20 h-full w-full/)
 assert.match(celuglow, /Comprar 1 unidade Celuglow — R\$ 209,90/)
 assert.match(celuglow, /Comprar Combo Celuglow 3 \+ 3 — R\$ 461,50/)
 assert.match(celuglow, /Comprar Combo Celuglow 12 unidades — R\$ 851,00/)
