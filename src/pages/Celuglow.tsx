@@ -9,6 +9,7 @@ type Offer = {
   price: string
   href: string | null
   className: string
+  descriptionClassName: string
 }
 
 const checkoutLinks = {
@@ -25,6 +26,7 @@ const offers: Offer[] = [
     price: 'R$ 209,90',
     href: checkoutLinks.single,
     className: 'left-[36.5%] top-[76.5%] h-[7.5%] w-[16%]',
+    descriptionClassName: 'left-[35.8%] top-[59.5%] w-[17.5%]',
   },
   {
     label: 'Comprar Combo Celuglow 3 + 3 — R$ 461,50',
@@ -33,6 +35,7 @@ const offers: Offer[] = [
     price: 'R$ 461,50',
     href: checkoutLinks.combo,
     className: 'left-[56%] top-[76.5%] h-[7.5%] w-[17.5%]',
+    descriptionClassName: 'left-[55.2%] top-[59.5%] w-[19.5%]',
   },
   {
     label: 'Comprar Combo Celuglow 12 unidades — R$ 851,00',
@@ -41,6 +44,7 @@ const offers: Offer[] = [
     price: 'R$ 851,00',
     href: checkoutLinks.twelve,
     className: 'left-[77.5%] top-[76.5%] h-[7.5%] w-[17.5%]',
+    descriptionClassName: 'left-[76.8%] top-[59.5%] w-[19.5%]',
   },
 ]
 
@@ -58,6 +62,19 @@ const Celuglow: React.FC = () => {
               className="block h-auto w-full object-contain"
               draggable={false}
             />
+
+            <div className="pointer-events-none absolute inset-0 z-20 h-full w-full">
+              {offers.map((offer) => (
+                <p
+                  key={`${offer.label}-image-description`}
+                  className={`absolute px-1 text-center font-semibold leading-[1.15] text-[#315f53] ${offer.descriptionClassName}`}
+                  style={{ fontSize: 'clamp(6px, 0.68vw, 10px)' }}
+                >
+                  {offer.description}
+                </p>
+              ))}
+            </div>
+
             <div className="pointer-events-none absolute inset-0 z-10 h-full w-full">
               {offers.map((offer) => offer.href ? (
                 <a
