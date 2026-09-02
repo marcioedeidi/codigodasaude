@@ -19,14 +19,6 @@ const CreaGym: React.FC = () => {
               />
 
               <a
-                href="https://pay.hest.com.br/50707acd-ed93-40b8-af5f-329280ef64a3"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Comprar CreaGym plano do meio"
-                className="absolute left-[54.5%] top-[73%] h-[7.5%] w-[18.5%] cursor-pointer"
-              />
-
-              <a
                 href="https://pay.hest.com.br/866ba3ea-0ebd-497e-89cc-1653f5459556"
                 target="_blank"
                 rel="noopener noreferrer"
