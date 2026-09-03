@@ -28,6 +28,7 @@ const Produtos: React.FC = () => {
   const [selected, setSelected] = useState<string | null>(null)
   const timerRef = useRef<number | null>(null)
   const pageImage = `${import.meta.env.BASE_URL}assets/produtos-page-v4.webp?v=produtos-v4-final`
+  const extraPageImage = `${import.meta.env.BASE_URL}assets/WhatsApp Image 2026-09-03 at 00.54.50.jpeg`
 
   const handleProductClick = (name: string) => {
     if (name === 'Velmo Black Drink') { navigate('/produtos/velmo-black-drink'); return }
@@ -51,20 +52,18 @@ const Produtos: React.FC = () => {
       <section className="w-full overflow-hidden">
         <div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{ aspectRatio: '1672 / 941' }}>
           <img src={pageImage} alt="Código da Saúde — Nossas Soluções" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
-
           {clickAreas.map((area) => (
-            <button
-              key={area.name}
-              type="button"
-              aria-label={`Conhecer ${area.name}`}
-              title={`Conhecer ${area.name}`}
-              onClick={() => handleProductClick(area.name)}
-              className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70"
-              style={{ left: area.left, top: area.top, width: area.width, height: area.height }}
-            />
+            <button key={area.name} type="button" aria-label={`Conhecer ${area.name}`} title={`Conhecer ${area.name}`} onClick={() => handleProductClick(area.name)} className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70" style={{ left: area.left, top: area.top, width: area.width, height: area.height }} />
           ))}
         </div>
       </section>
+
+      <section className="w-full overflow-hidden">
+        <div className="mx-auto w-full max-w-[1672px]">
+          <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block h-auto w-full object-contain" />
+        </div>
+      </section>
+
       {selected && <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-2xl md:text-base">{selected} selecionado.</div>}
     </main>
   )
