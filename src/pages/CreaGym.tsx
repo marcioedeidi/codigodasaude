@@ -9,13 +9,13 @@ const CreaGym: React.FC = () => {
           <div className="relative overflow-hidden rounded-[32px] bg-white shadow-[0_18px_55px_rgba(15,91,82,0.12)]">
             <img src={productImage} alt="CreaGym" className="block h-auto w-full object-contain" draggable={false} />
 
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 pointer-events-none">
               <a
                 href="https://pay.hest.com.br/8c8359b5-9a06-4786-b363-fe136b6ab25c"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Morango — 1 Mês — R$ 197,00"
-                className="absolute left-[39%] top-[73%] h-[7.5%] w-[14%] cursor-pointer"
+                className="absolute left-[38%] top-[72.5%] h-[8%] w-[13%] cursor-pointer pointer-events-auto"
               />
 
               <a
@@ -23,7 +23,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Tangerina — 3 Meses — R$ 417,00"
-                className="absolute left-[54%] top-[73%] h-[7.5%] w-[19%] cursor-pointer"
+                className="absolute left-[53.5%] top-[72.5%] h-[8%] w-[18%] cursor-pointer pointer-events-auto"
               />
 
               <a
@@ -31,7 +31,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Morango 3+3 — R$ 529,00"
-                className="absolute left-[78.5%] top-[73%] h-[7.5%] w-[16%] cursor-pointer"
+                className="absolute left-[78%] top-[72.5%] h-[8%] w-[16%] cursor-pointer pointer-events-auto"
               />
             </div>
           </div>
