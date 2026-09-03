@@ -15,7 +15,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Morango — 1 Mês — R$ 197,00"
-                className="absolute left-[38%] top-[72.5%] h-[8%] w-[13%] cursor-pointer pointer-events-auto"
+                className="absolute left-[39%] top-[73%] h-[7%] w-[12%] cursor-pointer pointer-events-auto"
               />
 
               <a
@@ -23,7 +23,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Tangerina — 3 Meses — R$ 417,00"
-                className="absolute left-[53.5%] top-[72.5%] h-[8%] w-[18%] cursor-pointer pointer-events-auto"
+                className="absolute left-[55.8%] top-[73%] h-[7%] w-[12.5%] cursor-pointer pointer-events-auto"
               />
 
               <a
@@ -31,7 +31,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Morango 3+3 — R$ 529,00"
-                className="absolute left-[78%] top-[72.5%] h-[8%] w-[16%] cursor-pointer pointer-events-auto"
+                className="absolute left-[78.5%] top-[73%] h-[7%] w-[15%] cursor-pointer pointer-events-auto"
               />
             </div>
           </div>
