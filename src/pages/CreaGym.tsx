@@ -23,7 +23,7 @@ const CreaGym: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar CreaGym Tangerina — 3 Meses — R$ 417,00"
-                className="absolute left-[55.8%] top-[73%] h-[7%] w-[12.5%] cursor-pointer pointer-events-auto"
+                className="absolute left-[56.7%] top-[73%] h-[7%] w-[9.5%] cursor-pointer pointer-events-auto"
               />
 
               <a
