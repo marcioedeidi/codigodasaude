@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import footerImage from '../assets/footer/rodape.png'
 
 type ClickArea = {
   name: string
@@ -51,19 +52,22 @@ const Produtos: React.FC = () => {
     <main className="w-full bg-[#dff4f0]">
       <section className="w-full overflow-hidden">
         <div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{ aspectRatio: '1672 / 941' }}>
-          <img src={pageImage} alt="Código da Saúde — Nossas Soluções" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
+          <img src={pageImage} alt="Código da Saúde — Produtos" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
           {clickAreas.map((area) => (
-            <button key={area.name} type="button" aria-label={`Conhecer ${area.name}`} title={`Conhecer ${area.name}`} onClick={() => handleProductClick(area.name)} className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#00a896]/70" style={{ left: area.left, top: area.top, width: area.width, height: area.height }} />
+            <button key={area.name} type="button" onClick={() => handleProductClick(area.name)} className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none" style={{ left: area.left, top: area.top, width: area.width, height: area.height }} />
           ))}
         </div>
       </section>
-
       <section className="w-full overflow-hidden">
         <div className="mx-auto w-full max-w-[1672px]">
           <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block h-auto w-full object-contain" />
         </div>
       </section>
-
+      <section className="w-full overflow-hidden">
+        <div className="mx-auto w-full max-w-[1672px]">
+          <img src={footerImage} alt="Código da Saúde — Por que escolher" className="block h-auto w-full object-contain" />
+        </div>
+      </section>
       {selected && <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-2xl md:text-base">{selected} selecionado.</div>}
     </main>
   )
