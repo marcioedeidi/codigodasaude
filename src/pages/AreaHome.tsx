@@ -17,31 +17,26 @@ const AreaHome: React.FC = () => {
     <main className="w-full bg-[#9fded7]">
       <section className="w-full">
         <div className="relative mx-auto w-full max-w-[1536px]">
-          <img
-            src={heroImage}
-            alt="Código da Saúde — Velmo Black Drink, e-book exclusivo e benefícios"
-            className="relative z-0 block h-auto w-full max-w-none select-none"
-            draggable={false}
-          />
-          <Link to="/produtos" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
-          <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[48.10%] z-20 h-[10.66%] w-[12.30%] rounded-[20px] bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
+          <img src={heroImage} alt="Código da Saúde" className="relative z-0 block h-auto w-full max-w-none select-none" draggable={false} />
+          <Link to="/produtos" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent" />
+          <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[48.10%] z-20 h-[10.66%] w-[12.30%] rounded-[20px] bg-transparent" />
         </div>
       </section>
       <TestimonialGallery brand="velmora" />
       <ProductMarquee />
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1100 / 619' }}>
-          <img src={alwaysFitImage} alt="AlwaysFit — suplementos selecionados para equilíbrio, energia e bem-estar" className="absolute inset-0 block h-full w-full select-none object-cover" draggable={false} />
-          <Link to="/produtos" aria-label="Conhecer os produtos AlwaysFit" className="absolute left-[7.1%] top-[63.5%] z-20 h-[7.4%] w-[19.8%] rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-white/90" />
+          <img src={alwaysFitImage} alt="AlwaysFit" className="absolute inset-0 block h-full w-full select-none object-cover" draggable={false} />
+          <Link to="/produtos/alwaysfit" aria-label="Conhecer os produtos AlwaysFit" className="absolute left-[7.1%] top-[63.5%] z-20 h-[7.4%] w-[19.8%] rounded-full bg-transparent" />
         </div>
       </section>
       <TestimonialGallery brand="alwaysfit" />
       <AlwaysFitMarquee />
-      <section id="ebooks" className="w-full bg-[#9fded7] scroll-mt-[104px]">
+      <section id="ebooks" className="w-full bg-[#9fded7]">
         <div className="relative mx-auto w-full max-w-[1536px]">
           <img src={ebookImage} alt="E-books Código da Saúde" className="block h-auto w-full select-none" draggable={false} />
-          <Link to="/cadastro" aria-label="Quero este E-book — Mulher Forte, Mente Cansada" className="absolute left-[27.0%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70" />
-          <Link to="/cadastro" aria-label="Quero este E-book — Mude sua Mente, Transforme sua Vida" className="absolute left-[73.5%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] cursor-pointer rounded-full bg-transparent outline-none focus-visible:ring-4 focus-visible:ring-[#0b615d]/70" />
+          <Link to="/cadastro" className="absolute left-[27%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] bg-transparent" />
+          <Link to="/cadastro" className="absolute left-[73.5%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] bg-transparent" />
         </div>
       </section>
     </main>
