@@ -34,10 +34,10 @@ const AppRoutes: React.FC = () => (
     <Routes>
       <Route path="/" element={<><Home /><Footer /></>} />
       <Route path="/cadastro" element={<Cadastro />} />
+      <Route path="/produtos/alwaysfit" element={<AlwaysFit />} />
       <Route element={<ProtectedLayout />}>
         <Route path="/inicio" element={<AreaHome />} />
         <Route path="/produtos" element={<Produtos />} />
-        <Route path="/produtos/alwaysfit" element={<AlwaysFit />} />
         <Route path="/produtos/velmo-black-drink" element={<VelmoBlackDrink />} />
         <Route path="/produtos/combo-velmo-black" element={<ComboVelmoBlack />} />
         <Route path="/produtos/celuglow" element={<Celuglow />} />
