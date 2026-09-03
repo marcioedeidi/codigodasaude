@@ -21,7 +21,12 @@ import Sobre from '../pages/Sobre'
 import ProtectedLayout from '../components/layout/ProtectedLayout'
 import Footer from '../components/layout/Footer'
 
-const ScrollToTop: React.FC = () => { const { pathname } = useLocation(); useLayoutEffect(() => { window.scrollTo(0,0) }, [pathname]); useEffect(() => {}, []); return null }
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation()
+  useLayoutEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => {}, [])
+  return null
+}
 
 const AppRoutes: React.FC = () => (
   <Router basename={import.meta.env.BASE_URL}>
@@ -47,7 +52,8 @@ const AppRoutes: React.FC = () => (
         <Route path="/depoimentos" element={<Depoimentos />} />
         <Route path="/ebooks" element={<Navigate to="/inicio#ebooks" replace />} />
         <Route path="/sobre" element={<Sobre />} />
-      </Routes>
+      </Route>
+    </Routes>
   </Router>
 )
 
