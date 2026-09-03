@@ -18,7 +18,7 @@ const AreaHome: React.FC = () => {
       <section className="w-full">
         <div className="relative mx-auto w-full max-w-[1536px]">
           <img src={heroImage} alt="Código da Saúde" className="relative z-0 block h-auto w-full max-w-none select-none" draggable={false} />
-          <Link to="/produtos" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent" />
+          <Link to="/produtos/alwaysfit" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent" />
           <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[48.10%] z-20 h-[10.66%] w-[12.30%] rounded-[20px] bg-transparent" />
         </div>
       </section>
