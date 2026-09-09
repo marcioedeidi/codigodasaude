@@ -11,6 +11,8 @@ const products = [
 ]
 
 const AlwaysFit: React.FC = () => {
+  const assetsPath = '/codigodasaude/assets/alwaysfit/'
+
   return (
     <main className="w-full bg-[#a8ded6]">
       <section className="mx-auto w-full max-w-[1536px] p-6">
@@ -18,7 +20,7 @@ const AlwaysFit: React.FC = () => {
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {products.map((product) => (
             <div key={product} className="rounded-2xl bg-white p-4 shadow">
-              <img src={`${import.meta.env.BASE_URL}assets/alwaysfit/${product}`} alt={`Produto AlwaysFit ${product}`} className="mx-auto h-48 w-full object-contain" />
+              <img src={`${assetsPath}${product}`} alt={`Produto AlwaysFit ${product}`} className="mx-auto h-48 w-full object-contain" />
             </div>
           ))}
         </div>
