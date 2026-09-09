@@ -12,14 +12,13 @@ import ebookImage from '../assets/livros/file_00000000e974820ea169cab1c1a81f5b.p
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
   const alwaysFitImage = `data:image/webp;base64,${alwaysFitImagePart1}${alwaysFitImagePart2}${alwaysFitImagePart3}${alwaysFitImagePart4}`
-  const alwaysFitPath = `${import.meta.env.BASE_URL}produtos/alwaysfit`
 
   return (
     <main className="w-full bg-[#9fded7]">
       <section className="w-full">
         <div className="relative mx-auto w-full max-w-[1536px]">
           <img src={heroImage} alt="Código da Saúde" className="relative z-0 block h-auto w-full max-w-none select-none" draggable={false} />
-          <a href={alwaysFitPath} aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent" />
+          <Link to="/produtos" aria-label="Conhecer os produtos" className="absolute left-[3.97%] top-[48.10%] z-20 h-[10.66%] w-[22.40%] rounded-[20px] bg-transparent" />
           <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[48.10%] z-20 h-[10.66%] w-[12.30%] rounded-[20px] bg-transparent" />
         </div>
       </section>
@@ -28,7 +27,7 @@ const AreaHome: React.FC = () => {
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1100 / 619' }}>
           <img src={alwaysFitImage} alt="AlwaysFit" className="block h-full w-full select-none object-cover" draggable={false} />
-          <a href={alwaysFitPath} aria-label="Conhecer os produtos AlwaysFit" className="absolute inset-0 z-20 block h-full w-full" />
+          <Link to="/produtos" aria-label="Conhecer os produtos AlwaysFit" className="absolute inset-0 z-20 block h-full w-full" />
         </div>
       </section>
       <TestimonialGallery brand="alwaysfit" />
