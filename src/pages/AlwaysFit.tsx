@@ -1,4 +1,5 @@
 import React from 'react'
+import proCurcumin from '../assets/Produtos/always-fit-curcumin-pro.jpeg'
 
 const products = [
   {
@@ -23,7 +24,7 @@ const products = [
   },
   {
     name: 'Pro Curcumin',
-    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-procurcumin-1frasco_11zon_a8e6cf0a-cdcb-4ed8-9958-d6a68f997165.webp?v=1775763718'
+    image: proCurcumin
   },
   {
     name: 'Pro3 Magnésio',
