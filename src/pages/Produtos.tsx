@@ -2,13 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import footerImage from '../assets/footer/rodape.png'
 
-type ClickArea = {
-  name: string
-  left: string
-  top: string
-  width: string
-  height: string
-}
+type ClickArea = { name: string; left: string; top: string; width: string; height: string }
 
 const clickAreas: ClickArea[] = [
   { name: 'Velmo Black Drink', left: '8.2%', top: '54.0%', width: '10.8%', height: '3.6%' },
@@ -18,11 +12,11 @@ const clickAreas: ClickArea[] = [
   { name: 'Fiber Slim', left: '81.9%', top: '54.0%', width: '10.3%', height: '3.6%' },
   { name: 'Celuglow', left: '7.7%', top: '90.2%', width: '8.8%', height: '3.5%' },
   { name: 'CreaGym', left: '23.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
+  { name: 'Pro Curcumin', left: '44.0%', top: '88.5%', width: '12.5%', height: '6%' },
   { name: 'Skin-Fit', left: '37.7%', top: '90.2%', width: '8.6%', height: '3.5%' },
   { name: 'Movimint', left: '52.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
   { name: 'Calminol', left: '67.1%', top: '90.2%', width: '8.6%', height: '3.5%' },
   { name: 'HeyHair', left: '82.0%', top: '90.2%', width: '8.8%', height: '3.5%' },
-  { name: 'Pro Curcumin', left: '50.0%', top: '90.2%', width: '8.7%', height: '3.5%' },
 ]
 
 const Produtos: React.FC = () => {
@@ -39,32 +33,20 @@ const Produtos: React.FC = () => {
     if (name === 'Velmo Black Cápsulas') { navigate('/produtos/velmo-caps'); return }
     if (name === 'Creatina Gummy') { navigate('/produtos/creatina-gummy'); return }
     if (name === 'Celuglow') { navigate('/produtos/celuglow'); return }
-    if (name === 'Fiber Slim') { window.location.assign(`${import.meta.env.BASE_URL}produtos/fiber-slim`); return }
-    if (name === 'CreaGym') { window.location.assign(`${import.meta.env.BASE_URL}produtos/creagym`); return }
-    if (name === 'Skin-Fit') { window.location.assign(`${import.meta.env.BASE_URL}produtos/skin-fit`); return }
-    if (name === 'Movimint') { window.location.assign(`${import.meta.env.BASE_URL}produtos/movimint`); return }
-    if (name === 'Calminol') { window.location.assign(`${import.meta.env.BASE_URL}produtos/calminol`); return }
-    if (name === 'HeyHair') { window.location.assign(`${import.meta.env.BASE_URL}produtos/heyhair`); return }
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
     timerRef.current = window.setTimeout(() => setSelected(null), 2400)
   }
 
-  return (
-    <main className="w-full bg-[#dff4f0]">
-      <section className="w-full overflow-hidden">
-        <div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{ aspectRatio: '1672 / 941' }}>
-          <img src={pageImage} alt="Código da Saúde — Produtos" className="absolute inset-0 block h-full w-full select-none object-contain" draggable={false} />
-          {clickAreas.map((area) => (
-            <button key={area.name} type="button" onClick={() => handleProductClick(area.name)} className="absolute z-20 cursor-pointer rounded-full bg-transparent outline-none" style={{ left: area.left, top: area.top, width: area.width, height: area.height }} />
-          ))}
-        </div>
-      </section>
-      <section className="w-full overflow-hidden"><div className="mx-auto w-full max-w-[1672px]"><img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block h-auto w-full object-contain" /></div></section>
-      <section className="w-full overflow-hidden"><div className="mx-auto w-full max-w-[1672px]"><img src={footerImage} alt="Código da Saúde — Por que escolher" className="block h-auto w-full object-contain" /></div></section>
-      {selected && <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-2xl md:text-base">{selected} selecionado.</div>}
-    </main>
-  )
+  return <main className="w-full bg-[#dff4f0]">
+    <section className="w-full overflow-hidden"><div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{aspectRatio:'1672 / 941'}}>
+      <img src={pageImage} alt="Código da Saúde — Produtos" className="absolute inset-0 block h-full w-full select-none object-contain" />
+      {clickAreas.map(area => <button key={area.name} type="button" onClick={()=>handleProductClick(area.name)} className="absolute z-20 cursor-pointer bg-transparent" style={{left:area.left,top:area.top,width:area.width,height:area.height}} />)}
+    </div></section>
+    <section><div className="mx-auto max-w-[1672px]"><img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="w-full" /></div></section>
+    <section><div className="mx-auto max-w-[1672px]"><img src={footerImage} alt="Código da Saúde" className="w-full" /></div></section>
+    {selected && <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">{selected} selecionado.</div>}
+  </main>
 }
 
 export default Produtos
