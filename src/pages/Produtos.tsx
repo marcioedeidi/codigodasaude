@@ -13,10 +13,10 @@ const clickAreas: ClickArea[] = [
   { name: 'Celuglow', left: '7.7%', top: '90.2%', width: '8.8%', height: '3.5%' },
   { name: 'CreaGym', left: '23.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
   { name: 'Skin-Fit', left: '37.7%', top: '90.2%', width: '8.6%', height: '3.5%' },
-  { name: 'Pro Curcumin', left: '43.0%', top: '86.8%', width: '15.5%', height: '7.5%' },
   { name: 'Movimint', left: '52.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
   { name: 'Calminol', left: '67.1%', top: '90.2%', width: '8.6%', height: '3.5%' },
   { name: 'HeyHair', left: '82.0%', top: '90.2%', width: '8.8%', height: '3.5%' },
+  { name: 'Pro Curcumin', left: '43.0%', top: '86.8%', width: '15.5%', height: '7.5%' },
 ]
 
 const Produtos: React.FC = () => {
@@ -41,7 +41,7 @@ const Produtos: React.FC = () => {
   return <main className="w-full bg-[#dff4f0]">
     <section className="w-full overflow-hidden"><div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{aspectRatio:'1672 / 941'}}>
       <img src={pageImage} alt="Código da Saúde — Produtos" className="absolute inset-0 block h-full w-full select-none object-contain" />
-      {clickAreas.map(area => <button key={area.name} type="button" onClick={()=>handleProductClick(area.name)} className="absolute z-20 cursor-pointer bg-transparent" style={{left:area.left,top:area.top,width:area.width,height:area.height}} />)}
+      {clickAreas.map(area => <button key={area.name} type="button" onClick={()=>handleProductClick(area.name)} className="absolute z-20 cursor-pointer bg-transparent" style={{left:area.left,top:area.top,width:area.width,height:area.height,zIndex: area.name === 'Pro Curcumin' ? 50 : 20}} />)}
     </div></section>
     <section><div className="mx-auto max-w-[1672px]"><img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="w-full" /></div></section>
     <section><div className="mx-auto max-w-[1672px]"><img src={footerImage} alt="Código da Saúde" className="w-full" /></div></section>
