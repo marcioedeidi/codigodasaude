@@ -22,6 +22,7 @@ const clickAreas: ClickArea[] = [
   { name: 'Movimint', left: '52.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
   { name: 'Calminol', left: '67.1%', top: '90.2%', width: '8.6%', height: '3.5%' },
   { name: 'HeyHair', left: '82.0%', top: '90.2%', width: '8.8%', height: '3.5%' },
+  { name: 'Pro Curcumin', left: '50.0%', top: '90.2%', width: '8.7%', height: '3.5%' },
 ]
 
 const Produtos: React.FC = () => {
@@ -32,6 +33,7 @@ const Produtos: React.FC = () => {
   const extraPageImage = `${import.meta.env.BASE_URL}assets/WhatsApp Image 2026-09-03 at 00.54.50.jpeg`
 
   const handleProductClick = (name: string) => {
+    if (name === 'Pro Curcumin') { navigate('/produtos/pro-curcumin'); return }
     if (name === 'Velmo Black Drink') { navigate('/produtos/velmo-black-drink'); return }
     if (name === 'Combo Velmo Black Drink') { navigate('/produtos/combo-velmo-black'); return }
     if (name === 'Velmo Black Cápsulas') { navigate('/produtos/velmo-caps'); return }
@@ -58,16 +60,8 @@ const Produtos: React.FC = () => {
           ))}
         </div>
       </section>
-      <section className="w-full overflow-hidden">
-        <div className="mx-auto w-full max-w-[1672px]">
-          <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block h-auto w-full object-contain" />
-        </div>
-      </section>
-      <section className="w-full overflow-hidden">
-        <div className="mx-auto w-full max-w-[1672px]">
-          <img src={footerImage} alt="Código da Saúde — Por que escolher" className="block h-auto w-full object-contain" />
-        </div>
-      </section>
+      <section className="w-full overflow-hidden"><div className="mx-auto w-full max-w-[1672px]"><img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block h-auto w-full object-contain" /></div></section>
+      <section className="w-full overflow-hidden"><div className="mx-auto w-full max-w-[1672px]"><img src={footerImage} alt="Código da Saúde — Por que escolher" className="block h-auto w-full object-contain" /></div></section>
       {selected && <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-2xl md:text-base">{selected} selecionado.</div>}
     </main>
   )
