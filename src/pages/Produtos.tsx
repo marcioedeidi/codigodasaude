@@ -5,48 +5,86 @@ import footerImage from '../assets/footer/rodape.png'
 type ClickArea = { name: string; left: string; top: string; width: string; height: string }
 
 const clickAreas: ClickArea[] = [
-  { name: 'Velmo Black Drink', left: '8.2%', top: '54.0%', width: '10.8%', height: '3.6%' },
-  { name: 'Combo Velmo Black Drink', left: '28.0%', top: '54.0%', width: '10.9%', height: '3.6%' },
-  { name: 'Velmo Black Cápsulas', left: '48.0%', top: '54.0%', width: '10.6%', height: '3.6%' },
-  { name: 'Creatina Gummy', left: '66.0%', top: '54.0%', width: '10.4%', height: '3.6%' },
-  { name: 'Fiber Slim', left: '81.9%', top: '54.0%', width: '10.3%', height: '3.6%' },
-  { name: 'Celuglow', left: '7.7%', top: '90.2%', width: '8.8%', height: '3.5%' },
-  { name: 'CreaGym', left: '23.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
-  { name: 'Skin-Fit', left: '37.7%', top: '90.2%', width: '8.6%', height: '3.5%' },
-  { name: 'Movimint', left: '52.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
-  { name: 'Calminol', left: '67.1%', top: '90.2%', width: '8.6%', height: '3.5%' },
-  { name: 'HeyHair', left: '82.0%', top: '90.2%', width: '8.8%', height: '3.5%' },
-  { name: 'Pro Curcumin', left: '40.0%', top: '80.0%', width: '20.0%', height: '17.0%' },
+  { name: 'Velmo Black Drink', left: '8%', top: '50%', width: '12%', height: '10%' },
+  { name: 'Combo Velmo Black Drink', left: '27%', top: '50%', width: '12%', height: '10%' },
+  { name: 'Velmo Black Cápsulas', left: '47%', top: '50%', width: '12%', height: '10%' },
+  { name: 'Creatina Gummy', left: '65%', top: '50%', width: '12%', height: '10%' },
+  { name: 'Fiber Slim', left: '80%', top: '50%', width: '12%', height: '10%' },
+  { name: 'Pro Curcumin', left: '38%', top: '76%', width: '25%', height: '22%' },
 ]
 
 const Produtos: React.FC = () => {
   const navigate = useNavigate()
   const [selected, setSelected] = useState<string | null>(null)
   const timerRef = useRef<number | null>(null)
-  const pageImage = `${import.meta.env.BASE_URL}assets/produtos-page-v4.webp?v=produtos-v4-final`
+  const pageImage = `${import.meta.env.BASE_URL}assets/produtos-page-v4.webp?v=produtos-v5`
   const extraPageImage = `${import.meta.env.BASE_URL}assets/WhatsApp Image 2026-09-03 at 00.54.50.jpeg`
 
   const handleProductClick = (name: string) => {
-    if (name === 'Pro Curcumin') { navigate('/produtos/pro-curcumin'); return }
-    if (name === 'Velmo Black Drink') { navigate('/produtos/velmo-black-drink'); return }
-    if (name === 'Combo Velmo Black Drink') { navigate('/produtos/combo-velmo-black'); return }
-    if (name === 'Velmo Black Cápsulas') { navigate('/produtos/velmo-caps'); return }
-    if (name === 'Creatina Gummy') { navigate('/produtos/creatina-gummy'); return }
-    if (name === 'Celuglow') { navigate('/produtos/celuglow'); return }
+    if (name === 'Pro Curcumin') {
+      navigate('/produtos/pro-curcumin')
+      return
+    }
+    if (name === 'Velmo Black Drink') return navigate('/produtos/velmo-black-drink')
+    if (name === 'Combo Velmo Black Drink') return navigate('/produtos/combo-velmo-black')
+    if (name === 'Velmo Black Cápsulas') return navigate('/produtos/velmo-caps')
+    if (name === 'Creatina Gummy') return navigate('/produtos/creatina-gummy')
+    if (name === 'Celuglow') return navigate('/produtos/celuglow')
+
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
-    timerRef.current = window.setTimeout(() => setSelected(null), 2400)
+    timerRef.current = window.setTimeout(() => setSelected(null), 2000)
   }
 
-  return <main className="w-full bg-[#dff4f0]">
-    <section className="w-full overflow-hidden"><div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{aspectRatio:'1672 / 941'}}>
-      <img src={pageImage} alt="Código da Saúde — Produtos" className="absolute inset-0 block h-full w-full select-none object-contain" />
-      {clickAreas.map(area => <button key={area.name} type="button" aria-label={area.name} onClick={()=>handleProductClick(area.name)} className="absolute z-20 cursor-pointer bg-transparent" style={{left:area.left,top:area.top,width:area.width,height:area.height,zIndex: area.name === 'Pro Curcumin' ? 50 : 20}} />)}
-    </div></section>
-    <section><div className="mx-auto max-w-[1672px]"><img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="w-full" /></div></section>
-    <section><div className="mx-auto max-w-[1672px]"><img src={footerImage} alt="Código da Saúde" className="w-full" /></div></section>
-    {selected && <div className="fixed bottom-5 left-1/2 z-[100] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">{selected} selecionado.</div>}
-  </main>
+  return (
+    <main className="w-full bg-[#dff4f0]">
+      <section className="w-full overflow-hidden">
+        <div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{aspectRatio:'1672 / 941'}}>
+          <img
+            src={pageImage}
+            alt="Código da Saúde — Produtos"
+            className="absolute inset-0 block h-full w-full select-none object-contain pointer-events-none"
+          />
+
+          {clickAreas.map(area => (
+            <button
+              key={area.name}
+              type="button"
+              aria-label={area.name}
+              onClick={() => handleProductClick(area.name)}
+              className="absolute cursor-pointer bg-transparent border-0 p-0"
+              style={{
+                left: area.left,
+                top: area.top,
+                width: area.width,
+                height: area.height,
+                zIndex: 100,
+                pointerEvents: 'auto'
+              }}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="mx-auto max-w-[1672px]">
+          <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="w-full" />
+        </div>
+      </section>
+
+      <section>
+        <div className="mx-auto max-w-[1672px]">
+          <img src={footerImage} alt="Código da Saúde" className="w-full" />
+        </div>
+      </section>
+
+      {selected && (
+        <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">
+          {selected} selecionado.
+        </div>
+      )}
+    </main>
+  )
 }
 
 export default Produtos
