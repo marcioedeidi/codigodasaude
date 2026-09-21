@@ -1,4 +1,5 @@
 import React from 'react'
+import productImage from '../assets/Produtos/always-fit-picolanatodecromo.jpeg'
 
 const PicolinatoCromo: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ const PicolinatoCromo: React.FC = () => {
         <div className="mx-auto w-full">
           <div className="relative overflow-hidden">
             <img
-              src="https://alwaysfit.com.br/cdn/shop/files/alwaysfit-picolinato-1frasco_11zon_2_1200x.webp?v=1750724263"
+              src={productImage}
               alt="AlwaysFit Picolinato de Cromo"
               className="block h-auto w-full object-contain"
               draggable={false}
