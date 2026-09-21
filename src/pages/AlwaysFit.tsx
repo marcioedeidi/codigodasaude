@@ -1,11 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import proCurcumin from '../assets/Produtos/always-fit-curcumin-pro.jpeg'
+import picolinatoCromo from '../assets/Produtos/always-fit-picolanatodecromo.jpeg'
 
 const products = [
   {
     name: 'Picolinato de Cromo',
-    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-picolinato-1frasco_11zon_2_1200x.webp?v=1750724263'
+    image: picolinatoCromo
   },
   {
     name: 'CoQ10',
@@ -62,7 +63,7 @@ const AlwaysFit: React.FC = () => {
               <img
                 src={product.image}
                 alt={'Produto AlwaysFit ' + product.name}
-                className={'mx-auto w-full object-contain ' + (product.name === 'Picolinato de Cromo' ? 'h-36' : 'h-48')}
+                className="mx-auto h-48 w-full object-contain"
               />
             </button>
           ))}
