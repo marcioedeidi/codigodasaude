@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import footerImage from '../assets/footer/rodape.png'
+import Navbar from '../components/layout/Navbar'
 
 type ClickArea = { name: string; left: string; top: string; width: string; height: string }
 
@@ -45,71 +46,75 @@ const Produtos: React.FC = () => {
   }
 
   return (
-    <main className="w-full bg-[#dff4f0]">
-      <section className="w-full overflow-hidden">
-        <div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{aspectRatio:'1672 / 941'}}>
-          <img
-            src={pageImage}
-            alt="Código da Saúde — Produtos"
-            className="absolute inset-0 block h-full w-full select-none object-contain pointer-events-none"
-          />
+    <>
+      <Navbar />
 
-          {clickAreas.map(area => (
-            <button
-              key={area.name}
-              type="button"
-              aria-label={area.name}
-              onClick={() => handleProductClick(area.name)}
-              className="absolute cursor-pointer bg-transparent border-0 p-0"
-              style={{
-                left: area.left,
-                top: area.top,
-                width: area.width,
-                height: area.height,
-                zIndex: 100,
-                pointerEvents: 'auto'
-              }}
+      <main className="w-full bg-[#dff4f0]">
+        <section className="w-full overflow-hidden">
+          <div className="relative mx-auto w-full max-w-[1672px] overflow-hidden" style={{aspectRatio:'1672 / 941'}}>
+            <img
+              src={pageImage}
+              alt="Código da Saúde — Produtos"
+              className="absolute inset-0 block h-full w-full select-none object-contain pointer-events-none"
             />
-          ))}
-        </div>
-      </section>
 
-      <section>
-        <div className="relative mx-auto max-w-[1672px]">
-          <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block w-full" />
+            {clickAreas.map(area => (
+              <button
+                key={area.name}
+                type="button"
+                aria-label={area.name}
+                onClick={() => handleProductClick(area.name)}
+                className="absolute cursor-pointer bg-transparent border-0 p-0"
+                style={{
+                  left: area.left,
+                  top: area.top,
+                  width: area.width,
+                  height: area.height,
+                  zIndex: 100,
+                  pointerEvents: 'auto'
+                }}
+              />
+            ))}
+          </div>
+        </section>
 
-          {extraClickAreas.map(area => (
-            <button
-              key={area.name}
-              type="button"
-              aria-label={area.name}
-              onClick={() => handleProductClick(area.name)}
-              className="absolute cursor-pointer bg-transparent border-0 p-0"
-              style={{
-                left: area.left,
-                top: area.top,
-                width: area.width,
-                height: area.height,
-                zIndex: 100,
-                pointerEvents: 'auto'
-              }}
-            />
-          ))}
-        </div>
-      </section>
+        <section>
+          <div className="relative mx-auto max-w-[1672px]">
+            <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block w-full" />
 
-      <section>
-        <div className="mx-auto max-w-[1672px]">
-          <img src={footerImage} alt="Código da Saúde" className="w-full" />
-        </div>
-      </section>
+            {extraClickAreas.map(area => (
+              <button
+                key={area.name}
+                type="button"
+                aria-label={area.name}
+                onClick={() => handleProductClick(area.name)}
+                className="absolute cursor-pointer bg-transparent border-0 p-0"
+                style={{
+                  left: area.left,
+                  top: area.top,
+                  width: area.width,
+                  height: area.height,
+                  zIndex: 100,
+                  pointerEvents: 'auto'
+                }}
+              />
+            ))}
+          </div>
+        </section>
 
-      {selected && (
-        <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">
-          {selected} selecionado.
-        </div>
-      )}
-    </main>
+        <section>
+          <div className="mx-auto max-w-[1672px]">
+            <img src={footerImage} alt="Código da Saúde" className="w-full" />
+          </div>
+        </section>
+
+        {selected && (
+          <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">
+            {selected} selecionado.
+          </div>
+        )}
+      </main>
+    </>
   )
 }
 
