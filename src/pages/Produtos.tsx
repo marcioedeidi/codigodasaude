@@ -100,7 +100,7 @@ const Produtos: React.FC = () => {
       </section>
 
       {selected && (
-        <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">
+        <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">
           {selected} selecionado.
         </div>
       )}
