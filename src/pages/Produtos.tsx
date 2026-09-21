@@ -10,6 +10,9 @@ const clickAreas: ClickArea[] = [
   { name: 'Velmo Black Cápsulas', left: '47%', top: '50%', width: '12%', height: '10%' },
   { name: 'Creatina Gummy', left: '65%', top: '50%', width: '12%', height: '10%' },
   { name: 'Fiber Slim', left: '80%', top: '50%', width: '12%', height: '10%' },
+]
+
+const extraClickAreas: ClickArea[] = [
   { name: 'Pro Curcumin', left: '38%', top: '76%', width: '25%', height: '22%' },
 ]
 
@@ -67,8 +70,26 @@ const Produtos: React.FC = () => {
       </section>
 
       <section>
-        <div className="mx-auto max-w-[1672px]">
-          <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="w-full" />
+        <div className="relative mx-auto max-w-[1672px]">
+          <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block w-full" />
+
+          {extraClickAreas.map(area => (
+            <button
+              key={area.name}
+              type="button"
+              aria-label={area.name}
+              onClick={() => handleProductClick(area.name)}
+              className="absolute cursor-pointer bg-transparent border-0 p-0"
+              style={{
+                left: area.left,
+                top: area.top,
+                width: area.width,
+                height: area.height,
+                zIndex: 100,
+                pointerEvents: 'auto'
+              }}
+            />
+          ))}
         </div>
       </section>
 
@@ -79,7 +100,7 @@ const Produtos: React.FC = () => {
       </section>
 
       {selected && (
-        <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">
+        <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">
           {selected} selecionado.
         </div>
       )}
