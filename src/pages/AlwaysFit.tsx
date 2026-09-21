@@ -37,6 +37,10 @@ const AlwaysFit: React.FC = () => {
   const navigate = useNavigate()
 
   const handleProductClick = (name: string) => {
+    if (name === 'Picolinato de Cromo') {
+      navigate('/produtos/picolinato-cromo')
+      return
+    }
     if (name === 'Pro Curcumin') {
       navigate('/produtos/pro-curcumin')
     }
@@ -53,9 +57,9 @@ const AlwaysFit: React.FC = () => {
               type="button"
               onClick={() => handleProductClick(product.name)}
               className="rounded-2xl bg-white p-4 shadow text-left transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#064f46]"
-              aria-label={`Ver produto AlwaysFit ${product.name}`}
+              aria-label={'Ver produto AlwaysFit ' + product.name}
             >
-              <img src={product.image} alt={`Produto AlwaysFit ${product.name}`} className="mx-auto h-48 w-full object-contain" />
+              <img src={product.image} alt={'Produto AlwaysFit ' + product.name} className="mx-auto h-48 w-full object-contain" />
             </button>
           ))}
         </div>
