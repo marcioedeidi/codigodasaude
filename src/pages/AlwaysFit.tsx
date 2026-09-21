@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import proCurcumin from '../assets/Produtos/always-fit-curcumin-pro.jpeg'
 
 const products = [
@@ -33,15 +34,29 @@ const products = [
 ]
 
 const AlwaysFit: React.FC = () => {
+  const navigate = useNavigate()
+
+  const handleProductClick = (name: string) => {
+    if (name === 'Pro Curcumin') {
+      navigate('/produtos/pro-curcumin')
+    }
+  }
+
   return (
     <main className="w-full bg-[#a8ded6]">
       <section className="mx-auto w-full max-w-[1536px] p-6">
         <h1 className="mb-8 text-center text-3xl font-bold text-[#064f46]">Produtos AlwaysFit</h1>
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {products.map((product) => (
-            <div key={product.name} className="rounded-2xl bg-white p-4 shadow">
+            <button
+              key={product.name}
+              type="button"
+              onClick={() => handleProductClick(product.name)}
+              className="rounded-2xl bg-white p-4 shadow text-left transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#064f46]"
+              aria-label={`Ver produto AlwaysFit ${product.name}`}
+            >
               <img src={product.image} alt={`Produto AlwaysFit ${product.name}`} className="mx-auto h-48 w-full object-contain" />
-            </div>
+            </button>
           ))}
         </div>
       </section>
