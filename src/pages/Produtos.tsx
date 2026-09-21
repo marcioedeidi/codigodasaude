@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import footerImage from '../assets/footer/rodape.png'
-import picolinatoCromo from '../assets/Produtos/always-fit-picolanatodecromo.jpeg'
 
 type ClickArea = { name: string; left: string; top: string; width: string; height: string }
 
@@ -78,19 +77,6 @@ const Produtos: React.FC = () => {
       <section>
         <div className="relative mx-auto max-w-[1672px]">
           <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block w-full" />
-
-          <img
-            src={picolinatoCromo}
-            alt="AlwaysFit Picolinato de Cromo"
-            className="absolute object-contain"
-            style={{
-              left: '64%',
-              top: '53%',
-              width: '25%',
-              height: '22%',
-              zIndex: 50,
-            }}
-          />
 
           {extraClickAreas.map(area => (
             <button
