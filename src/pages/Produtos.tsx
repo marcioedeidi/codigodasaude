@@ -14,7 +14,7 @@ const clickAreas: ClickArea[] = [
 ]
 
 const extraClickAreas: ClickArea[] = [
-  { name: 'Pro Curcumin', left: '38%', top: '76%', width: '25%', height: '22%' },
+  { name: 'Pro Curcumin', left: '45%', top: '93%', width: '10%', height: '5%' },
   { name: 'Picolinato de Cromo', left: '63%', top: '56%', width: '11%', height: '4%' },
 ]
 
