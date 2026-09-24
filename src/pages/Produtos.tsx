@@ -16,6 +16,7 @@ const clickAreas: ClickArea[] = [
 const extraClickAreas: ClickArea[] = [
   { name: 'Pro Curcumin', left: '45%', top: '93%', width: '10%', height: '5%' },
   { name: 'Picolinato de Cromo', left: '63%', top: '56%', width: '11%', height: '4%' },
+  { name: 'Pro3 Magnésio', left: '75%', top: '56%', width: '11%', height: '4%' },
 ]
 
 const Produtos: React.FC = () => {
@@ -32,6 +33,10 @@ const Produtos: React.FC = () => {
     }
     if (name === 'Picolinato de Cromo') {
       navigate('/produtos/picolinato-cromo')
+      return
+    }
+    if (name === 'Pro3 Magnésio') {
+      navigate('/produtos/pro3-magnesio')
       return
     }
     if (name === 'Velmo Black Drink') return navigate('/produtos/velmo-black-drink')
