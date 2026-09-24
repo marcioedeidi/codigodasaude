@@ -1,5 +1,6 @@
 import React from 'react'
 import productImage from '../assets/Produtos/alwaysfit-manesio-vitaminad.jpeg'
+import footerImage from '../assets/footer/rodape.png'
 
 const Pro3Magnesio: React.FC = () => {
   return (
@@ -14,6 +15,17 @@ const Pro3Magnesio: React.FC = () => {
               draggable={false}
             />
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="mx-auto w-full">
+          <img
+            src={footerImage}
+            alt="Código da Saúde"
+            className="block w-full"
+            draggable={false}
+          />
         </div>
       </section>
     </main>
