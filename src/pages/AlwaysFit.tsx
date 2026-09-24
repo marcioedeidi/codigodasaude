@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import proCurcumin from '../assets/Produtos/always-fit-curcumin-pro.jpeg'
 import picolinatoCromo from '../assets/Produtos/always-fit-picolanatodecromo.jpeg'
+import pro3Magnesio from '../assets/Produtos/alwaysfit-manesio-vitaminad.jpeg'
 
 const products = [
   {
@@ -32,7 +33,7 @@ const products = [
   },
   {
     name: 'Pro3 Magnésio',
-    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-pro3-1frasco_1__11zon_1c68d9d8-5d77-4f5b-85c9-69b3cd767ca1_1200x.webp?v=1783636176',
+    image: pro3Magnesio,
     route: '/produtos/pro3-magnesio'
   }
 ]
@@ -46,9 +47,7 @@ const AlwaysFit: React.FC = () => {
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {products.map((product) => {
             const card = (
-              <div
-                className="group relative block w-full rounded-2xl bg-white p-4 text-left shadow transition hover:-translate-y-1 hover:shadow-lg"
-              >
+              <div className="group relative block w-full rounded-2xl bg-white p-4 text-left shadow transition hover:-translate-y-1 hover:shadow-lg">
                 <img
                   src={product.image}
                   alt={'Produto AlwaysFit ' + product.name}
