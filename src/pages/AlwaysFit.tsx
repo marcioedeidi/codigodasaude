@@ -1,12 +1,13 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import proCurcumin from '../assets/Produtos/always-fit-curcumin-pro.jpeg'
 import picolinatoCromo from '../assets/Produtos/always-fit-picolanatodecromo.jpeg'
 
 const products = [
   {
     name: 'Picolinato de Cromo',
-    image: picolinatoCromo
+    image: picolinatoCromo,
+    route: '/produtos/picolinato-cromo'
   },
   {
     name: 'CoQ10',
@@ -26,61 +27,47 @@ const products = [
   },
   {
     name: 'Pro Curcumin',
-    image: proCurcumin
+    image: proCurcumin,
+    route: '/produtos/pro-curcumin'
   },
   {
     name: 'Pro3 Magnésio',
-    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-pro3-1frasco_1__11zon_1c68d9d8-5d77-4f5b-85c9-69b3cd767ca1_1200x.webp?v=1783636176'
+    image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-pro3-1frasco_1__11zon_1c68d9d8-5d77-4f5b-85c9-69b3cd767ca1_1200x.webp?v=1783636176',
+    route: '/produtos/pro3-magnesio'
   }
 ]
 
 const AlwaysFit: React.FC = () => {
-  const navigate = useNavigate()
-
-  const handleProductClick = (name: string) => {
-    if (name === 'Picolinato de Cromo') {
-      navigate('/produtos/picolinato-cromo')
-      return
-    }
-    if (name === 'Pro Curcumin') {
-      navigate('/produtos/pro-curcumin')
-      return
-    }
-    if (name === 'Pro3 Magnésio') {
-      navigate('/produtos/pro3-magnesio')
-      return
-    }
-  }
-
   return (
     <main className="w-full bg-[#a8ded6]">
       <section className="mx-auto w-full max-w-[1536px] p-6">
         <h1 className="mb-8 text-center text-3xl font-bold text-[#064f46]">Produtos AlwaysFit</h1>
+
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {products.map((product) => {
-            const isPro3Magnesio = product.name === 'Pro3 Magnésio'
-
-            return (
-              <button
-                key={product.name}
-                type="button"
-                onClick={() => handleProductClick(product.name)}
-                className="group relative block w-full cursor-pointer rounded-2xl bg-white p-4 text-left shadow transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#064f46]"
-                aria-label={'Ver produto AlwaysFit ' + product.name}
+            const card = (
+              <div
+                className="group relative block w-full rounded-2xl bg-white p-4 text-left shadow transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <img
                   src={product.image}
                   alt={'Produto AlwaysFit ' + product.name}
                   className="mx-auto block h-48 w-full object-contain"
                 />
+              </div>
+            )
 
-                {isPro3Magnesio && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 z-10 block rounded-2xl"
-                  />
-                )}
-              </button>
+            return product.route ? (
+              <Link
+                key={product.name}
+                to={product.route}
+                className="block w-full cursor-pointer rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#064f46]"
+                aria-label={'Abrir produto AlwaysFit ' + product.name}
+              >
+                {card}
+              </Link>
+            ) : (
+              <div key={product.name}>{card}</div>
             )
           })}
         </div>
