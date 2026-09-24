@@ -44,6 +44,10 @@ const AlwaysFit: React.FC = () => {
     }
     if (name === 'Pro Curcumin') {
       navigate('/produtos/pro-curcumin')
+      return
+    }
+    if (name === 'Pro3 Magnésio') {
+      navigate('/produtos/pro3-magnesio')
     }
   }
 
