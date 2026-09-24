@@ -15,7 +15,7 @@ const clickAreas: ClickArea[] = [
 
 const extraClickAreas: ClickArea[] = [
   { name: 'Pro Curcumin', left: '38%', top: '76%', width: '25%', height: '22%' },
-  { name: 'Picolinato de Cromo', left: '64%', top: '55%', width: '18%', height: '18%' },
+  { name: 'Picolinato de Cromo', left: '63%', top: '56%', width: '11%', height: '4%' },
 ]
 
 const Produtos: React.FC = () => {
