@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Pro3Magnesio: React.FC = () => {
-  const productImage = `${import.meta.env.BASE_URL}assets/alwaysfit/pro3-magnesio.svg`
+  const productImage =
+    'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-pro3-1frasco_1__11zon_1c68d9d8-5d77-4f5b-85c9-69b3cd767ca1_1200x.webp?v=1783636176'
 
   return (
     <main className="w-full bg-[#f3f8f3]">
