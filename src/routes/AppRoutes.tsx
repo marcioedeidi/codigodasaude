@@ -40,11 +40,11 @@ const AppRoutes: React.FC = () => (
 
       <Route path="/produtos" element={<Produtos />} />
       <Route path="/produtos/alwaysfit" element={<AlwaysFit />} />
+      <Route path="/produtos/pro3-magnesio" element={<Pro3Magnesio />} />
 
       <Route element={<ProtectedLayout />}>
         <Route path="/inicio" element={<AreaHome />} />
         <Route path="/produtos/pro-curcumin" element={<ProCurcumin />} />
-        <Route path="/produtos/pro3-magnesio" element={<Pro3Magnesio />} />
         <Route path="/produtos/picolinato-cromo" element={<PicolinatoCromo />} />
         <Route path="/produtos/velmo-black-drink" element={<VelmoBlackDrink />} />
         <Route path="/produtos/combo-velmo-black" element={<ComboVelmoBlack />} />
