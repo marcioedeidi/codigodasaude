@@ -100,7 +100,7 @@ const Produtos: React.FC = () => {
             ))}
           </div>
         </section>
-        <section><div className="mx-auto max-w-[1672px]"><img src={footerImage} alt="Código da Saúde" className="w-full" /></div></section>
+        <section><div className="mx-auto w-full overflow-hidden" style={{ aspectRatio: '1536 / 788' }}><img src={footerImage} alt="Código da Saúde" className="block h-auto w-full max-w-none" style={{ transform: 'translateY(-14.453125%)' }} draggable={false} /></div></section>
         {selected && <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">{selected} selecionado.</div>}
       </main>
     </>
