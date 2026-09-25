@@ -12,6 +12,7 @@ import Fits36 from '../pages/Fits36'
 import FitHair from '../pages/FitHair'
 import Q10 from '../pages/Q10'
 import FitDreams from '../pages/FitDreams'
+import VitaminasB6B9B12 from '../pages/VitaminasB6B9B12'
 import PicolinatoCromo from '../pages/PicolinatoCromo'
 import VelmoBlackDrink from '../pages/VelmoBlackDrink'
 import ComboVelmoBlack from '../pages/ComboVelmoBlack'
@@ -50,6 +51,7 @@ const AppRoutes: React.FC = () => (
       <Route path="/produtos/fithair" element={<FitHair />} />
       <Route path="/produtos/q10" element={<Q10 />} />
       <Route path="/produtos/fitdreams" element={<FitDreams />} />
+      <Route path="/produtos/vitaminas-b6-b9-b12" element={<VitaminasB6B9B12 />} />
 
       <Route element={<ProtectedLayout />}>
         <Route path="/inicio" element={<AreaHome />} />
