@@ -3,7 +3,7 @@ import footerImage from '../assets/footer/rodape.png'
 import Navbar from '../components/layout/Navbar'
 
 const VitaminasB6B9B12: React.FC = () => {
-  const productImage = 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-metil-caps-01_11zon.webp?v=1775762206'
+  const productImage = `${import.meta.env.BASE_URL}assets/Produtos/alwaisfit-b3,6,9.jpeg`
 
   return (
     <>
