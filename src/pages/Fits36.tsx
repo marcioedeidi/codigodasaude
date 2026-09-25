@@ -23,11 +23,12 @@ const Fits36: React.FC = () => {
         </section>
 
         <section>
-          <div className="mx-auto w-full">
+          <div className="mx-auto w-full overflow-hidden" style={{ aspectRatio: '1536 / 788' }}>
             <img
               src={footerImage}
               alt="Código da Saúde"
-              className="block w-full"
+              className="block h-auto w-full max-w-none"
+              style={{ transform: 'translateY(-14.453125%)' }}
               draggable={false}
             />
           </div>
