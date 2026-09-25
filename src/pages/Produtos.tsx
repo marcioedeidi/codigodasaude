@@ -14,6 +14,7 @@ const clickAreas: ClickArea[] = [
 ]
 
 const extraClickAreas: ClickArea[] = [
+  { name: 'NAC', left: '7%', top: '93%', width: '10%', height: '5%' },
   { name: 'Pro3 Magnésio', left: '26%', top: '93%', width: '10%', height: '5%' },
   { name: 'Pro Curcumin', left: '45%', top: '93%', width: '10%', height: '5%' },
   { name: 'Picolinato de Cromo', left: '63%', top: '56%', width: '11%', height: '4%' },
@@ -27,6 +28,10 @@ const Produtos: React.FC = () => {
   const extraPageImage = `${import.meta.env.BASE_URL}assets/WhatsApp Image 2026-09-03 at 00.54.50.jpeg`
 
   const handleProductClick = (name: string) => {
+    if (name === 'NAC') {
+      navigate('/produtos/nac')
+      return
+    }
     if (name === 'Pro Curcumin') {
       navigate('/produtos/pro-curcumin')
       return
