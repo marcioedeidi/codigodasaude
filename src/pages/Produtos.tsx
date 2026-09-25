@@ -11,6 +11,11 @@ const clickAreas: ClickArea[] = [
   { name: 'Velmo Black Cápsulas', left: '47%', top: '50%', width: '12%', height: '10%' },
   { name: 'Creatina Gummy', left: '65%', top: '50%', width: '12%', height: '10%' },
   { name: 'Fiber Slim', left: '80%', top: '50%', width: '12%', height: '10%' },
+  { name: 'Celuglow', left: '7.7%', top: '90.2%', width: '8.8%', height: '3.5%' },
+  { name: 'CreaGym', left: '23.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
+  { name: 'Skin-Fit', left: '37.7%', top: '90.2%', width: '8.6%', height: '3.5%' },
+  { name: 'Movimint', left: '52.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
+  { name: 'Calminol', left: '67.1%', top: '90.2%', width: '8.6%', height: '3.5%' },
 ]
 
 const extraClickAreas: ClickArea[] = [
@@ -74,6 +79,10 @@ const Produtos: React.FC = () => {
     if (name === 'Velmo Black Cápsulas') return navigate('/produtos/velmo-caps')
     if (name === 'Creatina Gummy') return navigate('/produtos/creatina-gummy')
     if (name === 'Celuglow') return navigate('/produtos/celuglow')
+    if (name === 'CreaGym') return navigate('/produtos/creagym')
+    if (name === 'Skin-Fit') return navigate('/produtos/skin-fit')
+    if (name === 'Movimint') return navigate('/produtos/movimint')
+    if (name === 'Calminol') return navigate('/produtos/calminol')
 
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
