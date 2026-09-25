@@ -22,10 +22,9 @@ const velmoraVideos: TestimonialVideo[] = [
 const alwaysFitVideos: TestimonialVideo[] = [
   { src: 'videos/VID-20260813-WA0022.mp4', label: 'Depoimento 1' },
   { src: 'videos/VID-20260813-WA0024.mp4', label: 'Depoimento 2' },
-  { src: 'videos/VID-20260813-WA0025.mp4', label: 'Depoimento 3' },
-  { src: 'videos/VID-20260813-WA0026.mp4', label: 'Depoimento 4' },
-  { src: 'videos/VID-20260813-WA0027.mp4', label: 'Depoimento 5' },
-  { src: 'videos/VID-20260813-WA0028.mp4', label: 'Depoimento 6' },
+  { src: 'videos/VID-20260813-WA0026.mp4', label: 'Depoimento 3' },
+  { src: 'videos/VID-20260813-WA0027.mp4', label: 'Depoimento 4' },
+  { src: 'videos/VID-20260813-WA0028.mp4', label: 'Depoimento 5' },
 ]
 
 type Props = {
