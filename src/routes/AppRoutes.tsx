@@ -10,6 +10,7 @@ import Pro3Magnesio from '../pages/Pro3Magnesio'
 import Nac from '../pages/Nac'
 import Fits36 from '../pages/Fits36'
 import FitHair from '../pages/FitHair'
+import Q10 from '../pages/Q10'
 import PicolinatoCromo from '../pages/PicolinatoCromo'
 import VelmoBlackDrink from '../pages/VelmoBlackDrink'
 import ComboVelmoBlack from '../pages/ComboVelmoBlack'
@@ -46,6 +47,7 @@ const AppRoutes: React.FC = () => (
       <Route path="/produtos/nac" element={<Nac />} />
       <Route path="/produtos/fits36" element={<Fits36 />} />
       <Route path="/produtos/fithair" element={<FitHair />} />
+      <Route path="/produtos/q10" element={<Q10 />} />
 
       <Route element={<ProtectedLayout />}>
         <Route path="/inicio" element={<AreaHome />} />
