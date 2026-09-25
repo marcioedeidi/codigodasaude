@@ -1,10 +1,9 @@
 import React from 'react'
+import productImage from '../assets/Produtos/alwaisfit-b3,6,9.jpeg'
 import footerImage from '../assets/footer/rodape.png'
 import Navbar from '../components/layout/Navbar'
 
 const VitaminasB6B9B12: React.FC = () => {
-  const productImage = `${import.meta.env.BASE_URL}assets/Produtos/alwaisfit-b3,6,9.jpeg`
-
   return (
     <>
       <Navbar />
