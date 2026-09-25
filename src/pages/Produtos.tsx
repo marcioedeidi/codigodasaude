@@ -20,7 +20,7 @@ const extraClickAreas: ClickArea[] = [
   { name: 'Q10', left: '9%', top: '56%', width: '13%', height: '6%' },
   { name: 'Fit Dreams', left: '27%', top: '56%', width: '13%', height: '6%' },
   { name: 'Fit Hair', left: '44%', top: '56%', width: '13%', height: '6%' },
-  { name: 'Vitaminas B6 B9 B12', left: '57%', top: '56%', width: '6%', height: '6%' },
+  { name: 'Vitaminas B6 B9 B12', left: '57%', top: '54%', width: '6%', height: '10%' },
   { name: 'Picolinato de Cromo', left: '63%', top: '56%', width: '11%', height: '5%' },
   { name: 'Fits36', left: '80%', top: '56%', width: '13%', height: '6%' },
 ]
