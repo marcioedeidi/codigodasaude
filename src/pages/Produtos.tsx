@@ -18,6 +18,7 @@ const extraClickAreas: ClickArea[] = [
   { name: 'Pro3 Magnésio', left: '26%', top: '93%', width: '10%', height: '5%' },
   { name: 'Pro Curcumin', left: '45%', top: '93%', width: '10%', height: '5%' },
   { name: 'Picolinato de Cromo', left: '63%', top: '56%', width: '11%', height: '4%' },
+  { name: 'Fits36', left: '82%', top: '56%', width: '11%', height: '4%' },
 ]
 
 const Produtos: React.FC = () => {
@@ -30,6 +31,10 @@ const Produtos: React.FC = () => {
   const handleProductClick = (name: string) => {
     if (name === 'NAC') {
       navigate('/produtos/nac')
+      return
+    }
+    if (name === 'Fits36') {
+      navigate('/produtos/fits36')
       return
     }
     if (name === 'Pro Curcumin') {
