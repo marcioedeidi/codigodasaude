@@ -16,6 +16,7 @@ const clickAreas: ClickArea[] = [
   { name: 'Skin-Fit', left: '37.7%', top: '90.2%', width: '8.6%', height: '3.5%' },
   { name: 'Movimint', left: '52.1%', top: '90.2%', width: '8.7%', height: '3.5%' },
   { name: 'Calminol', left: '67.1%', top: '90.2%', width: '8.6%', height: '3.5%' },
+  { name: 'HeyHair', left: '82%', top: '90.2%', width: '8.8%', height: '3.5%' },
 ]
 
 const extraClickAreas: ClickArea[] = [
@@ -83,6 +84,7 @@ const Produtos: React.FC = () => {
     if (name === 'Skin-Fit') return navigate('/produtos/skin-fit')
     if (name === 'Movimint') return navigate('/produtos/movimint')
     if (name === 'Calminol') return navigate('/produtos/calminol')
+    if (name === 'HeyHair') return navigate('/produtos/heyhair')
 
     setSelected(name)
     if (timerRef.current) window.clearTimeout(timerRef.current)
