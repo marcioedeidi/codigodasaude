@@ -18,6 +18,7 @@ const extraClickAreas: ClickArea[] = [
   { name: 'Pro3 Magnésio', left: '26%', top: '93%', width: '10%', height: '5%' },
   { name: 'Pro Curcumin', left: '45%', top: '93%', width: '10%', height: '5%' },
   { name: 'Q10', left: '9%', top: '56%', width: '13%', height: '6%' },
+  { name: 'Fit Dreams', left: '27%', top: '56%', width: '13%', height: '6%' },
   { name: 'Fit Hair', left: '44%', top: '56%', width: '13%', height: '6%' },
   { name: 'Picolinato de Cromo', left: '63%', top: '56%', width: '11%', height: '5%' },
   { name: 'Fits36', left: '80%', top: '56%', width: '13%', height: '6%' },
@@ -31,6 +32,10 @@ const Produtos: React.FC = () => {
   const extraPageImage = `${import.meta.env.BASE_URL}assets/WhatsApp Image 2026-09-03 at 00.54.50.jpeg`
 
   const handleProductClick = (name: string) => {
+    if (name === 'Fit Dreams') {
+      navigate('/produtos/fitdreams')
+      return
+    }
     if (name === 'Q10') {
       navigate('/produtos/q10')
       return
