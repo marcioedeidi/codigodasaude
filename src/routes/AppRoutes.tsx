@@ -9,6 +9,7 @@ import ProCurcumin from '../pages/ProCurcumin'
 import Pro3Magnesio from '../pages/Pro3Magnesio'
 import Nac from '../pages/Nac'
 import Fits36 from '../pages/Fits36'
+import FitHair from '../pages/FitHair'
 import PicolinatoCromo from '../pages/PicolinatoCromo'
 import VelmoBlackDrink from '../pages/VelmoBlackDrink'
 import ComboVelmoBlack from '../pages/ComboVelmoBlack'
@@ -39,12 +40,12 @@ const AppRoutes: React.FC = () => (
     <Routes>
       <Route path="/" element={<><Home /><Footer /></>} />
       <Route path="/cadastro" element={<Cadastro />} />
-
       <Route path="/produtos" element={<Produtos />} />
       <Route path="/produtos/alwaysfit" element={<AlwaysFit />} />
       <Route path="/produtos/pro3-magnesio" element={<Pro3Magnesio />} />
       <Route path="/produtos/nac" element={<Nac />} />
       <Route path="/produtos/fits36" element={<Fits36 />} />
+      <Route path="/produtos/fithair" element={<FitHair />} />
 
       <Route element={<ProtectedLayout />}>
         <Route path="/inicio" element={<AreaHome />} />
