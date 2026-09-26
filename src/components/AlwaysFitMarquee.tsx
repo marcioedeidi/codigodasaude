@@ -8,12 +8,11 @@ type AlwaysFitItem = {
   video?: string
 }
 
-// Imagens oficiais da vitrine AlwaysFit.
-// Usamos <img> diretamente, em vez de SVG com <image>, para evitar
-// bloqueios de carregamento do navegador e problemas com lazy-loading
-// dentro de uma esteira horizontal animada.
 const items: AlwaysFitItem[] = [
-  { name: 'Código da Saúde', kind: 'logo' },
+  {
+    name: 'Código da Saúde',
+    kind: 'logo'
+  },
   {
     name: 'NAC',
     kind: 'product',
@@ -58,6 +57,7 @@ const items: AlwaysFitItem[] = [
     name: 'PRO Curcumin',
     kind: 'product',
     image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-procurcumin-1frasco_11zon_a8e6cf0a-cdcb-4ed8-9958-d6a68f997165.webp?v=1775763718',
+    video: 'videos/VID-20260813-WA0022.mp4',
   },
   {
     name: 'FITS36',
@@ -98,7 +98,7 @@ const AlwaysFitMarquee: React.FC = () => {
               />
             </div>
 
-            {item.name === 'NAC' && item.video && !duplicate && (
+            {item.video && !duplicate && (
               <div
                 className="absolute inset-x-2 bottom-8 h-[48px] overflow-hidden rounded-xl border border-[#b7ddd6] bg-black shadow-sm sm:inset-x-3 sm:h-[54px]"
                 onClick={(event) => event.stopPropagation()}
@@ -110,7 +110,7 @@ const AlwaysFitMarquee: React.FC = () => {
                   preload="metadata"
                   poster={item.image}
                   className="h-full w-full object-cover"
-                  aria-label="Vídeo do produto NAC"
+                  aria-label={`Vídeo do produto ${item.name}`}
                   onClick={(event) => event.stopPropagation()}
                 />
               </div>
