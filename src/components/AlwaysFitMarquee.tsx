@@ -94,7 +94,6 @@ const AlwaysFitMarquee: React.FC = () => {
                   poster={item.image}
                   className="h-full w-full object-contain transition duration-500 hover:scale-105"
                   autoPlay
-                  muted
                   loop
                   playsInline
                   preload="metadata"
