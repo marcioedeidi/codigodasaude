@@ -26,6 +26,7 @@ const alwaysFitVideos: TestimonialVideo[] = [
   { src: 'videos/VID-20260813-WA0028.mp4', label: 'Depoimento 4' },
   { src: 'videos/alwaysfit-b6,b9,b12.mp4', label: 'Depoimento 5' },
   { src: 'videos/alwaysfit-fitdream.mp4', label: 'Depoimento 6' },
+  { src: 'videos/alwaysfit-fithair.mp4', label: 'Depoimento 7' },
 ]
 
 type Props = {
