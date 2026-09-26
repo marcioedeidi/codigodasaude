@@ -20,7 +20,7 @@ const ProCurcumin: React.FC = () => {
                 left: '2.8%',
                 top: '75.0%',
                 width: '33.0%',
-                height: '12.5%'
+                height: '16.5%'
               }}
             >
               <video
