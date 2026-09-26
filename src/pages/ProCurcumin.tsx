@@ -18,7 +18,7 @@ const ProCurcumin: React.FC = () => {
               className="absolute overflow-hidden rounded-2xl"
               style={{
                 left: '2.8%',
-                top: '75.0%',
+                top: '72.0%',
                 width: '33.0%',
                 height: '16.5%'
               }}
