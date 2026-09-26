@@ -73,7 +73,7 @@ const AlwaysFitMarquee: React.FC = () => {
     items.map((item, index) => (
       <div
         key={`${duplicate ? 'duplicate-' : ''}${item.name}-${index}`}
-        className="relative flex h-[138px] w-[176px] shrink-0 items-center justify-center overflow-hidden rounded-[22px] border-[3px] border-white bg-white shadow-[0_10px_24px_rgba(23,91,80,0.16)] sm:h-[150px] sm:w-[194px]"
+        className="relative flex h-[206px] w-[176px] shrink-0 items-center justify-center overflow-hidden rounded-[22px] border-[3px] border-white bg-white shadow-[0_10px_24px_rgba(23,91,80,0.16)] sm:h-[222px] sm:w-[194px]"
         aria-hidden={duplicate}
       >
         {item.kind === 'logo' ? (
@@ -87,30 +87,36 @@ const AlwaysFitMarquee: React.FC = () => {
           </div>
         ) : (
           <>
-            <div className="relative flex h-full w-full items-center justify-center overflow-hidden px-3 pb-8 pt-3">
-              {item.video ? (
+            <div className="relative flex h-[138px] w-full items-center justify-center overflow-hidden px-3 pt-3 sm:h-[150px]">
+              <img
+                src={item.image}
+                alt={duplicate ? '' : item.name}
+                className="max-h-[118px] w-auto max-w-[92%] object-contain transition duration-500 hover:scale-105"
+                draggable={false}
+                decoding="async"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
+            {item.name === 'NAC' && item.video && !duplicate && (
+              <div
+                className="absolute inset-x-2 bottom-8 h-[48px] overflow-hidden rounded-xl border border-[#b7ddd6] bg-black shadow-sm sm:inset-x-3 sm:h-[54px]"
+                onClick={(event) => event.stopPropagation()}
+              >
                 <video
-                  src={item.video}
-                  poster={item.image}
-                  className="h-full w-full object-contain transition duration-500 hover:scale-105"
-                  autoPlay
-                  loop
+                  src={import.meta.env.BASE_URL + item.video}
+                  controls
                   playsInline
                   preload="metadata"
-                  aria-label={duplicate ? '' : item.name}
+                  poster={item.image}
+                  className="h-full w-full object-cover"
+                  aria-label="Vídeo do produto NAC"
+                  onClick={(event) => event.stopPropagation()}
                 />
-              ) : (
-                <img
-                  src={item.image}
-                  alt={duplicate ? '' : item.name}
-                  className="max-h-[104px] w-auto max-w-[92%] object-contain transition duration-500 hover:scale-105"
-                  draggable={false}
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                />
-              )}
-            </div>
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/95 via-[#073d37]/70 to-transparent px-3 pb-2 pt-7">
+              </div>
+            )}
+
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/95 via-[#073d37]/70 to-transparent px-3 pb-2 pt-5">
               <p className="truncate text-center text-xs font-black text-white sm:text-sm">{item.name}</p>
             </div>
           </>
