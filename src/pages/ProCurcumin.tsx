@@ -47,7 +47,7 @@ const ProCurcumin: React.FC = () => {
                 controls
                 playsInline
                 preload="auto"
-                className={`block h-full w-full ${showPreview ? 'object-cover object-[center_35%]' : 'object-contain'}`}
+                className={`block h-full w-full ${showPreview ? 'object-cover object-[center_20%]' : 'object-contain'}`}
                 aria-label="Depoimento 1 do produto Pro Curcumin"
               />
 
