@@ -18,6 +18,25 @@ const Fits36: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
+
+              <div
+                className="absolute overflow-hidden rounded-2xl"
+                style={{
+                  left: '2.8%',
+                  top: '60.8%',
+                  width: '30.8%',
+                  height: '14.2%'
+                }}
+              >
+                <video
+                  src={import.meta.env.BASE_URL + 'videos/alwaysfit-fits36.mp4'}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="block h-full w-full object-cover"
+                  aria-label="Vídeo do produto Fits36"
+                />
+              </div>
             </div>
           </div>
         </section>
