@@ -28,7 +28,7 @@ const ProCurcumin: React.FC = () => {
                 controls
                 playsInline
                 preload="metadata"
-                className="block h-full w-full object-cover"
+                className="block h-full w-full object-contain"
                 aria-label="Depoimento 1 do produto Pro Curcumin"
               />
             </div>
