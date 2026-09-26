@@ -29,7 +29,8 @@ const products = [
   {
     name: 'Pro Curcumin',
     image: proCurcumin,
-    route: '/produtos/pro-curcumin'
+    route: '/produtos/pro-curcumin',
+    video: 'videos/VID-20260813-WA0022.mp4'
   },
   {
     name: 'Pro3 Magnésio',
@@ -53,6 +54,19 @@ const AlwaysFit: React.FC = () => {
                   alt={'Produto AlwaysFit ' + product.name}
                   className="mx-auto block h-48 w-full object-contain"
                 />
+
+                {product.video && (
+                  <div className="mt-4 overflow-hidden rounded-xl bg-black">
+                    <video
+                      src={`${import.meta.env.BASE_URL}${product.video}`}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="block aspect-video w-full object-cover"
+                      aria-label={'Depoimento — ' + product.name}
+                    />
+                  </div>
+                )}
               </div>
             )
 
