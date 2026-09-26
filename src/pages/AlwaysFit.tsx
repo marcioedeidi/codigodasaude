@@ -53,6 +53,24 @@ const AlwaysFit: React.FC = () => {
                   alt={'Produto AlwaysFit ' + product.name}
                   className="mx-auto block h-48 w-full object-contain"
                 />
+
+                {product.name === 'Pro Curcumin' && (
+                  <div
+                    className="mt-3 overflow-hidden rounded-xl border border-[#b7ddd6] bg-black shadow-sm"
+                    onClick={(event) => event.stopPropagation()}
+                  >
+                    <video
+                      src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0022.mp4'}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={product.image}
+                      className="h-28 w-full object-cover"
+                      aria-label="Depoimento 1 do produto Pro Curcumin"
+                      onClick={(event) => event.stopPropagation()}
+                    />
+                  </div>
+                )}
               </div>
             )
 
