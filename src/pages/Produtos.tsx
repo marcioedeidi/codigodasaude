@@ -106,6 +106,19 @@ const Produtos: React.FC = () => {
         <section>
           <div className="relative mx-auto max-w-[1672px]">
             <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block w-full" />
+            <div
+              className="absolute overflow-hidden rounded-[10px] bg-black shadow-md"
+              style={{ left: '45%', top: '76%', width: '10%', height: '17%', zIndex: 80 }}
+            >
+              <video
+                src={`${import.meta.env.BASE_URL}videos/VID-20260813-WA0022.mp4`}
+                controls
+                playsInline
+                preload="metadata"
+                className="block h-full w-full object-cover"
+                aria-label="Depoimento 1 — Always Fit Pro Curcumin"
+              />
+            </div>
             {extraClickAreas.map(area => (
               <button key={area.name} type="button" aria-label={area.name} onClick={() => handleProductClick(area.name)} className="absolute cursor-pointer bg-transparent border-0 p-0" style={{ left: area.left, top: area.top, width: area.width, height: area.height, zIndex: 100, pointerEvents: 'auto' }} />
             ))}
