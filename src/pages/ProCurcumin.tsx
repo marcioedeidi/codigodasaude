@@ -13,6 +13,25 @@ const ProCurcumin: React.FC = () => {
               className="block h-auto w-full object-contain"
               draggable={false}
             />
+
+            <div
+              className="absolute overflow-hidden rounded-2xl"
+              style={{
+                left: '37.6%',
+                top: '72.0%',
+                width: '29.3%',
+                height: '14.1%'
+              }}
+            >
+              <video
+                src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0022.mp4'}
+                controls
+                playsInline
+                preload="metadata"
+                className="block h-full w-full object-cover"
+                aria-label="Depoimento 1 do produto Pro Curcumin"
+              />
+            </div>
           </div>
         </div>
       </section>
