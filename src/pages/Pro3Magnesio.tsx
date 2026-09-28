@@ -18,32 +18,6 @@ const Pro3Magnesio: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
-
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden bg-white"
-                style={{
-                  left: '33.5%',
-                  top: '63.5%',
-                  width: '29%',
-                  height: '12.5%'
-                }}
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden rounded-2xl"
-                style={{
-                  left: '40.25%',
-                  top: '73.9%',
-                  width: '28.8%',
-                  height: '12%',
-                  backgroundImage: `url(${productImage})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: '373.13% 1010.1%',
-                  backgroundPosition: '47.27% 71.75%'
-                }}
-              />
             </div>
           </div>
         </section>
