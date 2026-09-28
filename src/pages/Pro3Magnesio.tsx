@@ -23,11 +23,10 @@ const Pro3Magnesio: React.FC = () => {
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
                 style={{
-                  left: '30%',
-                  top: '70%',
-                  width: '45%',
-                  height: '20%',
-                  zIndex: 10
+                  left: '34%',
+                  top: '72.8%',
+                  width: '38%',
+                  height: '15.8%'
                 }}
               />
 
@@ -42,8 +41,7 @@ const Pro3Magnesio: React.FC = () => {
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: '348.33% 895.65%',
-                  backgroundPosition: '52.12% 82.4%',
-                  zIndex: 20
+                  backgroundPosition: '52.12% 82.4%'
                 }}
               />
             </div>
