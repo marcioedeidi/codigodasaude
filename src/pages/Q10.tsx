@@ -57,6 +57,7 @@ const Q10: React.FC = () => {
                 <video
                   src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0024.mp4'}
                   controls
+                  controlsList="nofullscreen"
                   playsInline
                   preload="auto"
                   className="block h-full w-full object-cover"
