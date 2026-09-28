@@ -39,9 +39,9 @@ const ProCurcumin: React.FC = () => {
               className="absolute overflow-hidden bg-white"
               style={{
                 left: '36.9%',
-                top: '74.7%',
-                width: '29.2%',
-                height: '11.9%'
+                top: '73.9%',
+                width: '32.2%',
+                height: '13.2%'
               }}
             />
 
