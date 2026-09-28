@@ -78,7 +78,7 @@ const Q10: React.FC = () => {
                   controls
                   playsInline
                   preload="auto"
-                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_20%]' : 'object-contain'}`}
+                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_35%]' : 'object-contain'}`}
                   aria-label="Depoimento 2 do produto Q10"
                 />
 
