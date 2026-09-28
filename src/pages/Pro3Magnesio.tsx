@@ -18,33 +18,6 @@ const Pro3Magnesio: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
-
-              {/* Mesmo tratamento do Pro Curcumin: cobre o quadro original e recria o próprio quadro a partir da imagem. */}
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden bg-white"
-                style={{
-                  left: '34%',
-                  top: '72.8%',
-                  width: '38%',
-                  height: '15.8%'
-                }}
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden rounded-2xl"
-                style={{
-                  left: '40.25%',
-                  top: '73.9%',
-                  width: '28.8%',
-                  height: '12%',
-                  backgroundImage: `url(${productImage})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: '374.6% 890.4%',
-                  backgroundPosition: '47.2% 82.5%'
-                }}
-              />
             </div>
           </div>
         </section>
