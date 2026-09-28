@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import productImage from '../assets/Produtos/alwaysfit-q10.jpg'
 import footerImage from '../assets/footer/rodape.png'
 import Navbar from '../components/layout/Navbar'
 
 const Q10: React.FC = () => {
-  const [showCover, setShowCover] = useState(true)
-
   return (
     <>
       <Navbar />
@@ -56,36 +54,14 @@ const Q10: React.FC = () => {
                   height: '15.5%'
                 }}
               >
-                {showCover ? (
-                  <button
-                    type="button"
-                    onClick={() => setShowCover(false)}
-                    aria-label="Abrir depoimento em vídeo"
-                    className="absolute inset-0 z-10 block h-full w-full overflow-hidden rounded-2xl"
-                    style={{
-                      backgroundImage: `url(${productImage})`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: '245% auto',
-                      backgroundPosition: '50% 75%'
-                    }}
-                  >
-                    <span className="absolute inset-0 flex items-center justify-center">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-2xl shadow-lg">
-                        ▶
-                      </span>
-                    </span>
-                  </button>
-                ) : (
-                  <video
-                    autoPlay
-                    src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0024.mp4'}
-                    controls
-                    playsInline
-                    preload="auto"
-                    className="block h-full w-full object-contain"
-                    aria-label="Depoimento 2 do produto Q10"
-                  />
-                )}
+                <video
+                  src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0024.mp4'}
+                  controls
+                  playsInline
+                  preload="auto"
+                  className="block h-full w-full object-cover"
+                  aria-label="Depoimento 2 do produto Q10"
+                />
               </div>
             </div>
           </div>
