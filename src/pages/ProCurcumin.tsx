@@ -32,6 +32,34 @@ const ProCurcumin: React.FC = () => {
               draggable={false}
             />
 
+            {/* Mascara o quadro original e reposiciona o mesmo quadro
+                para alinhar a borda esquerda com a caixa "RECOMENDAÇÃO DE USO". */}
+            <div
+              aria-hidden="true"
+              className="absolute overflow-hidden bg-white"
+              style={{
+                left: '36.9%',
+                top: '74.7%',
+                width: '29.2%',
+                height: '11.9%'
+              }}
+            />
+
+            <div
+              aria-hidden="true"
+              className="absolute overflow-hidden rounded-2xl"
+              style={{
+                left: '40.25%',
+                top: '74.7%',
+                width: '28.8%',
+                height: '11.2%',
+                backgroundImage: `url(${productImage})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '348.33% 895.65%',
+                backgroundPosition: '52.12% 84.48%'
+              }}
+            />
+
             <div
               className="absolute overflow-hidden rounded-2xl"
               style={{
