@@ -26,7 +26,7 @@ const Pro3Magnesio: React.FC = () => {
                   left: '34%',
                   top: '72.8%',
                   width: '38%',
-                  height: '15.8%'
+                  height: '17.2%'
                 }}
               />
 
