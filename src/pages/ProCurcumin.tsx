@@ -65,7 +65,7 @@ const ProCurcumin: React.FC = () => {
               style={{
                 left: '2.8%',
                 top: '72.5%',
-                width: '30.8%',
+                width: '33.5%',
                 height: '15.5%'
               }}
             >
