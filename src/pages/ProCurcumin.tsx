@@ -36,9 +36,9 @@ const ProCurcumin: React.FC = () => {
               className="absolute overflow-hidden rounded-2xl"
               style={{
                 left: '2.8%',
-                top: '60.8%',
+                top: '74.0%',
                 width: '30.8%',
-                height: '14.2%'
+                height: '12.5%'
               }}
             >
               <video
