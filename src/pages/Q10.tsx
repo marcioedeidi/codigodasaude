@@ -54,7 +54,7 @@ const Q10: React.FC = () => {
                 aria-hidden="true"
                 className="absolute overflow-hidden rounded-2xl"
                 style={{
-                  left: '40.25%',
+                  left: '39.15%',
                   top: '73.9%',
                   width: '31.0%',
                   height: '12%',
