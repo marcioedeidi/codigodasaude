@@ -38,10 +38,10 @@ const ProCurcumin: React.FC = () => {
               aria-hidden="true"
               className="absolute overflow-hidden bg-white"
               style={{
-                left: '36.9%',
-                top: '74.7%',
-                width: '32.15%',
-                height: '12.2%'
+                left: '34%',
+                top: '72.8%',
+                width: '38%',
+                height: '15.8%'
               }}
             />
 
