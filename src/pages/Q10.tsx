@@ -54,23 +54,36 @@ const Q10: React.FC = () => {
                   height: '15.5%'
                 }}
               >
+                <div
+                  className="absolute inset-0 bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${productImage})`,
+                    backgroundSize: '245% auto',
+                    backgroundPosition: '50% 75%'
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={(event) => {
+                      const video = event.currentTarget.parentElement?.nextElementSibling as HTMLVideoElement | null
+                      video?.play()
+                    }}
+                    aria-label="Abrir depoimento em vídeo"
+                    className="absolute inset-0 flex items-center justify-center bg-black/5"
+                  >
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-2xl shadow-lg">
+                      ▶
+                    </span>
+                  </button>
+                </div>
+
                 <video
                   src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0024.mp4'}
                   controls
                   playsInline
                   preload="auto"
-                  className="block h-full w-full object-contain"
+                  className="absolute inset-0 block h-full w-full object-contain"
                   aria-label="Depoimento 2 do produto Q10"
-                />
-
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-no-repeat"
-                  style={{
-                    backgroundImage: `url(${productImage})`,
-                    backgroundSize: '245% auto',
-                    backgroundPosition: '50% 58%'
-                  }}
                 />
               </div>
             </div>
