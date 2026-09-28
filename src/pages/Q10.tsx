@@ -56,7 +56,7 @@ const Q10: React.FC = () => {
                 style={{
                   left: '40.25%',
                   top: '73.9%',
-                  width: '28.8%',
+                  width: '31.0%',
                   height: '12%',
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
