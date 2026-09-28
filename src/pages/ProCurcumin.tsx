@@ -37,8 +37,8 @@ const ProCurcumin: React.FC = () => {
               style={{
                 left: '2.8%',
                 top: '74.0%',
-                width: '30.8%',
-                height: '12.5%'
+                width: '33.5%',
+                height: '14.0%'
               }}
             >
               <video
