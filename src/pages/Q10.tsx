@@ -69,7 +69,7 @@ const Q10: React.FC = () => {
                   style={{
                     backgroundImage: `url(${productImage})`,
                     backgroundSize: '245% auto',
-                    backgroundPosition: '50% 42%'
+                    backgroundPosition: '50% 58%'
                   }}
                 />
               </div>
