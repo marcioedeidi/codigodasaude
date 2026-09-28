@@ -37,7 +37,16 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
-              <div aria-hidden="true" className="absolute overflow-hidden bg-white" style={{ left: '34%', top: '72.8%', width: '38%', height: '15.8%' }} />
+              <div
+                aria-hidden="true"
+                className="absolute overflow-hidden bg-white"
+                style={{
+                  left: '34%',
+                  top: '72.8%',
+                  width: '38%',
+                  height: '15.8%'
+                }}
+              />
 
               <div
                 aria-hidden="true"
@@ -56,7 +65,12 @@ const Pro3Magnesio: React.FC = () => {
 
               <div
                 className="absolute overflow-hidden rounded-2xl"
-                style={{ left: '2.8%', top: '72.5%', width: '36%', height: '15.5%' }}
+                style={{
+                  left: '2.8%',
+                  top: '72.5%',
+                  width: '36%',
+                  height: '15.5%'
+                }}
               >
                 <video
                   ref={videoRef}
