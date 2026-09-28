@@ -1,27 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import productImage from '../assets/Produtos/alwaysfit-manesio-vitaminad.jpeg'
 import footerImage from '../assets/footer/rodape.png'
 import Navbar from '../components/layout/Navbar'
 
 const Pro3Magnesio: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [showPreview, setShowPreview] = useState(true)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const handlePlay = () => setShowPreview(false)
-    video.addEventListener('play', handlePlay)
-
-    return () => video.removeEventListener('play', handlePlay)
-  }, [])
-
-  const handlePreviewClick = () => {
-    setShowPreview(false)
-    videoRef.current?.play()
-  }
-
   return (
     <>
       <Navbar />
@@ -36,66 +18,6 @@ const Pro3Magnesio: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
-
-              {/* Cobre completamente o quadro verde original antes de reposicionar a cópia alinhada. */}
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden bg-white"
-                style={{
-                  left: '33.2%',
-                  top: '71.9%',
-                  width: '39.6%',
-                  height: '17.4%'
-                }}
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden rounded-2xl"
-                style={{
-                  left: '40.25%',
-                  top: '73.9%',
-                  width: '28.8%',
-                  height: '12%',
-                  backgroundImage: `url(${productImage})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: '348.33% 895.65%',
-                  backgroundPosition: '52.12% 82.4%'
-                }}
-              />
-
-              <div
-                className="absolute overflow-hidden rounded-2xl"
-                style={{
-                  left: '2.8%',
-                  top: '72.5%',
-                  width: '36%',
-                  height: '15.5%'
-                }}
-              >
-                <video
-                  ref={videoRef}
-                  src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0027.mp4'}
-                  controls
-                  playsInline
-                  preload="auto"
-                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_20%]' : 'object-contain'}`}
-                  aria-label="Depoimento 3 do produto Pro3 Magnésio"
-                />
-
-                {showPreview && (
-                  <button
-                    type="button"
-                    onClick={handlePreviewClick}
-                    aria-label="Abrir depoimento em vídeo"
-                    className="absolute inset-0 flex items-center justify-center bg-black/5"
-                  >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-2xl shadow-lg">
-                      ▶
-                    </span>
-                  </button>
-                )}
-              </div>
             </div>
           </div>
         </section>
