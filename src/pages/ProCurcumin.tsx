@@ -39,9 +39,9 @@ const ProCurcumin: React.FC = () => {
               className="absolute overflow-hidden bg-white"
               style={{
                 left: '36.9%',
-                top: '73.9%',
+                top: '74.7%',
                 width: '32.15%',
-                height: '12.7%'
+                height: '12.2%'
               }}
             />
 
@@ -50,9 +50,9 @@ const ProCurcumin: React.FC = () => {
               className="absolute overflow-hidden rounded-2xl"
               style={{
                 left: '40.25%',
-                top: '73.9%',
+                top: '74.7%',
                 width: '28.8%',
-                height: '12%',
+                height: '11.9%',
                 backgroundImage: `url(${productImage})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '348.33% 895.65%',
