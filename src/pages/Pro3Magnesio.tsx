@@ -19,15 +19,15 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Corrige somente o quadro verde, usando o mesmo método aplicado no Pro Curcumin. */}
+              {/* Mesmo tratamento do Pro Curcumin: cobre o quadro original e recria o próprio quadro a partir da imagem. */}
               <div
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
                 style={{
-                  left: '33.8%',
-                  top: '72.45%',
-                  width: '29%',
-                  height: '12.25%'
+                  left: '34%',
+                  top: '72.8%',
+                  width: '38%',
+                  height: '15.8%'
                 }}
               />
 
@@ -41,8 +41,8 @@ const Pro3Magnesio: React.FC = () => {
                   height: '12%',
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
-                  backgroundSize: '374.6% 877%',
-                  backgroundPosition: '-3.9% 2.8%'
+                  backgroundSize: '374.6% 890.4%',
+                  backgroundPosition: '47.2% 82.5%'
                 }}
               />
             </div>
