@@ -62,6 +62,16 @@ const Q10: React.FC = () => {
                   className="block h-full w-full object-contain"
                   aria-label="Depoimento 2 do produto Q10"
                 />
+
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${productImage})`,
+                    backgroundSize: '245% auto',
+                    backgroundPosition: '50% 42%'
+                  }}
+                />
               </div>
             </div>
           </div>
