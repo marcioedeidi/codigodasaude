@@ -37,14 +37,15 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
+              {/* Cobre completamente o quadro verde original antes de reposicionar a cópia alinhada. */}
               <div
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
                 style={{
-                  left: '34%',
-                  top: '72.8%',
-                  width: '38%',
-                  height: '15.8%'
+                  left: '33.2%',
+                  top: '71.9%',
+                  width: '39.6%',
+                  height: '17.4%'
                 }}
               />
 
