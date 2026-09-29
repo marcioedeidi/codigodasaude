@@ -19,35 +19,31 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Mascara o quadro original e reposiciona o mesmo quadro,
-                  seguindo a mesma técnica usada na página Pro Curcumin. */}
               <div
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
                 style={{
-                  left: '34.2%',
-                  top: '72.3%',
-                  width: '31.6%',
-                  height: '13.2%'
+                  left: '34%',
+                  top: '72.8%',
+                  width: '38%',
+                  height: '15.8%'
                 }}
               />
 
-              {/* Quadro verde reposicionado inteiro, sem trocar a imagem original. */}
               <div
                 aria-hidden="true"
                 className="absolute overflow-hidden rounded-2xl"
                 style={{
-                  left: '38.48%',
-                  top: '72.75%',
-                  width: '26.69%',
-                  height: '11.4%',
+                  left: '40.25%',
+                  top: '73.9%',
+                  width: '28.8%',
+                  height: '12%',
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
-                  backgroundSize: '374.67% auto',
-                  backgroundPosition: '47.16% 82.4%'
+                  backgroundSize: '348.33% 895.65%',
+                  backgroundPosition: '52.12% 82.4%'
                 }}
               />
-
             </div>
           </div>
         </section>
