@@ -23,10 +23,10 @@ const Pro3Magnesio: React.FC = () => {
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
                 style={{
-                  left: '34%',
-                  top: '72.8%',
-                  width: '38%',
-                  height: '15.8%'
+                  left: '0%',
+                  top: '70%',
+                  width: '100%',
+                  height: '20%'
                 }}
               />
 
