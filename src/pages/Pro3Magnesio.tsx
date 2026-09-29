@@ -19,7 +19,8 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Cobre completamente a posição original do botão verde */}
+              {/* Mascara o quadro original e reposiciona o mesmo quadro,
+                  seguindo a mesma técnica usada na página Pro Curcumin. */}
               <div
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
@@ -31,29 +32,21 @@ const Pro3Magnesio: React.FC = () => {
                 }}
               />
 
-              {/* Reposiciona o botão verde inteiro, sem alterar a imagem original */}
+              {/* Quadro verde reposicionado inteiro, sem trocar a imagem original. */}
               <div
                 aria-hidden="true"
-                className="absolute overflow-hidden"
+                className="absolute overflow-hidden rounded-2xl"
                 style={{
                   left: '38.48%',
                   top: '72.75%',
                   width: '26.69%',
-                  height: '11.4%'
+                  height: '11.4%',
+                  backgroundImage: `url(${productImage})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '374.67% auto',
+                  backgroundPosition: '47.16% 82.4%'
                 }}
-              >
-                <img
-                  src={productImage}
-                  alt=""
-                  className="absolute max-w-none"
-                  style={{
-                    width: '374.67%',
-                    left: '-129.53%',
-                    top: '-638.6%'
-                  }}
-                  draggable={false}
-                />
-              </div>
+              />
 
             </div>
           </div>
