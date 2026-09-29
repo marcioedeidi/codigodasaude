@@ -24,9 +24,9 @@ const Pro3Magnesio: React.FC = () => {
                 className="absolute overflow-hidden bg-white"
                 style={{
                   left: '34%',
-                  top: '72.8%',
+                  top: '70.8%',
                   width: '38%',
-                  height: '15.8%'
+                  height: '17.8%'
                 }}
               />
 
