@@ -1,6 +1,5 @@
 import React from 'react'
 import productImage from '../assets/Produtos/alwaysfit-manesio-vitaminad.jpeg'
-import q10ProductImage from '../assets/Produtos/alwaysfit-q10.jpg'
 import footerImage from '../assets/footer/rodape.png'
 import Navbar from '../components/layout/Navbar'
 
@@ -39,7 +38,7 @@ const Pro3Magnesio: React.FC = () => {
                   top: '73.9%',
                   width: '28.8%',
                   height: '12%',
-                  backgroundImage: `url(${q10ProductImage})`,
+                  backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: '348.33% 895.65%',
                   backgroundPosition: '52.12% 82.4%'
