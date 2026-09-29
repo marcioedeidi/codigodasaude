@@ -41,7 +41,7 @@ const Pro3Magnesio: React.FC = () => {
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: '348.33% 895.65%',
-                  backgroundPosition: '52.12% 82.4%'
+                  backgroundPosition: '52.88% 79.14%'
                 }}
               />
             </div>
