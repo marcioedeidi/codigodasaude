@@ -34,14 +34,14 @@ const Pro3Magnesio: React.FC = () => {
                 aria-hidden="true"
                 className="absolute overflow-hidden rounded-2xl"
                 style={{
-                  left: '40.25%',
-                  top: '73.9%',
-                  width: '28.8%',
-                  height: '12%',
+                  left: '38.54%',
+                  top: '72.75%',
+                  width: '26.69%',
+                  height: '11%',
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
-                  backgroundSize: '348.33% 895.65%',
-                  backgroundPosition: '52.12% 82.4%'
+                  backgroundSize: '374.6% 904.4%',
+                  backgroundPosition: '47.2% 81.8%'
                 }}
               />
             </div>
