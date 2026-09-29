@@ -19,31 +19,42 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
+              {/* Cobre completamente a posição original do botão verde */}
               <div
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
                 style={{
-                  left: '34%',
-                  top: '72.8%',
-                  width: '38%',
-                  height: '15.8%'
+                  left: '34.2%',
+                  top: '72.3%',
+                  width: '31.6%',
+                  height: '13.2%'
                 }}
               />
 
+              {/* Reposiciona o botão verde inteiro, sem alterar a imagem original */}
               <div
                 aria-hidden="true"
-                className="absolute overflow-hidden rounded-2xl"
+                className="absolute overflow-hidden"
                 style={{
-                  left: '38.54%',
+                  left: '38.48%',
                   top: '72.75%',
                   width: '26.69%',
-                  height: '11%',
-                  backgroundImage: `url(${productImage})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: '374.6% 904.4%',
-                  backgroundPosition: '47.2% 81.8%'
+                  height: '11.4%'
                 }}
-              />
+              >
+                <img
+                  src={productImage}
+                  alt=""
+                  className="absolute max-w-none"
+                  style={{
+                    width: '374.67%',
+                    left: '-129.53%',
+                    top: '-638.6%'
+                  }}
+                  draggable={false}
+                />
+              </div>
+
             </div>
           </div>
         </section>
