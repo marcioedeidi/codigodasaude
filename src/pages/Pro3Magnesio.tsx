@@ -39,9 +39,9 @@ const Pro3Magnesio: React.FC = () => {
                 className="absolute overflow-hidden rounded-2xl"
                 style={{
                   left: '2.8%',
-                  top: '60.4%',
+                  top: '76.2%',
                   width: '36%',
-                  height: '15.5%'
+                  height: '11.8%'
                 }}
               >
                 <video
