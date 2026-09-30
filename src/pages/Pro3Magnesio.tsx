@@ -19,33 +19,6 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Corrige somente o quadro verde, alinhando-o abaixo do quadro de recomendação. */}
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden bg-white"
-                style={{
-                  left: '33.8%',
-                  top: '63.9%',
-                  width: '29.3%',
-                  height: '12%'
-                }}
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute overflow-hidden rounded-2xl"
-                style={{
-                  left: '40.25%',
-                  top: '64.6%',
-                  width: '28.8%',
-                  height: '11.3%',
-                  backgroundImage: `url(${productImage})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: '348.33% 895.65%',
-                  backgroundPosition: '52.12% 73.5%'
-                }}
-              />
-
             </div>
           </div>
         </section>
