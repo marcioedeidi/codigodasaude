@@ -36,10 +36,10 @@ const Pro3Magnesio: React.FC = () => {
               />
 
               <div
-                className="absolute overflow-hidden rounded-2xl"
+                className="absolute z-20 overflow-hidden rounded-2xl"
                 style={{
                   left: '2.8%',
-                  top: '72.5%',
+                  top: '70.8%',
                   width: '36%',
                   height: '15.5%'
                 }}
@@ -71,7 +71,7 @@ const Pro3Magnesio: React.FC = () => {
               {/* Desloca o quadro original 68px para a direita, sem redimensionar sua arte. */}
               <div
                 aria-hidden="true"
-                className="absolute overflow-hidden bg-white"
+                className="absolute z-10 overflow-hidden bg-white"
                 style={{
                   left: '37.5%',
                   top: '69.85%',
@@ -82,7 +82,7 @@ const Pro3Magnesio: React.FC = () => {
 
               <div
                 aria-hidden="true"
-                className="absolute overflow-hidden"
+                className="absolute z-10 overflow-hidden"
                 style={{
                   left: '42%',
                   top: '70.5%',
