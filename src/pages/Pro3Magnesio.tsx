@@ -19,6 +19,33 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
+              {/* Move somente o quadro verde para alinhar sua borda esquerda ao quadro de recomendação. */}
+              <div
+                aria-hidden="true"
+                className="absolute bg-white"
+                style={{
+                  left: '24.4%',
+                  top: '71.4%',
+                  width: '28.9%',
+                  height: '10.2%'
+                }}
+              />
+
+              <div
+                aria-hidden="true"
+                className="absolute overflow-hidden rounded-2xl"
+                style={{
+                  left: '28.35%',
+                  top: '71.4%',
+                  width: '28.9%',
+                  height: '10.2%',
+                  backgroundImage: `url(${productImage})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '346.2% 980.4%',
+                  backgroundPosition: '50% 89.7%'
+                }}
+              />
+
             </div>
           </div>
         </section>
