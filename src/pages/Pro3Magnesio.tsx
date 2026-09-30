@@ -19,15 +19,15 @@ const Pro3Magnesio: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Corrige apenas o quadro verde de compra, mantendo o restante da arte intacto. */}
+              {/* Corrige somente o quadro verde, alinhando-o abaixo do quadro de recomendação. */}
               <div
                 aria-hidden="true"
                 className="absolute overflow-hidden bg-white"
                 style={{
                   left: '33.8%',
-                  top: '71.9%',
+                  top: '63.9%',
                   width: '29.3%',
-                  height: '13%'
+                  height: '12%'
                 }}
               />
 
@@ -35,16 +35,17 @@ const Pro3Magnesio: React.FC = () => {
                 aria-hidden="true"
                 className="absolute overflow-hidden rounded-2xl"
                 style={{
-                  left: '34.57%',
-                  top: '72.66%',
-                  width: '26.83%',
-                  height: '11.23%',
+                  left: '40.25%',
+                  top: '64.6%',
+                  width: '28.8%',
+                  height: '11.3%',
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
-                  backgroundSize: '372.8% 890.4%',
-                  backgroundPosition: '47.2% 81.9%'
+                  backgroundSize: '348.33% 895.65%',
+                  backgroundPosition: '52.12% 73.5%'
                 }}
               />
+
             </div>
           </div>
         </section>
