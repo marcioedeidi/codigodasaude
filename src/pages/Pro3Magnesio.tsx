@@ -40,7 +40,7 @@ const Pro3Magnesio: React.FC = () => {
                 style={{
                   left: '2.8%',
                   top: '69.8%',
-                  width: '36%',
+                  width: '38%',
                   height: '15.5%'
                 }}
               >
