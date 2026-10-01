@@ -56,7 +56,7 @@ const VitaminasB6B9B12: React.FC = () => {
                 className="absolute z-10 overflow-hidden rounded-2xl"
                 style={{
                   left: '40.625%',
-                  top: '73.0143%',
+                  top: '72.6143%',
                   width: '28.7861%',
                   height: '12%',
                   backgroundImage: `url(${productImage})`,
