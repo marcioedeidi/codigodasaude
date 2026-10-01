@@ -72,7 +72,7 @@ const Fits36: React.FC = () => {
                 style={{
                   left: '2.8%',
                   top: '73.5%',
-                  width: '30.8%',
+                  width: '37%',
                   height: '14.2%'
                 }}
               >
