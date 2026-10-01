@@ -19,19 +19,20 @@ const Fits36: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Cobre somente a posição original do quadro verde. */}
+              {/* Limpa somente a área original do quadro, incluindo sua borda. */}
               <div
                 aria-hidden="true"
-                className="absolute z-10 bg-white"
+                className="absolute z-10"
                 style={{
-                  left: '37.9808%',
-                  top: '73.2143%',
-                  width: '28.7861%',
-                  height: '10.9562%'
+                  left: '37.5%',
+                  top: '72.72%',
+                  width: '30%',
+                  height: '12.2%',
+                  background: '#fdfdfd'
                 }}
               />
 
-              {/* Mesmo quadro verde original, deslocado 44px para a direita. */}
+              {/* Quadro verde original, deslocado somente para a direita. */}
               <div
                 aria-hidden="true"
                 className="absolute z-10 overflow-hidden"
