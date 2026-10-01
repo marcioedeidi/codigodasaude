@@ -82,7 +82,7 @@ const VitaminasB6B9B12: React.FC = () => {
                   controls
                   playsInline
                   preload="auto"
-                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_30%]' : 'object-contain'}`}
+                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_55%]' : 'object-contain'}`}
                   aria-label="Depoimento 5 do produto AlwaysFit Vitaminas B6 B9 B12"
                 />
 
