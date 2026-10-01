@@ -47,6 +47,44 @@ const FitDreams: React.FC = () => {
                   backgroundPosition: '53.3333% 82.2242%'
                 }}
               />
+
+              {/* Centraliza somente o texto da recomendação, sem mover nem redimensionar o quadro verde. */}
+              <div
+                aria-hidden="true"
+                className="absolute z-20 flex flex-col items-center justify-center text-center overflow-hidden"
+                style={{
+                  left: '45.4%',
+                  top: '74.25%',
+                  width: '22.9%',
+                  height: '8.7%',
+                  background: '#f3f8f5',
+                  padding: '0 1.2%'
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 'clamp(8px, 1.02vw, 16px)',
+                    lineHeight: 1.15,
+                    fontWeight: 700,
+                    color: '#165f54',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  RECOMENDAÇÃO DE USO
+                </div>
+                <div
+                  style={{
+                    marginTop: '0.35%',
+                    fontSize: 'clamp(7px, 0.78vw, 12px)',
+                    lineHeight: 1.25,
+                    fontWeight: 500,
+                    color: '#263b36',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  1 cápsula por dia, 30 minutos antes de dormir.
+                </div>
+              </div>
             </div>
           </div>
         </section>
