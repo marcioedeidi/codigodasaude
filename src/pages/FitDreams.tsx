@@ -47,48 +47,6 @@ const FitDreams: React.FC = () => {
                   backgroundPosition: '53.3333% 82.2242%'
                 }}
               />
-
-              {/* Somente o texto da recomendação, 1% mais acima. */}
-              <div
-                aria-hidden="true"
-                className="absolute z-20"
-                style={{
-                  left: '40.625%',
-                  top: '72.2143%',
-                  width: '28.7861%',
-                  height: '10.9562%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  boxSizing: 'border-box'
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: '1.18vw',
-                    lineHeight: 1.15,
-                    fontWeight: 700,
-                    color: '#174f47',
-                    marginBottom: '0.25vw',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  RECOMENDAÇÃO DE USO
-                </div>
-                <div
-                  style={{
-                    fontSize: '1.02vw',
-                    lineHeight: 1.2,
-                    fontWeight: 400,
-                    color: '#1f2d2a'
-                  }}
-                >
-                  1 cápsula ao dia com 200ml de água, cerca de 30<br />
-                  minutos antes de dormir.
-                </div>
-              </div>
             </div>
           </div>
         </section>
