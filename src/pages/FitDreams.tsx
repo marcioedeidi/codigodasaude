@@ -48,55 +48,6 @@ const FitDreams: React.FC = () => {
                 }}
               />
             </div>
-
-              {/* Centraliza somente o texto dentro do quadro verde-claro. */}
-              <div
-                aria-hidden="true"
-                className="absolute z-20"
-                style={{
-                  left: '46.1%',
-                  top: '59.65%',
-                  width: '24.2%',
-                  height: '7.05%',
-                  background: '#eef7ef',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  padding: '0 0.8%',
-                  boxSizing: 'border-box'
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: '1.18vw',
-                    lineHeight: 1.15,
-                    fontWeight: 700,
-                    color: '#174f47',
-                    marginBottom: '0.25vw',
-                    whiteSpace: 'nowrap',
-                    position: 'relative',
-                    top: '-0.25vw'
-                  }}
-                >
-                  RECOMENDAÇÃO DE USO
-                </div>
-                <div
-                  style={{
-                    fontSize: '1.02vw',
-                    lineHeight: 1.2,
-                    fontWeight: 400,
-                    color: '#1f2d2a',
-                    maxWidth: '100%',
-                    position: 'relative',
-                    top: '-0.25vw'
-                  }}
-                >
-                  1 cápsula ao dia com 200ml de água, cerca de 30<br />
-                  minutos antes de dormir.
-                </div>
-              </div>
           </div>
         </section>
 
