@@ -71,7 +71,7 @@ const Fits36: React.FC = () => {
                 className="absolute z-20 overflow-hidden rounded-2xl"
                 style={{
                   left: '2.8%',
-                  top: '69.8%',
+                  top: '73.5%',
                   width: '30.8%',
                   height: '14.2%'
                 }}
