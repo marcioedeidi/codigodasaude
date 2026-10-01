@@ -37,28 +37,28 @@ const VitaminasB6B9B12: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Limpa somente a área original do quadro verde. */}
+              {/* Limpa toda a área antiga para não deixar a linha inferior do quadro original. */}
               <div
                 aria-hidden="true"
                 className="absolute z-10"
                 style={{
                   left: '37.5%',
                   top: '72.72%',
-                  width: '30%',
-                  height: '12.2%',
+                  width: '31%',
+                  height: '13.2%',
                   background: '#fdfdfd'
                 }}
               />
 
-              {/* Quadro verde reposicionado 44px para a direita, sem alterar o restante. */}
+              {/* Quadro verde reposicionado, preservando o tamanho e recuperando a margem inferior arredondada. */}
               <div
                 aria-hidden="true"
-                className="absolute z-10 overflow-hidden"
+                className="absolute z-10 overflow-hidden rounded-2xl"
                 style={{
                   left: '40.625%',
                   top: '73.2143%',
                   width: '28.7861%',
-                  height: '10.9562%',
+                  height: '12%',
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: '347.3904% 912.5926%',
