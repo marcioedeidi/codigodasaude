@@ -18,34 +18,6 @@ const Fits36: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
-
-              {/* Retira somente a posição original do quadro verde. */}
-              <div
-                aria-hidden="true"
-                className="absolute z-10 overflow-hidden bg-white"
-                style={{
-                  left: '2.8%',
-                  top: '60.8%',
-                  width: '30.8%',
-                  height: '14.2%'
-                }}
-              />
-
-              {/* Mesmo quadro verde, deslocado somente para a direita. */}
-              <div
-                aria-hidden="true"
-                className="absolute z-10 overflow-hidden"
-                style={{
-                  left: '42%',
-                  top: '60.8%',
-                  width: '30.8%',
-                  height: '14.2%',
-                  backgroundImage: `url(${productImage})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: '324.6753% 704.2254%',
-                  backgroundPosition: '4.0462% 70.8625%'
-                }}
-              />
             </div>
           </div>
         </section>
