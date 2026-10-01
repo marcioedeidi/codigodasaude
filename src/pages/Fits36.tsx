@@ -18,33 +18,6 @@ const Fits36: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
-
-              {/* Move somente o quadro verde para a linha da recomendação de uso. */}
-              <div
-                aria-hidden="true"
-                className="absolute z-10 overflow-hidden"
-                style={{
-                  left: '42%',
-                  top: '60.8%',
-                  width: '30.8%',
-                  height: '14.2%',
-                  backgroundImage: `url(${productImage})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: '324.6753% 704.2254%',
-                  backgroundPosition: '0% 8.8%'
-                }}
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute z-20 overflow-hidden bg-[#f3f8f3]"
-                style={{
-                  left: '2.8%',
-                  top: '60.8%',
-                  width: '30.8%',
-                  height: '14.2%'
-                }}
-              />
             </div>
           </div>
         </section>
