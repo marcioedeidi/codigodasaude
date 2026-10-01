@@ -18,6 +18,35 @@ const FitDreams: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
+
+              {/* Limpa somente a área original do quadro, incluindo sua borda. */}
+              <div
+                aria-hidden="true"
+                className="absolute z-10"
+                style={{
+                  left: '37.5%',
+                  top: '72.72%',
+                  width: '30%',
+                  height: '12.2%',
+                  background: '#fdfdfd'
+                }}
+              />
+
+              {/* Quadro verde alinhado pela esquerda com o quadro de recomendação de uso. */}
+              <div
+                aria-hidden="true"
+                className="absolute z-10 overflow-hidden"
+                style={{
+                  left: '40.625%',
+                  top: '73.2143%',
+                  width: '28.7861%',
+                  height: '10.9562%',
+                  backgroundImage: `url(${productImage})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '347.3904% 912.5926%',
+                  backgroundPosition: '53.3333% 82.2242%'
+                }}
+              />
             </div>
           </div>
         </section>
