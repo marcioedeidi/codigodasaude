@@ -62,6 +62,11 @@ const FitDreams: React.FC = () => {
                 >
                   <div
                     style={{
+                      transform: 'translateY(-10%)'
+                    }}
+                  >
+                    <div
+                    style={{
                       fontSize: 'clamp(8px, 1.05vw, 18px)',
                       fontWeight: 700,
                       lineHeight: 1.15,
@@ -79,6 +84,7 @@ const FitDreams: React.FC = () => {
                     }}
                   >
                     1 cápsula ao dia com 200ml de água, cerca de 30 minutos antes de dormir.
+                  </div>
                   </div>
                 </div>
               </div>
