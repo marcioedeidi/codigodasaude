@@ -47,40 +47,6 @@ const FitDreams: React.FC = () => {
                   backgroundPosition: '52.9000% 82.2242%'
                 }}
               >
-                {/* Centraliza somente os textos, mantendo o ícone original à esquerda. */}
-                <div
-                  className="absolute flex flex-col items-center justify-center text-center"
-                  style={{
-                    left: '18%',
-                    top: '8%',
-                    width: '79%',
-                    height: '84%',
-                    background: '#edf7ef',
-                    color: '#183f36',
-                    fontFamily: 'Arial, sans-serif'
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 'clamp(8px, 1.05vw, 18px)',
-                      fontWeight: 700,
-                      lineHeight: 1.15,
-                      marginBottom: '2.5%'
-                    }}
-                  >
-                    RECOMENDAÇÃO DE USO
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 'clamp(7px, 0.88vw, 15px)',
-                      fontWeight: 400,
-                      lineHeight: 1.2,
-                      maxWidth: '96%'
-                    }}
-                  >
-                    1 cápsula ao dia com 200ml de água, cerca de 30 minutos antes de dormir.
-                  </div>
-                </div>
               </div>
             </div>
           </div>
