@@ -49,7 +49,7 @@ const FitDreams: React.FC = () => {
               >
                 {/* Centraliza somente os textos, mantendo o ícone original à esquerda. */}
                 <div
-                  className="absolute flex items-center justify-center text-center"
+                  className="absolute flex flex-col items-center justify-center text-center"
                   style={{
                     left: '18%',
                     top: '8%',
@@ -61,29 +61,24 @@ const FitDreams: React.FC = () => {
                   }}
                 >
                   <div
-                    className="flex flex-col items-center justify-center"
-                    style={{ transform: 'translateY(-8%)' }}
+                    style={{
+                      fontSize: 'clamp(8px, 1.05vw, 18px)',
+                      fontWeight: 700,
+                      lineHeight: 1.15,
+                      marginBottom: '2.5%'
+                    }}
                   >
-                    <div
-                      style={{
-                        fontSize: 'clamp(8px, 1.05vw, 18px)',
-                        fontWeight: 700,
-                        lineHeight: 1.15,
-                        marginBottom: '2.5%'
-                      }}
-                    >
-                      RECOMENDAÇÃO DE USO
-                    </div>
-                    <div
-                      style={{
-                        fontSize: 'clamp(7px, 0.88vw, 15px)',
-                        fontWeight: 400,
-                        lineHeight: 1.2,
-                        maxWidth: '96%'
-                      }}
-                    >
-                      1 cápsula ao dia com 200ml de água, cerca de 30 minutos antes de dormir.
-                    </div>
+                    RECOMENDAÇÃO DE USO
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 'clamp(7px, 0.88vw, 15px)',
+                      fontWeight: 400,
+                      lineHeight: 1.2,
+                      maxWidth: '96%'
+                    }}
+                  >
+                    1 cápsula ao dia com 200ml de água, cerca de 30 minutos antes de dormir.
                   </div>
                 </div>
               </div>
