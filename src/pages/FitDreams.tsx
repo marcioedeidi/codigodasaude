@@ -44,7 +44,7 @@ const FitDreams: React.FC = () => {
                   backgroundImage: `url(${productImage})`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: '347.3904% 912.5926%',
-                  backgroundPosition: '53.3333% 82.2242%'
+                  backgroundPosition: '52.9000% 82.2242%'
                 }}
               />
             </div>
