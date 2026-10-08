@@ -19,6 +19,46 @@ const FitDreams: React.FC = () => {
                 draggable={false}
               />
 
+              {/* Centraliza somente o texto da recomendação superior, que está incorporado à imagem.
+                  Mantém intactos o ícone, a moldura, a seta inferior e todo o restante da página. */}
+              <div
+                className="absolute z-10 flex flex-col justify-center"
+                style={{
+                  left: '45.7%',
+                  top: '63.85%',
+                  width: '23.6%',
+                  height: '6.8%',
+                  paddingLeft: '0.55%',
+                  background: 'linear-gradient(90deg, #ebf6ee 0%, #ecf6ef 100%)',
+                  color: '#183f36',
+                  fontFamily: 'Arial, sans-serif',
+                  WebkitTextSizeAdjust: 'none'
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: '1.10vw',
+                    fontWeight: 700,
+                    lineHeight: 1.16,
+                    marginBottom: '0.33vw'
+                  }}
+                >
+                  RECOMENDAÇÃO DE USO
+                </div>
+                <div
+                  style={{
+                    fontSize: '0.95vw',
+                    fontWeight: 400,
+                    lineHeight: 1.22,
+                    color: '#233b34',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  <span className="block">1 cápsula ao dia com 200ml de água, cerca de 30</span>
+                  <span className="block">minutos antes de dormir.</span>
+                </div>
+              </div>
+
               {/* Limpa somente a área original do quadro, incluindo sua borda. */}
               <div
                 aria-hidden="true"
