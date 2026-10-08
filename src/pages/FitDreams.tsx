@@ -93,7 +93,7 @@ const FitDreams: React.FC = () => {
                   controls
                   playsInline
                   preload="auto"
-                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_30%]' : 'object-contain'}`}
+                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_25%]' : 'object-contain'}`}
                   aria-label="Depoimento 6 do produto AlwaysFit Fit Dreams"
                 />
 
