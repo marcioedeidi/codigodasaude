@@ -75,7 +75,7 @@ const FitDreams: React.FC = () => {
               {/* Preserva a arte original da seta e sua mensagem: clique no vídeo para fazer a compra. */}
               <div
                 aria-hidden="true"
-                className="absolute z-10 overflow-hidden"
+                className="absolute z-10 overflow-hidden rounded-2xl"
                 style={{
                   left: '40.625%',
                   top: '73.2143%',
