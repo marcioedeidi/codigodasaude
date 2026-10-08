@@ -82,9 +82,9 @@ const FitDreams: React.FC = () => {
                 className="absolute z-20 overflow-hidden rounded-2xl"
                 style={{
                   left: '2.8%',
-                  top: '73.5%',
+                  top: '72.5%',
                   width: '36%',
-                  height: '14.2%'
+                  height: '15.2%'
                 }}
               >
                 <video
