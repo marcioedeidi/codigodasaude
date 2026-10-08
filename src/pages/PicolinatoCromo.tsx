@@ -45,11 +45,11 @@ const PicolinatoCromo: React.FC = () => {
                 ref={videoRef}
                 src={import.meta.env.BASE_URL + 'videos/alwaysfit-picolanato-de-cromo.mp4'}
                 onLoadedMetadata={(event) => {
-                  // Mostra um quadro parado do próprio depoimento como capa.
+                  // Mostra o quadro de 0:01 do próprio depoimento como capa parada.
                   const video = event.currentTarget
                   const previewTime = Number.isFinite(video.duration)
-                    ? Math.min(0.8, Math.max(0, video.duration - 0.1))
-                    : 0.8
+                    ? Math.min(1, Math.max(0, video.duration - 0.1))
+                    : 1
                   video.currentTime = previewTime
                   video.pause()
                 }}
