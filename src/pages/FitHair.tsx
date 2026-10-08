@@ -61,7 +61,7 @@ const FitHair: React.FC = () => {
                   controls
                   playsInline
                   preload="auto"
-                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_65%]' : 'object-contain'}`}
+                  className={`block h-full w-full ${showPreview ? 'object-cover object-[center_60%]' : 'object-contain'}`}
                   aria-label="Depoimento 7 do produto AlwaysFit Fit Hair"
                 />
 
