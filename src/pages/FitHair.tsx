@@ -61,7 +61,13 @@ const FitHair: React.FC = () => {
                     type="button"
                     onClick={handlePreviewClick}
                     aria-label="Abrir depoimento em vídeo"
-                    className="absolute inset-0 flex items-center justify-center bg-black/5"
+                    className="absolute inset-0 flex items-center justify-center bg-[#f8f1f0]"
+                    style={{
+                      backgroundImage: `url(${productImage})`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundSize: '250% auto',
+                      backgroundPosition: '9% 39%'
+                    }}
                   >
                     <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-2xl shadow-lg">
                       ▶
