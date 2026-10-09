@@ -36,35 +36,23 @@ const Q10: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
-              {/* Área clicável sobre COMPRAR AGORA, mantendo a arte original. */}
+              {/* Única área de compra clicável: exatamente sobre COMPRAR AGORA da arte. */}
               <a
                 href="https://vt.tiktok.com/ZSbtogFRv/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar Q10 no TikTok Shop da Universo Shop da Deidi"
-                className="absolute z-20 block rounded-lg focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#0a8069]"
+                className="absolute z-30 block cursor-pointer touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#0a8069]"
                 style={{
                   left: '75.1%',
                   top: '36.0%',
                   width: '21.4%',
                   height: '5.7%'
                 }}
-              />
+              >
+                <span className="sr-only">Comprar Q10 agora</span>
+              </a>
 
-              {/* O quadro verde também direciona à compra, sem interferir no vídeo. */}
-              <a
-                href="https://vt.tiktok.com/ZSbtogFRv/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Abrir o Q10 no TikTok para comprar"
-                className="absolute z-20 block rounded-2xl focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#0a8069]"
-                style={{
-                  left: '40.25%',
-                  top: '73.9%',
-                  width: '28.8%',
-                  height: '12%'
-                }}
-              />
 
 
               <div
