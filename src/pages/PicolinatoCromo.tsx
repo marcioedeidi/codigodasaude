@@ -56,7 +56,7 @@ const PicolinatoCromo: React.FC = () => {
                 controls
                 playsInline
                 preload="auto"
-                className={`block h-full w-full ${showPreview ? 'object-cover object-[center_0%]' : 'object-contain'}`}
+                className={`block h-full w-full ${showPreview ? 'object-cover object-[center_90%]' : 'object-contain'}`}
                 aria-label="Depoimento 9 do produto AlwaysFit Picolinato de Cromo"
               />
 
