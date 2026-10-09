@@ -113,6 +113,30 @@ const Q10: React.FC = () => {
                   </button>
                 )}
               </div>
+
+              {/* Link de compra acima do vídeo, mostrado somente quando o cliente abre o depoimento. */}
+              {!showPreview && (
+                <div
+                  className="pointer-events-none absolute z-30 flex justify-center"
+                  style={{
+                    left: '2.8%',
+                    top: '72.5%',
+                    width: '36%',
+                    transform: 'translateY(-100%)'
+                  }}
+                >
+                  <a
+                    href="https://vt.tiktok.com/ZSbtogFRv/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Comprar Q10 pelo vídeo da Universo Shop da Deidi no TikTok"
+                    className="pointer-events-auto inline-flex items-center justify-center gap-1.5 rounded-full bg-[#006c55] px-2.5 py-1.5 text-[10px] font-extrabold leading-none text-white shadow-md transition hover:bg-[#004c3d] focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#0a8069] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
+                  >
+                    <span aria-hidden="true" className="motion-safe:animate-pulse text-base leading-none sm:text-lg">⬇</span>
+                    COMPRE AGORA
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </section>
