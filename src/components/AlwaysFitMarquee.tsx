@@ -5,7 +5,6 @@ type AlwaysFitItem = {
   name: string
   kind: 'logo' | 'product'
   image?: string
-  video?: string
 }
 
 const items: AlwaysFitItem[] = [
@@ -17,25 +16,21 @@ const items: AlwaysFitItem[] = [
     name: 'NAC',
     kind: 'product',
     image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-nac-01_4__11zon_1200x.webp?v=1762809255',
-    video: 'videos/alwaysfit-nac.mp4',
   },
   {
     name: 'FIT DREAMS',
     kind: 'product',
     image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-fitdreams-01_2__11zon_1200x.webp?v=1758138598',
-    video: 'videos/alwaysfit-fitdream.mp4',
   },
   {
     name: 'FIT HAIR',
     kind: 'product',
     image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-fithair-1frasco_11zon_5074b251-776e-45d5-974f-7fb2a8393ed3.webp?v=1761578728',
-    video: 'videos/alwaysfit-fithair.mp4',
   },
   {
     name: 'Vitaminas B6 B9 B12',
     kind: 'product',
     image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-metil-caps-01_11zon.webp?v=1775762206',
-    video: 'videos/alwaysfit-b6,b9,b12.mp4',
   },
   {
     name: 'Q10 Coenzima',
@@ -51,13 +46,11 @@ const items: AlwaysFitItem[] = [
     name: 'Picolinato de Cromo',
     kind: 'product',
     image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-picolinato-1frasco_11zon_2_1200x.webp?v=1750724263',
-    video: 'videos/alwaysfit-picolanato-de-cromo.mp4',
   },
   {
     name: 'PRO Curcumin',
     kind: 'product',
     image: 'https://alwaysfit.com.br/cdn/shop/files/alwaysfit-procurcumin-1frasco_11zon_a8e6cf0a-cdcb-4ed8-9958-d6a68f997165.webp?v=1775763718',
-    video: 'videos/VID-20260813-WA0022.mp4',
   },
   {
     name: 'FITS36',
@@ -97,24 +90,6 @@ const AlwaysFitMarquee: React.FC = () => {
                 referrerPolicy="no-referrer"
               />
             </div>
-
-            {item.video && !duplicate && (
-              <div
-                className="absolute inset-x-2 bottom-8 h-[48px] overflow-hidden rounded-xl border border-[#b7ddd6] bg-black shadow-sm sm:inset-x-3 sm:h-[54px]"
-                onClick={(event) => event.stopPropagation()}
-              >
-                <video
-                  src={import.meta.env.BASE_URL + item.video}
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster={item.image}
-                  className="h-full w-full object-cover"
-                  aria-label={`Vídeo do produto ${item.name}`}
-                  onClick={(event) => event.stopPropagation()}
-                />
-              </div>
-            )}
 
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#073d37]/95 via-[#073d37]/70 to-transparent px-3 pb-2 pt-5">
               <p className="truncate text-center text-xs font-black text-white sm:text-sm">{item.name}</p>
