@@ -45,18 +45,18 @@ const PicolinatoCromo: React.FC = () => {
                 ref={videoRef}
                 src={import.meta.env.BASE_URL + 'videos/alwaysfit-picolanato-de-cromo.mp4'}
                 onLoadedMetadata={(event) => {
-                  // Mostra o quadro de 0:01 do próprio depoimento como capa parada.
+                  // Mostra o quadro de 0:02 do próprio depoimento como capa parada.
                   const video = event.currentTarget
                   const previewTime = Number.isFinite(video.duration)
-                    ? Math.min(1, Math.max(0, video.duration - 0.1))
-                    : 1
+                    ? Math.min(2, Math.max(0, video.duration - 0.1))
+                    : 2
                   video.currentTime = previewTime
                   video.pause()
                 }}
                 controls
                 playsInline
                 preload="auto"
-                className={`block h-full w-full ${showPreview ? 'object-cover object-[center_90%]' : 'object-contain'}`}
+                className={`block h-full w-full ${showPreview ? 'object-cover object-center' : 'object-contain'}`}
                 aria-label="Depoimento 9 do produto AlwaysFit Picolinato de Cromo"
               />
 
