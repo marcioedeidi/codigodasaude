@@ -91,7 +91,7 @@ const Fits36: React.FC = () => {
 
               {/* Única área de compra clicável: exatamente sobre COMPRAR AGORA da arte. */}
               <a
-                href="https://vt.tiktok.com/ZS9D3SHAfSbfC-XnIKM/"
+                href="https://vt.tiktok.com/ZS9D3UHqhWkff-fFMMK/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar FITS36 no TikTok Shop da Universo Shop da Deidi"
@@ -172,7 +172,7 @@ const Fits36: React.FC = () => {
                 {/* O link acompanha o vídeo quando ele é ampliado no celular. */}
                 {(!showPreview || isExpanded) && (
                   <a
-                    href="https://vt.tiktok.com/ZS9D3SHAfSbfC-XnIKM/"
+                    href="https://vt.tiktok.com/ZS9D3UHqhWkff-fFMMK/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Comprar FITS36 pelo vídeo da Universo Shop da Deidi no TikTok"
