@@ -3,7 +3,9 @@ import productImage from '../assets/Produtos/always-fit-curcumin-pro.jpeg'
 
 const ProCurcumin: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const videoContainerRef = useRef<HTMLDivElement>(null)
   const [showPreview, setShowPreview] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -15,9 +17,59 @@ const ProCurcumin: React.FC = () => {
     return () => video.removeEventListener('play', handlePlay)
   }, [])
 
+  useEffect(() => {
+    if (!isExpanded) return
+
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement) setIsExpanded(false)
+    }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !document.fullscreenElement) {
+        setIsExpanded(false)
+      }
+    }
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = originalOverflow
+      document.removeEventListener('fullscreenchange', handleFullscreenChange)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isExpanded])
+
   const handlePreviewClick = () => {
     setShowPreview(false)
     videoRef.current?.play()
+  }
+
+  const toggleVideoFullscreen = async () => {
+    const container = videoContainerRef.current
+    if (isExpanded) {
+      if (document.fullscreenElement === container) {
+        try {
+          await document.exitFullscreen()
+        } catch {
+          // A visualização ampliada ainda pode ser fechada normalmente.
+        }
+      }
+      setIsExpanded(false)
+      return
+    }
+
+    setIsExpanded(true)
+    // No Android, usa tela cheia nativa do QUADRO (incluindo o link).
+    // No iPhone, caso não seja permitido, mantém a visualização ampliada na tela.
+    if (container?.requestFullscreen) {
+      try {
+        await container.requestFullscreen()
+      } catch {
+        // Alternativa visual em tela cheia para navegadores sem suporte.
+      }
+    }
   }
 
   return (
@@ -31,6 +83,23 @@ const ProCurcumin: React.FC = () => {
               className="block h-auto w-full object-contain"
               draggable={false}
             />
+
+            {/* Única área de compra clicável: exatamente sobre COMPRAR AGORA da arte. */}
+            <a
+              href="https://vt.tiktok.com/ZS9UN7vvbtN29-R3MLN/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Comprar Pro Curcumin no TikTok Shop da Universo Shop da Deidi"
+              className="absolute z-30 block cursor-pointer touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#0a8069]"
+              style={{
+                left: '75.1%',
+                top: '36.0%',
+                width: '21.4%',
+                height: '5.7%'
+              }}
+            >
+              <span className="sr-only">Comprar Pro Curcumin agora</span>
+            </a>
 
             {/* Mascara o quadro original e reposiciona o mesmo quadro
                 para alinhar a borda esquerda com a caixa "RECOMENDAÇÃO DE USO". */}
@@ -61,21 +130,22 @@ const ProCurcumin: React.FC = () => {
             />
 
             <div
-              className="absolute overflow-hidden rounded-2xl"
-              style={{
-                left: '2.8%',
-                top: '72.5%',
-                width: '36%',
-                height: '15.5%'
-              }}
+              ref={videoContainerRef}
+              className={isExpanded
+                ? 'fixed z-[100] flex items-center justify-center overflow-hidden bg-black'
+                : 'absolute overflow-hidden rounded-2xl'}
+              style={isExpanded
+                ? { left: 0, top: 0, width: '100vw', height: '100dvh' }
+                : { left: '2.8%', top: '72.5%', width: '36%', height: '15.5%' }}
             >
               <video
                 ref={videoRef}
                 src={import.meta.env.BASE_URL + 'videos/VID-20260813-WA0022.mp4'}
                 controls
+                controlsList="nofullscreen"
                 playsInline
                 preload="auto"
-                className={`block h-full w-full ${showPreview ? 'object-cover object-[center_20%]' : 'object-contain'}`}
+                className={`block h-full w-full ${isExpanded ? 'object-contain' : showPreview ? 'object-cover object-[center_20%]' : 'object-contain'}`}
                 aria-label="Depoimento 1 do produto Pro Curcumin"
               />
 
@@ -91,6 +161,40 @@ const ProCurcumin: React.FC = () => {
                   </span>
                 </button>
               )}
+
+              {/* O link acompanha o vídeo quando ele é ampliado no celular. */}
+              {(!showPreview || isExpanded) && (
+                <a
+                  href="https://vt.tiktok.com/ZS9UN7vvbtN29-R3MLN/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Comprar Pro Curcumin pelo vídeo da Universo Shop da Deidi no TikTok"
+                  className={`absolute z-30 inline-flex max-w-[94%] items-center justify-center whitespace-nowrap rounded-full bg-[#004c3d]/95 font-extrabold leading-none text-white shadow-md transition hover:bg-[#003b30] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${isExpanded
+                    ? 'left-1/2 top-4 -translate-x-1/2 gap-2 px-4 py-2 text-base'
+                    : 'left-1 top-1 gap-0.5 px-1.5 py-1 text-[8px] sm:left-1/2 sm:top-2 sm:-translate-x-1/2 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-sm'}`}
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`motion-safe:animate-pulse font-black leading-none text-[#39FF14] drop-shadow-[0_0_5px_#39FF14] ${isExpanded ? 'text-xl' : 'text-sm sm:text-xl'}`}
+                  >
+                    ➜
+                  </span>
+                  COMPRE AGORA
+                </a>
+              )}
+
+              {/* Controle próprio de tela cheia para manter o botão de compra visível. */}
+              <button
+                type="button"
+                onClick={toggleVideoFullscreen}
+                aria-label={isExpanded ? 'Sair da tela cheia do vídeo Pro Curcumin' : 'Abrir vídeo Pro Curcumin em tela cheia'}
+                title={isExpanded ? 'Sair da tela cheia' : 'Tela cheia'}
+                className={`absolute z-40 flex items-center justify-center rounded-md bg-black/70 font-bold text-white shadow-md hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${isExpanded
+                  ? 'right-4 top-4 h-10 w-10 text-xl'
+                  : 'right-1 top-1 h-6 w-6 text-lg sm:right-2 sm:top-2 sm:h-8 sm:w-8'}`}
+              >
+                <span aria-hidden="true">{isExpanded ? '✕' : '⛶'}</span>
+              </button>
             </div>
           </div>
         </div>
