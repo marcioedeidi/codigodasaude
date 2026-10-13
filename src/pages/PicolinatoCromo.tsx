@@ -82,7 +82,7 @@ const PicolinatoCromo: React.FC = () => {
               className="block h-auto w-full object-contain"
               draggable={false}
             />
-            {/* Preço atualizado: cobre somente o valor incorporado à arte, sem alterar a imagem nem os demais elementos. */}
+            {/* Picolinato de Cromo — R$ 26,90: ajuste exclusivo da área de preço, sem alterar a imagem ou o restante da página. */}
             <div
               role="text"
               aria-label="Preço do Picolinato de Cromo: R$ 26,90"
