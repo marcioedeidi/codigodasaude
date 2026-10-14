@@ -83,6 +83,27 @@ const ProCurcumin: React.FC = () => {
               className="block h-auto w-full object-contain"
               draggable={false}
             />
+            {/* Cobertura completa do preço original incorporado à arte; preserva o restante da imagem. */}
+            <div
+              role="text"
+              aria-label="Preço do PRO Curcumin: R$ 49,91"
+              className="pointer-events-none absolute z-10 flex items-center justify-center whitespace-nowrap"
+              style={{
+                left: '73.7%',
+                top: '26.6%',
+                width: '21.1%',
+                height: '8.8%',
+                backgroundColor: '#ffffff',
+                color: '#005c50',
+                fontFamily: 'Arial, sans-serif',
+                fontWeight: 700,
+                lineHeight: 1,
+                letterSpacing: '-0.08vw'
+              }}
+            >
+              <span style={{ fontSize: '3.15vw', marginRight: '0.35vw' }}>R$</span>
+              <span style={{ fontSize: '4.25vw' }}>49,91</span>
+            </div>
 
             {/* Única área de compra clicável: exatamente sobre COMPRAR AGORA da arte. */}
             <a
