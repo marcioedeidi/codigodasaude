@@ -86,16 +86,16 @@ const Pro3Magnesio: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
-              {/* Preço atualizado: cobre somente o valor incorporado à arte, sem alterar a imagem nem os demais elementos. */}
+              {/* Preço atualizado: cobre toda a área do preço anterior na arte (inclusive extremidades), sem tocar no botão de compra. */}
               <div
                 role="text"
                 aria-label="Preço do PRO3 Magnésio: R$ 59,90"
                 className="pointer-events-none absolute z-10 flex items-center justify-center whitespace-nowrap"
                 style={{
-                  left: '75.0%',
-                  top: '28.1%',
-                  width: '18.2%',
-                  height: '6.7%',
+                  left: '73.7%',
+                  top: '26.6%',
+                  width: '21.1%',
+                  height: '8.8%',
                   backgroundColor: '#ffffff',
                   color: '#005c50',
                   fontFamily: 'Arial, sans-serif',
