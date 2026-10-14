@@ -88,6 +88,27 @@ const VitaminasB6B9B12: React.FC = () => {
                 className="block h-auto w-full object-contain"
                 draggable={false}
               />
+              {/* Cobertura integral do preço antigo da arte, respeitando o botão de compra logo abaixo. */}
+              <div
+                role="text"
+                aria-label="Preço das Vitaminas B6, B9 e B12: R$ 36,91"
+                className="pointer-events-none absolute z-10 flex items-center justify-center whitespace-nowrap"
+                style={{
+                  left: '73.7%',
+                  top: '30.2%',
+                  width: '21.1%',
+                  height: '7.7%',
+                  backgroundColor: '#ffffff',
+                  color: '#005c50',
+                  fontFamily: 'Arial, sans-serif',
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  letterSpacing: '-0.08vw'
+                }}
+              >
+                <span style={{ fontSize: '3.15vw', marginRight: '0.35vw' }}>R$</span>
+                <span style={{ fontSize: '4.25vw' }}>36,91</span>
+              </div>
 
               {/* Única área de compra clicável: exatamente sobre COMPRAR AGORA da arte. */}
               <a
