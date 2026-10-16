@@ -28,6 +28,7 @@ import HeyHair from '../pages/HeyHair'
 import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
 import Ebooks from '../pages/Ebooks'
+import EbookMulherForte from '../pages/EbookMulherForte'
 import ProtectedLayout from '../components/layout/ProtectedLayout'
 import Footer from '../components/layout/Footer'
 
@@ -71,6 +72,7 @@ const AppRoutes: React.FC = () => (
         <Route path="/produtos/heyhair" element={<HeyHair />} />
         <Route path="/depoimentos" element={<Depoimentos />} />
         <Route path="/ebooks" element={<Ebooks />} />
+        <Route path="/ebooks/mulher-forte-mente-cansada" element={<EbookMulherForte />} />
         <Route path="/sobre" element={<Sobre />} />
       </Route>
     </Routes>
