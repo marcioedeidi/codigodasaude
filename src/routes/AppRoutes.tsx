@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Home from '../pages/Home'
 import AreaHome from '../pages/AreaHome'
 import Cadastro from '../pages/Cadastro'
@@ -27,6 +27,7 @@ import Calminol from '../pages/Calminol'
 import HeyHair from '../pages/HeyHair'
 import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
+import Ebooks from '../pages/Ebooks'
 import ProtectedLayout from '../components/layout/ProtectedLayout'
 import Footer from '../components/layout/Footer'
 
@@ -69,7 +70,7 @@ const AppRoutes: React.FC = () => (
         <Route path="/produtos/calminol" element={<Calminol />} />
         <Route path="/produtos/heyhair" element={<HeyHair />} />
         <Route path="/depoimentos" element={<Depoimentos />} />
-        <Route path="/ebooks" element={<Navigate to="/inicio#ebooks" replace />} />
+        <Route path="/ebooks" element={<Ebooks />} />
         <Route path="/sobre" element={<Sobre />} />
       </Route>
     </Routes>
