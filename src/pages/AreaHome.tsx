@@ -7,7 +7,7 @@ import alwaysFitImagePart1 from '../data/alwaysfitImagePart1'
 import alwaysFitImagePart2 from '../data/alwaysfitImagePart2'
 import alwaysFitImagePart3 from '../data/alwaysfitImagePart3'
 import alwaysFitImagePart4 from '../data/alwaysfitImagePart4'
-import ebookImage from '../assets/livros/file_00000000e974820ea169cab1c1a81f5b.png'
+import ebookImage from '../assets/livros/E-books que transformam vidas ultima ediçao.png'
 
 const AreaHome: React.FC = () => {
   const heroImage = `${import.meta.env.BASE_URL}assets/hero-final-clean-v3.webp?v=hero-final-clean-v3`
