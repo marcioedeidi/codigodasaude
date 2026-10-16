@@ -35,7 +35,7 @@ const AreaHome: React.FC = () => {
       <section id="ebooks" className="w-full bg-[#9fded7]">
         <div className="relative mx-auto w-full max-w-[1536px]">
           <img src={ebookImage} alt="E-books Código da Saúde" className="block h-auto w-full select-none" draggable={false} />
-          <Link to="/ebooks" aria-label="Abrir o primeiro e-book" className="absolute left-[27%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] bg-transparent" />
+          <Link to="/ebooks/mulher-forte-mente-cansada" aria-label="Abrir o card de Mulher Forte, Mente Cansada" className="absolute left-[3%] top-[18%] z-30 h-[80%] w-[31%] bg-transparent" />
           <Link to="/cadastro" className="absolute left-[73.5%] top-[54.9%] z-30 h-[7.5%] w-[16.5%] bg-transparent" />
         </div>
       </section>
