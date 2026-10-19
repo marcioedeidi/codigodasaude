@@ -34,9 +34,10 @@ const alwaysFitVideos: TestimonialVideo[] = [
 type Props = {
   brand?: Brand
   videoIndexes?: number[]
+  compact?: boolean
 }
 
-const TestimonialGallery: React.FC<Props> = ({ brand = 'velmora', videoIndexes }) => {
+const TestimonialGallery: React.FC<Props> = ({ brand = 'velmora', videoIndexes, compact = false }) => {
   const [activeVideo, setActiveVideo] = useState<TestimonialVideo | null>(null)
   const allVideos = brand === 'alwaysfit' ? alwaysFitVideos : velmoraVideos
   const videos = videoIndexes ? videoIndexes.map((index) => allVideos[index - 1]).filter(Boolean) : allVideos
@@ -71,11 +72,11 @@ const TestimonialGallery: React.FC<Props> = ({ brand = 'velmora', videoIndexes }
 
           <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
             {videos.map((video, index) => (
-              <button key={video.src} type="button" onClick={() => setActiveVideo(video)} aria-label={`Assistir ${video.label} da ${brandName}`} className="group relative aspect-[9/16] w-[calc(50%-0.375rem)] max-w-[260px] overflow-hidden rounded-[22px] border-[5px] border-white bg-[#dcefe9] text-left shadow-[0_12px_28px_rgba(29,91,80,0.16)] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(29,91,80,0.22)] focus-visible:ring-4 focus-visible:ring-[#168f82]/60 sm:w-[calc(33.333%-0.85rem)] lg:w-[calc(25%-0.95rem)]">
+              <button key={video.src} type="button" onClick={() => setActiveVideo(video)} aria-label={`Assistir ${video.label} da ${brandName}`} className={`group relative aspect-[9/16] overflow-hidden border-white bg-[#dcefe9] text-left shadow-[0_12px_28px_rgba(29,91,80,0.16)] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(29,91,80,0.22)] focus-visible:ring-4 focus-visible:ring-[#168f82]/60 ${compact ? 'w-[calc(25%-0.1875rem)] max-w-[130px] rounded-[12px] border-2 sm:w-[calc(16.6665%-0.425rem)] lg:w-[calc(12.5%-0.475rem)]' : 'w-[calc(50%-0.375rem)] max-w-[260px] rounded-[22px] border-[5px] sm:w-[calc(33.333%-0.85rem)] lg:w-[calc(25%-0.95rem)]'}`}>
                 <video src={getVideoUrl(video.src)} muted playsInline preload="metadata" aria-hidden="true" tabIndex={-1} onLoadedMetadata={(event) => positionPreviewFrame(event.currentTarget)} className="pointer-events-none absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#092f29]/45 via-transparent to-white/5" />
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center"><span className="flex h-14 w-14 items-center justify-center rounded-full border-[3px] border-white bg-black/30 text-white shadow-xl backdrop-blur-[2px] transition duration-300 group-hover:scale-110 sm:h-16 sm:w-16"><svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-current" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span></div>
-                <div className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/60 bg-[#0d5148]/78 px-3 py-1 text-xs font-bold tracking-wide text-white shadow-sm backdrop-blur-sm">{video.label}</div>
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center"><span className={`flex items-center justify-center rounded-full border-white bg-black/30 text-white shadow-xl backdrop-blur-[2px] transition duration-300 group-hover:scale-110 ${compact ? 'h-8 w-8 border-2 sm:h-9 sm:w-9' : 'h-14 w-14 border-[3px] sm:h-16 sm:w-16'}`}><svg viewBox="0 0 24 24" className={`ml-1 fill-current ${compact ? 'h-4 w-4' : 'h-7 w-7'}`} aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span></div>
+                <div className={`pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/60 bg-[#0d5148]/78 font-bold tracking-wide text-white shadow-sm backdrop-blur-sm ${compact ? 'bottom-1 px-1 py-0.5 text-[8px] sm:text-[9px]' : 'bottom-3 px-3 py-1 text-xs'}`}>{video.label}</div>
               </button>
             ))}
           </div>
