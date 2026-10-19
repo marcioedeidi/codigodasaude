@@ -22,7 +22,7 @@ const AreaHome: React.FC = () => {
           <Link to="/cadastro" aria-label="Falar no WhatsApp" className="absolute left-[27.34%] top-[48.10%] z-20 h-[10.66%] w-[12.30%] rounded-[20px] bg-transparent" />
         </div>
       </section>
-      <TestimonialGallery brand="velmora" />
+      <TestimonialGallery brand="velmora" compact />
       <ProductMarquee />
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1100 / 619' }}>
@@ -30,7 +30,7 @@ const AreaHome: React.FC = () => {
           <Link to="/produtos" aria-label="Conhecer os produtos AlwaysFit" className="absolute inset-0 z-20 block h-full w-full" />
         </div>
       </section>
-      <TestimonialGallery brand="alwaysfit" />
+      <TestimonialGallery brand="alwaysfit" compact />
       <AlwaysFitMarquee />
       <section id="ebooks" className="w-full bg-[#9fded7]">
         <div className="relative mx-auto w-full max-w-[1536px]">
