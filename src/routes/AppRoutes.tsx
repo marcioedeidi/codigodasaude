@@ -27,6 +27,7 @@ import Calminol from '../pages/Calminol'
 import HeyHair from '../pages/HeyHair'
 import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
+import Crm from '../pages/Crm'
 import Ebooks from '../pages/Ebooks'
 import EbookMulherForte from '../pages/EbookMulherForte'
 import EbookMudeSuaMente from '../pages/EbookMudeSuaMente'
@@ -47,6 +48,8 @@ const AppRoutes: React.FC = () => (
     <Routes>
       <Route path="/" element={<><Home /><Footer /></>} />
       <Route path="/cadastro" element={<Cadastro />} />
+      {/* Rota administrativa separada do cadastro público, sem link no menu. */}
+      <Route path="/crm" element={<Crm />} />
       <Route path="/produtos" element={<Produtos />} />
       <Route path="/produtos/alwaysfit" element={<AlwaysFit />} />
       <Route path="/produtos/pro3-magnesio" element={<Pro3Magnesio />} />
