@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { saveContact } from '../services/supabaseClient'
 
 const Cadastro: React.FC = () => {
   const navigate = useNavigate()
   const [nome, setNome] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
   const [erro, setErro] = useState('')
+  const [salvando, setSalvando] = useState(false)
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
+    if (salvando) return
 
     const telefoneLimpo = whatsapp.replace(/\D/g, '')
     if (!nome.trim() || telefoneLimpo.length < 10) {
@@ -16,11 +19,48 @@ const Cadastro: React.FC = () => {
       return
     }
 
+    setErro('')
+    setSalvando(true)
+
+    const lead = {
+      nome: nome.trim(),
+      whatsapp: telefoneLimpo,
+      salvo_em: new Date().toISOString(),
+    }
+
+    // Preserva o funcionamento do cadastro mesmo se a internet falhar.
     localStorage.setItem('codigo_saude_cadastro_concluido', '1')
-    localStorage.setItem(
-      'codigo_saude_lead',
-      JSON.stringify({ nome: nome.trim(), whatsapp: telefoneLimpo })
-    )
+    localStorage.setItem('codigo_saude_lead', JSON.stringify(lead))
+
+    let sincronizado = false
+    try {
+      const resultado = await saveContact(lead.nome, lead.whatsapp)
+      sincronizado = resultado.success
+    } catch (error) {
+      console.error('Não foi possível sincronizar o cadastro:', error)
+    }
+
+    const leadLocal = { ...lead, pendente_sincronizacao: !sincronizado }
+    localStorage.setItem('codigo_saude_lead', JSON.stringify(leadLocal))
+
+    if (!sincronizado) {
+      // A próxima visita ou reconexão tentará enviar o contato ao Supabase.
+      localStorage.setItem('codigo_saude_lead_pendente', JSON.stringify(leadLocal))
+    } else {
+      const pendente = localStorage.getItem('codigo_saude_lead_pendente')
+      if (pendente) {
+        try {
+          const anterior = JSON.parse(pendente) as { nome?: string; whatsapp?: string }
+          if (anterior.nome === lead.nome && anterior.whatsapp === lead.whatsapp) {
+            localStorage.removeItem('codigo_saude_lead_pendente')
+          }
+        } catch {
+          // Não apagar registros antigos que não podem ser interpretados.
+        }
+      }
+    }
+
+    setSalvando(false)
 
     // Garante que o acesso recém-liberado sempre comece no topo da página inicial.
     if ('scrollRestoration' in window.history) {
@@ -87,9 +127,10 @@ const Cadastro: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full rounded-2xl bg-[#087b76] px-6 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-[#076863]"
+            disabled={salvando}
+            className="w-full rounded-2xl bg-[#087b76] px-6 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-[#076863] disabled:cursor-wait disabled:opacity-70"
           >
-            Liberar meu acesso
+            {salvando ? 'Salvando cadastro…' : 'Liberar meu acesso'}
           </button>
 
           <p className="text-center text-sm leading-5 text-[#315d55]">
