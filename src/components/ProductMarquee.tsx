@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import MarqueeSurface from './MarqueeSurface'
 
 type MarqueeItem = {
   name: string
@@ -23,10 +23,11 @@ const items: MarqueeItem[] = [
   { name: 'HeyHair', kind: 'product', x: '92.19%', y: '72.59%', size: '800% auto' },
 ]
 
-const ProductMarquee: React.FC = () => {
+const ProductMarquee: React.FC<{ displayOnly?: boolean }> = ({ displayOnly = false }) => {
   const logo = `${import.meta.env.BASE_URL}assets/logo-small.webp`
   const productsArtwork = `${import.meta.env.BASE_URL}assets/produtos-page-v3.webp?v=faixa-produtos-4`
   const loopItems = [...items, ...items]
+  const marqueeClassName = 'block w-full border-y border-white/80 bg-white/45 py-4 shadow-[0_10px_28px_rgba(28,103,92,0.10)]'
 
   return (
     <section className="w-full overflow-hidden bg-[linear-gradient(180deg,#e8f8f4_0%,#d2f0ea_100%)] py-8 md:py-10" aria-label="Conheça nossos produtos">
@@ -35,15 +36,17 @@ const ProductMarquee: React.FC = () => {
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#158b80]">Código da Saúde</p>
           <h2 className="mt-1 font-serif text-2xl font-bold text-[#10372f] sm:text-3xl md:text-4xl">Conheça nossas soluções</h2>
         </div>
-        <span className="hidden rounded-full border border-[#8fd1c7] bg-white/75 px-5 py-2 text-sm font-extrabold text-[#12675f] shadow-sm sm:inline-flex">
-          Ver todos os produtos →
-        </span>
+        {!displayOnly && (
+          <span className="hidden rounded-full border border-[#8fd1c7] bg-white/75 px-5 py-2 text-sm font-extrabold text-[#12675f] shadow-sm sm:inline-flex">
+            Ver todos os produtos →
+          </span>
+        )}
       </div>
 
-      <Link
-        to="/produtos"
-        aria-label="Ver todos os produtos do Código da Saúde"
-        className="group block w-full border-y border-white/80 bg-white/45 py-4 shadow-[0_10px_28px_rgba(28,103,92,0.10)] outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50"
+      <MarqueeSurface
+        displayOnly={displayOnly}
+        ariaLabel="Ver todos os produtos do Código da Saúde"
+        className={displayOnly ? marqueeClassName : `group ${marqueeClassName} outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50`}
       >
         <div className="relative overflow-hidden">
           <div className="product-marquee-track flex w-max items-center gap-4 px-4 sm:gap-5 sm:px-6">
@@ -77,10 +80,12 @@ const ProductMarquee: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-4 flex justify-center px-4 sm:hidden">
-          <span className="rounded-full bg-[#07534c] px-5 py-2 text-sm font-black text-white shadow-md">Ver todos os produtos →</span>
-        </div>
-      </Link>
+        {!displayOnly && (
+          <div className="mt-4 flex justify-center px-4 sm:hidden">
+            <span className="rounded-full bg-[#07534c] px-5 py-2 text-sm font-black text-white shadow-md">Ver todos os produtos →</span>
+          </div>
+        )}
+      </MarqueeSurface>
 
       <style>{`
         .product-marquee-track {
