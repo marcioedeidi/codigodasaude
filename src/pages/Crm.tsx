@@ -274,7 +274,20 @@ const Crm = () => {
   }
 
   return (
-    <main className="min-h-screen bg-[linear-gradient(115deg,#66dfd5_0%,#a7f2eb_50%,#5bd9d0_100%)] pb-14 text-[#163e36]">
+    <main
+      className="min-h-screen pb-14 text-[#163e36]"
+      style={{
+        backgroundColor: '#42d8db',
+        backgroundImage: [
+          'radial-gradient(ellipse 52% 36% at 95% 2%, rgba(255,255,255,0.92) 0%, rgba(246,255,255,0.44) 38%, rgba(255,255,255,0) 100%)',
+          'radial-gradient(ellipse 40% 14% at 15% 17%, rgba(243,255,255,0.64) 0%, rgba(243,255,255,0) 100%)',
+          'radial-gradient(ellipse 36% 15% at 73% 32%, rgba(246,255,255,0.55) 0%, rgba(246,255,255,0) 100%)',
+          'radial-gradient(ellipse 42% 18% at 32% 61%, rgba(207,255,250,0.4) 0%, rgba(207,255,250,0) 100%)',
+          'linear-gradient(165deg, #1dbde2 0%, #5bdbe9 29%, #8eede8 59%, #36d5ce 100%)',
+        ].join(', '),
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <header className="border-b border-[#c8e1dc] bg-white">
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 md:px-8">
           <div>
