@@ -1,8 +1,9 @@
 import React from 'react'
-import productImage from '../assets/Produtos/fiberslim.jpg'
 import TestimonialGallery from '../components/TestimonialGallery'
 
 const FiberSlim: React.FC = () => {
+  const productImage = `${import.meta.env.BASE_URL}assets/Banner%20Fiber%20Slim%20com%20Ofertas%20de%20Tratamento.png`
+
   return (
     <main className="w-full bg-[#f3f8f3]">
       <section className="w-full px-4 py-8 sm:px-6 md:py-12">
@@ -21,7 +22,7 @@ const FiberSlim: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar Fiber Slim — 1 Mês — R$ 209,90"
-                className="absolute left-[40.5%] top-[76.5%] h-[7.5%] w-[14.5%] cursor-pointer"
+                className="absolute left-[47.5%] top-[66.4%] h-[6.5%] w-[13%] cursor-pointer"
               />
 
               <a
@@ -29,7 +30,7 @@ const FiberSlim: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar Fiber Slim 3+3"
-                className="absolute left-[56%] top-[73%] h-[7.5%] w-[18.5%] cursor-pointer"
+                className="absolute left-[63.2%] top-[66.4%] h-[6.5%] w-[13.8%] cursor-pointer"
               />
 
               <a
@@ -37,7 +38,7 @@ const FiberSlim: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar Fiber Slim — 12 Mês"
-                className="absolute left-[80%] top-[73%] h-[7.5%] w-[16%] cursor-pointer"
+                className="absolute left-[79.6%] top-[66.4%] h-[6.5%] w-[14.9%] cursor-pointer"
               />
             </div>
           </div>
