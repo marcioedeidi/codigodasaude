@@ -13,6 +13,7 @@ const navLinks = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const logoSmall = `${import.meta.env.BASE_URL}assets/logo-small.webp`
+  const whatsappUrl = 'https://wa.me/5554991071933'
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `relative flex items-center gap-3 rounded-xl px-3 py-3 text-[15px] font-bold transition-colors md:text-base ${
@@ -43,13 +44,15 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <RouterLink
-          to="/cadastro"
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden min-w-[250px] items-center justify-center gap-3 rounded-[20px] bg-[#063c38] px-6 py-4 text-lg font-black text-white shadow-[0_10px_24px_rgba(2,54,49,0.25)] transition hover:-translate-y-0.5 hover:bg-[#042f2c] sm:flex"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white text-lg" aria-hidden="true">◔</span>
           Falar no WhatsApp
-        </RouterLink>
+        </a>
 
         <button
           className="rounded-xl bg-white/55 p-3 text-[#183c37] shadow-sm lg:hidden"
@@ -83,13 +86,15 @@ const Navbar = () => {
                 {link.label}
               </NavLink>
             ))}
-            <RouterLink
-              to="/cadastro"
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
               className="mt-2 rounded-xl bg-[#063c38] px-4 py-3 text-center font-bold text-white"
             >
               Falar no WhatsApp
-            </RouterLink>
+            </a>
           </div>
         </motion.nav>
       )}
