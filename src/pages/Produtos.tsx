@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import footerImage from '../assets/footer/rodape.png'
 import Navbar from '../components/layout/Navbar'
+import ProductMarquee from '../components/ProductMarquee'
+import AlwaysFitMarquee from '../components/AlwaysFitMarquee'
 
 type ClickArea = { name: string; left: string; top: string; width: string; height: string }
 
@@ -75,6 +77,7 @@ const Produtos: React.FC = () => {
             ))}
           </div>
         </section>
+        <ProductMarquee />
         <section>
           <div className="relative mx-auto max-w-[1672px]">
             <img src={extraPageImage} alt="Código da Saúde — Nossas Soluções" className="block w-full" />
@@ -83,6 +86,7 @@ const Produtos: React.FC = () => {
             ))}
           </div>
         </section>
+        <AlwaysFitMarquee />
         <section><div className="mx-auto w-full overflow-hidden" style={{ aspectRatio: '1536 / 788' }}><img src={footerImage} alt="Código da Saúde" className="block h-auto w-full max-w-none" style={{ transform: 'translateY(-14.453125%)' }} draggable={false} /></div></section>
         {selected && <div className="fixed bottom-5 left-1/2 z-[200] -translate-x-1/2 rounded-2xl bg-[#064f46] px-5 py-3 text-white">{selected} selecionado.</div>}
       </main>
