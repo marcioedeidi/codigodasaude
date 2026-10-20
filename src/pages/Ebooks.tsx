@@ -9,19 +9,12 @@ const Ebooks: React.FC = () => (
 
     <section aria-label="Lançamento do livro Eu Sou Terapeuta e Também Tenho Medo" className="w-full bg-[#9fded7]">
       <div className="mx-auto w-full max-w-[1536px]">
-        <Link
-          to="/ebooks/eu-sou-terapeuta-e-tambem-tenho-medo"
-          aria-label="Conhecer o lançamento Eu Sou Terapeuta e Também Tenho Medo"
-          title="Conhecer o lançamento"
-          className="block w-full focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]"
-        >
-          <img
-            src={launchHero}
-            alt="Lançamento: Eu Sou Terapeuta e Também Tenho Medo, na areia da praia, com mar verde-água e três flores de lótus"
-            className="block h-auto w-full select-none"
-            draggable={false}
-          />
-        </Link>
+        <img
+          src={launchHero}
+          alt="Lançamento: Eu Sou Terapeuta e Também Tenho Medo, na areia da praia, com mar verde-água e três flores de lótus"
+          className="block h-auto w-full select-none"
+          draggable={false}
+        />
       </div>
     </section>
 
@@ -41,17 +34,17 @@ const Ebooks: React.FC = () => (
           <Link
             to="/ebooks/mulher-forte-mente-cansada"
             aria-label="Abrir Mulher Forte, Mente Cansada"
-            className="absolute left-[3%] top-[23%] z-10 h-[75%] w-[31%] cursor-pointer"
+            className="absolute left-[6.9%] top-[88.5%] z-10 h-[7.5%] w-[23.8%] cursor-pointer rounded-full focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]"
           />
           <Link
             to="/ebooks/mude-sua-mente-transforme-sua-vida"
             aria-label="Abrir Mude Sua Mente, Transforme Sua Vida"
-            className="absolute left-[35%] top-[23%] z-10 h-[75%] w-[30%] cursor-pointer"
+            className="absolute left-[38.3%] top-[88.5%] z-10 h-[7.5%] w-[23.4%] cursor-pointer rounded-full focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]"
           />
           <Link
             to="/ebooks/eu-sou-terapeuta-e-tambem-tenho-medo"
             aria-label="Abrir Eu Sou Terapeuta e Também Tenho Medo"
-            className="absolute left-[66%] top-[23%] z-10 h-[75%] w-[32%] cursor-pointer"
+            className="absolute left-[69.3%] top-[88.5%] z-10 h-[7.5%] w-[23.9%] cursor-pointer rounded-full focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]"
           />
         </div>
       </div>
