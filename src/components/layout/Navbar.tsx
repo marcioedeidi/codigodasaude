@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const navLinks = [
   { label: 'Início', to: '/inicio', icon: '⌂' },
   { label: 'Produtos', to: '/produtos', icon: '▢' },
-  { label: 'E-books', to: '/inicio#ebooks', icon: '▤' },
+  { label: 'E-books', to: '/ebooks', icon: '▤' },
   { label: 'Sobre nós', to: '/sobre', icon: '♡' },
   { label: 'Depoimentos', to: '/depoimentos', icon: '◯' },
 ]
