@@ -288,16 +288,23 @@ const Crm = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      <header className="border-b border-[#c8e1dc] bg-white">
-        <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 md:px-8">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#0b857a]">Código da Saúde</p>
-            <h1 className="mt-1 text-2xl font-black md:text-3xl">Painel CRM</h1>
-            <p className="text-xs text-[#66817b]">Administração privada de contatos e vendas</p>
+      <header className="sticky top-0 z-50 w-full border-b border-white/70 bg-[linear-gradient(90deg,#bdeee8_0%,#91d9d0_50%,#bcebe6_100%)] shadow-[0_5px_22px_rgba(4,79,72,0.12)]">
+        <div className="mx-auto flex min-h-[104px] w-full max-w-[1536px] flex-wrap items-center justify-between gap-3 px-5 py-2 md:gap-5 md:px-7 lg:px-10">
+          <div className="flex shrink-0 items-center" aria-label="Código da Saúde">
+            <img
+              src={`${import.meta.env.BASE_URL}assets/logo-small.webp`}
+              alt="Código da Saúde"
+              className="h-[70px] w-auto max-w-[190px] object-contain md:h-[90px] md:max-w-[250px]"
+              draggable={false}
+            />
+          </div>
+          <div className="min-w-0 flex-1 text-center">
+            <h1 className="text-xl font-black text-[#082f2b] md:text-3xl">Painel CRM</h1>
+            <p className="hidden text-xs font-semibold text-[#315f58] sm:block">Administração privada de contatos e vendas</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="rounded-full border border-[#b9dfd6] bg-[#e7f8f3] px-3 py-2 text-xs font-bold text-[#14665b]">🔒 Acesso exclusivo</span>
-            <button onClick={() => void sair()} className="rounded-xl border border-[#cadbd5] px-4 py-2 text-sm font-bold hover:bg-[#edf7f4]">
+            <span className="hidden rounded-full border border-white/70 bg-white/55 px-3 py-2 text-xs font-bold text-[#14665b] sm:inline-flex">🔒 Acesso exclusivo</span>
+            <button type="button" onClick={() => void sair()} className="rounded-xl bg-[#063c38] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#042f2c]">
               Sair
             </button>
           </div>
