@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import MarqueeSurface from './MarqueeSurface'
 
 type AlwaysFitItem = {
   name: string
@@ -59,8 +59,9 @@ const items: AlwaysFitItem[] = [
   },
 ]
 
-const AlwaysFitMarquee: React.FC = () => {
+const AlwaysFitMarquee: React.FC<{ displayOnly?: boolean }> = ({ displayOnly = false }) => {
   const logo = `${import.meta.env.BASE_URL}assets/logo-small.webp`
+  const marqueeClassName = 'block w-full border-y border-white/80 bg-white/45 py-4 shadow-[0_10px_28px_rgba(28,103,92,0.10)]'
 
   const renderItems = (duplicate: boolean) =>
     items.map((item, index) => (
@@ -84,7 +85,7 @@ const AlwaysFitMarquee: React.FC = () => {
               <img
                 src={item.image}
                 alt={duplicate ? '' : item.name}
-                className="max-h-[118px] w-auto max-w-[92%] object-contain transition duration-500 hover:scale-105"
+                className={displayOnly ? 'max-h-[118px] w-auto max-w-[92%] object-contain' : 'max-h-[118px] w-auto max-w-[92%] object-contain transition duration-500 hover:scale-105'}
                 draggable={false}
                 decoding="async"
                 referrerPolicy="no-referrer"
@@ -111,15 +112,17 @@ const AlwaysFitMarquee: React.FC = () => {
             Conheça nossas soluções
           </h2>
         </div>
-        <span className="hidden rounded-full border border-[#8fd1c7] bg-white/75 px-5 py-2 text-sm font-extrabold text-[#12675f] shadow-sm sm:inline-flex">
-          Ver todos os produtos →
-        </span>
+        {!displayOnly && (
+          <span className="hidden rounded-full border border-[#8fd1c7] bg-white/75 px-5 py-2 text-sm font-extrabold text-[#12675f] shadow-sm sm:inline-flex">
+            Ver todos os produtos →
+          </span>
+        )}
       </div>
 
-      <Link
-        to="/produtos"
-        aria-label="Ver todos os produtos da linha AlwaysFit"
-        className="alwaysfit-marquee-group block w-full border-y border-white/80 bg-white/45 py-4 shadow-[0_10px_28px_rgba(28,103,92,0.10)] outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50"
+      <MarqueeSurface
+        displayOnly={displayOnly}
+        ariaLabel="Ver todos os produtos da linha AlwaysFit"
+        className={displayOnly ? marqueeClassName : `alwaysfit-marquee-group ${marqueeClassName} outline-none focus-visible:ring-4 focus-visible:ring-[#168f82]/50`}
       >
         <div className="relative overflow-hidden">
           <div className="alwaysfit-marquee-track">
@@ -132,12 +135,14 @@ const AlwaysFitMarquee: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-4 flex justify-center px-4 sm:hidden">
-          <span className="rounded-full bg-[#07534c] px-5 py-2 text-sm font-black text-white shadow-md">
-            Ver todos os produtos →
-          </span>
-        </div>
-      </Link>
+        {!displayOnly && (
+          <div className="mt-4 flex justify-center px-4 sm:hidden">
+            <span className="rounded-full bg-[#07534c] px-5 py-2 text-sm font-black text-white shadow-md">
+              Ver todos os produtos →
+            </span>
+          </div>
+        )}
+      </MarqueeSurface>
 
       <style>{`
         .alwaysfit-marquee-track {
