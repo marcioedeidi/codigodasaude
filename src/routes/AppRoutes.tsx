@@ -28,6 +28,7 @@ import HeyHair from '../pages/HeyHair'
 import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
 import Crm from '../pages/Crm'
+import CrmShortcut from '../components/CrmShortcut'
 import Ebooks from '../pages/Ebooks'
 import EbookMulherForte from '../pages/EbookMulherForte'
 import EbookMudeSuaMente from '../pages/EbookMudeSuaMente'
@@ -45,6 +46,7 @@ const ScrollToTop: React.FC = () => {
 const AppRoutes: React.FC = () => (
   <Router basename={import.meta.env.BASE_URL}>
     <ScrollToTop />
+    <CrmShortcut />
     <Routes>
       <Route path="/" element={<><Home /><Footer /></>} />
       <Route path="/cadastro" element={<Cadastro />} />
