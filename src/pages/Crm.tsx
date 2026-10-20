@@ -274,7 +274,7 @@ const Crm = () => {
   }
 
   return (
-    <main className="min-h-screen bg-[#f0f8f6] pb-14 text-[#163e36]">
+    <main className="min-h-screen bg-[linear-gradient(115deg,#66dfd5_0%,#a7f2eb_50%,#5bd9d0_100%)] pb-14 text-[#163e36]">
       <header className="border-b border-[#c8e1dc] bg-white">
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 md:px-8">
           <div>
@@ -297,7 +297,7 @@ const Crm = () => {
           <h2 className="mt-1 text-xl font-bold">Acompanhe cada oportunidade</h2>
         </div>
 
-        <section aria-label="Indicadores de atendimento" className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <section aria-label="Indicadores de atendimento" className="!bg-transparent grid grid-cols-2 gap-3 lg:grid-cols-4">
           {[
             { titulo: 'Clientes cadastrados', valor: clientes.length, simbolo: '👥' },
             { titulo: 'Novos contatos', valor: novos, simbolo: '✨' },
@@ -314,7 +314,7 @@ const Crm = () => {
           ))}
         </section>
 
-        <section aria-label="Gestão dos clientes" className="mt-6 grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(300px,390px)]">
+        <section aria-label="Gestão dos clientes" className="!bg-transparent mt-6 grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(300px,390px)]">
           <div className="overflow-hidden rounded-2xl border border-[#d9e8e2] bg-white shadow-sm">
             <div className="border-b border-[#e4eee9] p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
