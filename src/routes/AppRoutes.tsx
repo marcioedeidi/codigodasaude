@@ -29,6 +29,7 @@ import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
 import Crm from '../pages/Crm'
 import CrmShortcut from '../components/CrmShortcut'
+import { retryPendingLead } from '../services/supabaseClient'
 import Ebooks from '../pages/Ebooks'
 import EbookMulherForte from '../pages/EbookMulherForte'
 import EbookMudeSuaMente from '../pages/EbookMudeSuaMente'
@@ -39,7 +40,17 @@ import Footer from '../components/layout/Footer'
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation()
   useLayoutEffect(() => { window.scrollTo(0, 0) }, [pathname])
-  useEffect(() => {}, [])
+  // Reenvia apenas os cadastros que ficaram pendentes por falha de conexão.
+  useEffect(() => {
+    const tentarSincronizar = () => { void retryPendingLead() }
+    tentarSincronizar()
+    window.addEventListener('online', tentarSincronizar)
+    window.addEventListener('focus', tentarSincronizar)
+    return () => {
+      window.removeEventListener('online', tentarSincronizar)
+      window.removeEventListener('focus', tentarSincronizar)
+    }
+  }, [])
   return null
 }
 
