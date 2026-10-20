@@ -54,6 +54,7 @@ const Produtos: React.FC = () => {
     if (name === 'Combo Velmo Black Drink') return navigate('/produtos/combo-velmo-black')
     if (name === 'Velmo Black Cápsulas') return navigate('/produtos/velmo-caps')
     if (name === 'Creatina Gummy') return navigate('/produtos/creatina-gummy')
+    if (name === 'Fiber Slim') return navigate('/produtos/fiber-slim')
     if (name === 'Celuglow') return navigate('/produtos/celuglow')
     if (name === 'CreaGym') return navigate('/produtos/creagym')
     if (name === 'Skin-Fit') return navigate('/produtos/skin-fit')
