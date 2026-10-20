@@ -1,41 +1,62 @@
 import React from 'react'
-import ebookImage from '../assets/livros/file_00000000e974820ea169cab1c1a81f5b.png'
+import { Link } from 'react-router-dom'
+import launchHero from '../assets/livros/Livro Roxo à Beira-Mar com Lótus.png'
+import ebookCollection from '../assets/livros/E-books que transformam vidas ultima ediçao.png'
 
-const Ebooks: React.FC = () => {
-  return (
-    <section
-      id="ebooks"
-      className="relative w-full min-h-[calc(100vh-104px)] overflow-hidden bg-[#9fded7]"
-    >
-      <div className="mx-auto flex min-h-[calc(100vh-104px)] w-full max-w-[1536px] items-center px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
-        <div className="grid w-full items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
-          <div className="flex w-full items-center justify-center overflow-hidden">
-            <img
-              src={ebookImage}
-              alt="E-book Código da Saúde"
-              className="block max-h-[72vh] w-auto max-w-full rounded-[24px] object-contain shadow-[0_20px_45px_rgba(8,70,63,0.22)]"
-              draggable={false}
-            />
-          </div>
+const Ebooks: React.FC = () => (
+  <main id="ebooks" className="w-full bg-[#9fded7]">
+    <h1 className="sr-only">E-books Código da Saúde</h1>
 
-          <div className="flex w-full flex-col justify-center text-center md:text-left">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#126f67]">
-              Conteúdo exclusivo
-            </p>
-            <h1 className="mt-4 text-5xl font-bold leading-[1.05] text-[#10372f] sm:text-6xl lg:text-7xl">
-              E-books Código da Saúde
-            </h1>
-            <p className="mt-7 max-w-2xl text-xl leading-9 text-[#355b54] lg:text-2xl">
-              Conhecimento para ajudar você a fazer escolhas mais conscientes e cuidar melhor da sua rotina.
-            </p>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#46615b]">
-              Conteúdos digitais preparados para ampliar seu conhecimento e apoiar decisões mais conscientes para sua saúde e qualidade de vida.
-            </p>
-          </div>
+    <section aria-label="Lançamento do livro Eu Sou Terapeuta e Também Tenho Medo" className="w-full bg-[#9fded7]">
+      <div className="mx-auto w-full max-w-[1536px]">
+        <Link
+          to="/ebooks/eu-sou-terapeuta-e-tambem-tenho-medo"
+          aria-label="Conhecer o lançamento Eu Sou Terapeuta e Também Tenho Medo"
+          title="Conhecer o lançamento"
+          className="block w-full focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]"
+        >
+          <img
+            src={launchHero}
+            alt="Lançamento: Eu Sou Terapeuta e Também Tenho Medo, na areia da praia, com mar verde-água e três flores de lótus"
+            className="block h-auto w-full select-none"
+            draggable={false}
+          />
+        </Link>
+      </div>
+    </section>
+
+    <section aria-labelledby="colecao-ebooks" className="w-full bg-[#e9f8f4] px-3 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14">
+      <div className="mx-auto w-full max-w-[1536px]">
+        <h2 id="colecao-ebooks" className="mb-6 text-center font-serif text-3xl font-bold text-[#10372f] sm:text-4xl">
+          Conheça nossos e-books
+        </h2>
+
+        <div className="relative w-full">
+          <img
+            src={ebookCollection}
+            alt="Coleção de e-books Código da Saúde: Mulher Forte, Mente Cansada; Mude Sua Mente, Transforme Sua Vida; Eu Sou Terapeuta e Também Tenho Medo"
+            className="block h-auto w-full select-none"
+            draggable={false}
+          />
+          <Link
+            to="/ebooks/mulher-forte-mente-cansada"
+            aria-label="Abrir Mulher Forte, Mente Cansada"
+            className="absolute left-[3%] top-[23%] z-10 h-[75%] w-[31%] cursor-pointer"
+          />
+          <Link
+            to="/ebooks/mude-sua-mente-transforme-sua-vida"
+            aria-label="Abrir Mude Sua Mente, Transforme Sua Vida"
+            className="absolute left-[35%] top-[23%] z-10 h-[75%] w-[30%] cursor-pointer"
+          />
+          <Link
+            to="/ebooks/eu-sou-terapeuta-e-tambem-tenho-medo"
+            aria-label="Abrir Eu Sou Terapeuta e Também Tenho Medo"
+            className="absolute left-[66%] top-[23%] z-10 h-[75%] w-[32%] cursor-pointer"
+          />
         </div>
       </div>
     </section>
-  )
-}
+  </main>
+)
 
 export default Ebooks
