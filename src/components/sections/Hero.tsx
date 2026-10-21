@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import BotanicalLeaves from '@components/common/BotanicalLeaves'
 import logoOfficialComplete from '../../assets/logoBig'
 
 const Hero = () => {
@@ -8,8 +7,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative overflow-hidden py-14 md:py-20">
-      <BotanicalLeaves />
+    <section className="codigo-saude-hero relative overflow-hidden py-14 md:py-20">
 
       <div className="container-max relative z-10 grid items-center gap-12 px-4 md:grid-cols-[1.02fr_.98fr] md:gap-14">
         <motion.div
