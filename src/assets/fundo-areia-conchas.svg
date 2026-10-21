@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="areia" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f3e5c9"/>
+      <stop offset=".23" stop-color="#f0d8ad"/>
+      <stop offset=".52" stop-color="#e4c18c"/>
+      <stop offset=".74" stop-color="#eed7b1"/>
+      <stop offset="1" stop-color="#dfb77f"/>
+    </linearGradient>
+    <radialGradient id="sol" cx=".41" cy=".07" r=".8">
+      <stop offset="0" stop-color="#fff8e5" stop-opacity=".82"/>
+      <stop offset=".60" stop-color="#fff8e5" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#fff8e5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="granulos" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="4" seed="14" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".24"/></feComponentTransfer>
+    </filter>
+    <filter id="sombra" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="11"/>
+    </filter>
+    <linearGradient id="casca" x1=".04" x2=".9" y1=".18" y2=".88">
+      <stop offset="0" stop-color="#fff9e9"/>
+      <stop offset=".38" stop-color="#ffddb4"/>
+      <stop offset=".7" stop-color="#edb27f"/>
+      <stop offset="1" stop-color="#c58a5f"/>
+    </linearGradient>
+    <linearGradient id="cascaClara" x1=".08" x2=".96" y1=".15" y2="1">
+      <stop offset="0" stop-color="#fffdf5"/>
+      <stop offset=".4" stop-color="#f9ead1"/>
+      <stop offset=".78" stop-color="#eec9a0"/>
+      <stop offset="1" stop-color="#cfa37e"/>
+    </linearGradient>
+    <linearGradient id="conchaEspiral" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset=".43" stop-color="#dca879"/>
+      <stop offset=".67" stop-color="#f5d6b6"/>
+      <stop offset="1" stop-color="#b8794e"/>
+    </linearGradient>
+    <g id="vieira">
+      <ellipse cx="11" cy="-23" rx="81" ry="62" fill="#91643d" opacity=".29" filter="url(#sombra)"/>
+      <path d="M0 15 C-14 -6 -46 -27 -60 -49 C-80 -83 -70 -111 -38 -121 C-19 -127 -8 -119 0 -120 C8 -119 19 -127 38 -121 C70 -111 80 -83 60 -49 C46 -27 14 -6 0 15Z" fill="url(#casca)" stroke="#f6e6c7" stroke-width="3"/>
+      <path d="M0 9 Q-18 -56 -42 -112 M0 9 Q-8 -54 -18 -122 M0 9 L0 -119 M0 9 Q8 -54 18 -122 M0 9 Q18 -56 42 -112 M0 9 Q34 -47 65 -88 M0 9 Q-34 -47 -65 -88" stroke="#b97f59" stroke-opacity=".53" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 1 Q-29 -50 -52 -100 M0 1 Q-12 -70 -9 -113 M0 1 Q12 -70 9 -113 M0 1 Q29 -50 52 -100" stroke="#fff5de" stroke-opacity=".84" stroke-width="3" fill="none"/>
+      <path d="M-11 5 Q0 15 11 5" fill="none" stroke="#fff5d8" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-56 -98 Q-39 -119 -18 -119 M18 -119 Q39 -119 56 -98" stroke="#fff9e9" stroke-width="4" opacity=".65" fill="none"/>
+    </g>
+    <g id="pequena">
+      <ellipse cx="7" cy="-18" rx="48" ry="31" fill="#805b3b" opacity=".32" filter="url(#sombra)"/>
+      <path d="M-49 -14 C-40 -47 -14 -60 10 -54 C34 -49 48 -17 47 10 Q-3 28 -49 -14Z" fill="url(#cascaClara)" stroke="#fff4db" stroke-width="3"/>
+      <path d="M-47 -14 Q3 -8 47 10 M-39 -28 Q3 -11 47 10 M-27 -43 Q9 -16 47 10 M-7 -52 Q23 -18 47 10 M17 -52 Q34 -19 47 10" stroke="#cc9670" stroke-opacity=".6" stroke-width="3" fill="none"/>
+      <path d="M-30 -37 Q-15 -42 -1 -42" stroke="#fff9ee" stroke-width="5" opacity=".8" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="caracol">
+      <ellipse cx="11" cy="7" rx="63" ry="39" fill="#805632" opacity=".24" filter="url(#sombra)"/>
+      <path d="M-56 17 Q-51 -17 -21 -31 C0 -58 45 -43 54 -10 C62 18 28 44 -2 27 Q-28 9 -56 17Z" fill="url(#conchaEspiral)" stroke="#fff5df" stroke-width="3"/>
+      <path d="M-16 6 C-28 -16 0 -37 20 -22 C42 -4 16 28 -7 11 C-20 0 -6 -16 8 -12 C19 -8 13 7 4 5" fill="none" stroke="#a56e4c" stroke-width="6" stroke-linecap="round" opacity=".78"/>
+      <path d="M-39 17 Q-22 7 -16 -9 M-29 23 Q-16 13 -10 6" stroke="#fff5e0" stroke-width="4" fill="none" opacity=".7"/>
+    </g>
+  </defs>
+  <rect width="1600" height="900" fill="url(#areia)"/>
+  <rect width="1600" height="900" fill="url(#sol)"/>
+  <!-- Relevos discretos da areia, vistos de perto, sem linha do horizonte nem água -->
+  <path d="M-80 183 Q240 101 555 161 T1153 149 T1700 131" fill="none" stroke="#ffefce" stroke-width="95" opacity=".23"/>
+  <path d="M-140 634 Q300 523 741 628 T1690 583" fill="none" stroke="#ad7d47" stroke-width="125" opacity=".065"/>
+  <path d="M-100 404 Q280 490 653 417 T1730 411" fill="none" stroke="#fffae9" stroke-width="74" opacity=".16"/>
+  <rect width="1600" height="900" fill="#a4855c" filter="url(#granulos)" opacity=".42"/>
+  <!-- Sombras de pequenas ondulações no chão -->
+  <path d="M0 315 Q170 306 333 326 M950 275 Q1250 230 1600 277 M-15 738 Q170 690 350 716 M1217 755 Q1444 722 1636 733" fill="none" stroke="#b8945e" stroke-width="10" opacity=".10" stroke-linecap="round"/>
+  <path d="M42 341 Q170 331 318 347 M1123 290 Q1351 268 1592 292 M113 746 Q248 728 401 740" fill="none" stroke="#fff7e6" stroke-width="7" opacity=".21" stroke-linecap="round"/>
+  <!-- Conchas naturais sobre a areia: nas bordas, sem encobrir os cartões -->
+  <use xlink:href="#vieira" transform="translate(105 133) rotate(-25) scale(.91)"/>
+  <use xlink:href="#pequena" transform="translate(30 283) rotate(31) scale(.62)"/>
+  <use xlink:href="#caracol" transform="translate(232 83) rotate(-9) scale(.74)"/>
+  <use xlink:href="#vieira" transform="translate(1526 148) rotate(24) scale(.91)"/>
+  <use xlink:href="#pequena" transform="translate(1423 65) rotate(-24) scale(.64)"/>
+  <use xlink:href="#caracol" transform="translate(1572 327) rotate(65) scale(.73)"/>
+  <use xlink:href="#vieira" transform="translate(65 834) rotate(141) scale(1.04)"/>
+  <use xlink:href="#pequena" transform="translate(227 837) rotate(-31) scale(.70)"/>
+  <use xlink:href="#caracol" transform="translate(332 893) rotate(19) scale(.80)"/>
+  <use xlink:href="#vieira" transform="translate(1556 824) rotate(-145) scale(.95)"/>
+  <use xlink:href="#pequena" transform="translate(1399 856) rotate(37) scale(.71)"/>
+  <use xlink:href="#caracol" transform="translate(1223 907) rotate(-24) scale(.63)"/>
+  <use xlink:href="#pequena" transform="translate(17 519) rotate(93) scale(.56)"/>
+  <use xlink:href="#pequena" transform="translate(1610 563) rotate(-78) scale(.65)"/>
+  <!-- Pequenos brilhos da areia iluminada -->
+  <g fill="#fff9e8" opacity=".69">
+    <circle cx="300" cy="157" r="2.5"/><circle cx="377" cy="84" r="1.4"/>
+    <circle cx="815" cy="91" r="1.8"/><circle cx="1195" cy="121" r="2.3"/>
+    <circle cx="1349" cy="297" r="1.6"/><circle cx="120" cy="414" r="1.9"/>
+    <circle cx="1441" cy="468" r="2"/><circle cx="70" cy="642" r="1.5"/>
+    <circle cx="1273" cy="718" r="1.8"/><circle cx="888" cy="809" r="1.6"/>
+    <circle cx="405" cy="808" r="2"/><circle cx="1582" cy="671" r="2.4"/>
+  </g>
+</svg>
