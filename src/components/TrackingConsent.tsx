@@ -48,6 +48,12 @@ const TrackingConsent = () => {
     }
   }, [consentimento, rotaDoCrm])
 
+  useEffect(() => {
+    const abrir = () => setAbrirPreferencias(true)
+    window.addEventListener('codigo-saude:abrir-preferencias-cookies', abrir)
+    return () => window.removeEventListener('codigo-saude:abrir-preferencias-cookies', abrir)
+  }, [])
+
   const salvarEscolha = (valor: Escolha) => {
     try {
       window.localStorage.setItem(STORAGE_KEY, valor)
@@ -98,16 +104,7 @@ const TrackingConsent = () => {
             </button>
           </div>
         </aside>
-      ) : (
-        <button
-          type="button"
-          aria-label="Alterar preferências de privacidade e cookies"
-          onClick={() => setAbrirPreferencias(true)}
-          className="fixed bottom-3 left-3 z-[90] rounded-full border border-[#91c9bf] bg-white/95 px-3 py-1.5 text-xs font-semibold text-[#315d55] shadow-md transition hover:bg-white sm:bottom-5 sm:left-5"
-        >
-          Cookies
-        </button>
-      )}
+      ) : null}
     </>
   )
 }
