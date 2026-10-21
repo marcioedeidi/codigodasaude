@@ -118,15 +118,11 @@ section.codigo-saude-hero::after {
 }
 
 
-/* Segunda dobra: FOTO REAL DE AREIA E CONCHAS, sem texto, desenhos ou cartões
-   embutidos na imagem. O conteúdo React permanece acima da foto, sem duplicação.
-   Fotografia: Annie Spratt / Unsplash, uso conforme a licença Unsplash.
-   https://unsplash.com/photos/a-bunch-of-seashells-are-laying-on-the-sand-8_3VybkZ0ag */
+/* Segunda dobra: areia dourada iluminada, com conchas nas bordas,
+   como na referência aprovada. Fundo separado dos textos e cartões. */
 section.codigo-saude-benefits-sand {
-  background-color: #e8cea0 !important;
-  background-image:
-    linear-gradient(rgba(255, 245, 223, 0.05), rgba(255, 237, 203, 0.16)),
-    url('https://images.unsplash.com/photo-1649331713342-1f33e1942cd3?auto=format&fit=crop&w=1920&q=85');
+  background-color: #f3dfbf !important;
+  background-image: url('./assets/fundo-areia-praia-luminosa.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
