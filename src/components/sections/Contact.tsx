@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion'
 import Button from '@components/common/Button'
 import Input from '@components/common/Input'
-import BotanicalLeaves from '@components/common/BotanicalLeaves'
 import { useContactForm } from '@hooks/useContactForm'
 
 const Contact = () => {
   const { register, handleSubmit, errors, isLoading, submitStatus, errorMessage, onSubmit } = useContactForm()
 
   return (
-    <section id="contato" className="section-padding relative overflow-hidden bg-[#F7F3EA]">
-      <BotanicalLeaves />
+    <section id="contato" className="codigo-saude-hero section-padding relative overflow-hidden">
       <div className="container-max relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
