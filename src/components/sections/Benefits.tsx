@@ -17,14 +17,19 @@ const Benefits = () => (
         <li>Rotina Mais Simples — Uma experiência prática para organizar seus próximos passos de bem-estar.</li>
       </ul>
     </div>
-    <img
-      src={imagemSegundaDobra}
-      alt=""
-      loading="lazy"
-      decoding="async"
-      className="block h-auto w-full select-none"
-      draggable={false}
-    />
+    {/* Recorte panorâmico apenas em telas maiores: imagem original preservada e sem distorção.
+        Área visível da arte original: x=0..1727, y≈165..724.
+        Em celulares, mostrar a arte inteira para não cortar os textos dos cartões. */}
+    <div className="relative w-full overflow-hidden sm:aspect-[1727/559]">
+      <img
+        src={imagemSegundaDobra}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className="block h-auto w-full select-none sm:absolute sm:left-0 sm:top-[-29.5%] sm:max-w-none"
+        draggable={false}
+      />
+    </div>
   </section>
 )
 
