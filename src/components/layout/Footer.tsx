@@ -36,6 +36,14 @@ const Footer = () => {
       </div>
       <p className="mt-4 text-center text-xs text-[#527069]">
         © {new Date().getFullYear()} Código da Saúde. Conteúdo informativo; não substitui avaliação profissional de saúde.
+        {' · '}
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event('codigo-saude:abrir-preferencias-cookies'))}
+          className="underline underline-offset-2 hover:text-[#173f36]"
+        >
+          Preferências de cookies
+        </button>
       </p>
     </footer>
   )
