@@ -116,3 +116,18 @@ section.codigo-saude-hero::after {
   transform: rotate(27deg);
   box-shadow: 8px 0 16px rgba(255, 255, 255, 0.17);
 }
+
+
+/* Segunda dobra somente: textura de areia de praia limpa (sem plantas, céu ou mar).
+   Preserva textos, ícones, cartões e a identidade visual de todas as demais seções. */
+section.codigo-saude-benefits-sand {
+  background-color: #ebd6ad !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22graos%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.72%22%20numOctaves%3D%223%22%20seed%3D%2212%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20filter%3D%22url(%23graos)%22%20opacity%3D%220.13%22%2F%3E%3C%2Fsvg%3E"),
+    radial-gradient(ellipse 90% 80% at 13% 0%, rgba(255, 246, 221, 0.68) 0%, transparent 72%),
+    radial-gradient(ellipse 90% 80% at 88% 100%, rgba(174, 129, 72, 0.16) 0%, transparent 78%),
+    linear-gradient(135deg, #ead3a7 0%, #f3e2bd 46%, #e2c593 100%);
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 400px 400px, cover, cover, cover;
+  background-position: center, center, center, center;
+}
