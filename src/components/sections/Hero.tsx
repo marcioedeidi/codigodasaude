@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import logoOfficialComplete from '../../assets/logoBig'
 
 const Hero = () => {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const navigate = useNavigate()
 
   return (
     <section className="codigo-saude-hero relative overflow-hidden py-14 md:py-20">
@@ -36,14 +35,14 @@ const Hero = () => {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
-              onClick={() => scrollToSection('contato')}
+              onClick={() => navigate('/cadastro')}
               className="rounded-2xl bg-[#159a92] px-6 py-4 font-bold text-white shadow-lg shadow-[#159a92]/20 transition hover:-translate-y-0.5 hover:bg-[#117f79]"
             >
               Descobrir meu perfil
             </button>
             <button
               type="button"
-              onClick={() => scrollToSection('produtos')}
+              onClick={() => navigate('/cadastro')}
               className="rounded-2xl border-2 border-white bg-white/55 px-6 py-4 font-bold text-[#146d68] transition hover:-translate-y-0.5 hover:bg-white"
             >
               Conhecer os produtos
