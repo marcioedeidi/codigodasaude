@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import Card from '@components/common/Card'
-import BotanicalLeaves from '@components/common/BotanicalLeaves'
 
 const Benefits = () => {
   const benefits = [
@@ -48,8 +47,7 @@ const Benefits = () => {
   }
 
   return (
-    <section id="beneficios" className="section-padding relative overflow-hidden bg-[#F7F3EA]">
-      <BotanicalLeaves />
+    <section id="beneficios" className="section-padding codigo-saude-benefits-sand relative overflow-hidden">
       <div className="container-max relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
