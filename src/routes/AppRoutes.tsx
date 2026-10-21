@@ -29,6 +29,7 @@ import Depoimentos from '../pages/Depoimentos'
 import Sobre from '../pages/Sobre'
 import Crm from '../pages/Crm'
 import CrmShortcut from '../components/CrmShortcut'
+import TrackingConsent from '../components/TrackingConsent'
 import { retryPendingLead } from '../services/supabaseClient'
 import Ebooks from '../pages/Ebooks'
 import EbookMulherForte from '../pages/EbookMulherForte'
@@ -58,6 +59,7 @@ const AppRoutes: React.FC = () => (
   <Router basename={import.meta.env.BASE_URL}>
     <ScrollToTop />
     <CrmShortcut />
+    <TrackingConsent />
     <Routes>
       <Route path="/" element={<><Home /><Footer /></>} />
       <Route path="/cadastro" element={<Cadastro />} />
