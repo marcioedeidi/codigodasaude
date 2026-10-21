@@ -84,8 +84,9 @@ const TrackingConsent = () => {
         >
           <p className="text-base font-bold">Privacidade e cookies</p>
           <p className="mt-2 text-sm leading-6">
-            Usamos cookies opcionais para entender as visitas e medir nossas divulgações.
-            Eles só serão ativados se você aceitar. Você pode mudar sua escolha depois.
+            Seus dados são tratados com cuidado e medidas de proteção.
+            Os cookies opcionais de análise e divulgação só serão ativados com sua autorização.
+            Você pode alterar suas preferências depois.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <button
@@ -93,14 +94,14 @@ const TrackingConsent = () => {
               onClick={() => salvarEscolha('rejected')}
               className="rounded-xl border border-[#087b76] px-5 py-2.5 text-sm font-bold text-[#087b76] transition hover:bg-[#e7f8f4]"
             >
-              Recusar
+              Continuar sem cookies
             </button>
             <button
               type="button"
               onClick={() => salvarEscolha('accepted')}
               className="rounded-xl bg-[#087b76] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#076863]"
             >
-              Aceitar cookies opcionais
+              Aceitar e continuar
             </button>
           </div>
         </aside>
