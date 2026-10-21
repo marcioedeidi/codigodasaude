@@ -1,4 +1,4 @@
-import imagemSegundaDobra from '../../assets/segunda-dobra-completa.webp'
+import imagemSegundaDobra from '../../assets/Por Que Escolher o Código da Saúde_.png'
 
 /**
  * A segunda dobra é uma única arte, conforme solicitado.
@@ -20,8 +20,6 @@ const Benefits = () => (
     <img
       src={imagemSegundaDobra}
       alt=""
-      width={1727}
-      height={910}
       loading="lazy"
       decoding="async"
       className="block h-auto w-full select-none"
