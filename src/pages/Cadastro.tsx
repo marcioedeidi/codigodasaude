@@ -62,6 +62,21 @@ const Cadastro: React.FC = () => {
 
     setSalvando(false)
 
+    // Informa ao Google Tag Manager que o cadastro foi concluído, sem enviar
+    // nome, WhatsApp ou qualquer outro dado pessoal para ferramentas de análise.
+    // O evento só é emitido após consentimento explícito para cookies opcionais.
+    try {
+      if (localStorage.getItem('codigo_saude_tracking_consent_v1') === 'accepted') {
+        const janela = window as Window & { dataLayer?: Record<string, unknown>[] }
+        janela.dataLayer?.push({
+          event: 'codigo_saude_cadastro_concluido',
+          crm_sync_status: sincronizado ? 'synced' : 'pending',
+        })
+      }
+    } catch {
+      // Falhas no rastreamento nunca impedem o cadastro nem a navegação.
+    }
+
     // Garante que o acesso recém-liberado sempre comece no topo da página inicial.
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
