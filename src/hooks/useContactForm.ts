@@ -8,7 +8,7 @@ import { saveContact } from '@services/supabaseClient'
 const contactFormSchema = z.object({
   name: z.string().min(3, 'Nome deve ter pelo menos 3 caracteres').max(100),
   whatsapp: z.string().regex(/^\d{10,15}$/, 'WhatsApp inválido'),
-  email: z.string().email('Email inválido'),
+  email: z.string().trim().email('Email inválido').or(z.literal('')),
 })
 
 export type ContactFormInputs = z.infer<typeof contactFormSchema>
