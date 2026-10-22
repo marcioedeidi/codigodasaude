@@ -54,7 +54,7 @@ const Contact = () => {
 
               <div>
                 <Input
-                  label="Email"
+                  label="E-mail (* opcional)"
                   placeholder="seu.email@example.com"
                   type="email"
                   {...register('email')}
