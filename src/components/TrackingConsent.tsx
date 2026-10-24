@@ -15,18 +15,51 @@ function lerConsentimento(): Escolha | null {
   }
 }
 
+type EstadoConsentimentoGoogle = 'granted' | 'denied'
+type JanelaComDados = Window & { dataLayer?: Array<Record<string, unknown> | IArguments> }
+
+/**
+ * Enfileira o comando nativo de consentimento antes de carregar o GTM.
+ * No modo básico, nenhuma tag é carregada enquanto a pessoa não aceita.
+ */
+function registrarConsentimentoGoogle(
+  acao: 'default' | 'update',
+  estado: EstadoConsentimentoGoogle,
+) {
+  const janela = window as JanelaComDados
+  janela.dataLayer = janela.dataLayer || []
+
+  // O formato "arguments" é o esperado pelo processamento de comandos gtag no GTM.
+  function gtag(
+    _comando: string,
+    _acao: string,
+    _opcoes: Record<string, EstadoConsentimentoGoogle>,
+  ) {
+    janela.dataLayer?.push(arguments)
+  }
+
+  gtag('consent', acao, {
+    ad_storage: estado,
+    analytics_storage: estado,
+    ad_user_data: estado,
+    ad_personalization: estado,
+  })
+}
+
 /**
  * Carrega o Google Tag Manager somente depois do consentimento explícito.
- * A versão sem JavaScript (noscript) não é incluída para não contornar
- * a decisão de recusar o rastreamento.
+ * Registra primeiro o padrão negado e depois a autorização, antes do gtm.js,
+ * para que as tags com verificação de ad_storage leiam o estado correto.
+ * A versão noscript permanece desativada para respeitar a recusa.
  */
 function carregarTagManager() {
   if (document.querySelector('script[data-codigo-saude-gtm]')) return
 
-  type JanelaComDados = Window & { dataLayer?: Record<string, unknown>[] }
+  registrarConsentimentoGoogle('default', 'denied')
+  registrarConsentimentoGoogle('update', 'granted')
+
   const janela = window as JanelaComDados
-  janela.dataLayer = janela.dataLayer || []
-  janela.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' })
+  janela.dataLayer?.push({ 'gtm.start': Date.now(), event: 'gtm.js' })
 
   const script = document.createElement('script')
   script.async = true
@@ -62,6 +95,12 @@ const TrackingConsent = () => {
     }
 
     const estavaAtivo = consentimento === 'accepted'
+
+    // Revoga a permissão antes de recarregar a página para encerrar o GTM.
+    if (estavaAtivo && valor === 'rejected') {
+      registrarConsentimentoGoogle('update', 'denied')
+    }
+
     setConsentimento(valor)
     setAbrirPreferencias(false)
 
