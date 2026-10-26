@@ -53,6 +53,31 @@ function whatsappDoCliente(telefone: string) {
   return null
 }
 
+const MARCADOR_INICIO = '[QUIZ CÓDIGO DA SAÚDE]'
+const MARCADOR_FIM = '[/QUIZ]'
+
+function respostasSalvasNoQuiz(observacoes: string | null | undefined): string {
+  const texto = observacoes || ''
+  const inicio = texto.indexOf(MARCADOR_INICIO)
+  const fim = texto.indexOf(MARCADOR_FIM)
+  if (inicio < 0 || fim < inicio) return ''
+  return texto.slice(inicio + MARCADOR_INICIO.length, fim).trim()
+}
+
+function anotacoesDeAtendimento(observacoes: string | null | undefined): string {
+  const texto = observacoes || ''
+  const inicio = texto.indexOf(MARCADOR_INICIO)
+  const fim = texto.indexOf(MARCADOR_FIM)
+  if (inicio < 0 || fim < inicio) return texto
+  return (texto.slice(0, inicio) + texto.slice(fim + MARCADOR_FIM.length)).trim()
+}
+
+function focoRegistradoNoQuiz(observacoes: string | null | undefined): string | null {
+  const conteudo = respostasSalvasNoQuiz(observacoes)
+  const encontrado = conteudo.match(/^Perfil de interesse: (Livros|AlwaysFit|Velmora|Mix)$/m)
+  return encontrado ? encontrado[1] : null
+}
+
 const campo =
   'w-full rounded-xl border border-[#c7e2dc] bg-white px-3 py-2.5 text-sm text-[#173e38] outline-none transition focus:border-[#078b7f] focus:ring-2 focus:ring-[#078b7f]/15'
 
@@ -135,7 +160,7 @@ const Crm = () => {
       ? {
           produto_interesse: selecionado.produto_interesse || '',
           status_atendimento: selecionado.status_atendimento || 'Novo contato',
-          observacoes: selecionado.observacoes || '',
+          observacoes: anotacoesDeAtendimento(selecionado.observacoes),
           proximo_contato: selecionado.proximo_contato || '',
         }
       : detalhesVazios)
@@ -160,6 +185,11 @@ const Crm = () => {
   const novos = clientes.filter(c => !c.status_atendimento || c.status_atendimento === 'Novo contato').length
   const atendimentos = clientes.filter(c => c.status_atendimento === 'Em atendimento' || c.status_atendimento === 'Interessado').length
   const vendas = clientes.filter(c => c.status_atendimento === 'Venda realizada' || c.status_atendimento === 'Pós-venda').length
+  const interessesQuiz = ['Livros', 'AlwaysFit', 'Velmora', 'Mix'].map(foco => ({
+    foco,
+    quantidade: clientes.filter(cliente => focoRegistradoNoQuiz(cliente.observacoes) === foco).length,
+  }))
+  const totalQuiz = interessesQuiz.reduce((soma, item) => soma + item.quantidade, 0)
 
   const entrar = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -198,7 +228,12 @@ const Crm = () => {
     const atualizacao = {
       produto_interesse: formulario.produto_interesse.trim() || null,
       status_atendimento: formulario.status_atendimento,
-      observacoes: formulario.observacoes.trim() || null,
+      observacoes: [
+        respostasSalvasNoQuiz(selecionado.observacoes)
+          ? MARCADOR_INICIO + '\n' + respostasSalvasNoQuiz(selecionado.observacoes) + '\n' + MARCADOR_FIM
+          : '',
+        formulario.observacoes.trim(),
+      ].filter(Boolean).join('\n\n') || null,
       proximo_contato: formulario.proximo_contato || null,
     }
     const { data, error } = await crmSupabase
@@ -334,6 +369,21 @@ const Crm = () => {
           ))}
         </section>
 
+        <section aria-label="Resumo dos interesses do quiz" className="mt-6 rounded-2xl border border-[#cbe9df] bg-white/95 p-5 shadow-sm">
+          <h2 className="text-lg font-black">Interesses identificados no quiz</h2>
+          <p className="mt-1 text-xs leading-5 text-[#648078]">
+            {totalQuiz} cadastros com quiz. Estes números representam apenas pessoas que concluíram o cadastro.
+          </p>
+          <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {interessesQuiz.map(item => (
+              <div key={item.foco} className="rounded-xl bg-[#e5f5ef] p-4 text-center">
+                <p className="text-sm font-bold text-[#236b60]">{item.foco}</p>
+                <strong className="mt-2 block text-3xl font-black text-[#0b6358]">{item.quantidade}</strong>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section aria-label="Gestão dos clientes" className="!bg-transparent mt-6 grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(300px,390px)]">
           <div className="overflow-hidden rounded-2xl border border-[#d9e8e2] bg-white shadow-sm">
             <div className="border-b border-[#e4eee9] p-5">
@@ -399,6 +449,15 @@ const Crm = () => {
                     </a>
                   )}
                 </div>
+                {respostasSalvasNoQuiz(selecionado.observacoes) && (
+                  <section aria-label="Respostas do quiz" className="mt-5 rounded-xl border border-[#a7ded2] bg-[#ebf9f5] p-4">
+                    <h3 className="text-sm font-black text-[#075f56]">Quiz respondido no cadastro</h3>
+                    <p className="mt-1 text-xs text-[#44766a]">Respostas registradas quando o cadastro foi concluído.</p>
+                    <pre className="mt-3 whitespace-pre-wrap break-words font-sans text-sm leading-6">
+                      {respostasSalvasNoQuiz(selecionado.observacoes)}
+                    </pre>
+                  </section>
+                )}
                 <form onSubmit={salvar} className="mt-5 space-y-4">
                   <div>
                     <label htmlFor="crm-produto" className="mb-1.5 block text-sm font-bold">Produto de interesse</label>
