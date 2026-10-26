@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import footerImage from '../../assets/footer/rodape.png'
 
 const Footer = () => {
@@ -36,6 +37,8 @@ const Footer = () => {
       </div>
       <p className="mt-4 text-center text-xs text-[#527069]">
         © {new Date().getFullYear()} Código da Saúde. Conteúdo informativo; não substitui avaliação profissional de saúde.
+        {' · '}
+        <Link to="/privacidade" className="underline underline-offset-2 hover:text-[#173f36]">Privacidade</Link>
         {' · '}
         <button
           type="button"
