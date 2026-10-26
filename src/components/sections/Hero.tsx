@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
-              onClick={() => navigate('/quiz')}
+              onClick={() => document.getElementById('quiz')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
               className="rounded-2xl bg-[#159a92] px-6 py-4 font-bold text-white shadow-lg shadow-[#159a92]/20 transition hover:-translate-y-0.5 hover:bg-[#117f79]"
             >
               Descobrir meu perfil
