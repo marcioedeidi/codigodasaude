@@ -165,7 +165,7 @@ const Cadastro: React.FC = () => {
             {respostasQuiz
               ? 'Seu nome, WhatsApp e as três respostas serão registrados no nosso CRM para mostrar as opções escolhidas e dar continuidade ao atendimento, independentemente da escolha sobre cookies opcionais.'
               : 'Seus dados são usados para atendimento e continuidade da sua experiência no Código da Saúde.'}
-            {' '}Leia nossa <Link to="/privacidade" className="font-bold underline underline-offset-2">Política de Privacidade</Link>.
+            {' '}Leia nossa <Link to="/privacidade" target="_blank" rel="noopener noreferrer" className="font-bold underline underline-offset-2">Política de Privacidade</Link>.
           </p>
         </form>
       </div>
