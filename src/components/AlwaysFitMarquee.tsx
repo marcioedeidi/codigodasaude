@@ -152,10 +152,6 @@ const AlwaysFitMarquee: React.FC<{ displayOnly?: boolean }> = ({ displayOnly = f
           will-change: transform;
         }
 
-        .alwaysfit-marquee-group:hover .alwaysfit-marquee-track {
-          animation-play-state: paused;
-        }
-
         @keyframes alwaysfit-marquee-scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
