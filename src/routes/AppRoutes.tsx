@@ -5,6 +5,7 @@ import AreaHome from '../pages/AreaHome'
 import Cadastro from '../pages/Cadastro'
 import Quiz from '../pages/Quiz'
 import ResultadoQuiz from '../pages/ResultadoQuiz'
+import Privacidade from '../pages/Privacidade'
 import Produtos from '../pages/Produtos'
 import AlwaysFit from '../pages/AlwaysFit'
 import ProCurcumin from '../pages/ProCurcumin'
@@ -66,6 +67,7 @@ const AppRoutes: React.FC = () => (
       <Route path="/" element={<><Home /><Footer /></>} />
       <Route path="/cadastro" element={<Cadastro />} />
       <Route path="/quiz" element={<Quiz />} />
+      <Route path="/privacidade" element={<Privacidade />} />
       {/* Rota administrativa separada do cadastro público, sem link no menu. */}
       <Route path="/crm" element={<Crm />} />
       <Route path="/produtos" element={<Produtos />} />
