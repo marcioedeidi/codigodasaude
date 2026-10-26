@@ -35,9 +35,9 @@ const AreaHome: React.FC = () => {
       <section id="ebooks" className="w-full bg-[#9fded7]">
         <div className="relative mx-auto w-full max-w-[1536px]">
           <img src={ebookImage} alt="E-books Código da Saúde" className="block h-auto w-full select-none" draggable={false} />
-          <Link to="/ebooks/mulher-forte-mente-cansada" aria-label="Abrir o livro Mulher Forte, Mente Cansada" title="Abrir o livro Mulher Forte, Mente Cansada" className="absolute left-[3%] top-[23%] z-30 h-[75%] w-[31%] cursor-pointer bg-transparent" />
-          <Link to="/ebooks/mude-sua-mente-transforme-sua-vida" aria-label="Abrir o livro Mude Sua Mente, Transforme Sua Vida" title="Abrir o livro Mude Sua Mente, Transforme Sua Vida" className="absolute left-[35%] top-[23%] z-30 h-[75%] w-[30%] cursor-pointer bg-transparent" />
-          <Link to="/ebooks/eu-sou-terapeuta-e-tambem-tenho-medo" aria-label="Abrir o livro Eu Sou Terapeuta e Também Tenho Medo" title="Abrir o livro Eu Sou Terapeuta e Também Tenho Medo" className="absolute left-[66%] top-[23%] z-30 h-[75%] w-[32%] cursor-pointer bg-transparent" />
+          <Link to="/ebooks/mulher-forte-mente-cansada" aria-label="Abrir o livro Mulher Forte, Mente Cansada" title="Abrir o livro Mulher Forte, Mente Cansada" className="absolute left-[6.9%] top-[88.5%] z-30 h-[7.5%] w-[23.8%] cursor-pointer rounded-full bg-transparent focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]" />
+          <Link to="/ebooks/mude-sua-mente-transforme-sua-vida" aria-label="Abrir o livro Mude Sua Mente, Transforme Sua Vida" title="Abrir o livro Mude Sua Mente, Transforme Sua Vida" className="absolute left-[38.3%] top-[88.5%] z-30 h-[7.5%] w-[23.4%] cursor-pointer rounded-full bg-transparent focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]" />
+          <Link to="/ebooks/eu-sou-terapeuta-e-tambem-tenho-medo" aria-label="Abrir o livro Eu Sou Terapeuta e Também Tenho Medo" title="Abrir o livro Eu Sou Terapeuta e Também Tenho Medo" className="absolute left-[69.3%] top-[88.5%] z-30 h-[7.5%] w-[23.9%] cursor-pointer rounded-full bg-transparent focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#087e76]" />
         </div>
       </section>
     </main>
