@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { RespostasQuiz, resumoDoQuiz, saoRespostasValidas } from '../data/quizCodigoSaude'
 
 function cleanEnv(value: string | undefined, variableName: string) {
   return (value || '')
@@ -48,7 +49,7 @@ let syncingPending = false
  * Somente INSERT é necessário ao visitante; leitura e alteração ficam restritas
  * ao administrador pelo RLS do Supabase.
  */
-export async function saveContact(name: string, whatsapp: string, email?: string) {
+export async function saveContact(name: string, whatsapp: string, email?: string, respostasQuiz?: RespostasQuiz) {
   if (!supabase) {
     return {
       success: false,
@@ -59,13 +60,20 @@ export async function saveContact(name: string, whatsapp: string, email?: string
     }
   }
 
-  const registro: { nome: string; whatsapp: string; email?: string } = {
+  const registro: { nome: string; whatsapp: string; email?: string; produto_interesse?: string; observacoes?: string } = {
     nome: name.trim(),
     whatsapp: whatsapp.replace(/\D/g, ''),
   }
 
   if (email?.trim()) {
     registro.email = email.trim()
+  }
+
+  // Usa colunas já existentes em Cadastros. O quiz somente é enviado junto do cadastro.
+  if (respostasQuiz && saoRespostasValidas(respostasQuiz)) {
+    const { interesse, observacoes } = resumoDoQuiz(respostasQuiz)
+    registro.produto_interesse = interesse
+    registro.observacoes = observacoes
   }
 
   try {
