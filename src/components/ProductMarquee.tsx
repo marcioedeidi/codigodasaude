@@ -93,10 +93,6 @@ const ProductMarquee: React.FC<{ displayOnly?: boolean }> = ({ displayOnly = fal
           will-change: transform;
         }
 
-        .group:hover .product-marquee-track {
-          animation-play-state: paused;
-        }
-
         @keyframes product-marquee-scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
