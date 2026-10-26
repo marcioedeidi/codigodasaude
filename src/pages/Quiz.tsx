@@ -28,7 +28,7 @@ const Quiz: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   }
 
   return (
-    <Container id={embedded ? "quiz" : undefined} className={embedded ? "scroll-mt-4 bg-[#eaf7f3] px-4 py-12 text-[#173f36] sm:py-16" : "codigo-saude-hero min-h-screen px-4 py-10 text-[#173f36] sm:py-16"}>
+    <Container id={embedded ? "quiz" : undefined} className={embedded ? "codigo-saude-hero scroll-mt-4 px-4 py-12 text-[#173f36] sm:py-16" : "codigo-saude-hero min-h-screen px-4 py-10 text-[#173f36] sm:py-16"}>
       <div className="mx-auto w-full max-w-3xl rounded-[2rem] border-2 border-white/90 bg-white/90 p-6 shadow-2xl sm:p-10">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <span className="text-sm font-black uppercase tracking-[0.15em] text-[#06766c]">Código da Saúde</span>
