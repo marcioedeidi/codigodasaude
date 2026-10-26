@@ -27,7 +27,7 @@ const AreaHome: React.FC = () => {
       <section className="w-full overflow-hidden bg-[#a8ded6]" aria-label="Linha AlwaysFit">
         <div className="relative mx-auto w-full max-w-[1536px] overflow-hidden" style={{ aspectRatio: '1100 / 619' }}>
           <img src={alwaysFitImage} alt="AlwaysFit" className="block h-full w-full select-none object-cover" draggable={false} />
-          <Link to="/produtos" aria-label="Conhecer os produtos AlwaysFit" className="absolute inset-0 z-20 block h-full w-full" />
+          <Link to="/produtos" aria-label="Conhecer os produtos AlwaysFit" title="Conhecer os produtos AlwaysFit" className="absolute left-[7.4%] top-[63.8%] z-20 h-[6.3%] w-[18.1%] cursor-pointer rounded-full bg-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#07534c]" />
         </div>
       </section>
       <TestimonialGallery brand="alwaysfit" compact />
