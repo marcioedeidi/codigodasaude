@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { OpcaoQuiz, perguntasQuiz, RespostasQuiz } from '../data/quizCodigoSaude'
 
-const Quiz: React.FC = () => {
+const Quiz: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const navigate = useNavigate()
   const [etapa, setEtapa] = useState(0)
   const [respostas, setRespostas] = useState<(OpcaoQuiz | null)[]>([null, null, null])
+  const Container = embedded ? 'section' : 'main'
+  const Titulo = embedded ? 'h2' : 'h1'
   const pergunta = perguntasQuiz[etapa]
   const escolha = respostas[etapa]
 
@@ -26,7 +28,7 @@ const Quiz: React.FC = () => {
   }
 
   return (
-    <main className="codigo-saude-hero min-h-screen px-4 py-10 text-[#173f36] sm:py-16">
+    <Container id={embedded ? "quiz" : undefined} className={embedded ? "scroll-mt-4 bg-[#eaf7f3] px-4 py-12 text-[#173f36] sm:py-16" : "codigo-saude-hero min-h-screen px-4 py-10 text-[#173f36] sm:py-16"}>
       <div className="mx-auto w-full max-w-3xl rounded-[2rem] border-2 border-white/90 bg-white/90 p-6 shadow-2xl sm:p-10">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <span className="text-sm font-black uppercase tracking-[0.15em] text-[#06766c]">Código da Saúde</span>
@@ -50,9 +52,9 @@ const Quiz: React.FC = () => {
         </div>
 
         <p className="text-sm font-semibold text-[#457369]">Seu momento importa. Responda com sinceridade.</p>
-        <h1 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-4xl">
+        <Titulo className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-4xl">
           {pergunta.titulo}
-        </h1>
+        </Titulo>
 
         <div className="mt-8 grid gap-3" role="group" aria-label={pergunta.titulo}>
           {pergunta.opcoes.map(opcao => {
@@ -82,7 +84,7 @@ const Quiz: React.FC = () => {
         <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
           <button
             type="button"
-            onClick={() => etapa === 0 ? navigate('/') : setEtapa(etapa - 1)}
+            onClick={() => etapa === 0 ? (embedded ? window.scrollTo({ top: 0, behavior: 'smooth' }) : navigate('/')) : setEtapa(etapa - 1)}
             className="rounded-xl border border-[#9acbc1] px-5 py-3 font-bold text-[#17655c]"
           >
             ← Voltar
@@ -102,7 +104,7 @@ const Quiz: React.FC = () => {
           Se você sair antes de se cadastrar, suas respostas não serão enviadas ao CRM.
         </p>
       </div>
-    </main>
+    </Container>
   )
 }
 
