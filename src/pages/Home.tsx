@@ -5,8 +5,10 @@ import Quiz from './Quiz'
 const Home: React.FC = () => {
   return (
     <div>
-      <Hero />
-      <Quiz embedded />
+      <div className="codigo-saude-hero-continuo">
+        <Hero />
+        <Quiz embedded />
+      </div>
       <Benefits />
       <Products />
       <Contact />
