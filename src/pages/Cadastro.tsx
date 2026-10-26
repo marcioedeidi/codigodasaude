@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { respostasDoEstado } from '../data/quizCodigoSaude'
 import { saveContact } from '../services/supabaseClient'
 
 const Cadastro: React.FC = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const respostasQuiz = respostasDoEstado(location.state)
   const [nome, setNome] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
   const [erro, setErro] = useState('')
@@ -28,18 +31,23 @@ const Cadastro: React.FC = () => {
       salvo_em: new Date().toISOString(),
     }
 
-    // Preserva o funcionamento do cadastro mesmo se a internet falhar.
-    localStorage.setItem('codigo_saude_cadastro_concluido', '1')
-    localStorage.setItem('codigo_saude_lead', JSON.stringify(lead))
-
     let sincronizado = false
     try {
-      const resultado = await saveContact(lead.nome, lead.whatsapp)
+      const resultado = await saveContact(lead.nome, lead.whatsapp, undefined, respostasQuiz || undefined)
       sincronizado = resultado.success
     } catch (error) {
       console.error('Não foi possível sincronizar o cadastro:', error)
     }
 
+    // No fluxo do quiz não há resultado concluído enquanto o CRM não confirmar o cadastro.
+    // Mantém todas as respostas apenas na memória da navegação para permitir nova tentativa.
+    if (respostasQuiz && !sincronizado) {
+      setSalvando(false)
+      setErro('Não conseguimos registrar seu cadastro e as respostas no CRM. Verifique a conexão e tente novamente.')
+      return
+    }
+
+    localStorage.setItem('codigo_saude_cadastro_concluido', '1')
     const leadLocal = { ...lead, pendente_sincronizacao: !sincronizado }
     localStorage.setItem('codigo_saude_lead', JSON.stringify(leadLocal))
 
@@ -85,7 +93,10 @@ const Cadastro: React.FC = () => {
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
 
-    navigate('/inicio', { replace: true })
+    navigate(respostasQuiz ? '/resultado' : '/inicio', {
+      replace: true,
+      state: respostasQuiz ? { respostasQuiz } : undefined,
+    })
   }
 
   return (
@@ -96,10 +107,12 @@ const Cadastro: React.FC = () => {
             Código da Saúde
           </p>
           <h1 className="text-4xl font-bold text-[#173f36] md:text-5xl">
-            Antes de continuar
+            {respostasQuiz ? 'Seu resultado está pronto' : 'Antes de continuar'}
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg leading-7 text-[#315d55]">
-            Faça seu cadastro para liberar as páginas de produtos, e-books, depoimentos e conteúdos do Código da Saúde.
+            {respostasQuiz
+              ? 'Informe seu nome e WhatsApp para ver as opções selecionadas a partir das suas respostas.'
+              : 'Faça seu cadastro para liberar as páginas de produtos, e-books, depoimentos e conteúdos do Código da Saúde.'}
           </p>
         </div>
 
@@ -149,7 +162,10 @@ const Cadastro: React.FC = () => {
           </button>
 
           <p className="text-center text-sm leading-5 text-[#315d55]">
-            Seus dados são usados para atendimento e continuidade da sua experiência no Código da Saúde.
+            {respostasQuiz
+              ? 'Seu nome, WhatsApp e as três respostas serão registrados no nosso CRM para mostrar as opções escolhidas e dar continuidade ao atendimento, independentemente da escolha sobre cookies opcionais.'
+              : 'Seus dados são usados para atendimento e continuidade da sua experiência no Código da Saúde.'}
+            {' '}Leia nossa <Link to="/privacidade" className="font-bold underline underline-offset-2">Política de Privacidade</Link>.
           </p>
         </form>
       </div>
